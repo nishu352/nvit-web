@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   FINOLINK — GLOBAL DESIGN TOKEN SYSTEM
+   Light Mode tokens (default)
+   Dark Mode tokens (applied via .dark class on <html>)
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Typography */
+    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* === LIGHT MODE TOKENS === */
+    --bg-base:        #FAFBFC;
+    --bg-surface:     #FFFFFF;
+    --bg-subtle:      #F6F8FA;
+    --bg-muted:       #EEF1F5;
+    --bg-card:        rgba(255,255,255,0.80);
+    --bg-input:       #FFFFFF;
+
+    --text-primary:   #0f172a;
+    --text-secondary: #334155;
+    --text-muted:     #64748b;
+    --text-placeholder: #94a3b8;
+
+    --border-default: rgba(203,213,225,0.9);
+    --border-subtle:  rgba(226,232,240,0.7);
+    --border-focus:   #1d4ed8;
+
+    --ring:           rgba(29,78,216,0.2);
+    --shadow-card:    0 4px 24px -4px rgba(15,23,42,0.06);
+    --shadow-elevated: 0 12px 40px -8px rgba(15,23,42,0.12);
+
+    /* Capsule nav */
+    --nav-bg:         rgba(255,255,255,0.72);
+    --nav-border:     rgba(255,255,255,0.65);
+    --nav-shadow:     0 8px 32px -4px rgba(15,23,42,0.10), 0 2px 8px -2px rgba(15,23,42,0.06);
+    --nav-link:       #475569;
+    --nav-link-hover: #0f172a;
+    --nav-link-active:#1d4ed8;
+
+    /* Glass */
+    --glass-light-bg:    rgba(255,255,255,0.65);
+    --glass-light-border:rgba(255,255,255,0.60);
+    --glass-light-shadow:0 10px 40px -10px rgba(15,23,42,0.08);
+  }
+
+  .dark {
+    /* === DARK MODE TOKENS === */
+    --bg-base:        #0B1020;
+    --bg-surface:     #0F172A;
+    --bg-subtle:      #111827;
+    --bg-muted:       #182033;
+    --bg-card:        rgba(21,28,46,0.85);
+    --bg-input:       rgba(15,22,40,0.90);
+
+    --text-primary:   #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted:     #64748b;
+    --text-placeholder: #475569;
+
+    --border-default: rgba(255,255,255,0.09);
+    --border-subtle:  rgba(255,255,255,0.05);
+    --border-focus:   #3b82f6;
+
+    --ring:           rgba(59,130,246,0.25);
+    --shadow-card:    0 4px 24px -4px rgba(0,0,0,0.30);
+    --shadow-elevated: 0 16px 48px -8px rgba(0,0,0,0.50);
+
+    /* Capsule nav */
+    --nav-bg:         rgba(10,15,30,0.75);
+    --nav-border:     rgba(255,255,255,0.07);
+    --nav-shadow:     0 8px 32px -4px rgba(0,0,0,0.40), 0 2px 8px -2px rgba(0,0,0,0.25);
+    --nav-link:       #94a3b8;
+    --nav-link-hover: #f1f5f9;
+    --nav-link-active:#93c5fd;
+
+    /* Glass */
+    --glass-light-bg:    rgba(21,28,46,0.80);
+    --glass-light-border:rgba(255,255,255,0.08);
+    --glass-light-shadow:0 20px 50px -12px rgba(0,0,0,0.45);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+  }
+
+  /* Smooth theme transitions on key elements */
+  input, textarea, select, button {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+}
+
+/* ============================================================
+   SEMANTIC TOKEN UTILITY CLASSES
+   ============================================================ */
+@layer utilities {
+  /* Backgrounds */
+  .bg-surface      { background-color: var(--bg-surface); }
+  .bg-base         { background-color: var(--bg-base); }
+  .bg-subtle       { background-color: var(--bg-subtle); }
+  .bg-muted-surface{ background-color: var(--bg-muted); }
+
+  /* Text */
+  .text-primary-t  { color: var(--text-primary); }
+  .text-secondary-t{ color: var(--text-secondary); }
+  .text-muted-t    { color: var(--text-muted); }
+
+  /* Borders */
+  .border-default  { border-color: var(--border-default); }
+  .border-subtle   { border-color: var(--border-subtle); }
+
+  /* Brand Colors — Static */
+  .bg-navy         { background-color: #0f172a; }
+  .bg-navy-dark    { background-color: #0b1528; }
+  .bg-navy-deep    { background-color: #060d1a; }
+  .bg-navy-card    { background-color: #0f1d36; }
+  .bg-royal        { background-color: #1d4ed8; }
+  .bg-royal-light  { background-color: #eff6ff; }
+  .bg-emerald-fin  { background-color: #059669; }
+  .bg-emerald-dark { background-color: #047857; }
+  .bg-emerald-light{ background-color: #d1fae5; }
+  .text-navy       { color: #0f172a; }
+  .text-royal      { color: #1d4ed8; }
+  .text-royal-light{ color: #93c5fd; }
+  .text-emerald-fin{ color: #059669; }
+
+  /* ============================================================
+     CAPSULE NAVBAR GLASS — theme-aware via CSS vars
+     ============================================================ */
+  .glass-nav-capsule {
+    background: var(--nav-bg);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--nav-border);
+    box-shadow: var(--nav-shadow);
+    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  /* Scrolled state — slightly more opaque */
+  .glass-nav-capsule.scrolled {
+    --nav-bg: rgba(255,255,255,0.88);
+    --nav-shadow: 0 12px 40px -4px rgba(15,23,42,0.14), 0 2px 8px -2px rgba(15,23,42,0.08);
+  }
+  .dark .glass-nav-capsule.scrolled {
+    --nav-bg: rgba(10,15,30,0.90);
+    --nav-shadow: 0 12px 40px -4px rgba(0,0,0,0.50), 0 2px 8px -2px rgba(0,0,0,0.30);
+  }
+
+  /* ============================================================
+     CARD GLASS VARIANTS — theme-aware
+     ============================================================ */
+  .glass-card {
+    background: var(--glass-light-bg);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--glass-light-border);
+    box-shadow: var(--glass-light-shadow);
+  }
+
+  /* Explicit light/dark variants for forced contexts */
+  .glass-card-light {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.04);
+  }
+  .glass-card-dark {
+    background: rgba(21,28,46,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 50px -12px rgba(0,0,0,0.45);
+  }
+
+  /* ============================================================
+     THEMED INPUT
+     ============================================================ */
+  .input-themed {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-default);
+  }
+  .input-themed::placeholder {
+    color: var(--text-placeholder);
+  }
+  .input-themed:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px var(--ring);
+    outline: none;
+  }
+
+  /* ============================================================
+     DOT GRID BACKGROUNDS
+     ============================================================ */
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .bg-dot-grid-dark {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ============================================================
+     SHIMMER / SKELETON
+     ============================================================ */
+  @keyframes shimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  .animate-shimmer {
+    animation: shimmer 1.8s infinite linear;
+  }
+
+  /* ============================================================
+     LOGO PARTNER SLIDER
+     ============================================================ */
+  @keyframes logo-slider {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-logo-slider {
+    display: flex;
+    width: 200%;
+    animation: logo-slider 30s linear infinite;
+  }
+  .animate-logo-slider:hover {
+    animation-play-state: paused;
+  }
+
+  /* ============================================================
+     THEME SWITCHER CAPSULE (inner)
+     ============================================================ */
+  .theme-switcher-capsule {
+    background: rgba(15,23,42,0.06);
+    border: 1px solid rgba(15,23,42,0.10);
+    border-radius: 9999px;
+    padding: 3px;
+  }
+  .dark .theme-switcher-capsule {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.08);
+  }
+
+  /* ============================================================
+     PAGE CONTENT OFFSET — header is fixed + floating
+     ============================================================ */
+  .page-top-offset {
+    padding-top: 108px; /* 20px top + ~72px header + 16px gap */
+  }
+  .page-top-offset-lg {
+    padding-top: 120px;
+  }
+}
