@@ -127,10 +127,7 @@ export default function Footer() {
             </ul>
 
             <div className="space-y-2 text-xs text-slate-500 dark:text-slate-400 font-medium pt-2 border-t border-slate-200 dark:border-slate-800">
-              <div className="flex items-start space-x-2.5">
-                <MapPin className="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" />
-                <span>Sector 8, E-14, 3rd Floor, near Java Showroom, Sector 15 Metro, Noida, UP 201301</span>
-              </div>
+              {/* Address removed temporarily for admin integration */}
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-violet-500 dark:text-violet-400 shrink-0" />
                 <span>info@nvitsolution.com</span>
