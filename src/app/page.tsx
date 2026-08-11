@@ -552,13 +552,13 @@ export default function HomePage() {
                     value={companyQuery}
                     onChange={handleCompanyChange}
                     placeholder="Type company name (e.g. indus)..."
-                    className="w-full h-14 pl-12 pr-32 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:border-blue-500 focus:outline-none"
+                    className="w-full h-14 pl-12 pr-4 sm:pr-32 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:border-blue-500 focus:outline-none"
                   />
                   <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
                   <button
                     type="submit"
                     disabled={companyLoading}
-                    className="absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50"
+                    className="hidden sm:flex absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 items-center justify-center"
                   >
                     {companyLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Inspect Company"}
                   </button>
@@ -635,13 +635,13 @@ export default function HomePage() {
                     value={pincodeQuery}
                     onChange={(e) => setPincodeQuery(e.target.value.replace(/\D/g, ""))}
                     placeholder="Enter 6-digit PIN code (e.g. 201301)..."
-                    className="w-full h-14 pl-12 pr-32 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:border-blue-500 focus:outline-none"
+                    className="w-full h-14 pl-12 pr-4 sm:pr-32 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:border-blue-500 focus:outline-none"
                   />
                   <MapPin className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
                   <button
                     type="submit"
                     disabled={pincodeLoading}
-                    className="absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50"
+                    className="hidden sm:flex absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 items-center justify-center"
                   >
                     {pincodeLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Inspect Pincode"}
                   </button>

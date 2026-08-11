@@ -137,14 +137,14 @@ export default function CompanyCheckPage() {
                   }}
                   placeholder="Type employer name (e.g. indus, tata, hcl)..."
                   aria-label="Employer company search"
-                  className="w-full h-14 pl-12 pr-36 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none shadow-xl dark:shadow-none"
+                  className="w-full h-14 pl-12 pr-4 sm:pr-36 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none shadow-xl dark:shadow-none"
                 />
                 <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <button
                   type="submit"
                   disabled={loading}
                   aria-label="Submit company inspection"
-                  className="absolute right-2 top-2 bottom-2 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-colors"
+                  className="hidden sm:flex absolute right-2 top-2 bottom-2 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-colors items-center justify-center"
                 >
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Inspect Company"}
                 </button>

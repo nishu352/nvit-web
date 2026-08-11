@@ -280,15 +280,15 @@ export default function Navbar() {
           {/* ── MOBILE: Theme + Hamburger ─────────────────── */}
           <div className="flex md:hidden items-center gap-2">
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100/70 dark:bg-white/6 border border-slate-200 dark:border-white/8 text-slate-600 dark:text-slate-300 cursor-pointer"
+              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+              className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100/70 dark:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 cursor-pointer"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {resolvedTheme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100/70 dark:bg-white/6 border border-slate-200 dark:border-white/8 text-slate-700 dark:text-slate-200 cursor-pointer"
+              className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100/70 dark:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-200 cursor-pointer"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
             >
