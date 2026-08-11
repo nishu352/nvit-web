@@ -198,9 +198,9 @@ export default function FinanceToolsPage() {
                 <button
                   type="submit"
                   disabled={companyLoading}
-                  className="absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50"
+                  className="flex absolute right-2 top-2 bottom-2 px-4 sm:px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 items-center justify-center transition-all"
                 >
-                  {companyLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Inspect Company"}
+                  {companyLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><span className="hidden sm:inline">Inspect Company</span><Search className="w-4 h-4 sm:hidden" /></>}
                 </button>
 
                 <AnimatePresence>

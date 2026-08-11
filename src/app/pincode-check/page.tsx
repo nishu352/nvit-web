@@ -85,9 +85,9 @@ export default function PincodeCheckPage() {
                 <button
                   type="submit"
                   disabled={loading || pincode.length !== 6}
-                  className="hidden sm:flex absolute right-2 top-2 bottom-2 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-colors items-center justify-center"
+                  className="flex absolute right-2 top-2 bottom-2 px-4 sm:px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-colors items-center justify-center"
                 >
-                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Check Pincode"}
+                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><span className="hidden sm:inline">Check Pincode</span><MapPin className="w-4 h-4 sm:hidden" /></>}
                 </button>
               </div>
             </form>

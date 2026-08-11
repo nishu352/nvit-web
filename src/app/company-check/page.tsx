@@ -144,9 +144,9 @@ export default function CompanyCheckPage() {
                   type="submit"
                   disabled={loading}
                   aria-label="Submit company inspection"
-                  className="hidden sm:flex absolute right-2 top-2 bottom-2 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-colors items-center justify-center"
+                  className="flex absolute right-2 top-2 bottom-2 px-4 sm:px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-colors items-center justify-center"
                 >
-                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Inspect Company"}
+                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><span className="hidden sm:inline">Inspect Company</span><Search className="w-4 h-4 sm:hidden" /></>}
                 </button>
               </div>
             </form>

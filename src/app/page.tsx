@@ -558,9 +558,9 @@ export default function HomePage() {
                   <button
                     type="submit"
                     disabled={companyLoading}
-                    className="hidden sm:flex absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 items-center justify-center"
+                    className="flex absolute right-2 top-2 bottom-2 px-4 sm:px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 items-center justify-center"
                   >
-                    {companyLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Inspect Company"}
+                    {companyLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><span className="hidden sm:inline">Inspect Company</span><Search className="w-4 h-4 sm:hidden" /></>}
                   </button>
 
                   {companySuggestions.length > 0 && (
@@ -641,9 +641,9 @@ export default function HomePage() {
                   <button
                     type="submit"
                     disabled={pincodeLoading}
-                    className="hidden sm:flex absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 items-center justify-center"
+                    className="flex absolute right-2 top-2 bottom-2 px-4 sm:px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold cursor-pointer disabled:opacity-50 items-center justify-center"
                   >
-                    {pincodeLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Inspect Pincode"}
+                    {pincodeLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><span className="hidden sm:inline">Inspect Pincode</span><MapPin className="w-4 h-4 sm:hidden" /></>}
                   </button>
                 </div>
                 {pincodeError && <p className="text-xs text-rose-500 font-bold">{pincodeError}</p>}
