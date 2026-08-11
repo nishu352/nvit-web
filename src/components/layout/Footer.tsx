@@ -25,7 +25,7 @@ export default function Footer() {
     cms?.company?.address ||
     cms?.footer?.address ||
     "Sector 8, E-14, 3rd Floor, near Java Showroom, Sector 15 Metro, Noida, UP 201301";
-  const phone = cms?.brand?.supportPhone || "+91-85100-88409";
+  const phone = cms?.brand?.supportPhone || "";
   const email = cms?.footer?.contactEmail || cms?.brand?.supportEmail || "info@nvitsolution.com";
   const copyright =
     cms?.footer?.copyright || `© ${new Date().getFullYear()} ${companyName}. All rights reserved.`;
@@ -140,10 +140,12 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                 <span>{address}</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>{phone}</span>
-              </div>
+              {phone && (
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>{phone}</span>
+                </div>
+              )}
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>{email}</span>

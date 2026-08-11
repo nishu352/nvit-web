@@ -106,19 +106,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* ── RIGHT: Phone + Theme + CTA ─────────────────── */}
+          {/* ── RIGHT: Theme + CTA ─────────────────── */}
           <div className="hidden md:flex items-center gap-3 shrink-0">
-
-            {/* Phone */}
-            <a
-              href="tel:+918510088409"
-              className="hidden xl:flex items-center gap-2 text-[12px] font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              <div className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-white/8 border border-slate-200 dark:border-white/8 flex items-center justify-center shrink-0">
-                <PhoneCall className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-              </div>
-              <span className="tracking-tight">+91-85100-88409</span>
-            </a>
 
             {/* Theme Switcher Capsule */}
             <div
@@ -233,13 +222,6 @@ export default function Navbar() {
               </div>
 
               <div className="px-4 pb-5 pt-2 border-t border-[var(--border-subtle)] space-y-3">
-                <a
-                  href="tel:+918510088409"
-                  className="flex items-center gap-2.5 px-4 py-3 rounded-2xl text-[12px] font-bold text-[var(--text-secondary)] hover:bg-[var(--bg-muted)] transition-colors"
-                >
-                  <PhoneCall className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                  +91-85100-88409
-                </a>
 
                 {/* Full theme control in mobile drawer */}
                 <div className="px-3">
