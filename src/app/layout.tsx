@@ -8,18 +8,18 @@ import CursorTracker from "@/components/layout/CursorTracker";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NVIT Solution — Best DSA Loan Agency | Company Category & Policy Verification Engine",
+  title: "NVIT.SPACE — Technology • Software • AI • Digital Solutions",
   description:
-    "NVIT Solution PVT. LTD. Enterprise DSA Platform & Fintech Marketplace — Instant company category verification, pincode serviceability check, personal loans, business loans, overdrafts, and balance transfers from 40+ banks & NBFCs.",
+    "NVIT.SPACE is a modern digital engineering studio building websites, web applications, mobile apps, AI solutions, and custom software for forward-thinking enterprises.",
   keywords: [
-    "NVIT Solution",
-    "NVIT Solution Loan Agency",
-    "DSA Policy Platform",
-    "Company Category Check",
-    "Pincode Serviceability",
-    "Instant Personal Loan",
-    "Bank Policy Check",
-    "NBFC Loan Eligibility",
+    "NVIT.SPACE",
+    "Digital Engineering Studio",
+    "Web Application Development",
+    "Mobile App Development",
+    "AI Solutions",
+    "Custom Software",
+    "Business Automation",
+    "Full-Stack Development",
   ],
 };
 

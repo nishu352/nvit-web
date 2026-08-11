@@ -13,24 +13,26 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("light");
-  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
+  const [theme, setThemeState] = useState<Theme>("dark");
+  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("dark");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Read initial theme on mount
+    setMounted(true);
     const savedTheme = localStorage.getItem("theme") as Theme | null;
-    if (savedTheme) {
+    if (savedTheme && ["light", "dark", "system"].includes(savedTheme)) {
       setThemeState(savedTheme);
     } else {
-      setThemeState("light"); // Default is light mode
+      setThemeState("dark");
     }
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
     const root = document.documentElement;
 
     const applyTheme = () => {
-      let activeTheme: "light" | "dark" = "light";
+      let activeTheme: "light" | "dark" = "dark";
 
       if (theme === "system") {
         const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -50,14 +52,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     applyTheme();
 
-    // Listen for system changes if system theme is selected
     if (theme === "system") {
       const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
       const handleChange = () => applyTheme();
       mediaQuery.addEventListener("change", handleChange);
       return () => mediaQuery.removeEventListener("change", handleChange);
     }
-  }, [theme]);
+  }, [theme, mounted]);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
