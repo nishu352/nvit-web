@@ -128,15 +128,15 @@ export default function PincodeCheckPage() {
             </div>
 
             {/* Serviceable Lenders Grid */}
-            {result.availableBanks && result.availableBanks.length > 0 && (
+            {((result.availableBanks?.length > 0) || (result.availableNbfcs?.length > 0)) && (
               <div className="space-y-4">
                 <h3 className="text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
                   <Building2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  <span>Serviceable Lender Institutions ({result.availableBanks.length})</span>
+                  <span>Serviceable Lender Institutions ({(result.availableBanks?.length || 0) + (result.availableNbfcs?.length || 0)})</span>
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {result.availableBanks.map((bank: any) => (
+                  {[...(result.availableBanks || []), ...(result.availableNbfcs || [])].map((bank: any) => (
                     <div
                       key={bank.bankId}
                       className="glass-card rounded-2xl p-4 bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between shadow-sm dark:shadow-none"
