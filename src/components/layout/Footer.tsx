@@ -14,15 +14,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="space-y-4 md:col-span-1">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20 border border-white/20">
-                <Sparkles className="w-5 h-5" />
-              </div>
+            <div className="flex items-center space-x-3 select-none">
+              <img
+                src="/brand/nvit-icon.svg"
+                alt="NVIT.SPACE"
+                className="w-10 h-10 shrink-0"
+                width="40"
+                height="40"
+              />
               <div>
-                <span className="text-xl font-black text-slate-900 dark:text-white tracking-tight block">
-                  NVIT<span className="text-blue-600 dark:text-blue-400 font-mono">.SPACE</span>
+                <span className="text-[20px] tracking-tight text-slate-900 dark:text-white flex items-center">
+                  <span className="font-semibold">NVIT</span>
+                  <span className="text-blue-600 dark:text-blue-500 font-semibold">.</span>
+                  <span className="font-light">SPACE</span>
                 </span>
-                <span className="text-[9px] uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-extrabold block mt-0.5">
+                <span className="text-[9px] uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-extrabold block mt-[2px]">
                   Digital Engineering Studio
                 </span>
               </div>
