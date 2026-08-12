@@ -115,12 +115,18 @@ export default function Navbar() {
             className="flex items-center gap-2.5 shrink-0 select-none group"
             aria-label="NVIT.SPACE Home"
           >
-            <div className="w-9 h-9 sm:w-9.5 sm:h-9.5 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 group-hover:shadow-blue-500/40 transition-all duration-300 shrink-0 border border-white/20">
-              <Sparkles className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
-            </div>
+            <img
+              src="/brand/nvit-icon-animated.svg"
+              alt="NVIT.SPACE"
+              className="nvit-logo h-[34px] w-[34px] sm:h-9 sm:w-9 shrink-0"
+              width="36"
+              height="36"
+            />
             <div className="flex flex-col leading-none">
-              <span className="text-[17px] sm:text-[19px] font-black tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
-                NVIT<span className="text-blue-600 dark:text-blue-400 font-mono text-[16px] sm:text-[18px]">.SPACE</span>
+              <span className="text-[17px] sm:text-[19px] tracking-tight text-slate-900 dark:text-white flex items-center">
+                <span className="font-semibold">NVIT</span>
+                <span className="text-blue-600 dark:text-blue-500 font-semibold">.</span>
+                <span className="font-light">SPACE</span>
               </span>
               <span className="text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 font-semibold mt-[2px]">
                 Digital Studio
