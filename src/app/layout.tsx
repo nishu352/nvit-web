@@ -9,7 +9,10 @@ import CursorTracker from "@/components/layout/CursorTracker";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NVIT.SPACE — Technology • Software • AI • Digital Solutions",
+  title: {
+    default: "NVIT.SPACE - Home",
+    template: "NVIT.SPACE - %s",
+  },
   description:
     "NVIT.SPACE is a modern digital engineering studio building websites, web applications, mobile apps, AI solutions, and custom software for forward-thinking enterprises.",
   keywords: [
