@@ -101,7 +101,7 @@ export default function PincodeCheckPage() {
         {loading && (
           <div className="py-20 text-center space-y-3">
             <Loader2 className="w-10 h-10 text-indigo-600 dark:text-indigo-500 animate-spin mx-auto" />
-            <p className="text-xs font-bold text-slate-600 dark:text-slate-400">Querying location database index...</p>
+            <p className="text-xs font-bold text-slate-600 dark:text-slate-400">Searching pincode serviceability records...</p>
           </div>
         )}
 

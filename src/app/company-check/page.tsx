@@ -194,7 +194,7 @@ export default function CompanyCheckPage() {
         {loading && (
           <div className="py-20 text-center space-y-3">
             <Loader2 className="w-10 h-10 text-blue-600 dark:text-blue-500 animate-spin mx-auto" />
-            <p className="text-xs font-bold text-slate-600 dark:text-slate-400">Querying Supabase production database...</p>
+            <p className="text-xs font-bold text-slate-600 dark:text-slate-400">Searching company database records...</p>
           </div>
         )}
 
