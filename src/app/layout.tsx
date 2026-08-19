@@ -9,6 +9,10 @@ import CursorTracker from "@/components/layout/CursorTracker";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.nvit.space"),
+  alternates: {
+    canonical: "https://www.nvit.space",
+  },
   title: {
     default: "NVIT.SPACE - Home",
     template: "NVIT.SPACE - %s",
@@ -25,6 +29,29 @@ export const metadata: Metadata = {
     "Business Automation",
     "Full-Stack Development",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/brand/nvit-favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
+  openGraph: {
+    title: "NVIT.SPACE - Digital Engineering Studio",
+    description:
+      "Building websites, web applications, mobile apps, AI solutions, and custom software for forward-thinking enterprises.",
+    url: "https://www.nvit.space",
+    siteName: "NVIT.SPACE",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
