@@ -27,8 +27,8 @@ export function getCategoryStatus(rawCategory?: string | null): CategoryVisualCo
   if (!cat) {
     return {
       status: "NEGATIVE",
-      label: "Negative / Unlisted",
-      badgeClass: "bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-500/20",
+      label: "Unlisted",
+      badgeClass: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20 dark:border-rose-500/25",
       dotClass: "bg-rose-500",
       icon: "🔴",
     };
@@ -49,8 +49,8 @@ export function getCategoryStatus(rawCategory?: string | null): CategoryVisualCo
   ) {
     return {
       status: "NEGATIVE",
-      label: "Negative / Unlisted",
-      badgeClass: "bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-500/20",
+      label: "Unlisted",
+      badgeClass: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20 dark:border-rose-500/25",
       dotClass: "bg-rose-500",
       icon: "🔴",
     };
