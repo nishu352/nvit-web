@@ -7,6 +7,7 @@ import EmiCalculator from "@/components/ui/EmiCalculator";
 import { apiClient } from "@/services/apiClient";
 import { Building2, MapPin, Calculator, Search, Loader2, CheckCircle2, Wrench } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getCategoryStatus } from "@/utils/categoryStatus";
 
 export default function FinanceToolsPage() {
   const [activeTab, setActiveTab] = useState<"emi" | "company" | "pincode">("emi");
@@ -257,16 +258,11 @@ export default function FinanceToolsPage() {
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
                   {selectedCompany.banks?.slice(0, 4).map((b: any) => {
-                    const u = String(b.category || "").toUpperCase();
-                    let badgeClass = "bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-400 border-slate-300 dark:border-slate-800";
-                    if (u.includes("CAT A") || u.includes("PRIME") || u.includes("SUPER A")) badgeClass = "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-400 border-emerald-300 dark:border-emerald-800";
-                    else if (u.includes("CAT B")) badgeClass = "bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-400 border-blue-300 dark:border-blue-800";
-                    else if (u.includes("CAT C")) badgeClass = "bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-400 border-amber-300 dark:border-amber-800";
-                    else if (u.includes("REJECT") || u.includes("BLOCKED")) badgeClass = "bg-rose-100 dark:bg-rose-950/80 text-rose-800 dark:text-rose-400 border-rose-300 dark:border-rose-800";
+                    const visual = getCategoryStatus(b.category);
                     return (
                       <div key={b.bankId} className="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2 flex flex-col justify-between shadow-sm dark:shadow-none">
                         <span className="text-[10px] font-bold text-slate-900 dark:text-slate-200 block truncate">{b.bankName}</span>
-                        <span className={`text-xs font-black px-2 py-1 rounded-lg border text-center block ${badgeClass}`}>{b.category || "UNLISTED"}</span>
+                        <span className={`text-xs font-black px-2 py-1 rounded-lg border text-center block ${visual.badgeClass}`}>{b.category || "UNLISTED"}</span>
                       </div>
                     );
                   })}

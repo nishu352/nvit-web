@@ -25,7 +25,14 @@ import {
   Loader2,
   Server,
   Wrench,
+  Mail,
+  ChevronRight,
+  ShieldCheck,
+  Award,
+  Users,
+  Compass,
 } from "lucide-react";
+import { getCategoryStatus } from "@/utils/categoryStatus";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SERVICES = [
@@ -600,12 +607,15 @@ export default function HomePage() {
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                    {selectedCompany.banks?.slice(0, 4).map((b: any) => (
-                      <div key={b.bankId} className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center space-y-1">
-                        <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 block truncate">{b.bankName}</span>
-                        <span className="text-xs font-black text-blue-600 dark:text-blue-400 block">{b.category}</span>
-                      </div>
-                    ))}
+                    {selectedCompany.banks?.slice(0, 4).map((b: any) => {
+                      const visual = getCategoryStatus(b.category);
+                      return (
+                        <div key={b.bankId} className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center space-y-1.5 flex flex-col justify-between">
+                          <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 block truncate">{b.bankName}</span>
+                          <span className={`text-[11px] font-black px-2 py-0.5 rounded-lg border block ${visual.badgeClass}`}>{b.category || "UNLISTED"}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}

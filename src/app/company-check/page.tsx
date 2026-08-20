@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { apiClient } from "@/services/apiClient";
 import { Search, Building2, Loader2, MapPin, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getCategoryStatus } from "@/utils/categoryStatus";
 
 interface Suggestion {
   id: string;
@@ -48,16 +49,17 @@ export default function CompanyCheckPage() {
   };
 
   useEffect(() => {
-    if (searchTerm.trim().length < 2) {
+    let active = true;
+    const term = searchTerm.trim();
+    if (term.length < 2) {
       setSuggestions([]);
       return;
     }
 
-    let active = true;
     const timer = setTimeout(async () => {
       try {
         const res = await apiClient.get("/company/autocomplete", {
-          params: { q: searchTerm.trim() },
+          params: { q: term },
         });
         if (active && res.data && res.data.success && Array.isArray(res.data.data)) {
           setSuggestions(res.data.data);
@@ -74,20 +76,7 @@ export default function CompanyCheckPage() {
   }, [searchTerm]);
 
   const getCategoryBadgeClass = (cat: string) => {
-    const u = String(cat || "").toUpperCase();
-    if (u.includes("CAT A") || u.includes("PRIME") || u.includes("SUPER A")) {
-      return "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-400 border-emerald-300 dark:border-emerald-800";
-    }
-    if (u.includes("CAT B")) {
-      return "bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-400 border-blue-300 dark:border-blue-800";
-    }
-    if (u.includes("CAT C")) {
-      return "bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-400 border-amber-300 dark:border-amber-800";
-    }
-    if (u.includes("REJECT") || u.includes("BLOCKED")) {
-      return "bg-rose-100 dark:bg-rose-950/80 text-rose-800 dark:text-rose-400 border-rose-300 dark:border-rose-800";
-    }
-    return "bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-400 border-slate-300 dark:border-slate-800";
+    return getCategoryStatus(cat).badgeClass;
   };
 
   return (
