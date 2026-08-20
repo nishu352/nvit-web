@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { getCategoryStatus } from "@/utils/categoryStatus";
 import { motion, AnimatePresence } from "framer-motion";
+import { useWebsiteCMS } from "@/hooks/useWebsiteCMS";
 
 const SERVICES = [
   {
@@ -123,6 +124,7 @@ const TECH_STACK = [
 ];
 
 export default function HomePage() {
+  const { data: cms } = useWebsiteCMS();
   const [activeToolTab, setActiveToolTab] = useState<"company" | "pincode" | "emi">("company");
 
   // Company Search State
@@ -243,18 +245,25 @@ export default function HomePage() {
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/80 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/40 text-blue-700 dark:text-blue-300 text-xs font-bold shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 animate-pulse" />
-                <span>Next-Gen Digital Engineering Studio</span>
+                <span>{cms?.company?.tagline || "Next-Gen Digital Engineering Studio"}</span>
               </div>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.08]">
-                BUILD DIGITAL. <br />
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 dark:from-blue-400 dark:via-indigo-300 dark:to-violet-400 bg-clip-text text-transparent">
-                  BUILD SMART.
-                </span>
+                {cms?.hero?.title ? (
+                  <span>{cms.hero.title}</span>
+                ) : (
+                  <>
+                    BUILD DIGITAL. <br />
+                    <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 dark:from-blue-400 dark:via-indigo-300 dark:to-violet-400 bg-clip-text text-transparent">
+                      BUILD SMART.
+                    </span>
+                  </>
+                )}
               </h1>
 
               <p className="text-base sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                We build high-performance websites, web applications, mobile apps, and AI-powered digital solutions for modern forward-thinking businesses.
+                {cms?.hero?.subtitle ||
+                  "We build high-performance websites, web applications, mobile apps, and AI-powered digital solutions for modern forward-thinking businesses."}
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">

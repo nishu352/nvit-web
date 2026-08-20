@@ -1,9 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles, ShieldCheck, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, Building2 } from "lucide-react";
+import { useWebsiteCMS } from "@/hooks/useWebsiteCMS";
 
 export default function Footer() {
+  const { data: cms } = useWebsiteCMS();
+
+  const companyName = cms?.company?.name || "NVIT SOLUTION PVT. LTD.";
+  const brandTagline = cms?.company?.tagline || "Digital Engineering Studio";
+  const brandDesc =
+    cms?.about?.description ||
+    "NVIT.SPACE builds high-performance websites, web applications, mobile apps, custom software, and AI-powered digital solutions for forward-thinking modern enterprises.";
+  const supportEmail = cms?.brand?.supportEmail || "contact@nvit.space";
+  const supportPhone = cms?.brand?.supportPhone || "";
+  const address = [cms?.company?.address, cms?.company?.city, cms?.company?.state]
+    .filter(Boolean)
+    .join(", ");
+
   return (
     <footer className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-200 pt-16 pb-12 border-t border-slate-200 dark:border-slate-800/80 relative overflow-hidden transition-colors duration-300">
       {/* Subtle top ambient glow */}
@@ -16,9 +30,9 @@ export default function Footer() {
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center space-x-3 select-none">
               <img
-                src="/brand/nvit-icon.svg"
-                alt="NVIT.SPACE"
-                className="w-10 h-10 shrink-0"
+                src={cms?.brand?.logoUrl || "/brand/nvit-icon.svg"}
+                alt={companyName}
+                className="w-10 h-10 shrink-0 object-contain"
                 width="40"
                 height="40"
               />
@@ -29,12 +43,12 @@ export default function Footer() {
                   <span className="font-light">SPACE</span>
                 </span>
                 <span className="text-[9px] uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-extrabold block mt-[2px]">
-                  Digital Engineering Studio
+                  {brandTagline}
                 </span>
               </div>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-              NVIT.SPACE builds high-performance websites, web applications, mobile apps, custom software, and AI-powered digital solutions for forward-thinking modern enterprises.
+              {brandDesc}
             </p>
             <div className="flex items-center space-x-2 text-xs text-blue-600 dark:text-blue-400 font-bold pt-1">
               <ShieldCheck className="w-4 h-4 shrink-0" />
@@ -132,19 +146,42 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="space-y-2 text-xs text-slate-500 dark:text-slate-400 font-medium pt-2 border-t border-slate-200 dark:border-slate-800">
-              {/* Address removed temporarily for admin integration */}
-              <div className="flex items-center space-x-2.5">
-                <Mail className="w-4 h-4 text-violet-500 dark:text-violet-400 shrink-0" />
-                <span>info@nvitsolution.com</span>
-              </div>
+            <div className="space-y-2.5 text-xs text-slate-500 dark:text-slate-400 font-medium pt-2 border-t border-slate-200 dark:border-slate-800">
+              {address && (
+                <div className="flex items-start space-x-2.5">
+                  <MapPin className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
+                  <span className="leading-snug">{address}</span>
+                </div>
+              )}
+              {supportEmail && (
+                <div className="flex items-center space-x-2.5">
+                  <Mail className="w-4 h-4 text-violet-500 dark:text-violet-400 shrink-0" />
+                  <a href={`mailto:${supportEmail}`} className="hover:text-blue-500 transition-colors">
+                    {supportEmail}
+                  </a>
+                </div>
+              )}
+              {supportPhone && (
+                <div className="flex items-center space-x-2.5">
+                  <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <a href={`tel:${supportPhone}`} className="hover:text-blue-500 transition-colors">
+                    {supportPhone}
+                  </a>
+                </div>
+              )}
+              {(cms?.company?.cin || cms?.company?.gst) && (
+                <div className="text-[10px] text-slate-400 dark:text-slate-500 pt-1 space-y-0.5">
+                  {cms.company.cin && <p>CIN: {cms.company.cin}</p>}
+                  {cms.company.gst && <p>GST: {cms.company.gst}</p>}
+                </div>
+              )}
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 dark:text-slate-500 font-semibold">
-          <p>© {new Date().getFullYear()} NVIT.SPACE (NVIT SOLUTION PVT. LTD.). All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 dark:text-slate-500 font-semibold gap-4">
+          <p>© {new Date().getFullYear()} NVIT.SPACE ({companyName}). All rights reserved.</p>
+          <div className="flex space-x-6">
             <Link href="/privacy" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Terms of Service</Link>
             <Link href="/security" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Security Overview</Link>

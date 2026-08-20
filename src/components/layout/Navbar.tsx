@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/providers/ThemeProvider";
+import { useWebsiteCMS } from "@/hooks/useWebsiteCMS";
 
 const FINANCE_TOOLS = [
   {
@@ -62,6 +63,7 @@ const THEME_OPTIONS = [
 ] as const;
 
 export default function Navbar() {
+  const { data: cms } = useWebsiteCMS();
   const pathname = usePathname();
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -116,9 +118,9 @@ export default function Navbar() {
             aria-label="NVIT.SPACE Home"
           >
             <img
-              src="/brand/nvit-icon-animated.svg"
+              src={cms?.brand?.logoUrl || "/brand/nvit-icon-animated.svg"}
               alt="NVIT.SPACE"
-              className="nvit-logo h-[34px] w-[34px] sm:h-9 sm:w-9 shrink-0"
+              className="nvit-logo h-[34px] w-[34px] sm:h-9 sm:w-9 shrink-0 object-contain"
               width="36"
               height="36"
             />
@@ -129,7 +131,7 @@ export default function Navbar() {
                 <span className="font-light">SPACE</span>
               </span>
               <span className="text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 font-semibold mt-[2px]">
-                Digital Studio
+                {cms?.company?.tagline || "Digital Studio"}
               </span>
             </div>
           </Link>
