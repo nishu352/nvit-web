@@ -9,7 +9,7 @@ const getBaseUrl = () => {
   if (process.env.NODE_ENV === "development") {
     return "http://localhost:5001/api/v1";
   }
-  return "https://nvit-backend-production.up.railway.app/api/v1";
+  return "https://nvit-backend-production-d6c6.up.railway.app/api/v1";
 };
 
 export const apiClient = axios.create({
