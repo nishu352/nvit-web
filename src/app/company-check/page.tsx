@@ -355,20 +355,12 @@ export default function CompanyCheckPage() {
                         </div>
                       </div>
 
-                      {/* Header Actions */}
+                      {/* Header Badge */}
                       <div className="flex items-center gap-2.5 flex-wrap">
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
+                        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-bold shadow-sm">
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                           <span>Live Policy Verified</span>
                         </div>
-
-                        <Link
-                          href={`/loan-apply?company=${encodeURIComponent(comp.companyName)}`}
-                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-95 text-white text-xs font-bold transition-all shadow-md shadow-blue-600/20 cursor-pointer"
-                        >
-                          <span>Apply For Loan</span>
-                          <ArrowRight className="w-3 h-3" />
-                        </Link>
                       </div>
                     </div>
 
