@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, Building2 } from "lucide-react";
+import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, Building2, Users } from "lucide-react";
 import { useWebsiteCMS } from "@/hooks/useWebsiteCMS";
 
 export default function Footer() {
@@ -12,8 +12,12 @@ export default function Footer() {
   const brandDesc =
     cms?.about?.description ||
     "NVIT.SPACE builds high-performance websites, web applications, mobile apps, custom software, and AI-powered digital solutions for forward-thinking modern enterprises.";
-  const supportEmail = cms?.brand?.supportEmail || "contact@nvit.space";
+  const supportEmail = cms?.brand?.supportEmail || "info@nvit.space";
   const supportPhone = cms?.brand?.supportPhone || "";
+  const founderName = cms?.founders?.founder?.name || "Nishant Bhardwaj";
+  const founderRole = cms?.founders?.founder?.title || "Director & CEO";
+  const coFounderName = cms?.founders?.coFounder?.name || "Vineet";
+  const coFounderRole = cms?.founders?.coFounder?.title || "Co-Director & CTO";
   const address = [cms?.company?.address, cms?.company?.city, cms?.company?.state]
     .filter(Boolean)
     .join(", ");
@@ -156,7 +160,10 @@ export default function Footer() {
               {supportEmail && (
                 <div className="flex items-center space-x-2.5">
                   <Mail className="w-4 h-4 text-violet-500 dark:text-violet-400 shrink-0" />
-                  <a href={`mailto:${supportEmail}`} className="hover:text-blue-500 transition-colors">
+                  <a
+                    href={`mailto:${supportEmail}`}
+                    className="hover:text-blue-500 transition-colors font-semibold text-slate-700 dark:text-slate-200"
+                  >
                     {supportEmail}
                   </a>
                 </div>
@@ -164,11 +171,33 @@ export default function Footer() {
               {supportPhone && (
                 <div className="flex items-center space-x-2.5">
                   <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
-                  <a href={`tel:${supportPhone}`} className="hover:text-blue-500 transition-colors">
+                  <a
+                    href={`tel:${supportPhone}`}
+                    className="hover:text-blue-500 transition-colors font-semibold text-slate-700 dark:text-slate-200"
+                  >
                     {supportPhone}
                   </a>
                 </div>
               )}
+
+              {/* Directors & Leadership */}
+              <div className="pt-2 border-t border-slate-200 dark:border-slate-800/80 space-y-1">
+                <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-800 dark:text-slate-200">
+                  <Users className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
+                  <span>Directors &amp; Leadership:</span>
+                </div>
+                <div className="text-[11px] text-slate-600 dark:text-slate-400 space-y-0.5 pl-5">
+                  <p>
+                    <strong className="text-slate-900 dark:text-slate-100">{founderName}</strong>{" "}
+                    <span className="text-slate-400 dark:text-slate-500">({founderRole})</span>
+                  </p>
+                  <p>
+                    <strong className="text-slate-900 dark:text-slate-100">{coFounderName}</strong>{" "}
+                    <span className="text-slate-400 dark:text-slate-500">({coFounderRole})</span>
+                  </p>
+                </div>
+              </div>
+
               {(cms?.company?.cin || cms?.company?.gst) && (
                 <div className="text-[10px] text-slate-400 dark:text-slate-500 pt-1 space-y-0.5">
                   {cms.company.cin && <p>CIN: {cms.company.cin}</p>}
