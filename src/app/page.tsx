@@ -42,36 +42,42 @@ const SERVICES = [
     title: "Website Development",
     description: "High-performance, SEO-optimized digital web experiences built with Next.js, React, and modern web frameworks.",
     tag: "Web & UX",
+    href: "/services/website-development",
   },
   {
     icon: Code2,
     title: "Web Application Development",
     description: "Scalable SaaS platforms, custom dashboards, enterprise web portals, and complex cloud applications.",
     tag: "Full-Stack",
+    href: "/services/web-application-development",
   },
   {
     icon: Smartphone,
     title: "Mobile Apps (Android & iOS)",
     description: "Native and cross-platform mobile apps engineered for speed, intuitive UI, and seamless offline sync.",
     tag: "Mobile",
+    href: "/services/mobile-app-development",
   },
   {
     icon: Cpu,
     title: "AI Solutions & Integration",
     description: "Smart AI agents, LLM integrations, automated document extraction, and machine learning workflows.",
     tag: "AI & ML",
+    href: "/services/ai-development",
   },
   {
     icon: Database,
     title: "Backend & API Systems",
     description: "Robust REST & GraphQL APIs, microservices, PostgreSQL/Supabase database schemas, and cloud architecture.",
     tag: "Cloud Backend",
+    href: "/services/backend-development",
   },
   {
     icon: Zap,
     title: "Business Automation",
     description: "Custom internal tools, workflow automation engines, CRM/ERP integrations, and data pipelines.",
     tag: "Automation",
+    href: "/services/business-automation",
   },
 ];
 
@@ -366,34 +372,33 @@ export default function HomePage() {
             {SERVICES.map((service) => {
               const IconComp = service.icon;
               return (
-                <motion.div
-                  key={service.title}
-                  whileHover={{ y: -4, borderColor: "rgba(59,130,246,0.4)" }}
-                  className="glass-card rounded-3xl p-7 bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 shadow-xl dark:shadow-none transition-all group flex flex-col justify-between"
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/40 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
-                        <IconComp className="w-6 h-6" />
+                <Link key={service.title} href={service.href} className="block">
+                  <motion.div
+                    whileHover={{ y: -4, borderColor: "rgba(59,130,246,0.4)" }}
+                    className="h-full glass-card rounded-3xl p-7 bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 shadow-xl dark:shadow-none transition-all group flex flex-col justify-between"
+                  >
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/40 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                          <IconComp className="w-6 h-6" />
+                        </div>
+                        <span className="text-[11px] font-semibold text-slate-400 dark:text-slate-500">{service.tag}</span>
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
-                        {service.tag}
-                      </span>
+
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                        {service.description}
+                      </p>
                     </div>
 
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:text-blue-500">
-                    <span>Explore Solution</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </motion.div>
+                    <div className="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:text-blue-500">
+                      <span>Explore Solution</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </motion.div>
+                </Link>
               );
             })}
           </div>
@@ -610,9 +615,7 @@ export default function HomePage() {
                         {selectedCompany.city ? `${selectedCompany.city}, ${selectedCompany.state || ""}` : "Verified Database Entity"}
                       </p>
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800">
-                      Verified Production Record
-                    </span>
+                    <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">Verified</span>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">

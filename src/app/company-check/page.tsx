@@ -99,10 +99,7 @@ export default function CompanyCheckPage() {
         </div>
 
         <div className="max-w-4xl mx-auto space-y-5 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/40 text-blue-700 dark:text-blue-300 text-xs font-bold shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-            <span>NVIT.SPACE Enterprise Policy Matrix</span>
-          </div>
+          <p className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">Enterprise Policy Matrix</p>
 
           <div className="space-y-2">
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -143,13 +140,14 @@ export default function CompanyCheckPage() {
                   type="submit"
                   disabled={loading}
                   aria-label="Submit company inspection"
-                  className="absolute right-2 top-2 bottom-2 px-5 sm:px-6 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-600/20"
+                  className="absolute right-2 top-2 bottom-2 px-3 sm:px-6 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-600/20"
                 >
                   {loading ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
                   ) : (
                     <>
-                      <span>Inspect Company</span>
+                      <Search className="w-4 h-4 sm:hidden" />
+                      <span className="hidden sm:inline">Inspect Company</span>
                       <ArrowRight className="w-3.5 h-3.5 hidden sm:inline" />
                     </>
                   )}
@@ -357,10 +355,7 @@ export default function CompanyCheckPage() {
 
                       {/* Header Badge */}
                       <div className="flex items-center gap-2.5 flex-wrap">
-                        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-bold shadow-sm">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                          <span>Live Policy Verified</span>
-                        </div>
+                        <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">Live Verified</span>
                       </div>
                     </div>
 

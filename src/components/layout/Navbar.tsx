@@ -31,28 +31,24 @@ const FINANCE_TOOLS = [
     description: "Verify bank policy tiering & company status",
     href: "/company-check",
     icon: Building2,
-    badge: "API Live",
   },
   {
     name: "Pincode Check",
     description: "Inspect regional serviceability matrix",
     href: "/pincode-check",
     icon: MapPin,
-    badge: "Real-time",
   },
   {
     name: "EMI Calculator",
     description: "Interactive loan breakdown & amortization engine",
     href: "/finance-tools#emi-calculator",
     icon: Calculator,
-    badge: "Interactive",
   },
   {
     name: "All Finance Tools",
     description: "Explore complete suite of financial utilities",
     href: "/finance-tools",
     icon: Wrench,
-    badge: "Hub",
   },
 ];
 
@@ -138,12 +134,12 @@ export default function Navbar() {
 
           {/* ── CENTER: Navigation (desktop) ───────────────── */}
           <nav
-            className="hidden lg:flex items-center gap-x-1"
+            className="hidden lg:flex items-center gap-x-0.5 xl:gap-x-1"
             aria-label="Main navigation"
           >
             <Link
               href="/"
-              className={`relative px-3.5 py-2 rounded-xl text-[13px] font-semibold tracking-tight transition-colors duration-150 whitespace-nowrap ${
+              className={`relative px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors duration-150 whitespace-nowrap ${
                 isActive("/") && pathname === "/"
                   ? "text-blue-600 dark:text-blue-400"
                   : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
@@ -153,15 +149,23 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/#services"
-              className="px-3.5 py-2 rounded-xl text-[13px] font-semibold tracking-tight text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors whitespace-nowrap"
+              href="/services"
+              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
+                pathname.startsWith("/services")
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              }`}
             >
               Services
             </Link>
 
             <Link
-              href="/#solutions"
-              className="px-3.5 py-2 rounded-xl text-[13px] font-semibold tracking-tight text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors whitespace-nowrap"
+              href="/solutions"
+              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
+                pathname.startsWith("/solutions")
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              }`}
             >
               Solutions
             </Link>
@@ -170,7 +174,7 @@ export default function Navbar() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-xl text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap cursor-pointer ${
+                className={`flex items-center gap-1 px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap cursor-pointer ${
                   pathname.startsWith("/finance-tools") || pathname.startsWith("/company-check") || pathname.startsWith("/pincode-check")
                     ? "text-blue-600 dark:text-blue-400"
                     : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
@@ -209,9 +213,7 @@ export default function Navbar() {
                               <span className="text-[12.5px] font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                 {tool.name}
                               </span>
-                              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-blue-100/70 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300">
-                                {tool.badge}
-                              </span>
+
                             </div>
                             <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
                               {tool.description}
@@ -226,8 +228,19 @@ export default function Navbar() {
             </div>
 
             <Link
+              href="/resources"
+              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
+                pathname.startsWith("/resources")
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              }`}
+            >
+              Resources
+            </Link>
+
+            <Link
               href="/about"
-              className={`px-3.5 py-2 rounded-xl text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
+              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
                 pathname === "/about"
                   ? "text-blue-600 dark:text-blue-400"
                   : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
@@ -237,8 +250,12 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/#contact"
-              className="px-3.5 py-2 rounded-xl text-[13px] font-semibold tracking-tight text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors whitespace-nowrap"
+              href="/contact"
+              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
+                pathname === "/contact"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              }`}
             >
               Contact
             </Link>
@@ -273,7 +290,7 @@ export default function Navbar() {
             </div>
 
             {/* Let's Build CTA */}
-            <Link href="/#contact" aria-label="Start a project with NVIT.SPACE">
+            <Link href="/contact" aria-label="Start a project with NVIT.SPACE">
               <motion.button
                 whileHover={{ y: -1, boxShadow: "0 8px 25px -4px rgba(59,130,246,0.4)" }}
                 whileTap={{ scale: 0.97 }}
@@ -360,14 +377,14 @@ export default function Navbar() {
                   Home
                 </Link>
                 <Link
-                  href="/#services"
+                  href="/services"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                 >
                   Services
                 </Link>
                 <Link
-                  href="/#solutions"
+                  href="/solutions"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                 >
@@ -389,14 +406,19 @@ export default function Navbar() {
                           <tool.icon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                           <span>{tool.name}</span>
                         </div>
-                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
-                          {tool.badge}
-                        </span>
+
                       </Link>
                     ))}
                   </div>
                 </div>
 
+                <Link
+                  href="/resources"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+                >
+                  Resources &amp; Insights
+                </Link>
                 <Link
                   href="/about"
                   onClick={() => setMobileOpen(false)}
@@ -405,7 +427,7 @@ export default function Navbar() {
                   About NVIT.SPACE
                 </Link>
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                 >
@@ -436,7 +458,7 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <Link href="/#contact" onClick={() => setMobileOpen(false)}>
+                <Link href="/contact" onClick={() => setMobileOpen(false)}>
                   <button className="w-full h-12 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white text-[13px] font-bold shadow-lg shadow-blue-500/25 cursor-pointer transition-colors mt-2">
                     Start a Project →
                   </button>

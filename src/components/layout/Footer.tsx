@@ -1,13 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, Building2, Users } from "lucide-react";
+import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, Building2, Users, MessageSquareText } from "lucide-react";
 import { useWebsiteCMS } from "@/hooks/useWebsiteCMS";
+import FeedbackModal from "@/components/layout/FeedbackModal";
 
 export default function Footer() {
   const { data: cms } = useWebsiteCMS();
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+  const [defaultFeedbackType, setDefaultFeedbackType] = useState<"COMPLAINT" | "FEEDBACK" | "GRIEVANCE" | "SUGGESTION" | "SUPPORT">("FEEDBACK");
 
-  const companyName = cms?.company?.name || "NVIT SOLUTION PVT. LTD.";
+  const companyName = cms?.company?.name || "NVIT.SPACE";
   const brandTagline = cms?.company?.tagline || "Digital Engineering Studio";
   const brandDesc =
     cms?.about?.description ||
@@ -70,13 +74,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-blue-600 dark:hover:text-white transition-colors">
-                  Services Overview
+                <Link href="/services" className="hover:text-blue-600 dark:hover:text-white transition-colors">
+                  Services Hub
                 </Link>
               </li>
               <li>
-                <Link href="/#solutions" className="hover:text-blue-600 dark:hover:text-white transition-colors">
+                <Link href="/solutions" className="hover:text-blue-600 dark:hover:text-white transition-colors">
                   Solutions &amp; Digital Products
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="hover:text-blue-600 dark:hover:text-white transition-colors">
+                  Featured Projects
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources" className="hover:text-blue-600 dark:hover:text-white transition-colors">
+                  Resources &amp; Insights
                 </Link>
               </li>
               <li>
@@ -85,7 +99,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="hover:text-blue-600 dark:hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-blue-600 dark:hover:text-white transition-colors">
                   Contact Studio
                 </Link>
               </li>
@@ -97,32 +111,38 @@ export default function Footer() {
             <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 dark:text-white mb-4">Engineering Capabilities</h4>
             <ul className="space-y-2.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
               <li>
-                <Link href="/#services" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
+                <Link href="/services/website-development" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
                   Website Development
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
+                <Link href="/services/web-application-development" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
                   Web Application Development
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
-                  Android &amp; Mobile Apps
+                <Link href="/services/mobile-app-development" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
+                  Mobile App Development
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
-                  AI Integration &amp; Automation
+                <Link href="/services/ai-development" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
+                  AI Solutions &amp; Integration
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
-                  Backend &amp; Database Architecture
+                <Link href="/services/backend-development" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
+                  Backend &amp; API Systems
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/business-automation" className="hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
+                  Business Automation
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
@@ -144,8 +164,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/finance-tools#emi-calculator" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <Link href="/finance-tools/emi-calculator" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   EMI Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/finance-tools" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  All Financial Calculators
                 </Link>
               </li>
             </ul>
@@ -208,15 +233,71 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 dark:text-slate-500 font-semibold gap-4">
+        {/* Complaints & Grievances Resolution Banner */}
+        <div className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 mt-12 shadow-sm">
+          <div className="flex items-center gap-3.5 text-center md:text-left">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/40 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+              <MessageSquareText className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-xs font-bold text-slate-900 dark:text-white">
+                Have a Complaint, Feedback, or Service Grievance?
+              </h4>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                Directly routed to <span className="font-semibold text-blue-600 dark:text-blue-400">support@nvit.space</span> and our administrative oversight desk for guaranteed 24-hour review.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2.5 shrink-0">
+            <button
+              onClick={() => {
+                setDefaultFeedbackType("COMPLAINT");
+                setFeedbackOpen(true);
+              }}
+              className="px-4 py-2 rounded-xl bg-rose-50 dark:bg-rose-950/50 hover:bg-rose-100 dark:hover:bg-rose-900/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 text-xs font-bold transition-all cursor-pointer shadow-sm"
+            >
+              File a Complaint
+            </button>
+            <button
+              onClick={() => {
+                setDefaultFeedbackType("FEEDBACK");
+                setFeedbackOpen(true);
+              }}
+              className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all cursor-pointer shadow-sm shadow-blue-600/20"
+            >
+              Share Feedback
+            </button>
+          </div>
+        </div>
+
+        {/* Legal & Policy Links */}
+        <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 dark:text-slate-500 font-semibold gap-4">
           <p>© {new Date().getFullYear()} NVIT.SPACE ({companyName}). All rights reserved.</p>
-          <div className="flex space-x-6">
-            <Link href="/privacy" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Privacy Policy</Link>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <Link href="/privacy-policy" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Terms of Service</Link>
-            <Link href="/security" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Security Overview</Link>
+            <Link href="/disclaimer" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Disclaimer</Link>
+            <Link href="/cookie-policy" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Cookie Policy</Link>
+            <button
+              onClick={() => {
+                setDefaultFeedbackType("GRIEVANCE");
+                setFeedbackOpen(true);
+              }}
+              className="hover:text-blue-600 dark:hover:text-blue-400 text-blue-600/90 dark:text-blue-400/90 transition-colors font-bold cursor-pointer"
+            >
+              Complaints &amp; Grievances
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Interactive Modal */}
+      <FeedbackModal
+        isOpen={feedbackOpen}
+        onClose={() => setFeedbackOpen(false)}
+        defaultType={defaultFeedbackType}
+      />
     </footer>
   );
 }

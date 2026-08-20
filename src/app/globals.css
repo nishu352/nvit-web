@@ -6,6 +6,7 @@
 
 /* ============================================================
    NVIT.SPACE — GLOBAL DESIGN TOKEN SYSTEM
+   Simple • Premium • Spacious • Responsive
    ============================================================ */
 
 @layer base {
@@ -14,58 +15,58 @@
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* === LIGHT MODE TOKENS === */
-    --bg-base:        #F8FAFC;
-    --bg-surface:     #FFFFFF;
-    --bg-subtle:      #F1F5F9;
-    --bg-muted:       #E2E8F0;
-    --bg-card:        rgba(255,255,255,0.90);
-    --bg-input:       #FFFFFF;
+    --bg-base:          #F8FAFC;
+    --bg-surface:       #FFFFFF;
+    --bg-subtle:        #F1F5F9;
+    --bg-muted:         #E2E8F0;
+    --bg-card:          rgba(255, 255, 255, 0.95);
+    --bg-input:         #FFFFFF;
 
-    --text-primary:   #0F172A;
-    --text-secondary: #334155;
-    --text-muted:     #64748B;
+    --text-primary:     #0F172A;
+    --text-secondary:   #334155;
+    --text-muted:       #64748B;
     --text-placeholder: #94A3B8;
 
-    --border-default: rgba(203,213,225,0.9);
-    --border-subtle:  rgba(226,232,240,0.8);
-    --border-focus:   #2563EB;
+    --border-default:   rgba(203, 213, 225, 0.75);
+    --border-subtle:    rgba(226, 232, 240, 0.65);
+    --border-focus:     #2563EB;
 
-    --ring:           rgba(37,99,235,0.2);
+    --ring:             rgba(37, 99, 235, 0.2);
     
-    --nav-bg:         rgba(255,255,255,0.82);
-    --nav-border:     rgba(203,213,225,0.8);
-    --nav-shadow:     0 8px 32px -4px rgba(15,23,42,0.10), 0 2px 8px -2px rgba(15,23,42,0.06);
+    --nav-bg:           rgba(255, 255, 255, 0.85);
+    --nav-border:       rgba(203, 213, 225, 0.75);
+    --nav-shadow:       0 8px 30px -4px rgba(15, 23, 42, 0.07), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
 
-    --glass-border:   rgba(203,213,225,0.8);
-    --glass-shadow:   0 10px 40px -10px rgba(15,23,42,0.08);
+    --glass-border:     rgba(226, 232, 240, 0.85);
+    --glass-shadow:     0 8px 30px -6px rgba(15, 23, 42, 0.05);
   }
 
   .dark {
     /* === DARK MODE TOKENS === */
-    --bg-base:        #030712;
-    --bg-surface:     #0F172A;
-    --bg-subtle:      #111827;
-    --bg-muted:       #1E293B;
-    --bg-card:        rgba(15,23,42,0.85);
-    --bg-input:       rgba(15,23,42,0.95);
+    --bg-base:          #030712;
+    --bg-surface:       #0F172A;
+    --bg-subtle:        #111827;
+    --bg-muted:         #1E293B;
+    --bg-card:          rgba(15, 23, 42, 0.85);
+    --bg-input:         rgba(15, 23, 42, 0.95);
 
-    --text-primary:   #F8FAFC;
-    --text-secondary: #CBD5E1;
-    --text-muted:     #64748B;
+    --text-primary:     #F8FAFC;
+    --text-secondary:   #CBD5E1;
+    --text-muted:       #64748B;
     --text-placeholder: #475569;
 
-    --border-default: rgba(255,255,255,0.10);
-    --border-subtle:  rgba(255,255,255,0.05);
-    --border-focus:   #3B82F6;
+    --border-default:   rgba(255, 255, 255, 0.10);
+    --border-subtle:    rgba(255, 255, 255, 0.05);
+    --border-focus:     #3B82F6;
 
-    --ring:           rgba(59,130,246,0.25);
+    --ring:             rgba(59, 130, 246, 0.25);
 
-    --nav-bg:         rgba(15,23,42,0.80);
-    --nav-border:     rgba(255,255,255,0.10);
-    --nav-shadow:     0 8px 32px -4px rgba(0,0,0,0.50), 0 2px 8px -2px rgba(0,0,0,0.30);
+    --nav-bg:           rgba(15, 23, 42, 0.80);
+    --nav-border:       rgba(255, 255, 255, 0.10);
+    --nav-shadow:       0 8px 32px -4px rgba(0, 0, 0, 0.50), 0 2px 8px -2px rgba(0, 0, 0, 0.30);
 
-    --glass-border:   rgba(255,255,255,0.08);
-    --glass-shadow:   0 20px 50px -12px rgba(0,0,0,0.50);
+    --glass-border:     rgba(255, 255, 255, 0.08);
+    --glass-shadow:     0 20px 50px -12px rgba(0, 0, 0, 0.50);
   }
 
   * { box-sizing: border-box; }
@@ -78,9 +79,30 @@
     -webkit-font-smoothing: antialiased;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  /* Refined Typography Hierarchy */
+  h1 {
     font-family: var(--font-heading);
-    letter-spacing: -0.025em;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+  h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+  }
+  h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -97,34 +119,51 @@
   .border-default  { border-color: var(--border-default); }
   .border-subtle   { border-color: var(--border-subtle); }
 
+  /* Strategic Floating Capsule Header */
   .glass-nav-capsule {
     background-color: var(--nav-bg);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     border: 1px solid var(--nav-border);
     box-shadow: var(--nav-shadow);
-    transition: background-color 0.4s ease, border-color 0.4s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     transform: translateZ(0);
     will-change: transform, background-color;
   }
   
   .glass-nav-capsule.scrolled {
-    background-color: rgba(255,255,255,0.92);
+    background-color: rgba(255, 255, 255, 0.94);
   }
   .dark .glass-nav-capsule.scrolled {
-    background-color: rgba(15,23,42,0.92);
+    background-color: rgba(15, 23, 42, 0.94);
   }
 
-  /* Only apply blur, border, shadow. Let Tailwind handle background color */
+  /* Blur navbar when Feedback modal is open */
+  body.feedback-modal-open .glass-nav-capsule {
+    filter: blur(4px) brightness(0.85);
+    transition: filter 0.25s ease;
+    pointer-events: none;
+  }
+
+  /* Selective Glass Container for interactive cards, tools & forms */
   .glass-card {
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
     transform: translateZ(0);
     will-change: transform;
     backface-visibility: hidden;
+  }
+
+  /* Editorial & Reading Helpers */
+  .reading-container {
+    max-width: 48rem; /* 768px */
+  }
+
+  .divider-subtle {
+    border-top: 1px solid var(--border-subtle);
   }
 
   .input-themed {
@@ -142,14 +181,66 @@
   }
 
   .theme-switcher-capsule {
-    background: rgba(15,23,42,0.06);
-    border: 1px solid rgba(15,23,42,0.10);
+    background: rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 9999px;
     padding: 3px;
   }
   .dark .theme-switcher-capsule {
-    background: rgba(255,255,255,0.06);
-    border-color: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Custom Interactive Range Sliders with dynamic fill */
+  .range-slider-themed {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 9999px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .range-slider-themed::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2563eb;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.45);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  }
+
+  .dark .range-slider-themed::-webkit-slider-thumb {
+    background: #3b82f6;
+    border: 3px solid #0f172a;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+  }
+
+  .range-slider-themed::-webkit-slider-thumb:hover,
+  .range-slider-themed::-webkit-slider-thumb:active {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.2);
+  }
+
+  .dark .range-slider-themed::-webkit-slider-thumb:hover,
+  .dark .range-slider-themed::-webkit-slider-thumb:active {
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25);
+  }
+
+  .range-slider-themed::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2563eb;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.45);
+    cursor: pointer;
   }
 }
 

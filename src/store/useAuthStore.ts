@@ -9,13 +9,13 @@ interface AuthState {
   isLoading: boolean;
   error: string | null;
   login: (payload: LoginPayload) => Promise<void>;
-  logout: () => void;
+  logout: () => Promise<void>;
   checkAuth: () => Promise<void>;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
   user: null,
-  token: typeof window !== "undefined" ? localStorage.getItem("token") : null,
+  token: null,
   isAuthenticated: false,
   isLoading: false,
   error: null,
@@ -25,26 +25,23 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       const response = await authService.login(payload);
       const { user, token } = response.data;
-      if (typeof window !== "undefined") {
-        localStorage.setItem("token", token);
-      }
       set({
         user,
-        token,
+        token: token || null,
         isAuthenticated: true,
         isLoading: false,
       });
     } catch (err: any) {
       const msg = err.response?.data?.message || "Invalid credentials";
-      set({ error: msg, isLoading: false });
+      set({ error: msg, isLoading: false, isAuthenticated: false, user: null });
       throw new Error(msg);
     }
   },
 
-  logout: () => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("token");
-    }
+  logout: async () => {
+    try {
+      await authService.logout();
+    } catch (_) {}
     set({
       user: null,
       token: null,
@@ -54,25 +51,24 @@ export const useAuthStore = create<AuthState>((set) => ({
   },
 
   checkAuth: async () => {
-    const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
-    if (!token) {
-      set({ isAuthenticated: false, user: null, token: null });
-      return;
-    }
-
     set({ isLoading: true });
     try {
       const response = await authService.getMe();
-      set({
-        user: response.data,
-        token,
-        isAuthenticated: true,
-        isLoading: false,
-      });
-    } catch (err) {
-      if (typeof window !== "undefined") {
-        localStorage.removeItem("token");
+      if (response && response.data) {
+        set({
+          user: response.data,
+          isAuthenticated: true,
+          isLoading: false,
+        });
+      } else {
+        set({
+          user: null,
+          token: null,
+          isAuthenticated: false,
+          isLoading: false,
+        });
       }
+    } catch (err) {
       set({
         user: null,
         token: null,

@@ -3,11 +3,29 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import EmiCalculator from "@/components/ui/EmiCalculator";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
+import EmiCalculatorWidget from "@/components/finance-tools/EmiCalculatorWidget";
 import { apiClient } from "@/services/apiClient";
-import { Building2, MapPin, Calculator, Search, Loader2, CheckCircle2, Wrench } from "lucide-react";
+import Link from "next/link";
+import {
+  Building2,
+  MapPin,
+  Calculator,
+  Search,
+  Loader2,
+  CheckCircle2,
+  Wrench,
+  ArrowRight,
+  TrendingUp,
+  Clock,
+  UserCheck,
+  Briefcase,
+  Home,
+  CreditCard,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCategoryStatus } from "@/utils/categoryStatus";
+import { FINANCE_TOOLS_CONFIG } from "@/config/siteNavigation";
 
 export default function FinanceToolsPage() {
   const [activeTab, setActiveTab] = useState<"emi" | "company" | "pincode">("emi");
@@ -105,75 +123,78 @@ export default function FinanceToolsPage() {
       <Navbar />
 
       {/* Header Banner */}
-      <div className="pt-36 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 dark:border-slate-900 bg-white dark:bg-slate-950 relative overflow-hidden">
+      <div className="pt-32 sm:pt-36 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 dark:border-slate-900 bg-white dark:bg-slate-950 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto space-y-4 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/40 text-blue-700 dark:text-blue-300 text-xs font-bold shadow-sm">
-            <Wrench className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-            <span>NVIT.SPACE Digital Tools Suite</span>
-          </div>
+        <div className="max-w-6xl mx-auto space-y-6 relative z-10">
+          <Breadcrumbs items={[{ label: "Finance Tools" }]} />
 
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
-            Finance &amp; Data Tools Hub
-          </h1>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-medium">
-            Interactive financial calculators, company category checkers, and pincode coverage utilities built by NVIT.SPACE.
-          </p>
+          <div className="space-y-4 max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">Finance Tools</p>
 
-          {/* Tab Selector */}
-          <div className="flex flex-wrap justify-center gap-2 pt-6">
-            <button
-              onClick={() => setActiveTab("emi")}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${
-                activeTab === "emi"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                  : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
-              }`}
-            >
-              <Calculator className="w-4 h-4" />
-              EMI Calculator
-            </button>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+              FINANCIAL CALCULATORS &amp; DATA TOOLS.
+            </h1>
 
-            <button
-              onClick={() => setActiveTab("company")}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${
-                activeTab === "company"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                  : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
-              }`}
-            >
-              <Building2 className="w-4 h-4" />
-              Company Category Check
-            </button>
+            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-base leading-relaxed font-medium">
+              Interactive loan repayment calculators, borrowing eligibility estimators, interest growth engines, and verified banking data APIs built by NVIT.SPACE.
+            </p>
 
-            <button
-              onClick={() => setActiveTab("pincode")}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${
-                activeTab === "pincode"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                  : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
-              }`}
-            >
-              <MapPin className="w-4 h-4" />
-              Pincode Checker
-            </button>
+            {/* Quick-Access Tabs */}
+            <div className="flex flex-wrap gap-2 pt-4">
+              <button
+                onClick={() => setActiveTab("emi")}
+                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${
+                  activeTab === "emi"
+                    ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
+                    : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
+                }`}
+              >
+                <Calculator className="w-4 h-4" />
+                Universal Loan EMI
+              </button>
+
+              <button
+                onClick={() => setActiveTab("company")}
+                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${
+                  activeTab === "company"
+                    ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
+                    : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
+                }`}
+              >
+                <Building2 className="w-4 h-4" />
+                Company Category Check
+              </button>
+
+              <button
+                onClick={() => setActiveTab("pincode")}
+                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${
+                  activeTab === "pincode"
+                    ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
+                    : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
+                }`}
+              >
+                <MapPin className="w-4 h-4" />
+                Pincode Checker (19.5k)
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Main Tool Render */}
-      <main className="flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+      {/* Main Tool Render Area */}
+      <main className="flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full space-y-16">
+        {/* Interactive Selected Tab Widget */}
         {activeTab === "emi" && (
-          <div id="emi-calculator">
-            <EmiCalculator />
+          <div id="emi-calculator-live">
+            <EmiCalculatorWidget />
           </div>
         )}
 
         {activeTab === "company" && (
           <div className="glass-card rounded-3xl p-6 sm:p-8 bg-white dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-xl dark:shadow-none">
             <div className="space-y-2">
-              <h3 className="text-xl font-black text-slate-900 dark:text-white">Inspect Employer Company Category</h3>
+              <h2 className="text-xl font-black text-slate-900 dark:text-white">Inspect Employer Company Category</h2>
               <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">
                 Type employer name (e.g. &quot;indus&quot;, &quot;tata&quot;, &quot;hcl&quot;) to inspect bank policy categorization using prefix search.
               </p>
@@ -193,7 +214,7 @@ export default function FinanceToolsPage() {
                     if (e.key === "Escape") setShowCompanySuggestions(false);
                   }}
                   placeholder="Type company name (e.g. indus)..."
-                  className="w-full h-14 pl-12 pr-32 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:border-blue-500 focus:outline-none"
+                  className="w-full h-14 pl-12 pr-36 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm focus:border-blue-500 focus:outline-none"
                 />
                 <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
                 <button
@@ -246,14 +267,12 @@ export default function FinanceToolsPage() {
               <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-blue-200 dark:border-blue-900/50 space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
                   <div>
-                    <h4 className="text-lg font-black text-slate-900 dark:text-white">{selectedCompany.companyName}</h4>
+                    <h3 className="text-lg font-black text-slate-900 dark:text-white">{selectedCompany.companyName}</h3>
                     <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">
                       {selectedCompany.city ? `${selectedCompany.city}, ${selectedCompany.state || ""}` : "Verified Record"}
                     </p>
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800">
-                    Live Verified
-                  </span>
+                  <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">Verified</span>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
@@ -275,7 +294,7 @@ export default function FinanceToolsPage() {
         {activeTab === "pincode" && (
           <div className="glass-card rounded-3xl p-6 sm:p-8 bg-white dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-xl dark:shadow-none">
             <div className="space-y-2">
-              <h3 className="text-xl font-black text-slate-900 dark:text-white">Inspect Regional PIN Code Serviceability</h3>
+              <h2 className="text-xl font-black text-slate-900 dark:text-white">Inspect Regional PIN Code Serviceability</h2>
               <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">
                 Enter a 6-digit Indian PIN code to check regional banking coverage &amp; serviceability metrics.
               </p>
@@ -289,7 +308,7 @@ export default function FinanceToolsPage() {
                   value={pincodeQuery}
                   onChange={(e) => setPincodeQuery(e.target.value.replace(/\D/g, ""))}
                   placeholder="Enter 6-digit PIN code (e.g. 201301)..."
-                  className="w-full h-14 pl-12 pr-32 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:border-blue-500 focus:outline-none"
+                  className="w-full h-14 pl-12 pr-36 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm focus:border-blue-500 focus:outline-none"
                 />
                 <MapPin className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
                 <button
@@ -305,7 +324,7 @@ export default function FinanceToolsPage() {
 
             {pincodeResult && (
               <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-indigo-200 dark:border-indigo-900/50 space-y-3">
-                <h4 className="text-lg font-black text-slate-900 dark:text-white">PIN Code {pincodeResult.pincode} Details</h4>
+                <h3 className="text-lg font-black text-slate-900 dark:text-white">PIN Code {pincodeResult.pincode} Details</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-semibold text-slate-600 dark:text-slate-300">
                   <div>City: <span className="text-slate-900 dark:text-white font-bold">{pincodeResult.city || "N/A"}</span></div>
                   <div>State: <span className="text-slate-900 dark:text-white font-bold">{pincodeResult.state || "N/A"}</span></div>
@@ -315,10 +334,53 @@ export default function FinanceToolsPage() {
             )}
           </div>
         )}
+
+        {/* ── COMPLETE CALCULATORS DIRECTORY ─────────────────────────── */}
+        <section className="space-y-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+          <div className="space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+              Specialized Financial Calculators
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 font-medium">
+              Explore our dedicated calculators for specific loan categories, borrowing capacity, and interest compounding:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {FINANCE_TOOLS_CONFIG.map((tool) => (
+              <div
+                key={tool.slug}
+                className="glass-card rounded-3xl p-7 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none flex flex-col justify-between hover:border-blue-500/50 transition-all group"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/30">
+                      {tool.badge}
+                    </span>
+                    <Calculator className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                  </div>
+
+                  <h3 className="text-lg font-black text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                    <Link href={`/finance-tools/${tool.slug}`}>{tool.name}</Link>
+                  </h3>
+
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium line-clamp-3">
+                    {tool.description}
+                  </p>
+                </div>
+
+                <Link href={`/finance-tools/${tool.slug}`}>
+                  <button className="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-800 dark:text-slate-200 font-bold text-xs border border-slate-300 dark:border-white/10 transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                    Open Calculator <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
 
       <Footer />
     </div>
   );
 }
-

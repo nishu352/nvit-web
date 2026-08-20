@@ -75,7 +75,7 @@ export default function LoanApplyPage() {
       <div className="page-top-offset pb-14 px-4 sm:px-6 lg:px-8 border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-[#FAFBFC] via-[#F6F8FA] to-white dark:from-[#0B1020] dark:via-slate-900 dark:to-[#0B1020] bg-dot-grid dark:bg-dot-grid-dark relative">
         <div className="max-w-7xl mx-auto space-y-3 relative z-10">
           <Badge variant="emerald" pulse>
-            NVIT SOLUTION Institutional Sanction Portal
+            NVIT.SPACE Institutional Sanction Portal
           </Badge>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
             Apply for Multi-Bank Loan
@@ -109,7 +109,7 @@ export default function LoanApplyPage() {
                   </p>
                 </div>
                 <p className="text-xs text-[var(--text-muted)] max-w-md mx-auto leading-relaxed font-medium">
-                  Our NVIT Solution loan consultant will review your employer category tier and contact you within 2 hours for documentation.
+                  Our NVIT.SPACE loan consultant will review your employer category tier and contact you within 2 hours for documentation.
                 </p>
                 <Button variant="primary" size="md" onClick={() => setSubmittedData(null)}>
                   Submit Another Inquiry
@@ -129,7 +129,7 @@ export default function LoanApplyPage() {
                     <FileCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-extrabold text-[var(--text-primary)]">NVIT Solution Application Lead Form</h2>
+                    <h2 className="text-xl font-extrabold text-[var(--text-primary)]">NVIT.SPACE Application Lead Form</h2>
                     <p className="text-xs text-[var(--text-muted)]">100% confidential and SSL encrypted</p>
                   </div>
                 </div>

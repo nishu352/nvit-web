@@ -4,9 +4,14 @@ import { useState, useMemo } from "react";
 import { Calculator, ArrowRight, DollarSign, Percent, Calendar, PieChart } from "lucide-react";
 import { motion } from "framer-motion";
 
+function getTrackBackground(value: number, min: number, max: number, color = "#2563eb") {
+  const percent = Math.min(100, Math.max(0, ((value - min) / (max - min)) * 100));
+  return `linear-gradient(to right, ${color} 0%, ${color} ${percent}%, rgba(148, 163, 184, 0.25) ${percent}%, rgba(148, 163, 184, 0.25) 100%)`;
+}
+
 export default function EmiCalculator() {
   const [amount, setAmount] = useState<number>(500000);
-  const [rate, setRate] = useState<number>(10.5);
+  const [rate, setRate] = useState<number>(18);
   const [tenureYears, setTenureYears] = useState<number>(5);
 
   const { monthlyEmi, totalInterest, totalPayable, principalPercent, interestPercent } =
@@ -68,7 +73,7 @@ export default function EmiCalculator() {
         {/* Sliders & Controls */}
         <div className="lg:col-span-7 space-y-6">
           {/* Loan Amount */}
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             <div className="flex items-center justify-between">
               <label className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
                 <DollarSign className="w-3.5 h-3.5 text-blue-500" />
@@ -85,7 +90,9 @@ export default function EmiCalculator() {
               step={25000}
               value={amount}
               onChange={(e) => setAmount(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              aria-label="Loan Principal Amount"
+              style={{ background: getTrackBackground(amount, 50000, 10000000, "#2563eb") }}
+              className="range-slider-themed"
             />
             <div className="flex justify-between text-[10px] font-bold text-slate-400">
               <span>₹50,000</span>
@@ -95,7 +102,7 @@ export default function EmiCalculator() {
           </div>
 
           {/* Interest Rate */}
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             <div className="flex items-center justify-between">
               <label className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
                 <Percent className="w-3.5 h-3.5 text-violet-500" />
@@ -108,21 +115,23 @@ export default function EmiCalculator() {
             <input
               type="range"
               min={6}
-              max={30}
+              max={36}
               step={0.25}
               value={rate}
               onChange={(e) => setRate(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-violet-600"
+              aria-label="Annual Interest Rate Percentage"
+              style={{ background: getTrackBackground(rate, 6, 36, "#7c3aed") }}
+              className="range-slider-themed"
             />
             <div className="flex justify-between text-[10px] font-bold text-slate-400">
               <span>6.0%</span>
-              <span>15.0%</span>
-              <span>30.0%</span>
+              <span>18.0% (Default)</span>
+              <span>36.0%</span>
             </div>
           </div>
 
           {/* Loan Tenure */}
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             <div className="flex items-center justify-between">
               <label className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-emerald-500" />
@@ -139,11 +148,13 @@ export default function EmiCalculator() {
               step={1}
               value={tenureYears}
               onChange={(e) => setTenureYears(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+              aria-label="Loan Tenure Years"
+              style={{ background: getTrackBackground(tenureYears, 1, 30, "#059669") }}
+              className="range-slider-themed"
             />
             <div className="flex justify-between text-[10px] font-bold text-slate-400">
               <span>1 Year</span>
-              <span>15 Years</span>
+              <span>5 Years (Default)</span>
               <span>30 Years</span>
             </div>
           </div>
