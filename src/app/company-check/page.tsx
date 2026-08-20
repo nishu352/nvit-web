@@ -417,13 +417,17 @@ export default function CompanyCheckPage() {
                                     {isBank ? "Banking Partner" : "NBFC Lender"}
                                   </div>
                                 </div>
-                                <div className="w-6 h-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-400 flex items-center justify-center shrink-0 shadow-sm">
-                                  <Landmark className="w-3 h-3" />
+                                <div className="w-7 h-7 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-400 flex items-center justify-center shrink-0 shadow-sm overflow-hidden">
+                                  {b.logoUrl ? (
+                                    <img src={b.logoUrl} alt={b.bankCode || b.bankName} className="w-5 h-5 object-contain" />
+                                  ) : (
+                                    <Landmark className="w-3.5 h-3.5" />
+                                  )}
                                 </div>
                               </div>
 
                               {/* Category Badge */}
-                              <div className="space-y-1.5 pt-1 border-t border-slate-200/60 dark:border-slate-850">
+                              <div className="space-y-2 pt-1 border-t border-slate-200/60 dark:border-slate-850">
                                 <div className="flex items-center justify-between text-[10px] font-bold text-slate-400">
                                   <span>Policy Category</span>
                                   <span className="flex items-center gap-1">
@@ -437,6 +441,19 @@ export default function CompanyCheckPage() {
                                 >
                                   {b.category || "UNLISTED"}
                                 </div>
+
+                                {/* Dynamic Apply for Loan Button (Only rendered when ON + Valid URL) */}
+                                {b.applyEnabled && b.applyUrl && (
+                                  <a
+                                    href={b.applyUrl}
+                                    target={b.applyUrl.startsWith("http") ? "_blank" : undefined}
+                                    rel={b.applyUrl.startsWith("http") ? "noopener noreferrer" : undefined}
+                                    className="w-full py-1.5 px-3 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm shadow-blue-600/20 cursor-pointer"
+                                  >
+                                    <span>Apply for Loan</span>
+                                    <ArrowRight className="w-3 h-3" />
+                                  </a>
+                                )}
                               </div>
                             </div>
                           );
