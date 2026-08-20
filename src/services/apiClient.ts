@@ -3,7 +3,7 @@ import axios from "axios";
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ||
   process.env.NEXT_PUBLIC_API_URL ||
-  "http://localhost:5001/api/v1";
+  "https://nvit-backend-production.up.railway.app/api/v1";
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
