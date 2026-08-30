@@ -88,24 +88,27 @@ export default function CompanyCheckPage() {
   }, [searchTerm]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 flex flex-col selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#050507] text-zinc-900 dark:text-zinc-100 transition-colors duration-300 flex flex-col selection:bg-zinc-900 dark:selection:bg-white selection:text-white dark:selection:text-zinc-950">
       <Navbar />
 
       {/* Hero & Search Header */}
-      <div className="pt-36 sm:pt-44 pb-14 px-4 sm:px-6 lg:px-8 border-b border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-900/60 relative z-30">
+      <div className="pt-36 sm:pt-44 pb-14 px-4 sm:px-6 lg:px-8 border-b border-zinc-200/60 dark:border-white/5 bg-hero-gradient relative z-30">
         {/* Ambient Glows */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-blue-600/10 via-indigo-600/5 to-purple-600/10 rounded-full blur-[140px]" />
         </div>
 
         <div className="max-w-4xl mx-auto space-y-5 text-center relative z-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">Enterprise Policy Matrix</p>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-white/10 text-zinc-800 dark:text-zinc-200 text-xs font-bold shadow-sm backdrop-blur-xl">
+            <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+            <span>Enterprise Policy Matrix</span>
+          </div>
 
           <div className="space-y-2">
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
+            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 dark:text-white leading-[1.08]">
               Company Category Checker
             </h1>
-            <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-medium">
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-medium">
               Inspect real-time employer company tiering (CAT A, CAT B, Superprime, Unlisted) across top Indian partner banks and NBFCs directly from the master policy index.
             </p>
           </div>
@@ -133,14 +136,14 @@ export default function CompanyCheckPage() {
                   }}
                   placeholder="Type employer name (e.g. hdfc, tata capital, infosys)..."
                   aria-label="Employer company search"
-                  className="w-full h-14 pl-12 pr-36 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm font-semibold focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none shadow-xl dark:shadow-none transition-all"
+                  className="w-full h-14 pl-12 pr-36 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 text-zinc-900 dark:text-white text-sm font-semibold focus:border-zinc-900 dark:focus:border-white/40 focus:outline-none shadow-xl dark:shadow-none transition-all"
                 />
-                <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <Search className="w-5 h-5 text-zinc-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <button
                   type="submit"
                   disabled={loading}
                   aria-label="Submit company inspection"
-                  className="absolute right-2 top-2 bottom-2 px-3 sm:px-6 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white text-xs font-bold cursor-pointer disabled:opacity-50 transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-600/20"
+                  className="absolute right-2 top-2 bottom-2 px-3 sm:px-6 rounded-xl bg-zinc-900 dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-100 text-white dark:text-zinc-950 text-xs font-bold cursor-pointer disabled:opacity-50 transition-all flex items-center justify-center gap-1.5 shadow-md"
                 >
                   {loading ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
@@ -162,9 +165,9 @@ export default function CompanyCheckPage() {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 6 }}
-                  className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-2 z-50 shadow-2xl space-y-1 text-left max-h-80 overflow-y-auto"
+                  className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-2xl p-2 z-50 shadow-2xl space-y-1 text-left max-h-80 overflow-y-auto"
                 >
-                  <div className="px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-slate-400 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                  <div className="px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-zinc-400 dark:text-zinc-500 border-b border-zinc-100 dark:border-white/5 flex items-center justify-between">
                     <span>Database Suggestions</span>
                     <span>Exact Relevance</span>
                   </div>
@@ -177,16 +180,16 @@ export default function CompanyCheckPage() {
                         setShowSuggestions(false);
                         handleSearch(item.name);
                       }}
-                      className="w-full px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-blue-950/80 hover:text-blue-600 dark:hover:text-white flex items-center justify-between transition-colors cursor-pointer"
+                      className="w-full px-3.5 py-2.5 rounded-xl text-xs font-bold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-white/5 hover:text-zinc-900 dark:hover:text-white flex items-center justify-between transition-colors cursor-pointer"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <div className="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                        <div className="w-7 h-7 rounded-lg bg-zinc-100 dark:bg-white/10 border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-300 flex items-center justify-center shrink-0">
                           <Building2 className="w-3.5 h-3.5" />
                         </div>
                         <span className="truncate">{item.name}</span>
                       </div>
                       {item.city && (
-                        <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 shrink-0 ml-2">
+                        <span className="text-[10px] font-semibold text-zinc-500 dark:text-zinc-400 shrink-0 ml-2">
                           {item.city}, {item.state || ""}
                         </span>
                       )}
@@ -198,17 +201,17 @@ export default function CompanyCheckPage() {
           </div>
 
           {/* Quick Legend Indicators */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-[11px] font-bold text-slate-600 dark:text-slate-400">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-[11px] font-bold text-zinc-600 dark:text-zinc-400">
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50" />
+              <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" />
               <span>Listed / Available</span>
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-amber-500 shadow-sm shadow-amber-500/50" />
+              <span className="w-2 h-2 rounded-full bg-amber-500 shadow-sm" />
               <span>Caution / Review</span>
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-rose-500 shadow-sm shadow-rose-500/50" />
+              <span className="w-2 h-2 rounded-full bg-rose-500 shadow-sm" />
               <span>Unlisted / Delisted</span>
             </span>
           </div>
@@ -219,25 +222,25 @@ export default function CompanyCheckPage() {
       <main className="flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
         {loading && (
           <div className="py-24 text-center space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 flex items-center justify-center mx-auto text-blue-600">
+            <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-white/10 border border-zinc-200 dark:border-white/10 flex items-center justify-center mx-auto text-zinc-900 dark:text-white">
               <Loader2 className="w-6 h-6 animate-spin" />
             </div>
             <div className="space-y-1">
-              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Querying Banking Policy Index...</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Scanning 528,000+ indexed companies across 14 financial institutions</p>
+              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Querying Banking Policy Index...</h3>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">Scanning indexed companies across partner financial institutions</p>
             </div>
           </div>
         )}
 
         {!loading && hasSearched && companies.length === 0 && (
-          <div className="rounded-3xl p-12 text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 max-w-xl mx-auto space-y-4 shadow-xl dark:shadow-none">
-            <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto">
+          <div className="rounded-3xl p-12 text-center glass-card-apple max-w-xl mx-auto space-y-4 shadow-xl">
+            <div className="w-14 h-14 rounded-2xl bg-zinc-100 dark:bg-white/10 text-zinc-400 flex items-center justify-center mx-auto">
               <Building2 className="w-7 h-7" />
             </div>
             <div className="space-y-1">
-              <h3 className="text-base font-black text-slate-900 dark:text-white">No Companies Found</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                No matching employer company for &quot;<span className="font-bold text-slate-900 dark:text-white">{searchedQuery}</span>&quot; was found in the policy database.
+              <h3 className="text-base font-black text-zinc-900 dark:text-white">No Companies Found</h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                No matching employer company for &quot;<span className="font-bold text-zinc-900 dark:text-white">{searchedQuery}</span>&quot; was found in the policy database.
               </p>
             </div>
           </div>
@@ -246,26 +249,26 @@ export default function CompanyCheckPage() {
         {!loading && companies.length > 0 && (
           <div className="space-y-8">
             {/* Search Header Bar */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-zinc-200 dark:border-white/10">
               <div className="flex items-center gap-2">
-                <span className="text-sm font-black text-slate-900 dark:text-white">
+                <span className="text-sm font-black text-zinc-900 dark:text-white">
                   Found {companies.length} Match{companies.length > 1 ? "es" : ""}
                 </span>
-                <span className="text-xs text-slate-400">•</span>
-                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                <span className="text-xs text-zinc-400">•</span>
+                <span className="text-xs font-semibold text-zinc-500 dark:text-zinc-400">
                   for &quot;{searchedQuery}&quot;
                 </span>
               </div>
 
               {/* Status Filter Tabs */}
-              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-200/70 dark:bg-slate-900 border border-slate-300/80 dark:border-slate-800 text-[11px] font-bold">
+              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 text-[11px] font-bold">
                 <button
                   type="button"
                   onClick={() => setBankFilter("ALL")}
                   className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
                     bankFilter === "ALL"
-                      ? "bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm font-black"
-                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                      ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-sm font-black"
+                      : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                   }`}
                 >
                   All Banks
@@ -276,7 +279,7 @@ export default function CompanyCheckPage() {
                   className={`px-3 py-1 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer ${
                     bankFilter === "LISTED"
                       ? "bg-emerald-500 text-white shadow-sm font-black"
-                      : "text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400"
+                      : "text-zinc-600 dark:text-zinc-400 hover:text-emerald-500"
                   }`}
                 >
                   <span className={`w-1.5 h-1.5 rounded-full ${bankFilter === "LISTED" ? "bg-white" : "bg-emerald-500"}`} />
@@ -288,7 +291,7 @@ export default function CompanyCheckPage() {
                   className={`px-3 py-1 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer ${
                     bankFilter === "NEGATIVE"
                       ? "bg-rose-500 text-white shadow-sm font-black"
-                      : "text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400"
+                      : "text-zinc-600 dark:text-zinc-400 hover:text-rose-500"
                   }`}
                 >
                   <span className={`w-1.5 h-1.5 rounded-full ${bankFilter === "NEGATIVE" ? "bg-white" : "bg-rose-500"}`} />
@@ -319,34 +322,34 @@ export default function CompanyCheckPage() {
                 return (
                   <div
                     key={comp.companyId}
-                    className="rounded-3xl p-6 sm:p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-2xl space-y-6 transition-all"
+                    className="rounded-3xl p-6 sm:p-8 glass-card-apple space-y-6 transition-all"
                   >
                     {/* Company Header */}
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100 dark:border-slate-800">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-zinc-100 dark:border-white/10">
                       <div className="space-y-2">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 shadow-sm">
+                          <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-white/10 border border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white flex items-center justify-center shrink-0 shadow-sm">
                             <Building2 className="w-5 h-5" />
                           </div>
-                          <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                          <h3 className="text-xl sm:text-2xl font-black text-zinc-900 dark:text-white tracking-tight">
                             {comp.companyName}
                           </h3>
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-500 dark:text-slate-400 pl-1">
+                        <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-zinc-500 dark:text-zinc-400 pl-1">
                           {comp.city && (
-                            <span className="flex items-center gap-1 text-slate-600 dark:text-slate-300">
+                            <span className="flex items-center gap-1 text-zinc-700 dark:text-zinc-300">
                               <MapPin className="w-3.5 h-3.5 text-blue-500" />
                               {comp.city}, {comp.state}
                             </span>
                           )}
                           {comp.cin && (
-                            <span className="font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded text-[11px] border border-slate-200 dark:border-slate-700">
+                            <span className="font-mono bg-zinc-100 dark:bg-white/5 text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded text-[11px] border border-zinc-200 dark:border-white/10">
                               CIN: {comp.cin}
                             </span>
                           )}
-                          <span className="text-slate-300 dark:text-slate-700">•</span>
-                          <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
+                          <span className="text-zinc-300 dark:text-zinc-700">•</span>
+                          <span className="text-emerald-500 font-bold flex items-center gap-1">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                             <span>{listedCount} of {totalBanks} Lenders Listed</span>
                           </span>
@@ -355,26 +358,26 @@ export default function CompanyCheckPage() {
 
                       {/* Header Badge */}
                       <div className="flex items-center gap-2.5 flex-wrap">
-                        <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">Live Verified</span>
+                        <span className="text-[11px] font-semibold text-emerald-500">Live Verified</span>
                       </div>
                     </div>
 
                     {/* Policy Grid */}
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <h4 className="text-[11px] font-black uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                        <h4 className="text-[11px] font-black uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
                           Partner Lender Policy Categorization ({filteredBanks.length})
                         </h4>
                         <div className="flex items-center gap-3 text-xs font-bold">
-                          <span className="text-emerald-600 dark:text-emerald-400 font-black">
+                          <span className="text-emerald-500 font-black">
                             {listedCount} Listed
                           </span>
                           {cautionCount > 0 && (
-                            <span className="text-amber-600 dark:text-amber-400 font-black">
+                            <span className="text-amber-500 font-black">
                               • {cautionCount} Caution
                             </span>
                           )}
-                          <span className="text-slate-500 dark:text-slate-400 font-semibold">
+                          <span className="text-zinc-500 dark:text-zinc-400 font-semibold">
                             • {unlistedCount} Unlisted
                           </span>
                         </div>
@@ -388,31 +391,30 @@ export default function CompanyCheckPage() {
                           return (
                             <div
                               key={b.bankId}
-                              className="p-4 rounded-2xl bg-slate-50/90 dark:bg-slate-950/70 border border-slate-200/90 dark:border-slate-800/90 flex flex-col justify-between space-y-3.5 hover:border-blue-400 dark:hover:border-blue-500/60 transition-all group"
+                              className="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 flex flex-col justify-between space-y-3.5 hover:border-zinc-400 dark:hover:border-white/30 transition-all group"
                             >
                               {/* Top Row: Logo & Bank Name */}
                               <div className="flex items-center gap-3">
-                                {/* Dedicated Logo / Avatar Box */}
-                                <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-sm overflow-hidden p-1">
+                                <div className="w-9 h-9 rounded-xl bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-white/10 flex items-center justify-center shrink-0 shadow-sm overflow-hidden p-1">
                                   {b.logoUrl ? (
                                     <img src={b.logoUrl} alt={b.bankCode || b.bankName} className="w-full h-full object-contain" />
                                   ) : (
-                                    <Landmark className="w-4 h-4 text-slate-700" />
+                                    <Landmark className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
                                   )}
                                 </div>
 
                                 <div className="min-w-0 flex-1">
-                                  <div className="text-xs font-black text-slate-900 dark:text-white truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                  <div className="text-xs font-black text-zinc-900 dark:text-white truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                     {b.bankName}
                                   </div>
-                                  <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                                  <div className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
                                     {isBank ? "Commercial Bank" : "NBFC Lender"}
                                   </div>
                                 </div>
                               </div>
 
-                              {/* Bottom: Clean Category Badge & Optional Apply CTA */}
-                              <div className="space-y-2 pt-1 border-t border-slate-200/60 dark:border-slate-800/70">
+                              {/* Bottom: Category Badge */}
+                              <div className="space-y-2 pt-1 border-t border-zinc-200/60 dark:border-white/10">
                                 <div
                                   className={`w-full py-1.5 px-3 rounded-xl border text-center font-black text-xs tracking-wide flex items-center justify-center gap-1.5 transition-all shadow-sm ${visual.badgeClass}`}
                                 >
@@ -420,13 +422,12 @@ export default function CompanyCheckPage() {
                                   <span className="truncate">{b.category || "UNLISTED"}</span>
                                 </div>
 
-                                {/* Dynamic Apply for Loan Button (Only rendered when ON + Valid URL) */}
                                 {b.applyEnabled && b.applyUrl && (
                                   <a
                                     href={b.applyUrl}
                                     target={b.applyUrl.startsWith("http") ? "_blank" : undefined}
                                     rel={b.applyUrl.startsWith("http") ? "noopener noreferrer" : undefined}
-                                    className="w-full py-1.5 px-3 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm shadow-blue-600/20 cursor-pointer"
+                                    className="w-full py-1.5 px-3 rounded-xl bg-zinc-900 dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-100 text-white dark:text-zinc-950 text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm cursor-pointer"
                                   >
                                     <span>Apply for Loan</span>
                                     <ArrowRight className="w-3 h-3" />
@@ -439,7 +440,7 @@ export default function CompanyCheckPage() {
                       </div>
 
                       {filteredBanks.length === 0 && (
-                        <div className="p-8 text-center rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-500">
+                        <div className="p-8 text-center rounded-2xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/10 text-xs font-semibold text-zinc-500">
                           No partner lenders match the selected &quot;{bankFilter}&quot; filter for this company.
                         </div>
                       )}

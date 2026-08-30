@@ -4,26 +4,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import {
-  Sparkles,
   Menu,
   X,
-  ArrowRight,
   Sun,
   Moon,
-  Monitor,
   ChevronDown,
+  ChevronRight,
   Building2,
   MapPin,
   Calculator,
   Wrench,
-  Layers,
-  Cpu,
-  Globe,
-  Code2,
+  Monitor,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/providers/ThemeProvider";
-import { useWebsiteCMS } from "@/hooks/useWebsiteCMS";
 
 const FINANCE_TOOLS = [
   {
@@ -59,16 +53,20 @@ const THEME_OPTIONS = [
 ] as const;
 
 export default function Navbar() {
-  const { data: cms } = useWebsiteCMS();
   const pathname = usePathname();
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    setMounted(true);
+    const onScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -95,252 +93,270 @@ export default function Navbar() {
     return pathname.startsWith(href);
   };
 
+  const isToolsActive =
+    pathname.startsWith("/finance-tools") ||
+    pathname.startsWith("/company-check") ||
+    pathname.startsWith("/pincode-check");
+
   return (
     <>
-      {/* ── FLOATING CAPSULE HEADER ─────────────────────────── */}
+      {/* ── FLOATING PILL CAPSULE HEADER (Apple Style) ─────────────────────────── */}
       <header
         aria-label="Site navigation"
-        className="fixed top-4 sm:top-5 left-0 right-0 z-[100] px-3 sm:px-6"
-        style={{ pointerEvents: "none" }}
+        className="fixed top-4 left-0 right-0 z-[100] px-4 pointer-events-none transform-gpu"
       >
-        <div
-          className={`glass-nav-capsule${scrolled ? " scrolled" : ""} mx-auto flex items-center justify-between rounded-[26px] h-[64px] sm:h-[68px] px-3.5 sm:px-5 max-w-[1380px] w-full`}
-          style={{ pointerEvents: "auto" }}
-        >
-          {/* ── LEFT: Logo ─────────────────────────────────── */}
-          <Link
-            href="/"
-            className="flex items-center gap-2.5 shrink-0 select-none group"
-            aria-label="NVIT.SPACE Home"
+        <div className="mx-auto max-w-5xl w-full pointer-events-auto">
+          <div
+            className={`flex items-center justify-between h-[58px] px-4 sm:px-6 rounded-full transition-colors duration-200 transition-shadow duration-200 ${
+              scrolled
+                ? "bg-white/95 dark:bg-zinc-950/90 backdrop-blur-2xl border border-zinc-200/80 dark:border-white/12 shadow-[0_10px_36px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.75)]"
+                : "bg-white/85 dark:bg-zinc-950/80 backdrop-blur-2xl border border-zinc-200/60 dark:border-white/10 shadow-[0_6px_28px_rgba(0,0,0,0.05)] dark:shadow-[0_6px_32px_rgba(0,0,0,0.55)]"
+            }`}
           >
-            <img
-              src={cms?.brand?.logoUrl || "/brand/nvit-icon-animated.svg"}
-              alt="NVIT.SPACE"
-              className="nvit-logo h-[34px] w-[34px] sm:h-9 sm:w-9 shrink-0 object-contain"
-              width="36"
-              height="36"
-            />
-            <div className="flex flex-col leading-none">
-              <span className="text-[17px] sm:text-[19px] tracking-tight text-slate-900 dark:text-white flex items-center">
-                <span className="font-semibold">NVIT</span>
-                <span className="text-blue-600 dark:text-blue-500 font-semibold">.</span>
-                <span className="font-light">SPACE</span>
-              </span>
-              <span className="text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 font-semibold mt-[2px]">
-                {cms?.company?.tagline || "Digital Studio"}
-              </span>
-            </div>
-          </Link>
-
-          {/* ── CENTER: Navigation (desktop) ───────────────── */}
-          <nav
-            className="hidden lg:flex items-center gap-x-0.5 xl:gap-x-1"
-            aria-label="Main navigation"
-          >
+            {/* ── LEFT: Logo ─────────────────────────────────── */}
             <Link
               href="/"
-              className={`relative px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors duration-150 whitespace-nowrap ${
-                isActive("/") && pathname === "/"
-                  ? "text-blue-600 dark:text-blue-400"
-                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-              }`}
+              className="flex items-center gap-2.5 shrink-0 select-none group"
+              aria-label="NVIT.SPACE Home"
             >
-              Home
+              <div className="w-7 h-7 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 font-black text-sm flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-sm shrink-0">
+                N
+              </div>
+              <span className="text-base font-extrabold tracking-tight text-zinc-900 dark:text-white flex items-center">
+                NVIT<span className="text-zinc-400 dark:text-zinc-500 font-bold">.SPACE</span>
+              </span>
             </Link>
 
-            <Link
-              href="/services"
-              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
-                pathname.startsWith("/services")
-                  ? "text-blue-600 dark:text-blue-400"
-                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-              }`}
+            {/* ── CENTER: Navigation Pills (Desktop) ───────────────── */}
+            <nav
+              className="hidden lg:flex items-center gap-x-1 bg-zinc-100/80 dark:bg-white/[0.06] rounded-full p-1 border border-zinc-200/60 dark:border-white/10"
+              aria-label="Main navigation"
             >
-              Services
-            </Link>
-
-            <Link
-              href="/solutions"
-              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
-                pathname.startsWith("/solutions")
-                  ? "text-blue-600 dark:text-blue-400"
-                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-              }`}
-            >
-              Solutions
-            </Link>
-
-            {/* Finance Tools Dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
-                className={`flex items-center gap-1 px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap cursor-pointer ${
-                  pathname.startsWith("/finance-tools") || pathname.startsWith("/company-check") || pathname.startsWith("/pincode-check")
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              <Link
+                href="/"
+                className={`px-3.5 py-1 text-[12.5px] font-bold tracking-tight rounded-full transition-colors whitespace-nowrap border ${
+                  isActive("/") && pathname === "/"
+                    ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border-zinc-200/90 dark:border-white/15 shadow-xs"
+                    : "text-zinc-600 dark:text-zinc-400 border-transparent hover:text-zinc-900 dark:hover:text-white"
                 }`}
               >
-                <span>Finance Tools</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${toolsDropdownOpen ? "rotate-180 text-blue-600 dark:text-blue-400" : "opacity-60"}`} />
+                Home
+              </Link>
+
+              <Link
+                href="/services"
+                className={`px-3.5 py-1 text-[12.5px] font-bold tracking-tight rounded-full transition-colors whitespace-nowrap border ${
+                  pathname.startsWith("/services")
+                    ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border-zinc-200/90 dark:border-white/15 shadow-xs"
+                    : "text-zinc-600 dark:text-zinc-400 border-transparent hover:text-zinc-900 dark:hover:text-white"
+                }`}
+              >
+                Services
+              </Link>
+
+              <Link
+                href="/solutions"
+                className={`px-3.5 py-1 text-[12.5px] font-bold tracking-tight rounded-full transition-colors whitespace-nowrap border ${
+                  pathname.startsWith("/solutions")
+                    ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border-zinc-200/90 dark:border-white/15 shadow-xs"
+                    : "text-zinc-600 dark:text-zinc-400 border-transparent hover:text-zinc-900 dark:hover:text-white"
+                }`}
+              >
+                Solutions
+              </Link>
+
+              {/* Finance Tools Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  type="button"
+                  onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
+                  className={`flex items-center gap-1 px-3.5 py-1 text-[12.5px] font-bold tracking-tight rounded-full transition-colors whitespace-nowrap cursor-pointer border ${
+                    isToolsActive
+                      ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border-zinc-200/90 dark:border-white/15 shadow-xs"
+                      : "text-zinc-600 dark:text-zinc-400 border-transparent hover:text-zinc-900 dark:hover:text-white"
+                  }`}
+                >
+                  <span>Finance Tools</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      toolsDropdownOpen ? "rotate-180 text-zinc-900 dark:text-white" : "opacity-60"
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {toolsDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                      transition={{ duration: 0.15, ease: "easeOut" }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl bg-white/95 dark:bg-zinc-900/95 backdrop-blur-2xl p-2 shadow-2xl border border-zinc-200/80 dark:border-white/10 overflow-hidden z-50"
+                    >
+                      <div className="px-3 py-2 text-[10px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500 border-b border-zinc-100 dark:border-white/5 mb-1">
+                        Digital Financial Tools
+                      </div>
+                      {FINANCE_TOOLS.map((tool) => {
+                        const IconComponent = tool.icon;
+                        return (
+                          <Link
+                            key={tool.name}
+                            href={tool.href}
+                            onClick={() => setToolsDropdownOpen(false)}
+                            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-zinc-100/70 dark:hover:bg-white/5 transition-colors group"
+                          >
+                            <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-white/10 border border-zinc-200/80 dark:border-white/10 flex items-center justify-center text-zinc-700 dark:text-zinc-300 shrink-0 group-hover:scale-105 transition-transform">
+                              <IconComponent className="w-4 h-4" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="text-[12.5px] font-bold text-zinc-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                  {tool.name}
+                                </span>
+                              </div>
+                              <p className="text-[11px] text-zinc-500 dark:text-zinc-400 truncate mt-0.5">
+                                {tool.description}
+                              </p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <Link
+                href="/resources"
+                className={`px-3.5 py-1 text-[12.5px] font-bold tracking-tight rounded-full transition-colors whitespace-nowrap border ${
+                  pathname.startsWith("/resources")
+                    ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border-zinc-200/90 dark:border-white/15 shadow-xs"
+                    : "text-zinc-600 dark:text-zinc-400 border-transparent hover:text-zinc-900 dark:hover:text-white"
+                }`}
+              >
+                Resources
+              </Link>
+
+              <Link
+                href="/about"
+                className={`px-3.5 py-1 text-[12.5px] font-bold tracking-tight rounded-full transition-colors whitespace-nowrap border ${
+                  pathname === "/about"
+                    ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border-zinc-200/90 dark:border-white/15 shadow-xs"
+                    : "text-zinc-600 dark:text-zinc-400 border-transparent hover:text-zinc-900 dark:hover:text-white"
+                }`}
+              >
+                About us
+              </Link>
+
+              <Link
+                href="/contact"
+                className={`px-3.5 py-1 text-[12.5px] font-bold tracking-tight rounded-full transition-colors whitespace-nowrap border ${
+                  pathname === "/contact"
+                    ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border-zinc-200/90 dark:border-white/15 shadow-xs"
+                    : "text-zinc-600 dark:text-zinc-400 border-transparent hover:text-zinc-900 dark:hover:text-white"
+                }`}
+              >
+                Contact
+              </Link>
+            </nav>
+
+            {/* ── RIGHT: Stable Theme Toggle & Pill CTA Button ─────────────────── */}
+            <div className="hidden md:flex items-center gap-2.5 shrink-0">
+              {/* Stable Sized Theme Switcher Toggle (Zero Layout Shift) */}
+              <button
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                className="w-8 h-8 shrink-0 rounded-full flex items-center justify-center bg-zinc-100/80 dark:bg-white/10 hover:bg-zinc-200 dark:hover:bg-white/20 text-zinc-700 dark:text-zinc-200 border border-zinc-200/70 dark:border-white/10 transition-colors cursor-pointer"
+                aria-label="Toggle light/dark theme"
+                title={mounted ? `Switch to ${resolvedTheme === "dark" ? "Light" : "Dark"} Mode` : "Toggle Theme"}
+              >
+                {!mounted ? (
+                  <span className="w-3.5 h-3.5 rounded-full bg-zinc-400/40" />
+                ) : (
+                  <AnimatePresence mode="wait" initial={false}>
+                    {resolvedTheme === "dark" ? (
+                      <motion.span
+                        key="sun"
+                        initial={{ rotate: -90, scale: 0.7, opacity: 0 }}
+                        animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                        exit={{ rotate: 90, scale: 0.7, opacity: 0 }}
+                        transition={{ duration: 0.15 }}
+                      >
+                        <Sun className="w-4 h-4 text-amber-400" />
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key="moon"
+                        initial={{ rotate: 90, scale: 0.7, opacity: 0 }}
+                        animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                        exit={{ rotate: -90, scale: 0.7, opacity: 0 }}
+                        transition={{ duration: 0.15 }}
+                      >
+                        <Moon className="w-4 h-4 text-zinc-700" />
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                )}
               </button>
 
-              <AnimatePresence>
-                {toolsDropdownOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 6, scale: 0.96 }}
-                    transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl glass-card bg-white/95 dark:bg-slate-950/95 p-2 shadow-2xl border border-slate-200 dark:border-white/10 overflow-hidden"
-                  >
-                    <div className="px-3 py-2 text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-white/5 mb-1">
-                      Digital Financial Tools
-                    </div>
-                    {FINANCE_TOOLS.map((tool) => {
-                      const IconComponent = tool.icon;
-                      return (
-                        <Link
-                          key={tool.name}
-                          href={tool.href}
-                          onClick={() => setToolsDropdownOpen(false)}
-                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group"
-                        >
-                          <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-800/40 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform">
-                            <IconComponent className="w-4 h-4" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center justify-between">
-                              <span className="text-[12.5px] font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                {tool.name}
-                              </span>
-
-                            </div>
-                            <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
-                              {tool.description}
-                            </p>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Get Started CTA */}
+              <Link href="/contact" aria-label="Start a project with NVIT.SPACE">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1.5 h-9 px-5 rounded-full bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-950 font-bold text-xs tracking-tight shadow-md hover:scale-[1.02] active:scale-[0.98] transition-transform duration-150 cursor-pointer whitespace-nowrap shrink-0"
+                >
+                  <span>Get Started</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-white/80 dark:text-zinc-950/80" />
+                </button>
+              </Link>
             </div>
 
-            <Link
-              href="/resources"
-              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
-                pathname.startsWith("/resources")
-                  ? "text-blue-600 dark:text-blue-400"
-                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-              }`}
-            >
-              Resources
-            </Link>
-
-            <Link
-              href="/about"
-              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
-                pathname === "/about"
-                  ? "text-blue-600 dark:text-blue-400"
-                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-              }`}
-            >
-              About
-            </Link>
-
-            <Link
-              href="/contact"
-              className={`px-3 xl:px-3.5 py-2 rounded-xl text-[12.5px] xl:text-[13px] font-semibold tracking-tight transition-colors whitespace-nowrap ${
-                pathname === "/contact"
-                  ? "text-blue-600 dark:text-blue-400"
-                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-              }`}
-            >
-              Contact
-            </Link>
-          </nav>
-
-          {/* ── RIGHT: Theme Switcher + CTA Button ─────────────────── */}
-          <div className="hidden md:flex items-center gap-3 shrink-0">
-            {/* Theme Switcher Capsule */}
-            <div
-              className="theme-switcher-capsule flex items-center gap-0.5"
-              role="group"
-              aria-label="Theme selector"
-            >
-              {THEME_OPTIONS.map(({ id, Icon, label }) => {
-                const active = theme === id;
-                return (
-                  <button
-                    key={id}
-                    onClick={() => setTheme(id as any)}
-                    title={`${label} mode`}
-                    aria-pressed={active}
-                    className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-200 cursor-pointer text-[11px] ${
-                      active
-                        ? "bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm"
-                        : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
-                    }`}
-                  >
-                    <Icon className="w-3.5 h-3.5" />
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Let's Build CTA */}
-            <Link href="/contact" aria-label="Start a project with NVIT.SPACE">
-              <motion.button
-                whileHover={{ y: -1, boxShadow: "0 8px 25px -4px rgba(59,130,246,0.4)" }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-1.5 h-10 px-5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white text-[12.5px] font-bold tracking-tight shadow-md shadow-blue-500/20 transition-all duration-200 cursor-pointer whitespace-nowrap border border-white/20"
+            {/* ── MOBILE: Theme + Hamburger ─────────────────── */}
+            <div className="flex lg:hidden items-center gap-2">
+              <button
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                className="w-8 h-8 shrink-0 flex items-center justify-center rounded-xl bg-zinc-100 dark:bg-white/10 border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-200 cursor-pointer"
+                aria-label="Toggle theme"
               >
-                Let&apos;s Build
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </motion.button>
-            </Link>
-          </div>
-
-          {/* ── MOBILE: Theme + Hamburger ─────────────────── */}
-          <div className="flex md:hidden items-center gap-2">
-            <button
-              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-              className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100/70 dark:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 cursor-pointer"
-              aria-label="Toggle theme"
-            >
-              {resolvedTheme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100/70 dark:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-200 cursor-pointer"
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileOpen}
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                {mobileOpen ? (
-                  <motion.span
-                    key="x"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <X className="w-4.5 h-4.5" />
-                  </motion.span>
+                {!mounted ? (
+                  <span className="w-3 h-3 rounded-full bg-zinc-400/40" />
+                ) : resolvedTheme === "dark" ? (
+                  <Sun className="w-4 h-4 text-amber-400" />
                 ) : (
-                  <motion.span
-                    key="hm"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <Menu className="w-4.5 h-4.5" />
-                  </motion.span>
+                  <Moon className="w-4 h-4 text-zinc-700" />
                 )}
-              </AnimatePresence>
-            </button>
+              </button>
+
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="w-8 h-8 shrink-0 flex items-center justify-center rounded-xl bg-zinc-100 dark:bg-white/10 border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-200 cursor-pointer"
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileOpen}
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  {mobileOpen ? (
+                    <motion.span
+                      key="x"
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <X className="w-4 h-4" />
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="hm"
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <Menu className="w-4 h-4" />
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -365,33 +381,33 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ type: "spring", stiffness: 360, damping: 32 }}
-              className="fixed top-[90px] left-3 right-3 z-[99] rounded-3xl glass-card bg-white/95 dark:bg-slate-950/95 overflow-hidden shadow-2xl border border-slate-200 dark:border-white/10 max-h-[85vh] overflow-y-auto"
+              className="fixed top-[84px] left-3 right-3 z-[99] rounded-3xl bg-white/95 dark:bg-zinc-950/95 backdrop-blur-2xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-white/10 max-h-[85vh] overflow-y-auto"
               style={{ pointerEvents: "auto" }}
             >
               <div className="p-4 space-y-1">
                 <Link
                   href="/"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-zinc-800 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
                   Home
                 </Link>
                 <Link
                   href="/services"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-zinc-800 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
                   Services
                 </Link>
                 <Link
                   href="/solutions"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-zinc-800 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
                   Solutions &amp; Digital Products
                 </Link>
                 <div className="pt-2 pb-1">
-                  <p className="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 font-black px-4 mb-2">
+                  <p className="text-[10px] uppercase tracking-widest text-zinc-400 dark:text-zinc-500 font-black px-4 mb-2">
                     Finance Tools
                   </p>
                   <div className="grid grid-cols-1 gap-1 px-2">
@@ -400,13 +416,12 @@ export default function Navbar() {
                         key={tool.name}
                         href={tool.href}
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between px-3 py-2.5 rounded-xl text-[12.5px] font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5"
+                        className="flex items-center justify-between px-3 py-2.5 rounded-xl text-[12.5px] font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5"
                       >
                         <div className="flex items-center gap-2.5">
                           <tool.icon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                           <span>{tool.name}</span>
                         </div>
-
                       </Link>
                     ))}
                   </div>
@@ -415,29 +430,29 @@ export default function Navbar() {
                 <Link
                   href="/resources"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-zinc-800 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
                   Resources &amp; Insights
                 </Link>
                 <Link
                   href="/about"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-zinc-800 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
                   About NVIT.SPACE
                 </Link>
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+                  className="flex items-center px-4 py-3 rounded-2xl text-[13.5px] font-semibold text-zinc-800 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 >
                   Contact
                 </Link>
               </div>
 
-              <div className="px-4 pb-5 pt-3 border-t border-slate-100 dark:border-white/5 space-y-3">
+              <div className="px-4 pb-5 pt-3 border-t border-zinc-100 dark:border-white/5 space-y-3">
                 <div className="px-2">
-                  <p className="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 font-black mb-2">
+                  <p className="text-[10px] uppercase tracking-widest text-zinc-400 dark:text-zinc-500 font-black mb-2">
                     Theme Preference
                   </p>
                   <div className="flex gap-2">
@@ -447,8 +462,8 @@ export default function Navbar() {
                         onClick={() => setTheme(id as any)}
                         className={`flex-1 flex flex-col items-center gap-1 py-2.5 rounded-2xl text-[10.5px] font-bold transition-all cursor-pointer ${
                           theme === id
-                            ? "bg-blue-600 text-white shadow-md shadow-blue-500/30"
-                            : "bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                            ? "bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 shadow-md"
+                            : "bg-zinc-100 dark:bg-white/5 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                         }`}
                       >
                         <Icon className="w-4 h-4" />
@@ -459,7 +474,7 @@ export default function Navbar() {
                 </div>
 
                 <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                  <button className="w-full h-12 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white text-[13px] font-bold shadow-lg shadow-blue-500/25 cursor-pointer transition-colors mt-2">
+                  <button className="w-full h-12 rounded-2xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 text-[13px] font-bold shadow-lg cursor-pointer transition-colors mt-2">
                     Start a Project →
                   </button>
                 </Link>
