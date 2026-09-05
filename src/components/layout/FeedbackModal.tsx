@@ -16,6 +16,7 @@ import {
   MessageSquare,
   Copy,
   Check,
+  ArrowRight,
 } from "lucide-react";
 import { apiClient } from "@/services/apiClient";
 
@@ -224,12 +225,21 @@ export default function FeedbackModal({
                       within <strong className="text-slate-800 dark:text-slate-200">24 hours</strong>.
                     </p>
 
-                    <button
-                      onClick={resetAndClose}
-                      className="w-full py-3 rounded-xl bg-slate-900 dark:bg-white hover:bg-slate-700 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-bold text-sm cursor-pointer transition-all"
-                    >
-                      Done
-                    </button>
+                    <div className="space-y-2 pt-2">
+                      <a
+                        href={`/check-status?ticket=${ticketResult.ticketNumber}`}
+                        className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm cursor-pointer transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20"
+                      >
+                        <span>Track Ticket Status</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                      <button
+                        onClick={resetAndClose}
+                        className="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs cursor-pointer transition-all"
+                      >
+                        Done
+                      </button>
+                    </div>
                   </motion.div>
                 ) : (
                   <motion.form

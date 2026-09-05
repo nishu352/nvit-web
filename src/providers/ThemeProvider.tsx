@@ -12,6 +12,25 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+const getSafeLocalStorage = (key: string): string | null => {
+  try {
+    if (typeof window !== "undefined" && "localStorage" in window) {
+      return window.localStorage.getItem(key);
+    }
+  } catch (_) {
+    return null;
+  }
+  return null;
+};
+
+const setSafeLocalStorage = (key: string, value: string) => {
+  try {
+    if (typeof window !== "undefined" && "localStorage" in window) {
+      window.localStorage.setItem(key, value);
+    }
+  } catch (_) {}
+};
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("system");
   const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("dark");
@@ -19,7 +38,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    const savedTheme = getSafeLocalStorage("theme") as Theme | null;
     if (savedTheme && ["light", "dark", "system"].includes(savedTheme)) {
       setThemeState(savedTheme);
     } else {
@@ -35,8 +54,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       let activeTheme: "light" | "dark" = "dark";
 
       if (theme === "system") {
-        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        activeTheme = systemPrefersDark ? "dark" : "light";
+        try {
+          const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          activeTheme = systemPrefersDark ? "dark" : "light";
+        } catch (_) {
+          activeTheme = "dark";
+        }
       } else {
         activeTheme = theme === "dark" ? "dark" : "light";
       }
@@ -53,16 +76,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     applyTheme();
 
     if (theme === "system") {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      const handleChange = () => applyTheme();
-      mediaQuery.addEventListener("change", handleChange);
-      return () => mediaQuery.removeEventListener("change", handleChange);
+      try {
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const handleChange = () => applyTheme();
+        mediaQuery.addEventListener("change", handleChange);
+        return () => mediaQuery.removeEventListener("change", handleChange);
+      } catch (_) {}
     }
   }, [theme, mounted]);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem("theme", newTheme);
+    setSafeLocalStorage("theme", newTheme);
   };
 
   return (

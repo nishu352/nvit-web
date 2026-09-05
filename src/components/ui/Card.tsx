@@ -30,7 +30,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         whileHover={
           hoverEffect
-            ? { y: -4, transition: { duration: 0.22, ease: "easeOut" } }
+            ? { y: -4, transition: { type: "spring", stiffness: 350, damping: 25 } }
             : undefined
         }
         className={cn(baseStyles, variants[variant], className)}

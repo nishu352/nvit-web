@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, Building2, Users, MessageSquareText } from "lucide-react";
+import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, Building2, Users, MessageSquareText, Search } from "lucide-react";
 import { useWebsiteCMS } from "@/hooks/useWebsiteCMS";
 import FeedbackModal from "@/components/layout/FeedbackModal";
+
+import TranscendentLogo from "@/components/brand/TranscendentLogo";
 
 export default function Footer() {
   const { data: cms } = useWebsiteCMS();
@@ -36,25 +38,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="space-y-4 md:col-span-1">
-            <div className="flex items-center space-x-3 select-none">
-              <img
-                src={cms?.brand?.logoUrl || "/brand/nvit-icon.svg"}
-                alt={companyName}
-                className="w-10 h-10 shrink-0 object-contain"
-                width="40"
-                height="40"
-              />
-              <div>
-                <span className="text-[20px] tracking-tight text-slate-900 dark:text-white flex items-center">
-                  <span className="font-semibold">NVIT</span>
-                  <span className="text-blue-600 dark:text-blue-500 font-semibold">.</span>
-                  <span className="font-light">SPACE</span>
-                </span>
-                <span className="text-[9px] uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-extrabold block mt-[2px]">
-                  {brandTagline}
-                </span>
-              </div>
-            </div>
+            <Link href="/" className="inline-block">
+              <TranscendentLogo size={36} />
+            </Link>
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
               {brandDesc}
             </p>
@@ -101,6 +87,12 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="hover:text-blue-600 dark:hover:text-white transition-colors">
                   Contact Studio
+                </Link>
+              </li>
+              <li>
+                <Link href="/check-status" className="hover:text-blue-600 dark:hover:text-blue-400 font-bold text-blue-600 dark:text-blue-400 transition-colors flex items-center gap-1.5 pt-1">
+                  <Search className="w-3.5 h-3.5" />
+                  <span>Track Status</span>
                 </Link>
               </li>
             </ul>
@@ -249,7 +241,14 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5 shrink-0">
+          <div className="flex items-center gap-2.5 shrink-0 flex-wrap sm:flex-nowrap">
+            <Link
+              href="/check-status"
+              className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm"
+            >
+              <Search className="w-3.5 h-3.5 text-blue-500" />
+              <span>Track Status</span>
+            </Link>
             <button
               onClick={() => {
                 setDefaultFeedbackType("COMPLAINT");
@@ -279,6 +278,9 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Terms of Service</Link>
             <Link href="/disclaimer" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Disclaimer</Link>
             <Link href="/cookie-policy" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Cookie Policy</Link>
+            <Link href="/check-status" className="hover:text-blue-600 dark:hover:text-blue-400 text-blue-600/90 dark:text-blue-400/90 transition-colors font-bold">
+              Track Status
+            </Link>
             <button
               onClick={() => {
                 setDefaultFeedbackType("GRIEVANCE");

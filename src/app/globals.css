@@ -271,3 +271,101 @@
     transition: none !important;
   }
 }
+
+/* === LENIS SMOOTH SCROLL FOUNDATION === */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* === CURSOR STATE MACHINE STYLES === */
+.cursor-expand {
+  width: 46px !important;
+  height: 46px !important;
+  border-color: rgba(59, 130, 246, 0.65) !important;
+  background-color: rgba(59, 130, 246, 0.08) !important;
+}
+
+.cursor-button-snap {
+  width: 42px !important;
+  height: 42px !important;
+  border-color: rgba(99, 102, 241, 0.75) !important;
+  background-color: rgba(99, 102, 241, 0.12) !important;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.25) !important;
+}
+
+.cursor-morph-pill {
+  width: auto !important;
+  min-width: 68px !important;
+  height: 28px !important;
+  padding: 0 12px !important;
+  border-radius: 9999px !important;
+  background-color: rgba(37, 99, 235, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.5) !important;
+}
+
+.cursor-morph-pill span {
+  opacity: 1 !important;
+}
+
+/* === SPATIAL DEPTH & MASKED TYPOGRAPHY TOKENS === */
+.spatial-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+.dark .spatial-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.spatial-horizon-glow {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent 70%);
+}
+
+.dark .spatial-horizon-glow {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.22), transparent 75%);
+}
+
+.masked-line-wrap {
+  overflow: hidden;
+  display: block;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.z-spatial-1 {
+  transform: translateZ(10px);
+}
+
+.z-spatial-2 {
+  transform: translateZ(24px);
+}
+
+.z-spatial-3 {
+  transform: translateZ(40px);
+}
+

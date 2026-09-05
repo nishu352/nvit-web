@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/providers/QueryProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { MotionProvider } from "@/providers/MotionProvider";
 import CursorTracker from "@/components/layout/CursorTracker";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -66,8 +67,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                let savedTheme = null;
+                try {
+                  savedTheme = window.localStorage ? window.localStorage.getItem('theme') : null;
+                } catch(e) {}
+                if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                   document.documentElement.classList.add('dark');
                 } else {
                   document.documentElement.classList.remove('dark');
@@ -87,7 +91,9 @@ export default function RootLayout({
         />
         <div className="relative z-10">
           <ThemeProvider>
-            <QueryProvider>{children}</QueryProvider>
+            <MotionProvider>
+              <QueryProvider>{children}</QueryProvider>
+            </MotionProvider>
           </ThemeProvider>
         </div>
       </body>

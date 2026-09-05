@@ -15,6 +15,7 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  transpilePackages: ["framer-motion", "motion"],
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
