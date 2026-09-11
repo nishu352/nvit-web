@@ -39,7 +39,11 @@ export const metadata: Metadata = {
       { url: "/brand/nvit-favicon.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
     shortcut: "/favicon.ico",
   },
@@ -61,7 +65,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="scroll-smooth"
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -69,13 +77,18 @@ export default function RootLayout({
               try {
                 let savedTheme = null;
                 try {
-                  savedTheme = window.localStorage ? window.localStorage.getItem('theme') : null;
+                  savedTheme = window.localStorage
+                    ? window.localStorage.getItem('theme')
+                    : null;
                 } catch(e) {}
+
                 if (
                   savedTheme === 'dark' ||
-                  (!savedTheme &&
+                  (
+                    !savedTheme &&
                     window.matchMedia &&
-                    window.matchMedia('(prefers-color-scheme: dark)').matches)
+                    window.matchMedia('(prefers-color-scheme: dark)').matches
+                  )
                 ) {
                   document.documentElement.classList.add('dark');
                 } else {
@@ -86,7 +99,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google AdSense */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8120312262865304"
@@ -107,27 +119,6 @@ export default function RootLayout({
           aria-hidden="true"
         />
 
-        <div className="relative z-10">
-          <ThemeProvider>
-            <MotionProvider>
-              <QueryProvider>{children}</QueryProvider>
-            </MotionProvider>
-          </ThemeProvider>
-        </div>
-      </body>
-    </html>
-  );
-}          }}
-        />
-      </head>
-      <body className={`${inter.className} min-h-screen antialiased selection:bg-royal selection:text-white relative`} suppressHydrationWarning>
-        <CursorTracker />
-        <Analytics />
-        {/* Subtle radial cursor glow following mouse cursor */}
-        <div 
-          className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(600px_circle_at_var(--mouse-x,0px)_var(--mouse-y,0px),rgba(59,130,246,0.035),transparent_80%)] dark:bg-[radial-gradient(600px_circle_at_var(--mouse-x,0px)_var(--mouse-y,0px),rgba(59,130,246,0.05),transparent_80%)]" 
-          aria-hidden="true" 
-        />
         <div className="relative z-10">
           <ThemeProvider>
             <MotionProvider>
