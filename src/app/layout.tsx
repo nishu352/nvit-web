@@ -71,7 +71,12 @@ export default function RootLayout({
                 try {
                   savedTheme = window.localStorage ? window.localStorage.getItem('theme') : null;
                 } catch(e) {}
-                if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                if (
+                  savedTheme === 'dark' ||
+                  (!savedTheme &&
+                    window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches)
+                ) {
                   document.documentElement.classList.add('dark');
                 } else {
                   document.documentElement.classList.remove('dark');
@@ -79,6 +84,40 @@ export default function RootLayout({
               } catch (_) {}
             `,
           }}
+        />
+
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8120312262865304"
+          crossOrigin="anonymous"
+        />
+      </head>
+
+      <body
+        className={`${inter.className} min-h-screen antialiased selection:bg-royal selection:text-white relative`}
+        suppressHydrationWarning
+      >
+        <CursorTracker />
+        <Analytics />
+
+        {/* Subtle radial cursor glow following mouse cursor */}
+        <div
+          className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(600px_circle_at_var(--mouse-x,0px)_var(--mouse-y,0px),rgba(59,130,246,0.035),transparent_80%)] dark:bg-[radial-gradient(600px_circle_at_var(--mouse-x,0px)_var(--mouse-y,0px),rgba(59,130,246,0.05),transparent_80%)]"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10">
+          <ThemeProvider>
+            <MotionProvider>
+              <QueryProvider>{children}</QueryProvider>
+            </MotionProvider>
+          </ThemeProvider>
+        </div>
+      </body>
+    </html>
+  );
+}          }}
         />
       </head>
       <body className={`${inter.className} min-h-screen antialiased selection:bg-royal selection:text-white relative`} suppressHydrationWarning>
