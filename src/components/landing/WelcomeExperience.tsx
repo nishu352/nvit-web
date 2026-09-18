@@ -41,20 +41,20 @@ export default function WelcomeExperience({ onComplete }: WelcomeExperienceProps
     // Qualified to show
     setShouldShow(true);
 
-    // Timeline Sequence (approx 4.8 seconds total)
+    // Timeline Sequence (approx 3.8 seconds total: fast, elegant, brand-focused)
     // Step 0 (0ms): Empty space
-    // Step 1 (400ms): Geometric lines begin drawing N structure
-    // Step 2 (1800ms): Connection points & gap react
-    // Step 3 (2600ms): Light / data beam travels through structure
-    // Step 4 (3500ms): NVIT.SPACE logotype reveals
-    // Step 5 (4600ms): Smooth dissolve into homepage
-    const t1 = setTimeout(() => setStep(1), 400);
-    const t2 = setTimeout(() => setStep(2), 1800);
-    const t3 = setTimeout(() => setStep(3), 2600);
-    const t4 = setTimeout(() => setStep(4), 3500);
+    // Step 1 (300ms): Geometric lines begin drawing N structure
+    // Step 2 (1200ms): Connection node & gap react
+    // Step 3 (1900ms): Light / data beam travels through structure
+    // Step 4 (2600ms): NVIT.SPACE logotype reveals
+    // Step 5 (3800ms): Smooth dissolve into homepage
+    const t1 = setTimeout(() => setStep(1), 300);
+    const t2 = setTimeout(() => setStep(2), 1200);
+    const t3 = setTimeout(() => setStep(3), 1900);
+    const t4 = setTimeout(() => setStep(4), 2600);
     const t5 = setTimeout(() => {
       finish();
-    }, 4800);
+    }, 3800);
 
     return () => {
       clearTimeout(t1);
@@ -225,7 +225,7 @@ export default function WelcomeExperience({ onComplete }: WelcomeExperienceProps
             className="h-full bg-blue-500"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ duration: 4.6, ease: "linear" }}
+            transition={{ duration: 3.7, ease: "linear" }}
           />
         </div>
       </motion.div>

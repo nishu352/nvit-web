@@ -7,41 +7,49 @@ import WelcomeExperience from "@/components/landing/WelcomeExperience";
 import HeroSection from "@/components/landing/HeroSection";
 import VisionSection from "@/components/landing/VisionSection";
 import DigitalGapSection from "@/components/landing/DigitalGapSection";
-import WhatWeDoSection from "@/components/landing/WhatWeDoSection";
-import DigitalJourneySection from "@/components/landing/DigitalJourneySection";
+import WhatNVITDoesSection from "@/components/landing/WhatNVITDoesSection";
+import CapabilitiesEcosystemSection from "@/components/landing/CapabilitiesEcosystemSection";
+import SelectedWorkSection from "@/components/landing/SelectedWorkSection";
+import TechnicalCredibilitySection from "@/components/landing/TechnicalCredibilitySection";
 import PhilosophySection from "@/components/landing/PhilosophySection";
 import FinalCtaSection from "@/components/landing/FinalCtaSection";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors duration-300">
-      {/* 01 — First-Visit Welcome Experience (4–6s, 1-hr localStorage cache, skip button, reduced-motion aware) */}
+      {/* 00 — First-Visit Lightweight Welcome Experience (1-hr localStorage cache, skip button, reduced-motion aware) */}
       <WelcomeExperience />
 
-      {/* Primary Sticky Translucent Navigation */}
+      {/* Primary Clean Navigation */}
       <Navbar />
 
-      {/* Main Architectural Sections */}
+      {/* Continuous Architectural Story */}
       <main className="flex-1">
-        {/* 02 — Hero Section: "Take Your Business Into the Digital World." */}
+        {/* 01 — Hero: "Take Your Business Into The Digital World." */}
         <HeroSection />
 
-        {/* 03 — Vision Section: "Every Business Deserves a Place in the Digital Future." */}
+        {/* 02 — Vision: "Every Business Deserves a Place in the Digital Future." */}
         <VisionSection />
 
-        {/* 04 — The Digital Gap (Signature Transition: Today → The Digital Gap → Future) */}
+        {/* 03 — The Digital Gap: Signature Transition (Traditional Business → Digital Gap → Digital Platform) */}
         <DigitalGapSection />
 
-        {/* 05 — What We Do (Connected 4-Pillar Ecosystem) */}
-        <WhatWeDoSection />
+        {/* 04 — What NVIT Does: "We Turn Business Ideas Into Digital Experiences." (Understand → Imagine → Build → Evolve) */}
+        <WhatNVITDoesSection />
 
-        {/* 06 — Digital Journey (Continuous Geometric Line Process: Understand, Imagine, Build, Evolve) */}
-        <DigitalJourneySection />
+        {/* 05 — Capabilities / Digital Ecosystem (Presence / Experiences / Systems / Growth) */}
+        <CapabilitiesEcosystemSection />
 
-        {/* 07 — Philosophy: "Technology Should Feel Simple. The Possibilities Should Feel Limitless." */}
+        {/* 06 — Proof / Selected Work: Problem → Engineered → Result (Real Production Software) */}
+        <SelectedWorkSection />
+
+        {/* 07 — Technical Credibility: Serious Engineering. Uncompromising Standards. */}
+        <TechnicalCredibilitySection />
+
+        {/* 08 — Philosophy: "Technology Should Feel Simple. The Possibilities Should Feel Limitless." */}
         <PhilosophySection />
 
-        {/* 08 — Final CTA: "Your Next Chapter Is Digital." / "Let's Build Your Digital Future." */}
+        {/* 09 — Final CTA: "Your Next Chapter Is Digital." / "Let's Build Your Digital Future." */}
         <FinalCtaSection />
       </main>
 

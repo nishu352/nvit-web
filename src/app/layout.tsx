@@ -5,7 +5,6 @@ import "./globals.css";
 import QueryProvider from "@/providers/QueryProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { MotionProvider } from "@/providers/MotionProvider";
-import CursorTracker from "@/components/layout/CursorTracker";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +14,11 @@ export const metadata: Metadata = {
     canonical: "https://www.nvit.space",
   },
   title: {
-    default: "NVIT.SPACE - Home",
-    template: "NVIT.SPACE - %s",
+    default: "NVIT.SPACE — Take Your Business Into The Digital World",
+    template: "%s | NVIT.SPACE",
   },
   description:
-    "NVIT.SPACE is a modern digital engineering studio building websites, web applications, mobile apps, AI solutions, and custom software for forward-thinking enterprises.",
+    "NVIT.SPACE designs and builds digital experiences, systems, and technology that help businesses move forward. Digital Architecture & Technology Studio.",
   keywords: [
     "NVIT.SPACE",
     "Digital Engineering Studio",
@@ -82,13 +81,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} min-h-screen antialiased selection:bg-royal selection:text-white relative`} suppressHydrationWarning>
-        <CursorTracker />
         <Analytics />
-        {/* Subtle radial cursor glow following mouse cursor */}
-        <div 
-          className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(600px_circle_at_var(--mouse-x,0px)_var(--mouse-y,0px),rgba(59,130,246,0.035),transparent_80%)] dark:bg-[radial-gradient(600px_circle_at_var(--mouse-x,0px)_var(--mouse-y,0px),rgba(59,130,246,0.05),transparent_80%)]" 
-          aria-hidden="true" 
-        />
         <div className="relative z-10">
           <ThemeProvider>
             <MotionProvider>

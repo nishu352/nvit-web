@@ -22,7 +22,7 @@ import { useTheme } from "@/providers/ThemeProvider";
 
 const NAV_LINKS = [
   { name: "Work", href: "/projects" },
-  { name: "Capabilities", href: "/#what-we-do" },
+  { name: "Capabilities", href: "/#capabilities" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
