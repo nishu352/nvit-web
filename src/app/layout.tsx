@@ -38,7 +38,11 @@ export const metadata: Metadata = {
       { url: "/brand/nvit-favicon.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
     shortcut: "/favicon.ico",
   },
@@ -60,7 +64,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="scroll-smooth"
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -68,9 +76,19 @@ export default function RootLayout({
               try {
                 let savedTheme = null;
                 try {
-                  savedTheme = window.localStorage ? window.localStorage.getItem('theme') : null;
+                  savedTheme = window.localStorage
+                    ? window.localStorage.getItem('theme')
+                    : null;
                 } catch(e) {}
-                if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+
+                if (
+                  savedTheme === 'dark' ||
+                  (
+                    !savedTheme &&
+                    window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches
+                  )
+                ) {
                   document.documentElement.classList.add('dark');
                 } else {
                   document.documentElement.classList.remove('dark');
@@ -78,6 +96,12 @@ export default function RootLayout({
               } catch (_) {}
             `,
           }}
+        />
+
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8120312262865304"
+          crossOrigin="anonymous"
         />
       </head>
       <body className={`${inter.className} min-h-screen antialiased selection:bg-royal selection:text-white relative`} suppressHydrationWarning>
