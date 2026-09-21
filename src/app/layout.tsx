@@ -56,6 +56,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  other: {
+    // Google AdSense account verification
+    "google-adsense-account": "ca-pub-8120312262865304",
+  },
 };
 
 export default function RootLayout({
