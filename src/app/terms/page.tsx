@@ -40,28 +40,78 @@ export default function TermsPage() {
         <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
           <h2 className="text-lg font-black text-slate-900 dark:text-white">1. Acceptance of Terms</h2>
           <p>
-            By accessing or using the NVIT.SPACE website, digital tools, APIs, and associated engineering services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our platforms.
+            By accessing or using the NVIT.SPACE website, digital tools, APIs, calculators, and associated engineering services, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please discontinue platform use immediately.
           </p>
         </section>
 
         <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
-          <h2 className="text-lg font-black text-slate-900 dark:text-white">2. Scope of Services</h2>
+          <h2 className="text-lg font-black text-slate-900 dark:text-white">2. Scope of Services &amp; Engagements</h2>
           <p>
-            NVIT.SPACE operates as a specialized digital engineering studio providing custom software development, web &amp; mobile application engineering, AI automation integrations, and financial calculation tools. Specific project engagements are governed by individual Master Services Agreements (MSAs) and Statements of Work (SOWs).
+            NVIT.SPACE operates as a specialized digital engineering studio providing custom software development, web &amp; mobile application engineering, AI automation integrations, and financial calculation tools. Specific enterprise development engagements are governed by separate Master Services Agreements (MSAs) and Statements of Work (SOWs).
           </p>
         </section>
 
         <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
-          <h2 className="text-lg font-black text-slate-900 dark:text-white">3. Intellectual Property</h2>
+          <h2 className="text-lg font-black text-slate-900 dark:text-white">3. Acceptable Use Policy</h2>
           <p>
-            All website visual assets, brand trademarks, logos, custom software codebases, and architectural design systems developed directly by NVIT.SPACE are the intellectual property of NVIT.SPACE unless explicitly transferred via written client contract.
+            Users agree to use NVIT.SPACE solely for lawful informational and technical consultation purposes. You agree not to:
+          </p>
+          <ul className="space-y-1.5 list-disc pl-5">
+            <li>Engage in automated scraping, data mining, or extraction of website content or underlying database records without prior written consent.</li>
+            <li>Attempt to probe, scan, or breach the security, authentication, or infrastructure of our web servers or backend APIs.</li>
+            <li>Transmit malicious code, viruses, automated bots, or participate in denial-of-service (DoS) attacks against our services.</li>
+            <li>Misrepresent your identity or submit fraudulent project inquiries or feedback requests.</li>
+          </ul>
+        </section>
+
+        <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
+          <h2 className="text-lg font-black text-slate-900 dark:text-white">4. Calculators &amp; Digital Tools Limitations</h2>
+          <p>
+            Our public calculators (including the Loan EMI Calculator, Loan Eligibility Calculator, Pincode Checker, and Company Policy Checker) are provided solely for illustrative, mathematical, and estimation purposes:
+          </p>
+          <ul className="space-y-1.5 list-disc pl-5">
+            <li>Outputs do not constitute official credit approvals, binding quotes, or underwriting decisions by NVIT.SPACE or any lending institution.</li>
+            <li>Calculated values are estimates based on standard mathematical models (such as reducing balance amortization) and may differ from final lender sanction letters due to rounding, fee structures, processing charges, or tax adjustments.</li>
+            <li>Bank company categorization matrices and postal PIN code serviceability boundaries are based on compiled reference indexes and are subject to real-time revision by respective banks and NBFCs.</li>
+            <li>Users must verify all financial calculations directly with authorized lending institutions before executing credit agreements.</li>
+          </ul>
+        </section>
+
+        <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
+          <h2 className="text-lg font-black text-slate-900 dark:text-white">5. Intellectual Property Rights</h2>
+          <p>
+            All website design systems, graphic assets, typography hierarchies, brand trademarks, logos, custom software codebases, and architectural documentation created directly by NVIT.SPACE are the proprietary intellectual property of NVIT.SPACE, protected by copyright and intellectual property laws. Content may not be copied, reproduced, or distributed without explicit written permission.
           </p>
         </section>
 
         <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
-          <h2 className="text-lg font-black text-slate-900 dark:text-white">4. Disclaimer of Warranties</h2>
+          <h2 className="text-lg font-black text-slate-900 dark:text-white">6. Third-Party Links &amp; Advertisements</h2>
           <p>
-            Our public calculators and tools are provided &quot;as is&quot; for informational and estimation purposes. While we strive for absolute mathematical precision, financial calculations should be verified with official lending institutions prior to taking borrowing decisions.
+            The website may contain advertisements served by Google AdSense and links to third-party websites or services. NVIT.SPACE does not endorse, guarantee, or assume responsibility for any products, services, or information offered by third-party advertisers or external websites linked from our platform. Accessing third-party resources is done at your own discretion and risk.
+          </p>
+        </section>
+
+        <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
+          <h2 className="text-lg font-black text-slate-900 dark:text-white">7. Limitation of Liability</h2>
+          <p>
+            To the maximum extent permitted by applicable law, NVIT.SPACE, its founders, directors, and developers shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or inability to use this website, digital tools, or reliance on any calculations or technical content presented herein.
+          </p>
+        </section>
+
+        <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
+          <h2 className="text-lg font-black text-slate-900 dark:text-white">8. Modifications &amp; Governing Law</h2>
+          <p>
+            NVIT.SPACE reserves the right to modify these Terms of Service at any time without prior individual notice. Revisions become effective immediately upon publication on this page with an updated date. These terms are governed by the laws of India, and any disputes relating to general website usage shall be subject to the jurisdiction of competent courts in the jurisdiction of the company&apos;s registered operations.
+          </p>
+        </section>
+
+        <section className="glass-card rounded-3xl p-8 bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-4 shadow-xl dark:shadow-none">
+          <h2 className="text-lg font-black text-slate-900 dark:text-white">9. Contact Information</h2>
+          <p>
+            For questions or legal inquiries regarding these Terms of Service, please contact our legal desk at{" "}
+            <a href="mailto:info@nvit.space" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">
+              info@nvit.space
+            </a>.
           </p>
         </section>
       </main>

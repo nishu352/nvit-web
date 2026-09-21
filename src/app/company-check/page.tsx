@@ -15,6 +15,7 @@ import {
   Sparkles,
   ExternalLink,
   Landmark,
+  ShieldCheck,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCategoryStatus, CategoryStatusType } from "@/utils/categoryStatus";
@@ -451,6 +452,123 @@ export default function CompanyCheckPage() {
             </div>
           </div>
         )}
+
+        {/* ── EDUCATIONAL GUIDE & EMPLOYER CATEGORY MATRIX ────────────────── */}
+        <section className="mt-16 pt-12 border-t border-zinc-200/80 dark:border-white/10 space-y-12">
+          {/* Section Heading */}
+          <div className="space-y-2 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/40 text-blue-700 dark:text-blue-300 text-[11px] font-bold">
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+              <span>Underwriting Intelligence</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight">
+              Understanding Corporate Employer Category Tiering in Banking
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+              When applying for unsecured personal loans, corporate credit cards, or pre-approved lines of credit, commercial lenders evaluate your employer&apos;s institutional tiering alongside your personal credit score:
+            </p>
+          </div>
+
+          {/* 4 Category Explanation Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-200/80 dark:border-emerald-800/40">Tier 1 / Superprime</span>
+              </div>
+              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Category A (Superprime)</h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                Top Fortune 500 multinationals, Tier-1 IT leaders, central government bodies, and premier PSUs. Employees qualify for the lowest benchmark interest rates (typically 10.5%–11.5%), highest borrowing caps (up to ₹40–50 Lakhs), and maximum FOIR thresholds.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded-full border border-blue-200/80 dark:border-blue-800/40">Tier 2 / Prime</span>
+              </div>
+              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Category B (Prime)</h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                Established mid-cap organizations, publicly listed Indian enterprises, and large healthcare or educational institutions. Borrowers receive competitive interest rates and standard digital processing pipelines.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-full border border-amber-200/80 dark:border-amber-800/40">Tier 3 / Growth</span>
+              </div>
+              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Category C &amp; D</h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                Small to medium private limited companies, regional manufacturing entities, or early-stage ventures. Lenders may request extended bank statements or require higher minimum take-home salary benchmarks.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded-full border border-rose-200/80 dark:border-rose-800/40">Open Market</span>
+              </div>
+              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Unlisted / Emerging</h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                Entities not yet cataloged in a lender&apos;s pre-approved employer database. Loan applications are processed through manual underwriting channels, where salary consistency, employer vintage, and banking habits determine approval.
+              </p>
+            </div>
+          </div>
+
+          {/* Frequently Asked Questions */}
+          <div className="space-y-4 pt-4">
+            <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
+              Frequently Asked Questions About Company Category Checks
+            </h3>
+
+            <div className="space-y-3.5">
+              <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
+                <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                  Can I still get a personal loan if my employer is marked &quot;Unlisted&quot;?
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Yes. An &quot;Unlisted&quot; categorization simply means the lender does not have a pre-negotiated corporate program with your employer. Most banks and NBFCs process unlisted company employees through their open-market channel, assessing your monthly salary credits, CIBIL score (750+ recommended), and banking discipline.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
+                <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                  Why is my company categorized as CAT-A in one bank but CAT-B or Unlisted in another?
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Every financial institution defines its own internal risk parameters, corporate relationship portfolios, and salary account tie-ups. A bank that manages your employer&apos;s corporate payroll accounts will typically place your company in a higher category than a competitor with no prior relationship.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
+                <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                  Does employer tiering affect loan processing speed?
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Yes. Applications from Category-A and Superprime organizations often qualify for automated Straight-Through Processing (STP), digital KYC, and instant document waivers, resulting in loan disbursals within 4 to 24 hours.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
+                <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                  How often do lenders revise their corporate employer lists?
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Bank credit committees review corporate master lists quarterly or biannually, upgrading companies that demonstrate steady revenue growth and headcount expansion, or demoting firms undergoing financial restructuring.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Informational Notice Callout */}
+          <div className="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+            <span className="font-bold text-zinc-800 dark:text-zinc-200 block">Underwriting Disclaimer:</span>
+            <p className="leading-relaxed">
+              Company categorization statuses displayed on this page are compiled for informational and estimation guidance. Institutional categories, loan rates, and maximum exposure limits are subject to change by respective lending institutions without prior notice. Final loan sanctions depend on individual underwriting, income verification, and credit bureau evaluation.
+            </p>
+          </div>
+        </section>
       </main>
 
       <Footer />

@@ -221,6 +221,115 @@ export default function PincodeCheckPage() {
             )}
           </div>
         )}
+
+        {/* ── EDUCATIONAL GUIDE & SERVICEABILITY INTELLIGENCE ────────────── */}
+        <section className="mt-16 pt-12 border-t border-zinc-200/80 dark:border-white/10 space-y-12">
+          {/* Section Heading */}
+          <div className="space-y-2 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/40 text-blue-700 dark:text-blue-300 text-[11px] font-bold">
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+              <span>Location Policy Architecture</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight">
+              How Postal PIN Code Serviceability Works in Banking &amp; Lending
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+              In retail banking and unsecured credit underwriting, an applicant&apos;s residential and employment postal code is a primary policy filter. Here is how financial institutions evaluate location data:
+            </p>
+          </div>
+
+          {/* 3 Core Explanation Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 sm:p-7 rounded-3xl glass-card-apple space-y-3.5 shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm font-mono">
+                01
+              </div>
+              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">
+                Six-Digit Postal Index Decoding
+              </h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                India&apos;s postal PIN code system uses a 6-digit hierarchical structure. The 1st digit identifies the geographical region, the 2nd the sub-region or state circle, the 3rd the sorting district, and the final 3 digits the specific delivery post office.
+              </p>
+            </div>
+
+            <div className="p-6 sm:p-7 rounded-3xl glass-card-apple space-y-3.5 shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200/80 dark:border-indigo-800/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm font-mono">
+                02
+              </div>
+              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">
+                Physical Verification Reach (CPV)
+              </h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                Before sanctioning personal loans or corporate credit cards, lenders conduct Contact Point Verification (CPV). If an applicant resides in a PIN code beyond the operational radius of agency field executives, the application cannot proceed.
+              </p>
+            </div>
+
+            <div className="p-6 sm:p-7 rounded-3xl glass-card-apple space-y-3.5 shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-violet-50 dark:bg-violet-950/60 border border-violet-200/80 dark:border-violet-800/40 text-violet-600 dark:text-violet-400 flex items-center justify-center font-bold text-sm font-mono">
+                03
+              </div>
+              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">
+                Negative &amp; Caution Pincode Lists
+              </h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                Risk committees at commercial banks maintain internal negative pincode lists based on localized delinquency rates, legal jurisdiction limits, or logistical constraints. These lists are reviewed and updated on a regular cycle.
+              </p>
+            </div>
+          </div>
+
+          {/* Frequently Asked Questions */}
+          <div className="space-y-4 pt-4">
+            <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
+              Frequently Asked Questions About Pincode Eligibility
+            </h3>
+
+            <div className="space-y-3.5">
+              <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
+                <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                  Why is my PIN code serviceable by one lender but rejected by another?
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Each financial institution establishes its own network of physical branch offices and third-party verification agencies. A regional bank or NBFC with strong local presence in a particular district will service postal codes that a centralized private lender might exclude.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
+                <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                  Can I apply for credit using my office address if my residence PIN is unserviceable?
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Many lenders allow an application if either the current residence or permanent corporate employer address falls within a serviceable postal code, provided one of the two locations can be physically verified by field representatives.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
+                <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                  Does querying a pincode on this tool impact my credit score?
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  No. This serviceability check queries public postal zoning and partner institution coverage indices. It does not pull your credit report (CIBIL/Experian) and has zero impact on your credit rating.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
+                <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
+                  How often is the 19,500+ pincode database updated?
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Our database syncs with official Indian postal directory updates and lending institution policy revisions periodically to ensure high geographic fidelity across urban and semi-urban clusters.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Informational Disclaimer Callout */}
+          <div className="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+            <span className="font-bold text-zinc-800 dark:text-zinc-200 block">Informational Notice:</span>
+            <p className="leading-relaxed">
+              Pincode serviceability metrics displayed here are based on compiled reference indexes for informational purposes. Individual lender branch boundaries and credit policies may change without prior notice. Final loan approval remains subject to borrower credit assessment, KYC documentation, and lender underwriting criteria.
+            </p>
+          </div>
+        </section>
       </main>
 
       <Footer />
