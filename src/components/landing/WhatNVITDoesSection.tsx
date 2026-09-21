@@ -35,7 +35,7 @@ const JOURNEY_STAGES: JourneyStage[] = [
     tagline: "Full-Stack Production Engineering",
     description:
       "We construct scalable systems with strict typed contracts, sub-50ms query optimization, automated tests, and resilient edge delivery.",
-    milestones: ["Type-Safe Codebase", "Sub-50ms Data Indexing", "Zero-Downtime CI/CD"],
+    milestones: ["Type-Safe Codebase", "Optimized Data Queries", "Zero-Downtime CI/CD"],
   },
   {
     step: "04",
@@ -164,11 +164,7 @@ export default function WhatNVITDoesSection() {
         {/* ── Architectural Cadence Summary ── */}
         <div className="mt-20 pt-8 border-t border-slate-200/60 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-slate-500 dark:text-slate-400">
           <div className="flex items-center gap-2">
-            <span className="text-blue-600 dark:text-blue-400 font-bold">// CADENCE</span>
-            <span>Unbroken Path from Strategy to Production Delivery</span>
-          </div>
-          <div className="tracking-widest uppercase text-[10px]">
-            Understand → Imagine → Build → Evolve
+            <span className="text-slate-400 dark:text-slate-500">Unbroken path from strategy to production delivery.</span>
           </div>
         </div>
       </div>

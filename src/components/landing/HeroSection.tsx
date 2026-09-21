@@ -119,10 +119,7 @@ export default function HeroSection() {
             <circle cx="580" cy="480" r="3" fill="#2563EB" className="opacity-80" />
             <circle cx="580" cy="330" r="3.5" fill="#2563EB" />
 
-            {/* Coordinate Marker Labels */}
-            <text x="428" y="152" fill="currentColor" className="text-[9px] font-mono tracking-wider fill-slate-400 dark:fill-slate-600">NVIT // 01</text>
-            <text x="590" y="152" fill="#2563EB" className="text-[9px] font-mono tracking-wider font-semibold">DIGITAL // NODE</text>
-            <text x="590" y="340" fill="#2563EB" className="text-[9px] font-mono tracking-wider opacity-75">[GAP: TRANSITION]</text>
+
           </svg>
         </motion.div>
       </div>
@@ -189,11 +186,9 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* ── Subdued Bottom Geometric Anchor ── */}
-      <div className="relative z-10 max-w-5xl mx-auto w-full pt-8 flex items-center justify-between text-xs font-mono text-slate-400 dark:text-slate-500 border-t border-slate-200/50 dark:border-white/5">
-        <span className="tracking-widest uppercase">NVIT.SPACE // STUDIO</span>
-        <span className="hidden sm:inline tracking-wider">STRUCTURE OVER DECORATION</span>
-        <span className="tracking-widest uppercase">FOUNDED FOR SCALE</span>
+      {/* ── Subdued Bottom Anchor ── */}
+      <div className="relative z-10 max-w-5xl mx-auto w-full pt-8 flex items-center justify-center text-xs font-mono text-slate-400 dark:text-slate-500 border-t border-slate-200/50 dark:border-white/5">
+        <span className="tracking-widest uppercase">NVIT.SPACE · Digital Architecture Studio</span>
       </div>
     </section>
   );

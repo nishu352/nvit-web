@@ -22,17 +22,15 @@ const PILLARS = [
   },
   {
     icon: Cpu,
-    title: "High-Throughput Indexing & Sub-50ms Latency",
+    title: "High-Throughput Indexing & Query Optimisation",
     description:
-      "From database trigram indexes (pg_trgm) to in-memory caching and debounced network calls, every query is optimized for minimum compute cost and rapid user response.",
-    spec: "Sub-50ms Query Plans • Zero Bloatware",
+      "From database trigram indexes (pg_trgm) to in-memory caching and debounced network calls, every query is engineered for minimum compute cost and rapid user response.",
   },
   {
     icon: ShieldCheck,
-    title: "Production Observability & Clean Ownership",
+    title: "Production Observability & Full Codebase Ownership",
     description:
-      "Containerized deployments, automated test verification, and structured audit logs. Your codebase is clean, documented, and never trapped inside proprietary vendor lock-in.",
-    spec: "Docker • Full Codebase Ownership",
+      "Containerised deployments, structured audit logs, and clean modular architecture. Your codebase is documented, maintainable, and never locked inside proprietary vendor systems.",
   },
 ];
 
@@ -87,9 +85,6 @@ export default function TechnicalCredibilitySection() {
                   <div className="w-9 h-9 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.02] flex items-center justify-center text-slate-700 dark:text-slate-300">
                     <Icon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <span className="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase tracking-widest">
-                    Pillar 0{idx + 1}
-                  </span>
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-heading font-bold text-slate-950 dark:text-white tracking-tight">
@@ -99,10 +94,6 @@ export default function TechnicalCredibilitySection() {
                 <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                   {pillar.description}
                 </p>
-
-                <div className="pt-2 text-[11px] font-mono text-blue-600 dark:text-blue-400">
-                  {pillar.spec}
-                </div>
               </motion.div>
             );
           })}

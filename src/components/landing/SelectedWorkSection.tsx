@@ -54,7 +54,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     engineered:
       "NVIT built a high-speed geospatial indexing engine mapping 19,500+ postal PIN codes to state, district, and circle hubs, cross-referenced with institution-specific lending criteria.",
     result:
-      "Zero-latency public lookup service returning positive/negative serviceability flags across tier-1 and tier-2 financial institutions with sub-10ms query execution.",
+      "Fast public lookup service returning positive/negative serviceability flags across tier-1 and tier-2 financial institutions with confirmed sub-50ms query execution on indexed data.",
     technologies: ["Next.js", "Fastify", "PostgreSQL", "TypeScript"],
     liveHref: "/pincode-check",
     caseStudyHref: "/resources/case-studies/pan-india-pincode-eligibility-engine",
@@ -116,22 +116,12 @@ export default function SelectedWorkSection() {
                   }`}
                 >
                   <div className="relative p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-[#070B12]/80 overflow-hidden">
-                    {/* Header info */}
-                    <div className="flex items-center justify-between pb-4 border-b border-slate-200/70 dark:border-white/10 mb-6">
-                      <span className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400">
-                        // SPEC {study.number}
-                      </span>
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400">
-                        ARCHITECTURE PROOF
-                      </span>
-                    </div>
-
                     {/* Visual Architectural Diagram */}
                     <div className="py-6 flex flex-col items-center justify-center space-y-4">
-                      <div className="w-full h-32 rounded-xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/[0.02] flex items-center justify-center p-4 relative overflow-hidden">
+                      <div className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/[0.02] flex items-center justify-center p-6 relative overflow-hidden">
                         <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.08] bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] bg-[size:16px_16px]" />
                         <div className="relative z-10 text-center">
-                          <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1">
+                          <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-2">
                             {study.category}
                           </span>
                           <span className="text-sm sm:text-base font-heading font-bold text-slate-900 dark:text-white">

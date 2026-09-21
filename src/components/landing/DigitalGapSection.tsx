@@ -51,7 +51,7 @@ export default function DigitalGapSection() {
       fragmentTitle: "Growth Limitations",
       fragmentDesc: "Scaling demands linear hiring and increases operational failure points.",
       unifiedTitle: "Scalable Digital Growth",
-      unifiedDesc: "High-throughput cloud architecture built to absorb 10x transaction volume seamlessly.",
+      unifiedDesc: "Cloud architecture designed for elastic scale — absorbing increased load without proportional cost or operational complexity.",
     },
   ];
 
@@ -95,31 +95,29 @@ export default function DigitalGapSection() {
           <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-11 gap-8 items-center">
-            {/* Left Zone: Traditional Business (Fragmented) */}
             <motion.div
               style={{ opacity: leftOpacity }}
               className="lg:col-span-5 space-y-4"
             >
               <div className="flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-600" />
-                <span className="text-xs font-mono tracking-wider uppercase text-slate-500 dark:text-slate-400 font-semibold">
-                  Traditional Business // Fragmented State
+                <span className="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700" />
+                <span className="text-xs font-mono tracking-wider uppercase text-slate-400 dark:text-slate-500">
+                  Before — Fragmented State
                 </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {TRANSITIONS.map((item) => (
+                {TRANSITIONS.map((item, idx) => (
                   <div
                     key={item.index}
-                    className="p-4 rounded-xl border border-dashed border-slate-300 dark:border-white/10 bg-white/60 dark:bg-white/[0.02]"
+                    className={`p-4 rounded-xl border border-dashed border-slate-200 dark:border-white/[0.06] bg-slate-50/30 dark:bg-white/[0.01] ${
+                      idx % 2 === 1 ? "mt-3" : ""
+                    }`}
                   >
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-[10px] font-mono text-slate-400">[0{item.index}]</span>
-                      <h4 className="text-sm font-heading font-semibold text-slate-800 dark:text-slate-300">
-                        {item.fragmentTitle}
-                      </h4>
-                    </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    <h4 className="text-sm font-heading font-medium text-slate-500 dark:text-slate-500 mb-1">
+                      {item.fragmentTitle}
+                    </h4>
+                    <p className="text-xs text-slate-400 dark:text-slate-600 leading-relaxed">
                       {item.fragmentDesc}
                     </p>
                   </div>

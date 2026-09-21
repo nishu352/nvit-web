@@ -42,8 +42,8 @@ const CAPABILITIES: Record<CapabilityKey, Capability> = {
     description: "Interfaces and experiences designed around how people actually use them.",
     scope: [
       "Customer portals, web applications & client dashboards",
-      "Fluid 60fps micro-interactions with responsive layout grids",
-      "Zero-friction onboarding and authenticated self-service tools",
+      "Smooth, responsive interactions with precise layout grids",
+      "Frictionless onboarding and authenticated self-service tools",
     ],
     link: "/services/web-application-development",
     icon: Layers,
@@ -70,8 +70,8 @@ const CAPABILITIES: Record<CapabilityKey, Capability> = {
     description: "Technology foundations designed to support long-term digital growth.",
     scope: [
       "Resilient cloud infrastructure with CI/CD deployment pipelines",
-      "Real-time operational telemetry, error reporting & audit trails",
-      "Sub-50ms indexed search and modular decoupled codebases",
+      "Real-time operational monitoring, error reporting & audit trails",
+      "Optimised search and modular decoupled codebases",
     ],
     link: "/solutions",
     icon: TrendingUp,
@@ -177,7 +177,7 @@ export default function CapabilitiesEcosystemSection() {
                 NVIT.SPACE
               </span>
               <span className="text-[9px] font-mono tracking-widest text-slate-400 uppercase">
-                ARCHITECTURAL CORE
+                Digital Nexus
               </span>
             </div>
 
@@ -329,7 +329,7 @@ export default function CapabilitiesEcosystemSection() {
               <div className="lg:col-span-7 space-y-4">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-bold">
-                    Active Pillar // {current.name}
+                    {current.name}
                   </span>
                 </div>
 
@@ -354,7 +354,7 @@ export default function CapabilitiesEcosystemSection() {
 
               <div className="lg:col-span-5 pt-4 lg:pt-0 lg:border-l lg:border-slate-100 lg:dark:border-white/5 lg:pl-8 space-y-3">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 font-semibold block">
-                  Engineering Scope
+                  What this includes
                 </span>
                 {current.scope.map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
