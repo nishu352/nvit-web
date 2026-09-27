@@ -49,7 +49,6 @@ export default function CookiePolicyPage() {
           <ul className="space-y-2 list-disc pl-5">
             <li><strong>Theme Preference:</strong> Storing your preferred visual mode (Light / Dark / System) via browser localStorage (`theme`) to avoid visual flicker during navigation.</li>
             <li><strong>Session &amp; Form Security:</strong> Maintaining transient tokens and CSRF verification state during inquiry and feedback form submissions.</li>
-            <li><strong>Welcome Modal State:</strong> Storing a temporary timestamp to avoid repeatedly displaying the introduction banner during active browsing sessions.</li>
           </ul>
         </section>
 

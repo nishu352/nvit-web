@@ -3,7 +3,6 @@
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import WelcomeExperience from "@/components/landing/WelcomeExperience";
 import HeroSection from "@/components/landing/HeroSection";
 import VisionSection from "@/components/landing/VisionSection";
 import DigitalGapSection from "@/components/landing/DigitalGapSection";
@@ -19,9 +18,6 @@ import FinalCtaSection from "@/components/landing/FinalCtaSection";
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors duration-300">
-      {/* 00 — First-Visit Lightweight Welcome Experience */}
-      <WelcomeExperience />
-
       {/* Primary Clean Navigation */}
       <Navbar />
 
