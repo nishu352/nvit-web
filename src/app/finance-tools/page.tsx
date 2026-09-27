@@ -378,6 +378,13 @@ export default function FinanceToolsPage() {
             ))}
           </div>
         </section>
+
+        {/* Informational Disclaimer Banner */}
+        <div className="p-4 rounded-2xl bg-zinc-100 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 text-[11px] text-zinc-500 dark:text-zinc-400 space-y-1">
+          <p className="leading-relaxed">
+            <strong>Informational Notice:</strong> Financial calculators and policy check utilities on NVIT.SPACE provide mathematical estimates and compiled informational guidelines only. Actual interest rates, repayment tenures, loan eligibility, and employer categorization vary by lender and individual borrower profile. NVIT.SPACE is not an authorized lender or financial advisor and does not guarantee loan sanctions or credit approval.
+          </p>
+        </div>
       </main>
 
       <Footer />

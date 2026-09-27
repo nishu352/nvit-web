@@ -110,7 +110,7 @@ export default function CompanyCheckPage() {
               Company Category Checker
             </h1>
             <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-medium">
-              Inspect real-time employer company tiering (CAT A, CAT B, Superprime, Unlisted) across top Indian partner banks and NBFCs directly from the master policy index.
+              Inspect employer company tiering indicators (CAT A, CAT B, Superprime, Unlisted) compiled from major Indian commercial bank and NBFC underwriting policy matrices.
             </p>
           </div>
 
@@ -367,7 +367,7 @@ export default function CompanyCheckPage() {
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <h4 className="text-[11px] font-black uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
-                          Partner Lender Policy Categorization ({filteredBanks.length})
+                          Institutional Lender Policy Categorization ({filteredBanks.length})
                         </h4>
                         <div className="flex items-center gap-3 text-xs font-bold">
                           <span className="text-emerald-500 font-black">
@@ -442,7 +442,7 @@ export default function CompanyCheckPage() {
 
                       {filteredBanks.length === 0 && (
                         <div className="p-8 text-center rounded-2xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/10 text-xs font-semibold text-zinc-500">
-                          No partner lenders match the selected &quot;{bankFilter}&quot; filter for this company.
+                          No institutional lenders match the selected &quot;{bankFilter}&quot; filter for this company.
                         </div>
                       )}
                     </div>
@@ -465,58 +465,131 @@ export default function CompanyCheckPage() {
               Understanding Corporate Employer Category Tiering in Banking
             </h2>
             <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-              When applying for unsecured personal loans, corporate credit cards, or pre-approved lines of credit, commercial lenders evaluate your employer&apos;s institutional tiering alongside your personal credit score:
+              Commercial banks and NBFCs often reference internal corporate employer directories when evaluating unsecured retail loan applications alongside individual credit bureau scores:
             </p>
           </div>
 
-          {/* 4 Category Explanation Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Section A & B: Tool Scope & Normalization Methodology */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
-              <div className="flex items-center justify-between">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-200/80 dark:border-emerald-800/40">Tier 1 / Superprime</span>
+              <div className="flex items-center gap-2 text-xs font-bold text-zinc-900 dark:text-white">
+                <span className="w-2 h-2 rounded-full bg-blue-500" />
+                <span>What This Tool Checks</span>
               </div>
-              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Category A (Superprime)</h3>
               <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                Top Fortune 500 multinationals, Tier-1 IT leaders, central government bodies, and premier PSUs. Employees qualify for the lowest benchmark interest rates (typically 10.5%–11.5%), highest borrowing caps (up to ₹40–50 Lakhs), and maximum FOIR thresholds.
+                The Company Checker searches compiled reference records to indicate whether an employer entity appears on institutional lender policy lists. It displays cataloged policy tiers (such as Category A, B, C, or Unlisted) compiled from lending guideline references.
               </p>
             </div>
 
             <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
-              <div className="flex items-center justify-between">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded-full border border-blue-200/80 dark:border-blue-800/40">Tier 2 / Prime</span>
+              <div className="flex items-center gap-2 text-xs font-bold text-zinc-900 dark:text-white">
+                <span className="w-2 h-2 rounded-full bg-indigo-500" />
+                <span>How Matching &amp; Normalization Works</span>
               </div>
-              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Category B (Prime)</h3>
               <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                Established mid-cap organizations, publicly listed Indian enterprises, and large healthcare or educational institutions. Borrowers receive competitive interest rates and standard digital processing pipelines.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
-              <div className="flex items-center justify-between">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-full border border-amber-200/80 dark:border-amber-800/40">Tier 3 / Growth</span>
-              </div>
-              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Category C &amp; D</h3>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                Small to medium private limited companies, regional manufacturing entities, or early-stage ventures. Lenders may request extended bank statements or require higher minimum take-home salary benchmarks.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
-              <div className="flex items-center justify-between">
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded-full border border-rose-200/80 dark:border-rose-800/40">Open Market</span>
-              </div>
-              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Unlisted / Emerging</h3>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                Entities not yet cataloged in a lender&apos;s pre-approved employer database. Loan applications are processed through manual underwriting channels, where salary consistency, employer vintage, and banking habits determine approval.
+                Search queries are processed using PostgreSQL trigram similarity indexing and string normalization. Entity suffixes (such as &quot;Pvt Ltd&quot;, &quot;Limited&quot;, &quot;LLP&quot;, and &quot;Inc&quot;) and common punctuation marks are normalized to locate matching employer records across spelling variations.
               </p>
             </div>
           </div>
 
-          {/* Frequently Asked Questions */}
+          {/* Section C: 4 Category Explanation Cards (What Category Means) */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+              Employer Category Tiers Explained
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-200/80 dark:border-emerald-800/40">Tier 1 / Superprime</span>
+                </div>
+                <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Category A (Superprime)</h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Typically includes large multinational enterprises, premier public sector undertakings, and major listed corporations with strong corporate track records. Some institutions may offer preferential rate bands or higher internal borrowing caps to applicants from these employers, subject to full credit evaluation.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded-full border border-blue-200/80 dark:border-blue-800/40">Tier 2 / Prime</span>
+                </div>
+                <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Category B (Prime)</h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Established mid-cap organizations, prominent regional corporations, and institutional healthcare or educational bodies. Borrowers are typically processed through standard underwriting channels with competitive product parameters.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-full border border-amber-200/80 dark:border-amber-800/40">Tier 3 / Growth</span>
+                </div>
+                <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Category C &amp; D</h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Small to medium enterprises, regional businesses, or emerging ventures. Lenders may review additional verification items, such as longer banking history or conservative debt-to-income benchmarks.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded-full border border-rose-200/80 dark:border-rose-800/40">Open Market</span>
+                </div>
+                <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Unlisted / Emerging</h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  Entities not explicitly indexed in a lender&apos;s corporate master list. Applications are evaluated through open-market underwriting based on individual income stability, salary credit verification, and credit history.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section D & E: What Results Do NOT Mean & Illustrative Financial Context */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm border-l-4 border-l-amber-500">
+              <h3 className="text-xs font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                <span>What Category Results Do NOT Mean</span>
+              </h3>
+              <ul className="text-xs text-zinc-600 dark:text-zinc-400 space-y-2 font-medium list-disc list-inside">
+                <li>Does NOT guarantee loan approval or pre-sanctioned credit status.</li>
+                <li>Does NOT guarantee a specific interest rate, fee waiver, or loan quantum.</li>
+                <li>Does NOT guarantee expedited turnaround or automated document waivers.</li>
+                <li>An &quot;Unlisted&quot; result does NOT mean loan rejection or an unfavorable credit rating.</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm border-l-4 border-l-blue-500">
+              <h3 className="text-xs font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                <span>Illustrative Financial Context</span>
+              </h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                <em>Illustrative example only — actual interest rates, loan amounts, eligibility criteria and processing times vary by lender and borrower.</em> For instance, while industry marketing often showcases illustrative unsecured rates or processing timelines for prime corporate employees, actual sanction terms depend entirely on individual underwriting, monthly take-home salary, credit score history, and institutional credit policy.
+              </p>
+            </div>
+          </div>
+
+          {/* Section F & G: Limitations & Data Context */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+              <h3 className="text-xs font-bold text-zinc-900 dark:text-white">
+                Platform Limitations
+              </h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                Institutional employer lists are updated periodically by lenders. Internal revisions or policy changes made by a bank&apos;s credit committee may not be immediately reflected. Search results reflect reference classifications rather than live credit bureau or core banking systems.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-apple space-y-3 shadow-sm">
+              <h3 className="text-xs font-bold text-zinc-900 dark:text-white">
+                Data &amp; Source Transparency
+              </h3>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                Classifications are compiled from institutional lender policy circulars, corporate master catalogs, and public underwriting references. NVIT.SPACE is an independent technology utility and is not an agent, loan broker, or affiliate of any financial institution.
+              </p>
+            </div>
+          </div>
+
+          {/* Frequently Asked Questions (Section H) */}
           <div className="space-y-4 pt-4">
             <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
               Frequently Asked Questions About Company Category Checks
@@ -525,28 +598,28 @@ export default function CompanyCheckPage() {
             <div className="space-y-3.5">
               <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
                 <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
-                  Can I still get a personal loan if my employer is marked &quot;Unlisted&quot;?
+                  Can an applicant get a personal loan if their employer is marked &quot;Unlisted&quot;?
                 </h4>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                  Yes. An &quot;Unlisted&quot; categorization simply means the lender does not have a pre-negotiated corporate program with your employer. Most banks and NBFCs process unlisted company employees through their open-market channel, assessing your monthly salary credits, CIBIL score (750+ recommended), and banking discipline.
+                  Yes. An &quot;Unlisted&quot; categorization simply means the lender does not maintain an active corporate tie-up or pre-indexed policy entry for that organization. Commercial lenders and NBFCs process unlisted company employees through open-market channels, evaluating individual income stability, salary credits, and overall credit history.
                 </p>
               </div>
 
               <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
                 <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
-                  Why is my company categorized as CAT-A in one bank but CAT-B or Unlisted in another?
+                  Why is a company categorized as CAT-A in one bank but CAT-B or Unlisted in another?
                 </h4>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                  Every financial institution defines its own internal risk parameters, corporate relationship portfolios, and salary account tie-ups. A bank that manages your employer&apos;s corporate payroll accounts will typically place your company in a higher category than a competitor with no prior relationship.
+                  Each lending institution establishes its own internal risk models, commercial relationships, and payroll portfolio partnerships. A bank that manages an employer&apos;s corporate payroll accounts will typically place that organization in a higher internal category than an institution without a banking relationship.
                 </p>
               </div>
 
               <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
                 <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
-                  Does employer tiering affect loan processing speed?
+                  Does employer tiering affect loan processing workflows?
                 </h4>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                  Yes. Applications from Category-A and Superprime organizations often qualify for automated Straight-Through Processing (STP), digital KYC, and instant document waivers, resulting in loan disbursals within 4 to 24 hours.
+                  Some lenders apply automated straight-through processing workflows or streamlined document verification for certain categorized corporate employees. However, processing times vary by lender, applicant documentation completeness, and verification requirements.
                 </p>
               </div>
 
@@ -555,7 +628,7 @@ export default function CompanyCheckPage() {
                   How often do lenders revise their corporate employer lists?
                 </h4>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                  Bank credit committees review corporate master lists quarterly or biannually, upgrading companies that demonstrate steady revenue growth and headcount expansion, or demoting firms undergoing financial restructuring.
+                  Credit committees review corporate employer lists periodically, adjusting classifications based on corporate financial performance, market capitalization, credit rating changes, and internal portfolio risk parameters.
                 </p>
               </div>
             </div>
@@ -563,9 +636,9 @@ export default function CompanyCheckPage() {
 
           {/* Informational Notice Callout */}
           <div className="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
-            <span className="font-bold text-zinc-800 dark:text-zinc-200 block">Underwriting Disclaimer:</span>
+            <span className="font-bold text-zinc-800 dark:text-zinc-200 block">Underwriting &amp; Independence Disclaimer:</span>
             <p className="leading-relaxed">
-              Company categorization statuses displayed on this page are compiled for informational and estimation guidance. Institutional categories, loan rates, and maximum exposure limits are subject to change by respective lending institutions without prior notice. Final loan sanctions depend on individual underwriting, income verification, and credit bureau evaluation.
+              Company categorization statuses displayed on this page are compiled for informational and estimation guidance only. NVIT.SPACE is an independent technology platform and is not an authorized lender, banking partner, or financial advisory service. Institutional categories, loan rates, eligibility criteria, and exposure limits are subject to change by respective lending institutions without prior notice. Categorization status does not guarantee loan approval, credit limits, interest rates, or disbursal timelines. Final credit decisions rest exclusively with the respective lending institution following formal underwriting.
             </p>
           </div>
         </section>

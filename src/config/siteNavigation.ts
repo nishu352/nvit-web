@@ -803,12 +803,12 @@ export const FINANCE_TOOLS_CONFIG: FinanceToolItem[] = [
     description: "Calculate monthly installments for unsecured personal loans across tenures from 1 to 7 years.",
     heroTitle: "Personal Loan EMI Calculator",
     heroSubtitle: "Accurately compute monthly installments and total borrowing costs for unsecured personal loans.",
-    formulaDescription: "Calculates reducing-balance EMI tailored for typical personal loan interest brackets (10.5% to 24% p.a.).",
+    formulaDescription: "Calculates reducing-balance EMI across illustrative personal loan interest brackets (such as 10.5% to 24% p.a.).",
     keyBenefits: [
       "Tailored for short to medium tenure borrowings (12 to 84 months)",
       "Helps determine affordable monthly payout before applying",
       "Compare interest variations between fixed and floating bank rates",
-      "Check company category eligibility across top partner banks",
+      "Check company category policy tiers across major lending institutions",
     ],
   },
   {
@@ -847,13 +847,13 @@ export const FINANCE_TOOLS_CONFIG: FinanceToolItem[] = [
     badge: "Eligibility",
     description: "Estimate maximum eligible loan amount based on net monthly salary, existing EMIs, and FOIR guidelines.",
     heroTitle: "Loan Eligibility & Borrowing Power Calculator",
-    heroSubtitle: "Determine the maximum loan amount banks will approve based on your monthly income and current obligations.",
-    formulaDescription: "Uses standard Fixed Obligation to Income Ratio (FOIR 40% - 65%) according to bank underwriting norms.",
+    heroSubtitle: "Estimate potential borrowing capacity and manageable loan amounts based on your monthly income and existing obligations.",
+    formulaDescription: "Models standard Fixed Obligation to Income Ratio (FOIR 40% to 65%) based on common institutional underwriting frameworks.",
     keyBenefits: [
-      "Estimates realistic approval ceilings before filing applications",
+      "Estimates illustrative borrowing capacity benchmarks before filing applications",
       "Incorporates existing credit card & personal loan obligations",
       "Shows impact of adding a co-applicant to increase borrowing capacity",
-      "Instant integration with bank-specific category policy guidelines",
+      "Reference policy tier guidelines across institutional lenders",
     ],
   },
   {

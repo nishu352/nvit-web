@@ -353,7 +353,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         title: "Financial Policy & Broker CRM",
         targetAudience: "Loan Distribution Agencies & DSAs",
-        challenge: "Loan executives losing deals due to slow manual policy checks across 10+ partner banking lists.",
+        challenge: "Loan executives losing deals due to slow manual policy checks across 10+ institutional banking lists.",
         deliveredSolution: "Custom web app with instant multi-bank company categorization matching, 19,500+ pincode check, and automated lead allocation.",
       },
       {

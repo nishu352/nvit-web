@@ -81,7 +81,7 @@ export default function LoanApplyPage() {
             Apply for Multi-Bank Loan
           </h1>
           <p className="text-slate-300 max-w-2xl text-xs sm:text-sm leading-relaxed font-semibold">
-            Fill out your application details to receive pre-approval quotes from 30+ partner banks & NBFCs with zero obligation.
+            Submit your application parameters to explore financing options across commercial lenders and NBFC policy matrices.
           </p>
         </div>
       </div>

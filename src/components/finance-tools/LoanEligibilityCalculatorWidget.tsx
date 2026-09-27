@@ -250,7 +250,7 @@ export default function LoanEligibilityCalculatorWidget() {
                 <span>Existing EMIs Exceed FOIR Limit</span>
               </div>
               <p>
-                Your existing ongoing EMIs ({formatINR(existingEmis)}) exceed {foir}% of your monthly take-home income ({formatINR(monthlyIncome * (foir / 100))}). Closing existing debts will restore loan eligibility.
+                Your existing ongoing EMIs ({formatINR(existingEmis)}) exceed {foir}% of your monthly take-home income ({formatINR(monthlyIncome * (foir / 100))}). Reducing or closing existing obligations can improve estimated borrowing capacity.
               </p>
             </div>
           ) : (
@@ -281,7 +281,7 @@ export default function LoanEligibilityCalculatorWidget() {
               </div>
 
               <div className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/5 border border-slate-200/70 dark:border-white/5 text-[11px] text-slate-500 leading-relaxed font-medium">
-                💡 <strong>Tip:</strong> Adding an earning co-applicant (spouse or parent) combines both monthly incomes, significantly expanding your total borrowing limit.
+                💡 <strong>Planning Tip:</strong> Adding an eligible earning co-applicant (such as a spouse or parent) combines recognized household income, which may increase modeled borrowing capacity depending on lender policy.
               </div>
             </>
           )}

@@ -27,7 +27,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     engineered:
       "NVIT architected a specialized high-speed categorization engine utilizing PostgreSQL trigram indexing (pg_trgm), normalized company alias tables, and an asynchronous Fastify API layer. Queries are debounced on the client side to minimize server strain.",
     result:
-      "Fast autocomplete search across hundreds of thousands of registered corporate employer entities, with a unified view displaying partner bank policy tiers in real time.",
+      "Fast autocomplete search across hundreds of thousands of registered corporate employer entities, with a unified view displaying institutional bank policy tiers in real time.",
     technologies: ["PostgreSQL (pg_trgm)", "Fastify", "TypeScript", "Next.js"],
     liveHref: "/company-check",
     caseStudyHref: "/resources/case-studies/enterprise-company-category-checker",

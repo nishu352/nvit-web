@@ -169,14 +169,14 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: "Multi-Bank Employer Categorization", tag: "Company Match", description: "Instant fuzzy search matching borrower employers across Cat A, B, C, and D lender tier lists." },
       { title: "Document AI Bank Statement Parser", tag: "Neural OCR", description: "Extracts transaction tables, average monthly balances, and salary credits from PDF statements in seconds." },
       { title: "Executive Round-Robin Lead Routing", tag: "DSA Operations", description: "Instant lead allocation to sales executives with instant WhatsApp notification dispatch." },
-      { title: "Lender API Integration Gateway", tag: "Disbursal", description: "Secure API bridges forwarding qualified applications directly into partner banking LOS systems." },
+      { title: "Lender API Integration Gateway", tag: "Disbursal", description: "Secure API bridges forwarding qualified applications directly into client banking LOS systems." },
     ],
     modules: [
       { step: "01", title: "Borrower Ingestion Funnel", description: "Mobile-friendly inquiry form capturing loan amount, purpose, employment type, and pincode." },
       { step: "02", title: "Instant Policy & Pincode Check", description: "Engine cross-references pincode serviceability and company category across 10+ bank matrices." },
       { step: "03", title: "Document Upload & Neural OCR", description: "Borrower uploads PDF bank statement and salary slip; AI parses financial metrics instantly." },
       { step: "04", title: "Underwriter Evaluation Dashboard", description: "Lending executive reviews standardized income analysis, credit score, and policy fit." },
-      { step: "05", title: "Lender Forwarding & Tracking", description: "Application dispatched to partner bank API or assigned to DSA field agent with live tracking." },
+      { step: "05", title: "Lender Forwarding & Tracking", description: "Application dispatched to configured lender API or assigned to DSA field agent with live tracking." },
       { step: "06", title: "Disbursal & WhatsApp Notifications", description: "Automated customer messaging updating approval status and scheduled EMI repayments." },
     ],
     techGroups: [
@@ -209,7 +209,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ],
     faqs: [
       { question: "Does NVIT.SPACE approve loans or provide lending capital?", answer: "No. NVIT.SPACE provides the software technology that powers digital lending platforms, broker networks, and DSAs. We do not provide credit or make credit decisions." },
-      { question: "How does the pincode eligibility check work across multiple banks?", answer: "Our platform indexes 19,500+ Indian pincodes with composite B-Tree database indexes, cross-referencing your partner banking lists with fast indexed query execution to identify which lenders service that exact location." },
+      { question: "How does the pincode eligibility check work across multiple banks?", answer: "Our platform indexes 19,500+ Indian pincodes with composite B-Tree database indexes, cross-referencing configured institutional banking lists with fast indexed query execution to identify which lenders service that exact location." },
       { question: "Can borrower leads be automatically distributed to sales agents via WhatsApp?", answer: "Yes. Inbound applications are captured seamlessly, allocated via weighted round-robin rules, and dispatched directly to the assigned executive's WhatsApp." },
       { question: "How accurate is the Document AI bank statement parser?", answer: "Our neural OCR pipeline provides high extraction accuracy on multi-page PDF bank statements, outputting structured JSON transaction tables with automatic debit/credit balance reconciliation." },
     ],

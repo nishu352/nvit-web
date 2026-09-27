@@ -512,7 +512,7 @@ export const BLOG_ARTICLES: Record<string, BlogArticle> = {
       {
         heading: "1. The FOIR Underwriting Ratio",
         paragraphs: [
-          "Underwriters evaluate loan eligibility using the Fixed Obligation to Income Ratio (FOIR). Most Indian banks allow 50% to 65% of your net monthly income to be committed toward all loan EMIs combined.",
+          "Underwriters commonly evaluate debt capacity using the Fixed Obligation to Income Ratio (FOIR). Many Indian lending institutions permit approximately 40% to 65% of net monthly income to be committed toward total monthly debt obligations, though acceptable ratios vary significantly by lender, income slab, and credit profile.",
         ],
         takeaway: "Your maximum loan capacity equals your disposable EMI margin reversed through the EMI formula.",
       },
@@ -525,7 +525,7 @@ export const BLOG_ARTICLES: Record<string, BlogArticle> = {
       { title: "Loan Origination Platforms", href: "/solutions/loan-finance-platforms", badge: "Lending Tech" },
     ],
     faqs: [
-      { question: "How can I quickly boost my loan eligibility?", answer: "Close existing credit card debts or small personal loans to free up monthly FOIR capacity, or add an earning co-applicant." },
+      { question: "How can an applicant improve estimated borrowing capacity?", answer: "Reducing revolving credit card balances, clearing smaller outstanding debts to expand monthly disposable capacity, or adding an eligible earning co-applicant can improve modeled loan capacity under many lender frameworks." },
     ],
     metaTitle: "How Loan Eligibility Is Calculated: FOIR & Salary | NVIT.SPACE",
     metaDescription: "Understand how bank underwriters calculate loan eligibility using FOIR, monthly salary, and existing debt obligations to estimate credit limits.",
@@ -767,7 +767,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     title: "Engineering a High-Performance Pan-India Pincode Eligibility Engine",
     badge: "Database & API Architecture",
     clientType: "Fintech & Lending Infrastructure",
-    challenge: "Lending underwriters and sales executives spent hours manually searching disconnected Excel spreadsheets from multiple partner banks to verify whether a borrower's 6-digit PIN code was serviceable, causing severe loan processing bottlenecks and high customer drop-off.",
+    challenge: "Lending underwriters and sales executives spent hours manually searching disconnected Excel spreadsheets from multiple lending institutions to verify whether a borrower's 6-digit PIN code was serviceable, causing severe loan processing bottlenecks and high customer drop-off.",
     context: "In Indian retail lending, every bank maintains distinct serviceability lists covering varying subsets of the country's 19,500+ postal PIN codes. Merging and querying these disparate lists in real time during customer onboarding was an operational hurdle.",
     solution: "NVIT.SPACE engineered a centralized high-speed Pincode Eligibility Engine backed by normalized PostgreSQL relational tables and composite B-Tree indexes. The engine enriches every pincode with state, district, and office location data while cross-referencing multi-bank serviceability policies with fast indexed query execution.",
     architectureHighlights: [
@@ -777,7 +777,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       "Batch CSV ingestion pipeline enabling non-technical operators to upload updated monthly bank policy sheets.",
     ],
     keyFeatures: [
-      "Instant 6-digit PIN code serviceability validation across multiple partner banking institutions.",
+      "Instant 6-digit PIN code serviceability validation across multiple institutional lending frameworks.",
       "Automatic geographical enrichment providing verified City, District, State, and Post Office names.",
       "Administrative CSV batch upload console with automated schema validation and deduplication.",
       "Public-facing client lookup utility embedded directly on NVIT.SPACE web platform.",
@@ -818,8 +818,8 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     architectureHighlights: [
       "Trigram and ILIKE prefix search indexing hundreds of thousands of registered corporate employer entities.",
       "Fast autocomplete API endpoint with debounced client-side queries.",
-      "Multi-bank category aggregation displaying Cat A, B, C, or D status across all partner banks in a unified card.",
-      "Direct integration with borrower application funnels to apply instant interest rate discounts.",
+      "Multi-bank category aggregation displaying Cat A, B, C, or D status across major lenders in a unified card.",
+      "Direct integration with borrower application funnels to reference indicative interest rate tiers.",
     ],
     keyFeatures: [
       "Real-time autocomplete suggestions as user types company name.",

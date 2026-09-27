@@ -199,7 +199,7 @@ export default function FinanceToolDetailView({ tool }: Props) {
           <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-start gap-3">
             <ShieldAlert className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
-              <strong>Estimate Disclaimer:</strong> Calculator results are mathematical estimates for informational and planning purposes only. Actual loan terms, interest rates, processing fees, eligibility, and repayment schedules vary by lender and individual borrower profile.
+              <strong>Informational Estimate Disclaimer:</strong> Calculations and repayment projections shown on this page are mathematical illustrations for educational and planning purposes only. Actual interest rates, applicable fees, loan tenures, and credit eligibility vary by lending institution and individual borrower credit assessment. Users should verify current terms, applicable charges, and product conditions directly with the relevant lender. NVIT.SPACE provides independent informational utilities and does not provide financial advice, loan brokerage, or guarantee credit approval.
             </p>
           </div>
         </section>
