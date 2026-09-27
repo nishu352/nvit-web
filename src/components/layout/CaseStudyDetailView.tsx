@@ -105,20 +105,25 @@ export default function CaseStudyDetailView({ caseStudy }: Props) {
       {/* ── CASE STUDY CONTENT ───────────────────────────────────────── */}
       <main className="flex-1 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full space-y-12">
         {/* Technical Highlights / Metrics */}
-        <section className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {caseStudy.technicalMetrics.map((metric, i) => (
-            <div
-              key={i}
-              className="p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 text-center space-y-1 shadow-sm"
-            >
-              <div className="text-base sm:text-lg font-bold font-mono text-slate-900 dark:text-white">
-                {metric}
+        <section className="space-y-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {caseStudy.technicalMetrics.map((metric, i) => (
+              <div
+                key={i}
+                className="p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 text-center space-y-1 shadow-sm"
+              >
+                <div className="text-base sm:text-lg font-bold font-mono text-slate-900 dark:text-white">
+                  {metric}
+                </div>
+                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block font-mono">
+                  Internal Benchmark
+                </span>
               </div>
-              <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block font-mono">
-                Engineering Benchmark
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
+          <p className="text-[11px] text-slate-500 dark:text-slate-400 italic text-center leading-relaxed">
+            * Note on engineering benchmarks: Latency measurements reflect internal benchmark testing environments under controlled loads with optimized B-Tree database indexes and API response caching. Actual production performance varies based on hardware provisioning, network conditions, payload size, and concurrent system load.
+          </p>
         </section>
 
         {/* Challenge & Context */}

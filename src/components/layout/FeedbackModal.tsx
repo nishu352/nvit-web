@@ -336,7 +336,7 @@ export default function FeedbackModal({
                             type="tel"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
-                            placeholder="+91 98765 43210"
+                            placeholder="Enter your phone number"
                             className={inputClass}
                           />
                         </div>

@@ -424,7 +424,7 @@ export default function FinanceToolDetailView({ tool }: Props) {
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="Nishant Sharma"
+                        placeholder="Enter your full name"
                         className="w-full h-11 px-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:border-blue-500 focus:outline-none"
                       />
                     </div>
@@ -435,7 +435,7 @@ export default function FinanceToolDetailView({ tool }: Props) {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="you@company.com"
+                        placeholder="Enter your business email"
                         className="w-full h-11 px-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:border-blue-500 focus:outline-none"
                       />
                     </div>
@@ -447,7 +447,7 @@ export default function FinanceToolDetailView({ tool }: Props) {
                       type="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="+91 98765 43210"
+                      placeholder="Enter your phone number"
                       className="w-full h-11 px-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:border-blue-500 focus:outline-none"
                     />
                   </div>

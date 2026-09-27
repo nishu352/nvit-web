@@ -10,6 +10,8 @@ import DigitalGapSection from "@/components/landing/DigitalGapSection";
 import WhatNVITDoesSection from "@/components/landing/WhatNVITDoesSection";
 import CapabilitiesEcosystemSection from "@/components/landing/CapabilitiesEcosystemSection";
 import SelectedWorkSection from "@/components/landing/SelectedWorkSection";
+import FreeToolsHomeSection from "@/components/landing/FreeToolsHomeSection";
+import ResourcesHomeSection from "@/components/landing/ResourcesHomeSection";
 import TechnicalCredibilitySection from "@/components/landing/TechnicalCredibilitySection";
 import PhilosophySection from "@/components/landing/PhilosophySection";
 import FinalCtaSection from "@/components/landing/FinalCtaSection";
@@ -17,7 +19,7 @@ import FinalCtaSection from "@/components/landing/FinalCtaSection";
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors duration-300">
-      {/* 00 — First-Visit Lightweight Welcome Experience (1-hr localStorage cache, skip button, reduced-motion aware) */}
+      {/* 00 — First-Visit Lightweight Welcome Experience */}
       <WelcomeExperience />
 
       {/* Primary Clean Navigation */}
@@ -31,25 +33,31 @@ export default function HomePage() {
         {/* 02 — Vision: "Every Business Deserves a Place in the Digital Future." */}
         <VisionSection />
 
-        {/* 03 — The Digital Gap: Signature Transition (Traditional Business → Digital Gap → Digital Platform) */}
+        {/* 03 — The Digital Gap: Traditional Business → Digital Platform */}
         <DigitalGapSection />
 
-        {/* 04 — What NVIT Does: "We Turn Business Ideas Into Digital Experiences." (Understand → Imagine → Build → Evolve) */}
+        {/* 04 — What NVIT Does: Software Development & Business Systems */}
         <WhatNVITDoesSection />
 
-        {/* 05 — Capabilities / Digital Ecosystem (Presence / Experiences / Systems / Growth) */}
+        {/* 05 — Capabilities / Digital Ecosystem */}
         <CapabilitiesEcosystemSection />
 
-        {/* 06 — Proof / Selected Work: Problem → Engineered → Result (Real Production Software) */}
+        {/* 06 — Interactive Utilities & Banking Data APIs */}
+        <FreeToolsHomeSection />
+
+        {/* 07 — Proof / Selected Work: Engineered Production Systems */}
         <SelectedWorkSection />
 
-        {/* 07 — Technical Credibility: Serious Engineering. Uncompromising Standards. */}
+        {/* 08 — Educational Resources & Technical Guides */}
+        <ResourcesHomeSection />
+
+        {/* 09 — Technical Credibility */}
         <TechnicalCredibilitySection />
 
-        {/* 08 — Philosophy: "Technology Should Feel Simple. The Possibilities Should Feel Limitless." */}
+        {/* 10 — Philosophy */}
         <PhilosophySection />
 
-        {/* 09 — Final CTA: "Your Next Chapter Is Digital." / "Let's Build Your Digital Future." */}
+        {/* 11 — Final CTA */}
         <FinalCtaSection />
       </main>
 
@@ -58,3 +66,4 @@ export default function HomePage() {
     </div>
   );
 }
+

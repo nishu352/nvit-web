@@ -306,7 +306,7 @@ export default function ServicePageTemplate({
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="Nishant Sharma"
+                        placeholder="Enter your full name"
                         className="w-full h-11 px-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 text-xs text-zinc-900 dark:text-white focus:border-zinc-900 dark:focus:border-white/40 focus:outline-none"
                       />
                     </div>
@@ -329,7 +329,7 @@ export default function ServicePageTemplate({
                       type="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="+91 98765 43210"
+                      placeholder="Enter your phone number"
                       className="w-full h-11 px-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 text-xs text-zinc-900 dark:text-white focus:border-zinc-900 dark:focus:border-white/40 focus:outline-none"
                     />
                   </div>
