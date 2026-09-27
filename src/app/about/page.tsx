@@ -236,13 +236,13 @@ export default function AboutPage() {
             <div className="flex items-center gap-2">
               <Building2 className="w-4 h-4 text-zinc-500" />
               <h3 className="text-sm font-bold text-zinc-900 dark:text-white">
-                Corporate Registration &amp; Registered Office
+                Business &amp; Identity Disclosure
               </h3>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-medium text-zinc-600 dark:text-zinc-400">
               <div>
-                <span className="text-zinc-400 dark:text-zinc-500 block text-[11px] font-bold">Legal Entity:</span>
+                <span className="text-zinc-400 dark:text-zinc-500 block text-[11px] font-bold">Platform Brand:</span>
                 <strong className="text-zinc-900 dark:text-white">{companyName}</strong>
               </div>
               {cms?.company?.cin && (

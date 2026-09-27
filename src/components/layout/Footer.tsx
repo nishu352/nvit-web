@@ -236,7 +236,7 @@ export default function Footer() {
                 Have a Complaint, Feedback, or Service Grievance?
               </h4>
               <p className="text-[11px] text-slate-500 dark:text-slate-400">
-                Directly routed to <span className="font-semibold text-blue-600 dark:text-blue-400">support@nvit.space</span> and our administrative oversight desk for guaranteed 24-hour review.
+                Directly routed to <span className="font-semibold text-blue-600 dark:text-blue-400">support@nvit.space</span> and our administrative oversight desk. We aim to respond within one business day.
               </p>
             </div>
           </div>

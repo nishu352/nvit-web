@@ -148,10 +148,10 @@ export default function ResourcesHubPage() {
           <section className="space-y-6">
             <MotionReveal>
               <SectionHeading
-                badge="Client Transformations"
+                badge="Selected Engineering Work"
                 badgeIcon={<Award className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />}
                 badgeVariant="emerald"
-                title="Verified Client Case Studies"
+                title="Engineering Case Studies"
                 subtitle="Detailed breakdowns of enterprise problems, engineering decisions, and measurable outcomes:"
               />
             </MotionReveal>
