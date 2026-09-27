@@ -150,7 +150,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     overviewSummary: "Corporate web portals require rigorous security, role-governed content workflows, multi-stakeholder transparency, and global CDN resilience. NVIT.SPACE delivers enterprise-grade corporate web platforms that uphold corporate governance while delivering high performance.",
     overviewDetailedParagraphs: [
       "Large corporations must balance multiple audiences: institutional investors, regulatory bodies, enterprise clients, and prospective talent. We architect modular corporate platforms that separate public investor disclosures, regulatory press releases, and commercial service offerings into structured, easily navigable portals.",
-      "Deployed on global edge CDNs with automated DDoS mitigation, enterprise SSL termination, and strict privacy cookie compliance, our corporate platforms maintain 99.99% uptime during high-traffic financial disclosure announcements.",
+      "Deployed on global edge CDNs with automated DDoS mitigation, enterprise SSL termination, and strict privacy cookie compliance, our corporate platforms maintain high availability during high-traffic financial disclosure announcements.",
     ],
     targetAudienceHeadline: "Engineered for Corporate Organizations & Holding Companies:",
     targetAudienceList: [
@@ -193,7 +193,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { number: "04", title: "Full-Stack Implementation", description: "Engineering modular components with TypeScript, edge caching, and localized data stores.", deliverable: "Corporate Web Platform Codebase" },
       { number: "05", title: "Security & Accessibility Audit", description: "Conducting vulnerability pen-testing, SSL configuration, and WCAG accessibility compliance verification.", deliverable: "Compliance & Security Audit Report" },
       { number: "06", title: "Edge Deployment & CDN Routing", description: "Deploying across globally distributed edge nodes with automated failover routing.", deliverable: "Live Enterprise Production Launch" },
-      { number: "07", title: "SLA Support & Disclosure Readiness", description: "24/7 emergency response team and scheduled server maintenance for financial calendar disclosures.", deliverable: "Enterprise 99.99% Uptime SLA" },
+      { number: "07", title: "SLA Support & Disclosure Readiness", description: "24/7 emergency response team and scheduled server maintenance for financial calendar disclosures.", deliverable: "Enterprise High-Availability Support" },
     ],
     benefits: [
       { title: "Institutional Prestige", description: "Impeccable visual execution that inspires confidence among shareholders, analysts, and enterprise clients." },
@@ -1618,7 +1618,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { number: "07", title: "Telemetry & Vector Maintenance", description: "Monitoring retrieval relevance, updating vector embeddings as new documents publish, and ongoing SLA.", deliverable: "Continuous Knowledge Governance" },
     ],
     benefits: [
-      { title: "100% Hallucination-Free Responses", description: "The AI answers strictly from your private documents and provides exact source citations for verification." },
+      { title: "Grounded & Verified Responses", description: "The AI answers strictly from your ingested private documents and provides exact source citations for verification." },
       { title: "No Dedicated Vector DB Lock-In", description: "Using pgvector inside PostgreSQL keeps your data centralized without expensive proprietary vector DB fees." },
       { title: "Sub-Second Knowledge Retrieval", description: "Find answers in seconds across thousands of pages of complex PDFs, spreadsheets, and manuals." },
       { title: "Enterprise Data Privacy", description: "Your proprietary documents are never shared or used to train third-party foundation models." },

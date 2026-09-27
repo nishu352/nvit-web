@@ -70,7 +70,7 @@ export const SERVICES_CONFIG: ServiceCategory[] = [
       "Adaptive dark/light theme systems with fluid CSS styling",
       "Enterprise security headers, SSL/TLS, and OWASP compliance",
       "Integrated CMS support and dynamic markdown/headless content",
-      "100% mobile-first responsive design audited for Lighthouse 95+ scores",
+      "Mobile-first responsive design optimized for Core Web Vitals and Lighthouse benchmarks",
     ],
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML5/CSS3", "Framer Motion", "Vercel", "Node.js"],
     relatedSolutions: ["ecommerce", "startup-mvp", "business-management"],

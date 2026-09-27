@@ -1369,8 +1369,8 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
         description: "Our ETL pipelines process 100,000+ row spreadsheets using memory-efficient streams, preventing server memory crashes.",
       },
       {
-        title: "Guaranteed Zero Lost Events",
-        description: "With Redis-backed BullMQ queues and exponential retry policies, every webhook and transactional message is guaranteed to execute.",
+        title: "Resilient Webhook & Event Queueing",
+        description: "With Redis-backed BullMQ queues and exponential retry policies, every webhook and transactional message is engineered with retry logic to prevent message loss during transient network failures.",
       },
       {
         title: "Seamless Enterprise API Bridging",
