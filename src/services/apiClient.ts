@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getBaseUrl = (): string => {
+export const getBaseUrl = (): string => {
   const envUrl = process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL;
   if (envUrl) {
     const clean = envUrl.trim().replace(/\/+$/, "");
@@ -17,7 +17,7 @@ const getBaseUrl = (): string => {
   if (process.env.NODE_ENV === "development") {
     return "http://localhost:5001/api/v1";
   }
-  return "https://web-production-676ee.up.railway.app/api/v1";
+  return "https://web-production-9265a.up.railway.app/api/v1";
 };
 
 export const apiClient = axios.create({
@@ -30,6 +30,7 @@ export const apiClient = axios.create({
 });
 
 apiClient.interceptors.request.use((config) => {
+  config.baseURL = getBaseUrl();
   if (!config.baseURL || config.baseURL.includes("railway.app")) {
     if (typeof window !== "undefined" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")) {
       config.baseURL = "http://localhost:5001/api/v1";
@@ -37,3 +38,4 @@ apiClient.interceptors.request.use((config) => {
   }
   return config;
 });
+
