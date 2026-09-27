@@ -276,7 +276,7 @@ export default function PrimaryServiceDetailView({ service }: Props) {
             badgeIcon={<Wrench className="w-3.5 h-3.5 text-violet-600 dark:text-violet-400" />}
             badgeVariant="violet"
             title="Engineering Process & Project Lifecycle"
-            subtitle="A transparent, milestone-driven execution framework from initial requirements to zero-downtime deployment:"
+            subtitle="A transparent, milestone-driven execution framework from initial requirements to live production deployment:"
           />
 
           <Timeline steps={service.processSteps} />

@@ -112,7 +112,7 @@ export default function FinalCtaSection() {
 
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-500" />
-            <span>Strict Client Confidentiality Guaranteed</span>
+            <span>Strict Client Confidentiality</span>
           </div>
         </div>
       </div>

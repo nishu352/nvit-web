@@ -12,7 +12,7 @@ export default function ResourcesHomeSection() {
       type: "Pillar Guide",
       readingTime: "14 min read",
       description:
-        "An authoritative technical guide for engineering multi-tenant SaaS platforms, Stripe subscription billing, RBAC permissions, and zero-downtime deployments.",
+        "A practical technical guide for engineering multi-tenant SaaS platforms, subscription billing, RBAC permissions, and cloud deployments.",
       href: "/resources/guides/saas-development-guide",
     },
     {

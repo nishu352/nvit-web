@@ -98,7 +98,7 @@ export const BLOG_ARTICLES: Record<string, BlogArticle> = {
       {
         heading: "3. Key Considerations for Building Web Applications",
         paragraphs: [
-          "When architecting a web app, engineering teams must prioritize end-to-end type safety (TypeScript), stateless JWT session governance, database indexing for sub-10ms query execution, and automated CI/CD deployment pipelines.",
+          "When architecting a web app, engineering teams must prioritize end-to-end type safety (TypeScript), stateless JWT session governance, database indexing for fast query execution, and automated CI/CD deployment pipelines.",
         ],
       },
     ],
@@ -315,7 +315,7 @@ export const BLOG_ARTICLES: Record<string, BlogArticle> = {
       { question: "When should I use JSONB in PostgreSQL?", answer: "Use JSONB for semi-structured data like bank policy attributes or user audit logs that vary between entities, while keeping core transactional data in normalized columns." },
     ],
     metaTitle: "PostgreSQL Schema Design & Indexing Guide | NVIT.SPACE",
-    metaDescription: "Master PostgreSQL relational schema design: composite B-Tree indexing, foreign key constraints, ACID transaction locks, and sub-10ms query execution.",
+    metaDescription: "Master PostgreSQL relational schema design: composite B-Tree indexing, foreign key constraints, ACID transaction locks, and fast indexed query execution.",
   },
 
   "ai-chatbot-vs-ai-agent": {
@@ -769,11 +769,11 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     clientType: "Fintech & Lending Infrastructure",
     challenge: "Lending underwriters and sales executives spent hours manually searching disconnected Excel spreadsheets from multiple partner banks to verify whether a borrower's 6-digit PIN code was serviceable, causing severe loan processing bottlenecks and high customer drop-off.",
     context: "In Indian retail lending, every bank maintains distinct serviceability lists covering varying subsets of the country's 19,500+ postal PIN codes. Merging and querying these disparate lists in real time during customer onboarding was an operational hurdle.",
-    solution: "NVIT.SPACE engineered a centralized high-speed Pincode Eligibility Engine backed by normalized PostgreSQL relational tables and composite B-Tree indexes. The engine enriches every pincode with state, district, and office location data while cross-referencing multi-bank serviceability policies in under 10 milliseconds.",
+    solution: "NVIT.SPACE engineered a centralized high-speed Pincode Eligibility Engine backed by normalized PostgreSQL relational tables and composite B-Tree indexes. The engine enriches every pincode with state, district, and office location data while cross-referencing multi-bank serviceability policies with fast indexed query execution.",
     architectureHighlights: [
       "Normalized PostgreSQL relational database indexing 19,500+ Indian postal PIN codes.",
-      "Composite B-Tree database indexes ensuring sub-10ms query execution under heavy concurrent lookups.",
-      "Sub-20ms Fastify REST API endpoint serving live web frontend and mobile client applications.",
+      "Composite B-Tree database indexes ensuring fast indexed query execution under heavy concurrent lookups.",
+      "Fast, low-latency Fastify REST API endpoint serving live web frontend and mobile client applications.",
       "Batch CSV ingestion pipeline enabling non-technical operators to upload updated monthly bank policy sheets.",
     ],
     keyFeatures: [
@@ -783,14 +783,14 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       "Public-facing client lookup utility embedded directly on NVIT.SPACE web platform.",
     ],
     engineeringDecisions: [
-      { decision: "Composite B-Tree Indexes", rationale: "Standard full-table scans took ~450ms. Adding composite B-Tree indexes on `(pincode, bankId)` dropped query latency to under 8ms." },
+      { decision: "Composite B-Tree Indexes", rationale: "Standard full-table scans took ~450ms. Adding composite B-Tree indexes on `(pincode, bankId)` dropped query latency significantly." },
       { decision: "Fastify Microservice Architecture", rationale: "Fastify's schema compilation delivered 3x higher throughput compared to standard Express servers for high-volume lookup traffic." },
     ],
     technicalMetrics: [
       "19,500+ Postal Pincodes Indexed",
-      "<10ms Average Query Execution Time",
-      "100% Pan-India Geographical Coverage",
-      "Zero Downtime Monthly Policy Updates",
+      "Fast Indexed Query Execution Time",
+      "Broad Pan-India Geographical Coverage",
+      "Continuous Monthly Policy Updates",
     ],
     technologies: ["PostgreSQL", "Fastify", "TypeScript", "Prisma ORM", "Next.js", "Docker VPS"],
     connectedServices: [
@@ -804,7 +804,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     ],
     liveToolLink: { title: "Live Pincode Checker Utility", href: "/pincode-check" },
     metaTitle: "Case Study: Pan-India Pincode Eligibility Engine | NVIT.SPACE",
-    metaDescription: "How NVIT.SPACE engineered a sub-10ms PostgreSQL pincode eligibility engine indexing 19,500+ Indian PIN codes and multi-bank lending policies.",
+    metaDescription: "How NVIT.SPACE engineered a fast indexed PostgreSQL pincode eligibility engine indexing 19,500+ Indian PIN codes and multi-bank lending policies.",
   },
 
   "enterprise-company-category-checker": {
@@ -814,7 +814,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     clientType: "Fintech Lending Operations",
     challenge: "Lenders classify corporate employers into Category A, B, C, and D tiers to determine personal loan interest rates and borrowing limits. Loan officers struggled to match company names accurately due to typographical differences, spelling variations, and fragmented bank tier sheets.",
     context: "A single corporate employer might appear as 'HCL Technologies Ltd', 'HCL Tech', or 'HCL' across different banking policy lists. Underwriters required an instant prefix and fuzzy autocomplete search tool to identify verified company tiers in real time.",
-    solution: "NVIT.SPACE built a specialized Company Category Checker API utilizing PostgreSQL full-text search, trigram indexing (`pg_trgm`), and Fastify API caching. The system provides real-time autocomplete suggestions within 50ms as the loan officer types.",
+    solution: "NVIT.SPACE built a specialized Company Category Checker API utilizing PostgreSQL full-text search, trigram indexing (`pg_trgm`), and Fastify API caching. The system provides fast, real-time autocomplete suggestions as the loan officer types.",
     architectureHighlights: [
       "Trigram and ILIKE prefix search indexing hundreds of thousands of registered corporate employer entities.",
       "Fast autocomplete API endpoint with debounced client-side queries.",
@@ -832,7 +832,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       { decision: "Debounced API Calls", rationale: "Client-side 250ms debouncing reduced unnecessary API server requests by over 70% during active user typing." },
     ],
     technicalMetrics: [
-      "<50ms Autocomplete Search Latency",
+      "Fast Real-Time Autocomplete Search",
       "Unified Multi-Bank Policy View",
       "100k+ Indexed Corporate Employers",
       "Zero Third-Party Search SaaS Dependencies",
@@ -858,11 +858,11 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     clientType: "Fintech Lending Distribution & DSAs",
     challenge: "Loan distribution networks and direct selling agents (DSAs) operated across manual paper workflows, physical document drop-offs, and disjointed WhatsApp chats, causing 7-to-10 day loan processing turnaround times and unacceptably high lead leakage.",
     context: "A modern loan origination platform required a cohesive digital ecosystem: a mobile-first borrower application flow, instant policy checks, Document AI statement OCR, executive lead routing, and an administrative review console.",
-    solution: "NVIT.SPACE architected an end-to-end digital Loan Origination System combining a responsive Next.js frontend, sub-20ms Fastify API microservices, Document AI neural PDF statement parsing, and weighted round-robin lead distribution with instant WhatsApp alerts.",
+    solution: "NVIT.SPACE architected an end-to-end digital Loan Origination System combining a responsive Next.js frontend, fast Fastify API microservices, Document AI neural PDF statement parsing, and weighted round-robin lead distribution with instant WhatsApp alerts.",
     architectureHighlights: [
       "Mobile-first 3-step borrower intake funnel with phone OTP verification.",
-      "Automated Document AI pipeline parsing 6-month PDF bank statements into structured income metrics in 5 seconds.",
-      "Sub-500ms weighted round-robin lead allocation to sales executives with instant WhatsApp notification triggers.",
+      "Automated Document AI pipeline parsing 6-month PDF bank statements into structured income metrics efficiently.",
+      "Automated weighted round-robin lead allocation to sales executives with instant WhatsApp notification triggers.",
       "Granular role-based underwriter console with 1-click status updates and audit logs.",
     ],
     keyFeatures: [
@@ -873,13 +873,13 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     ],
     engineeringDecisions: [
       { decision: "Decoupled Next.js & Fastify Architecture", rationale: "Decoupling allowed edge hosting for the borrower frontend while the Fastify backend scaled independently for heavy OCR processing." },
-      { decision: "Document AI Pipeline", rationale: "Replacing manual underwriter data entry with neural OCR reduced average document ingestion time from 45 minutes to under 5 seconds." },
+      { decision: "Document AI Pipeline", rationale: "Replacing manual underwriter data entry with neural OCR reduced average document ingestion time significantly." },
     ],
     technicalMetrics: [
-      "<60s Borrower Application Completion",
-      "<5s Document AI Statement Extraction",
-      "<500ms Automated Lead Allocation",
-      "100% Digital Paperless Lending Lifecycle",
+      "Rapid Borrower Application Flow",
+      "Fast Document AI Statement Extraction",
+      "Automated Lead Allocation",
+      "Paperless Digital Lending Lifecycle",
     ],
     technologies: ["Next.js (App Router)", "Fastify", "PostgreSQL", "Prisma ORM", "Document AI (OCR)", "WhatsApp Cloud API", "Docker VPS"],
     connectedServices: [

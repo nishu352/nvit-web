@@ -64,11 +64,11 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     name: "Business Website Development",
     badge: "Commercial Authority",
     h1Title: "Custom Business Website Development for Growing Companies",
-    heroSubtitle: "We engineer high-performance corporate and commercial websites tailored to convert visitors into qualified sales inquiries. Built with Next.js, React, and TypeScript with sub-second page speeds.",
+    heroSubtitle: "We engineer high-performance corporate and commercial websites tailored to convert visitors into qualified sales inquiries. Built with Next.js, React, and TypeScript with fast page speeds.",
     overviewSummary: "Your business website is your primary digital brand asset and sales channel. At NVIT.SPACE, our business website development combines modern design aesthetics, clear value positioning, and technical SEO architecture to establish immediate market credibility.",
     overviewDetailedParagraphs: [
       "A generic or slow website damages buyer trust. We engineer bespoke business web platforms with clean semantic HTML5, adaptive light/dark mode tokens, and integrated lead capture mechanisms designed around your customer buying journey.",
-      "Every build includes structured metadata, sub-second Core Web Vitals, and seamless integrations with CRMs, analytics, and booking schedulers, empowering your commercial team to convert organic traffic effortlessly.",
+      "Every build includes structured metadata, optimized Core Web Vitals, and seamless integrations with CRMs, analytics, and booking schedulers, empowering your commercial team to convert organic traffic effortlessly.",
     ],
     targetAudienceHeadline: "Ideal for Commercial Organizations & Service Providers:",
     targetAudienceList: [
@@ -82,7 +82,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { name: "Frictionless Lead Capture", tag: "Conversion", description: "High-converting inquiry forms, interactive service selectors, and automated CRM webhook routing." },
       { name: "Adaptive Dark/Light Themes", tag: "UI Experience", description: "Fluid, high-contrast color systems that preserve readability and aesthetic elegance across both themes." },
       { name: "Direct Meeting Schedulers", tag: "Sales Enablement", description: "Seamless calendar booking integrations (Cal.com, Calendly) for instant consultation appointments." },
-      { name: "Strict Core Web Vitals", tag: "Performance", description: "Sub-second LCP and zero CLS layout shifts audited for Google Lighthouse 95+ desktop and mobile scores." },
+      { name: "Strict Core Web Vitals", tag: "Performance", description: "Optimized LCP and minimal layout shifts audited for Google Lighthouse 95+ desktop and mobile scores." },
     ],
     useCases: [
       {
@@ -95,7 +95,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
         title: "Commercial Architectural Studio Website",
         targetAudience: "Design & Construction Practices",
         challenge: "High image file sizes causing 6+ second load times and high bounce rates on mobile networks.",
-        deliveredSolution: "Modern portfolio with automated WebP image compression, edge CDN routing, and sub-800ms load times.",
+        deliveredSolution: "Modern portfolio with automated WebP image compression, edge CDN routing, and fast load times.",
       },
     ],
     techGroups: [
@@ -115,7 +115,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     benefits: [
       { title: "Immediate Commercial Credibility", description: "First impressions matter. Our modern aesthetics position your brand as a market leader from the first click." },
-      { title: "Sub-Second Page Loads", description: "Eliminate bounce rates caused by slow legacy hosting with edge-cached server-side rendering." },
+      { title: "Fast Page Loads", description: "Eliminate bounce rates caused by slow legacy hosting with edge-cached server-side rendering." },
       { title: "Zero Maintenance Headaches", description: "Clean static/server Next.js code eliminates fragile third-party plugin conflicts common in CMS builders." },
       { title: "SEO-First Codebase", description: "Built from line one with semantic HTML5 tags, canonical URLs, and structured data schemas." },
     ],
@@ -136,7 +136,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "Can the website connect to our CRM or email software?", answer: "Yes. We connect contact forms directly to your CRM (HubSpot, Salesforce, Zoho, or custom CRM), WhatsApp Business, and transactional email gateways." },
     ],
     metaTitle: "Business Website Development Services | NVIT.SPACE",
-    metaDescription: "Custom business website development for modern companies. Built with Next.js, React & TypeScript for sub-second speeds, authoritative design, and high conversions.",
+    metaDescription: "Custom business website development for modern companies. Built with Next.js, React & TypeScript for fast load speeds, authoritative design, and high conversions.",
   },
 
   "corporate-websites": {
@@ -227,10 +227,10 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     name: "eCommerce Website Development",
     badge: "Headless Commerce",
     h1Title: "High-Converting Headless eCommerce Storefront Development",
-    heroSubtitle: "We engineer lightning-fast eCommerce web platforms with sub-second product filtering, frictionless single-page checkouts, and seamless payment gateway integrations. Built for maximum buyer conversions.",
+    heroSubtitle: "We engineer lightning-fast eCommerce web platforms with fast product filtering, frictionless single-page checkouts, and seamless payment gateway integrations. Built for maximum buyer conversions.",
     overviewSummary: "Every millisecond of delay in an online store directly decreases conversion rates and average order value. NVIT.SPACE builds modern headless eCommerce storefronts that decouple frontend presentation from backend inventory and payment logic, delivering instant catalog browsing and checkout velocity.",
     overviewDetailedParagraphs: [
-      "Traditional monolithic eCommerce platforms suffer from slow mobile load times and bloated JavaScript bundles. We engineer headless shopping frontends using Next.js and React that deliver sub-second product search, dynamic cart state management, and real-time inventory synchronization.",
+      "Traditional monolithic eCommerce platforms suffer from slow mobile load times and bloated JavaScript bundles. We engineer headless shopping frontends using Next.js and React that deliver rapid product search, dynamic cart state management, and real-time inventory synchronization.",
       "Integrated with domestic and international payment gateways (Stripe, Razorpay, Cashfree), automated tax calculation engines, and shipping tracking webhooks, our eCommerce solutions scale smoothly from 100 to 100,000+ SKU catalogs.",
     ],
     targetAudienceHeadline: "Built for Modern Digital Retailers & D2C Brands:",
@@ -241,7 +241,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       "Subscription commerce brands requiring automated recurring billing cycles.",
     ],
     capabilities: [
-      { name: "Instant Product Filtering", tag: "Search Velocity", description: "Sub-second client-side facet filtering by price, category, rating, and attributes without page reloads." },
+      { name: "Instant Product Filtering", tag: "Search Velocity", description: "Rapid client-side facet filtering by price, category, rating, and attributes without page reloads." },
       { name: "One-Page Optimized Checkout", tag: "Conversion", description: "Streamlined single-page checkout flow minimizing input friction and reducing cart abandonment." },
       { name: "Multi-Gateway Integration", tag: "Payments", description: "Secure integration with UPI, Credit/Debit Cards, Net Banking, Apple Pay, and Google Pay." },
       { name: "Dynamic Cart & Wishlist", tag: "State Sync", description: "Persistent cart state synchronized across sessions, guest checkout, and abandoned cart hooks." },
@@ -270,14 +270,14 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     processSteps: [
       { number: "01", title: "Catalog & Checkout Architecture", description: "Map catalog taxonomy, shipping rules, tax calculations, and payment gateway specifications.", deliverable: "eCommerce Functional Specification" },
       { number: "02", title: "UI/UX & Mobile Commerce Design", description: "Designing high-converting product detail pages (PDP), category list pages (PLP), and cart drawers.", deliverable: "eCommerce Design System & Prototypes" },
-      { number: "03", title: "Headless Storefront Development", description: "Engineering sub-second Next.js pages with dynamic cart state and client-side filtering.", deliverable: "Production Storefront Codebase" },
+      { number: "03", title: "Headless Storefront Development", description: "Engineering fast Next.js pages with dynamic cart state and client-side filtering.", deliverable: "Production Storefront Codebase" },
       { number: "04", title: "Payment & Shipping Integrations", description: "Connecting payment gateway webhooks, shipping APIs (Shiprocket, Delhivery), and GST invoices.", deliverable: "Verified Payment & Order Gateway" },
       { number: "05", title: "Load & Transaction QA", description: "Simulating heavy flash sale checkout concurrency and verifying payment settlement webhooks.", deliverable: "Load Testing & Security Report" },
       { number: "06", title: "Production Store Launch", description: "Configuring domain routing, SSL certificates, analytics funnels, and production deployment.", deliverable: "Live eCommerce Platform Launch" },
       { number: "07", title: "Post-Launch Conversion Tuning", description: "Analyzing cart drop-off funnels, A/B testing checkout layouts, and optimizing speed.", deliverable: "Continuous CRO Optimization" },
     ],
     benefits: [
-      { title: "Sub-Second Page Loads", description: "Instant catalog navigation keeps buyers engaged, significantly improving mobile purchase conversion rates." },
+      { title: "Fast Page Loads", description: "Instant catalog navigation keeps buyers engaged, significantly improving mobile purchase conversion rates." },
       { title: "Zero Platform Commission", description: "You own the custom storefront and database completely, avoiding revenue percentage cuts from platform builders." },
       { title: "Complete Customization Freedom", description: "Build bespoke bundling rules, custom discount engines, and tiered loyalty programs with zero constraints." },
       { title: "Flash Sale Scalability", description: "Decoupled architecture absorbs intense traffic spikes during promotional events without crashing." },
@@ -299,7 +299,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "Is the checkout process secure and PCI compliant?", answer: "Yes. Payment details are tokenized and processed directly through certified PCI-DSS Level 1 compliant gateway SDKs, ensuring no sensitive card numbers touch your web server." },
     ],
     metaTitle: "Headless eCommerce Website Development | NVIT.SPACE",
-    metaDescription: "High-converting headless eCommerce website development. Sub-second product filtering, 1-page checkout, multi-gateway payments (Stripe/Razorpay), and instant scaling.",
+    metaDescription: "High-converting headless eCommerce website development. Rapid product filtering, 1-page checkout, multi-gateway payments (Stripe/Razorpay), and instant scaling.",
   },
 
   "landing-pages": {
@@ -309,8 +309,8 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     name: "Landing Page Development",
     badge: "PPC & CRO Engineering",
     h1Title: "Performance-Driven Campaign Landing Page Development",
-    heroSubtitle: "We engineer high-velocity marketing landing pages optimized for Google Ads, Meta campaigns, and product launches. Built for sub-80KB initial loads, extreme conversion rates, and exact attribution tracking.",
-    overviewSummary: "Driving paid traffic to a slow, generic homepage wastes marketing budget. NVIT.SPACE engineers bespoke campaign landing pages laser-focused on a single commercial call-to-action, delivering sub-second load times that maximize ad quality scores and lower customer acquisition costs.",
+    heroSubtitle: "We engineer high-velocity marketing landing pages optimized for Google Ads, Meta campaigns, and product launches. Built for lightweight initial loads, high conversion rates, and exact attribution tracking.",
+    overviewSummary: "Driving paid traffic to a slow, generic homepage wastes marketing budget. NVIT.SPACE engineers bespoke campaign landing pages laser-focused on a single commercial call-to-action, delivering fast load times that maximize ad quality scores and lower customer acquisition costs.",
     overviewDetailedParagraphs: [
       "Every landing page we build is crafted around conversion rate optimization (CRO) principles: clear value proposition above the fold, trust indicators, interactive demonstration elements, and frictionless multi-step inquiry forms.",
       "We integrate server-side tracking, dynamic UTM parameter capture, and instant CRM webhook dispatchers so your sales team receives enriched lead details the instant a visitor submits a request.",
@@ -327,7 +327,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { name: "Dynamic UTM Attribution", tag: "Analytics", description: "Automatically capture campaign source, medium, term, and keyword parameters with every form submission." },
       { name: "Interactive Conversion Elements", tag: "Engagement", description: "Interactive ROI calculators, step-by-step quote builders, and video demo previews." },
       { name: "A/B Testing Architecture", tag: "Growth", description: "Server-side variant splitting allowing rapid testing of headlines, CTAs, and layout variations." },
-      { name: "Instant Lead Webhooks", tag: "Sales Speed", description: "Sub-500ms lead forwarding directly to CRM systems, WhatsApp Business, and executive email queues." },
+      { name: "Instant Lead Webhooks", tag: "Sales Speed", description: "Instant lead forwarding directly to CRM systems, WhatsApp Business, and executive email queues." },
     ],
     useCases: [
       {
@@ -347,12 +347,12 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { category: "Frontend Framework", items: ["Next.js (App Router)", "TypeScript", "Tailwind CSS"] },
       { category: "Tracking & Pixels", items: ["Google Tag Manager", "Meta Pixel (CAPI)", "LinkedIn Insight Tag"] },
       { category: "Integration & CRM", items: ["Webhooks", "WhatsApp Business API", "Zapier/Make Bridges"] },
-      { category: "Speed Optimization", items: ["Sub-80KB JS Payload", "Inlined Critical CSS", "Edge CDN"] },
+      { category: "Speed Optimization", items: ["Lightweight JS Payload", "Inlined Critical CSS", "Edge CDN"] },
     ],
     processSteps: [
       { number: "01", title: "Campaign Strategy & Value Scoping", description: "Analyze paid ad keywords, audience intent, and define the primary conversion action.", deliverable: "CRO Wireframe & Copy Blueprint" },
       { number: "02", title: "High-Converting UI Design", description: "Designing high-contrast CTA buttons, trust badges, and visual benefit comparisons.", deliverable: "Figma Landing Page Prototype" },
-      { number: "03", title: "Lightweight Code Implementation", description: "Building a lean, zero-bloat Next.js page optimized for sub-second first contentful paint (FCP).", deliverable: "Production Landing Page Codebase" },
+      { number: "03", title: "Lightweight Code Implementation", description: "Building a lean, zero-bloat Next.js page optimized for fast first contentful paint (FCP).", deliverable: "Production Landing Page Codebase" },
       { number: "04", title: "Pixel & UTM Tracking Setup", description: "Configuring server-side tracking, conversion event triggers, and dynamic UTM parameter routing.", deliverable: "Verified Analytics Attribution Suite" },
       { number: "05", title: "Lead Ingestion & CRM Testing", description: "Testing form submission speed, spam honey-pots, and webhook delivery to sales dashboards.", deliverable: "End-to-End Lead Flow Verification" },
       { number: "06", title: "Live Campaign Launch", description: "Deploying to edge CDN with custom domain routing and SSL security certificates.", deliverable: "Live Campaign Activation" },
@@ -360,14 +360,14 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     benefits: [
       { title: "Lower Cost Per Lead (CPL)", description: "Faster load times and clear conversion pathways directly increase ad quality scores and conversion rates." },
-      { title: "Zero Ad Traffic Waste", description: "Sub-second loading ensures mobile visitors who click your paid ad don't bounce before the page appears." },
-      { title: "Sub-Second Lead Response", description: "Leads are routed to your sales reps via WhatsApp and CRM the exact second they are submitted." },
+      { title: "Zero Ad Traffic Waste", description: "Fast page loading ensures mobile visitors who click your paid ad don't bounce before the page appears." },
+      { title: "Instant Lead Response", description: "Leads are routed to your sales reps via WhatsApp and CRM the exact second they are submitted." },
       { title: "Accurate Attribution Data", description: "UTM tags and source parameters are preserved across the entire lead lifecycle for precise ROAS reporting." },
     ],
     siblingServices: [
       { title: "Custom Business Websites", href: "/services/website-development/business-websites", description: "Complete multi-page corporate websites establishing permanent commercial authority." },
       { title: "SEO-First Websites", href: "/services/website-development/seo-websites", description: "Search-engine optimized architectures designed for long-term organic traffic." },
-      { title: "CRM Lead Automation", href: "/services/business-automation/crm-automation", description: "Automate sub-second lead ingestion, round-robin assignment, and follow-ups." },
+      { title: "CRM Lead Automation", href: "/services/business-automation/crm-automation", description: "Automate rapid lead ingestion, round-robin assignment, and follow-ups." },
     ],
     connectedSolutions: [
       { title: "Startup MVP & Rapid Launch", href: "/solutions/startup-mvp", badge: "Startups" },
@@ -383,7 +383,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "Will the landing page work with our existing CRM?", answer: "Yes. We connect form submissions via custom webhooks or APIs to any CRM system including HubSpot, Salesforce, Zoho, LeadSquared, or custom internal portals." },
     ],
     metaTitle: "High-Converting Landing Page Development | NVIT.SPACE",
-    metaDescription: "Performance landing page development for Google Ads, Meta PPC, and product launches. Sub-80KB payloads, instant CRM lead webhooks, and high conversion rates.",
+    metaDescription: "Performance landing page development for Google Ads, Meta PPC, and product launches. Lightweight payloads, instant CRM lead webhooks, and high conversion rates.",
   },
 
   "seo-websites": {
@@ -394,7 +394,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     badge: "Organic Search Authority",
     h1Title: "SEO-First Architecture & Programmatic Web Platform Development",
     heroSubtitle: "We engineer search-engine-first web platforms built for indexability, Core Web Vitals dominance, and topical authority. Incorporating semantic HTML5, automated Schema.org JSON-LD, and programmatic routing.",
-    overviewSummary: "Organic search visibility is not an afterthought to be patched with plugins; it must be engineered directly into the foundational codebase. NVIT.SPACE builds SEO-first web architectures with clean crawl budgets, semantic document outlines, and sub-second render speeds.",
+    overviewSummary: "Organic search visibility is not an afterthought to be patched with plugins; it must be engineered directly into the foundational codebase. NVIT.SPACE builds SEO-first web architectures with clean crawl budgets, semantic document outlines, and fast render speeds.",
     overviewDetailedParagraphs: [
       "Search crawlers evaluate web pages based on technical accessibility, structured schema markup, and user experience signals (Core Web Vitals). We eliminate JavaScript rendering bottlenecks by utilizing server-side rendering (SSR) and static generation (SSG) in Next.js, ensuring Googlebot indexes clean HTML on the very first crawl pass.",
       "For directory platforms, financial comparison portals, and content-rich services, we engineer programmatic SEO routing engines that generate thousands of unique, search-intent aligned landing pages dynamically from structured databases.",
@@ -410,7 +410,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { name: "Clean Semantic HTML5", tag: "Crawl Hierarchy", description: "Strict single H1 hierarchy, logical sectioning elements, and accessible document outlines." },
       { name: "Automated JSON-LD Schema", tag: "Rich Snippets", description: "Dynamic Schema.org structured data (Organization, FAQPage, BreadcrumbList, Service, Product)." },
       { name: "Dynamic Programmatic SEO", tag: "Scalable Indexing", description: "Database-driven route generation producing thousands of search-intent targeted landing pages." },
-      { name: "Sub-Second Core Web Vitals", tag: "Page Experience", description: "Engineered for LCP < 1.2s, CLS 0, and instant INP interaction response times." },
+      { name: "Optimized Core Web Vitals", tag: "Page Experience", description: "Engineered for LCP < 1.2s, CLS 0, and instant INP interaction response times." },
       { name: "Canonical & Sitemaps Engine", tag: "Indexing Control", description: "Automated dynamic XML sitemaps with prioritization tags and canonical URL self-referencing." },
     ],
     useCases: [
@@ -499,7 +499,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { name: "Multi-Tenant Isolation", tag: "Data Security", description: "Tenant-keyed relational database partitioning guaranteeing zero cross-organization data leakage." },
       { name: "Automated Subscription Billing", tag: "Monetization", description: "Stripe & Razorpay integration supporting monthly/annual plans, usage metering, and invoice webhooks." },
       { name: "Organization Seat Management", tag: "Team Workspaces", description: "Invite team members, assign workspace roles (Admin, Member, Viewer), and manage seat limits." },
-      { name: "High-Speed Asynchronous APIs", tag: "Performance", description: "Fastify backend microservices delivering sub-20ms route resolution under high concurrent traffic." },
+      { name: "High-Speed Asynchronous APIs", tag: "Performance", description: "Fastify backend microservices delivering fast, low-latency route resolution under high concurrent traffic." },
       { name: "Usage Telemetry & Metering", tag: "Analytics", description: "Track API calls, storage limits, and feature consumption with real-time billing threshold alerts." },
     ],
     useCases: [
@@ -534,7 +534,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     benefits: [
       { title: "Ironclad Multi-Tenant Security", description: "Database-level tenant isolation ensures enterprise clients that their confidential data is completely separated." },
       { title: "Automated Revenue Lifecycles", description: "Self-service customer billing, invoice downloads, and card updates eliminate manual billing overhead." },
-      { title: "Sub-20ms API Performance", description: "Built on Fastify and Node.js for lightning-fast dashboard responsiveness even under peak user loads." },
+      { title: "Fast API Performance", description: "Built on Fastify and Node.js for responsive dashboard interactions even under peak user loads." },
       { title: "Full Source Code Ownership", description: "You own 100% of your proprietary software codebase, database schemas, and intellectual property." },
     ],
     siblingServices: [
@@ -578,7 +578,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     capabilities: [
       { name: "Visual Kanban Deal Pipelines", tag: "Sales Tracking", description: "Drag-and-drop opportunity pipelines customized around your exact stages, milestones, and deal values." },
-      { name: "Sub-Second Lead Ingestion", tag: "Automation", description: "Instant capture of web form inquiries and paid ad leads with automated round-robin executive routing." },
+      { name: "Rapid Lead Ingestion", tag: "Automation", description: "Instant capture of web form inquiries and paid ad leads with automated round-robin executive routing." },
       { name: "Unified Customer Timeline", tag: "Omnichannel", description: "Consolidated interaction history logging phone calls, emails, WhatsApp messages, and internal notes." },
       { name: "Executive Task Reminders", tag: "Follow-Up SLA", description: "Automated task assignments, follow-up deadlines, and manager SLA breach alerts." },
       { name: "Executive Performance Reports", tag: "Analytics", description: "Real-time revenue forecasting, conversion rate metrics by source, and agent productivity dashboards." },
@@ -614,7 +614,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     benefits: [
       { title: "Zero Per-User Monthly License Fees", description: "Eliminate expensive per-seat subscription costs from Salesforce or HubSpot. You own the software forever." },
-      { title: "Sub-Second Lead Response Time", description: "Leads from your website are ingested and assigned to sales reps via WhatsApp within 500 milliseconds." },
+      { title: "Rapid Lead Response Time", description: "Leads from your website are ingested and assigned to sales reps via WhatsApp in real time." },
       { title: "Exact Business Alignment", description: "Every field, stage, and automation rule matches your company's proprietary sales methodology perfectly." },
       { title: "Complete Data Privacy & Security", description: "Your customer contact lists and deal numbers remain entirely on your own secure private database." },
     ],
@@ -638,7 +638,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "Can the CRM send automated WhatsApp messages to customers?", answer: "Yes. We integrate official WhatsApp Business APIs to send instant automated welcome greetings, appointment confirmations, and follow-up reminders directly to customers." },
     ],
     metaTitle: "Custom CRM Development & Lead Pipeline Systems | NVIT.SPACE",
-    metaDescription: "Custom CRM development for high-velocity sales teams. Visual Kanban pipelines, sub-second lead routing, WhatsApp integrations, and zero per-seat license fees.",
+    metaDescription: "Custom CRM development for high-velocity sales teams. Visual Kanban pipelines, rapid lead routing, WhatsApp integrations, and zero per-seat license fees.",
   },
 
   "erp-development": {
@@ -1451,8 +1451,8 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { number: "07", title: "Telemetry & Model Version Updates", description: "Monitoring token consumption, error rates, and testing new model releases for performance upgrades.", deliverable: "Ongoing Model Lifecycle SLA" },
     ],
     benefits: [
-      { title: "Zero Perceived Latency", description: "Streaming token responses display text instantly as it is generated, keeping users engaged." },
-      { title: "Guaranteed Structured Data", description: "Strict schema validation ensures the AI returns clean JSON that your database and application code can rely on." },
+      { title: "Interactive Streaming Responses", description: "Streaming token responses display text as it is generated, keeping users engaged." },
+      { title: "Validated Structured Output", description: "Strict schema validation ensures the AI returns clean JSON that your database and application code can rely on." },
       { title: "Optimized Ongoing Costs", description: "Semantic caching and lightweight model tiering prevent unnecessary API costs as usage scales." },
       { title: "Enterprise Data Privacy", description: "Strict zero-data-retention API configurations ensure your proprietary data is never used for training." },
     ],
@@ -1620,7 +1620,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     benefits: [
       { title: "Grounded & Verified Responses", description: "The AI answers strictly from your ingested private documents and provides exact source citations for verification." },
       { title: "No Dedicated Vector DB Lock-In", description: "Using pgvector inside PostgreSQL keeps your data centralized without expensive proprietary vector DB fees." },
-      { title: "Sub-Second Knowledge Retrieval", description: "Find answers in seconds across thousands of pages of complex PDFs, spreadsheets, and manuals." },
+      { title: "Fast Knowledge Retrieval", description: "Find answers in seconds across thousands of pages of complex PDFs, spreadsheets, and manuals." },
       { title: "Enterprise Data Privacy", description: "Your proprietary documents are never shared or used to train third-party foundation models." },
     ],
     siblingServices: [
@@ -1700,7 +1700,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     benefits: [
       { title: "Handle Complex Qualitative Tasks", description: "Automate workflows that require understanding context, sentiment, and unstructured language." },
-      { title: "Sub-Second Inbound Lead Triage", description: "Score, categorize, and assign leads to the right sales reps the instant they arrive." },
+      { title: "Rapid Inbound Lead Triage", description: "Score, categorize, and assign leads to the right sales reps the instant they arrive." },
       { title: "Reliable Event Processing", description: "Redis-backed background queues ensure every classification task is executed with retry resilience and minimal dropped events." },
       { title: "Substantial Labor Savings", description: "Free your team from hours of manual email reading, ticket sorting, and data entry." },
     ],
@@ -1739,7 +1739,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     name: "Node.js & Fastify Backend Engineering",
     badge: "Low-Latency Microservices",
     h1Title: "Node.js & Fastify High-Throughput Backend Engineering",
-    heroSubtitle: "We engineer lean, high-throughput asynchronous backend systems using Node.js, Fastify, and TypeScript. Delivering sub-20ms route resolution times and low memory footprints under high concurrency.",
+    heroSubtitle: "We engineer lean, high-throughput asynchronous backend systems using Node.js, Fastify, and TypeScript. Delivering fast route resolution times and low memory footprints under high concurrency.",
     overviewSummary: "Server performance and memory efficiency directly dictate infrastructure hosting costs and user experience. While legacy Node.js frameworks like Express struggle under heavy concurrent load, NVIT.SPACE builds modern backend microservices with Fastify and TypeScript, handling thousands of requests per second with negligible latency.",
     overviewDetailedParagraphs: [
       "Fastify's schema-based fast JSON serialization (via fast-json-stringify) and highly optimized radix-tree routing algorithms process up to 2x more requests per second than Express while consuming a fraction of the server memory.",
@@ -1747,7 +1747,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     targetAudienceHeadline: "Built for High-Throughput APIs & Real-Time Backends:",
     targetAudienceList: [
-      "Fintech platforms and payment gateways requiring sub-20ms API response times.",
+      "Fintech platforms and payment gateways requiring fast, low-latency API response times.",
       "High-traffic mobile applications requiring low-latency backend route resolution.",
       "Real-time event streaming architectures and WebSocket notification servers.",
       "Companies modernizing heavy legacy server codebases into lean microservices.",
@@ -1763,8 +1763,8 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       {
         title: "High-Traffic Loan Serviceability API Gateway",
         targetAudience: "Fintech Platforms & Loan Networks",
-        challenge: "Handling 1,000+ requests/sec searching 19,500+ Indian pincodes with sub-20ms SLA.",
-        deliveredSolution: "Fastify backend microservice with in-memory Redis caching and composite PostgreSQL indexing, achieving 11ms average response times.",
+        challenge: "Handling 1,000+ requests/sec searching 19,500+ Indian pincodes with fast response time SLAs.",
+        deliveredSolution: "Fastify backend microservice with in-memory Redis caching and composite PostgreSQL indexing, achieving fast indexed response times.",
       },
       {
         title: "Real-Time WebSocket Notification Server",
@@ -1789,7 +1789,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { number: "07", title: "24/7 Telemetry & Health Monitoring", description: "Setting up real-time server health checks, memory leak monitoring, and automated daily backups.", deliverable: "Continuous Backend SLA Support" },
     ],
     benefits: [
-      { title: "Sub-20ms Route Execution", description: "Fastify's compiled routing and serialization deliver blazing API response speeds." },
+      { title: "Fast Route Execution", description: "Fastify's compiled routing and serialization deliver blazing API response speeds." },
       { title: "Lower Cloud Hosting Bills", description: "Efficient CPU and memory utilization allows handling massive traffic on affordable cloud VPS instances." },
       { title: "End-to-End Type Safety", description: "Full TypeScript integration ensures runtime validation matches compile-time types perfectly." },
       { title: "Enterprise Scalability", description: "Modular plugin encapsulation allows easily scaling from a monolith to distributed microservices." },
@@ -1814,7 +1814,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "How do you deploy Node.js / Fastify in production?", answer: "We package backends in lightweight multi-stage Docker containers, managed by PM2 in cluster mode on Ubuntu Linux VPS instances behind Nginx reverse proxies with SSL termination." },
     ],
     metaTitle: "Node.js & Fastify Backend Engineering | NVIT.SPACE",
-    metaDescription: "High-throughput Node.js & Fastify backend engineering: sub-20ms route resolution, schema serialization, low memory footprint, and PostgreSQL integration.",
+    metaDescription: "High-throughput Node.js & Fastify backend engineering: fast route resolution, schema serialization, low memory footprint, and PostgreSQL integration.",
   },
 
   "rest-api-development": {
@@ -1855,7 +1855,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
         title: "eCommerce Mobile & Web Backend REST API",
         targetAudience: "Retail & D2C Brands",
         challenge: "Connecting separate iOS, Android, and web frontends to a single unified backend API.",
-        deliveredSolution: "Versioned RESTful API with idempotent order creation, JWT session tokens, and sub-20ms latency.",
+        deliveredSolution: "Versioned RESTful API with idempotent order creation, JWT session tokens, and low-latency response times.",
       },
     ],
     techGroups: [
@@ -1875,7 +1875,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     benefits: [
       { title: "Standardized Developer Experience", description: "Clear documentation, predictable endpoints, and consistent error codes make partner integrations effortless." },
-      { title: "Guaranteed Zero Duplicate Actions", description: "Idempotency keys prevent duplicate payments or record creations even if a client retries requests." },
+      { title: "Idempotent Transaction Handling", description: "Idempotency keys prevent duplicate payments or record creations even if a client retries requests." },
       { title: "DDoS & Abuse Protection", description: "Redis-backed rate limiting protects your backend databases from traffic spikes and malicious scrapers." },
       { title: "Seamless Multi-Client Support", description: "A single REST API powers your web app, iOS app, Android app, and third-party integrations." },
     ],
@@ -1899,7 +1899,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "How do you handle API versioning when adding new features?", answer: "We use URI path versioning (e.g. `/api/v1/` and `/api/v2/`), ensuring existing third-party client integrations continue functioning without breaking changes as new features deploy." },
     ],
     metaTitle: "Enterprise REST API Development & Architecture | NVIT.SPACE",
-    metaDescription: "Enterprise REST API development: OpenAPI 3.0 Swagger documentation, idempotency keys, Redis token-bucket rate limiting, and sub-20ms latency.",
+    metaDescription: "Enterprise REST API development: OpenAPI 3.0 Swagger documentation, idempotency keys, Redis token-bucket rate limiting, and low-latency response times.",
   },
 
   "graphql-development": {
@@ -1994,7 +1994,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     overviewSummary: "Your database is the foundation of your entire software ecosystem. Unindexed queries, poorly normalized tables, and missing foreign key constraints lead to sluggish page loads, database locks, and catastrophic data corruption under load. NVIT.SPACE engineers high-performance, indexed PostgreSQL database architectures.",
     overviewDetailedParagraphs: [
       "We design normalized relational schemas with strict ACID transactional guarantees, composite B-Tree, GIN, and GiST indexes, and pgvector extensions for AI semantic search. We analyze query execution plans (EXPLAIN ANALYZE) to eliminate sequential table scans and optimize multi-million row tables.",
-      "Utilizing Prisma ORM and automated migration pipelines, our database architectures support zero-downtime rolling deployments, connection pooling, and automated daily offsite backup routines.",
+      "Utilizing Prisma ORM and automated migration pipelines, our database architectures support rolling cluster deployments, connection pooling, and automated daily offsite backup routines.",
     ],
     targetAudienceHeadline: "Built for High-Scale Applications & Financial Systems:",
     targetAudienceList: [
@@ -2062,7 +2062,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     faqs: [
       { question: "How do you optimize slow PostgreSQL queries?", answer: "We use `EXPLAIN (ANALYZE, BUFFERS)` to inspect query execution plans, identify sequential table scans, construct targeted composite B-Tree or GIN indexes, optimize JOIN conditions, and tune PostgreSQL memory parameters (`work_mem`, `shared_buffers`)." },
       { question: "What is the difference between B-Tree, GIN, and GiST indexes in PostgreSQL?", answer: "B-Tree indexes are ideal for standard equality and range lookups (e.g. numbers, dates, strings). GIN (Generalized Inverted Index) is optimized for JSONB columns, arrays, and full-text search. GiST indexes are designed for geometric coordinates and full-text search extensions." },
-      { question: "How do you handle zero-downtime database migrations?", answer: "Using Prisma ORM and backward-compatible migration patterns (adding columns with defaults, multi-step column renames), we deploy database schema changes safely without requiring server downtime." },
+      { question: "How do you handle safe database migrations?", answer: "Using Prisma ORM and backward-compatible migration patterns (adding columns with defaults, multi-step column renames), we deploy database schema changes safely without disrupting active traffic." },
       { question: "How are automated database backups configured?", answer: "We configure automated daily cron jobs that generate compressed `pg_dump` snapshot files, encrypt them, and upload them to secure offsite cloud storage vaults with automated retention policies." },
     ],
     metaTitle: "PostgreSQL Database Architecture & Optimization | NVIT.SPACE",
@@ -2079,7 +2079,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     heroSubtitle: "We engineer secure, cost-effective cloud backend infrastructure: Docker container orchestration, Nginx reverse proxy SSL termination, PM2 process supervision, and automated CI/CD deployment pipelines.",
     overviewSummary: "Modern cloud platforms often charge steep premium fees for proprietary managed services that lock your business into proprietary ecosystems. NVIT.SPACE architects self-hosted, scalable cloud infrastructure using open-source Docker containers and Linux VPS hosting, delivering enterprise uptime with complete infrastructure ownership.",
     overviewDetailedParagraphs: [
-      "We configure hardened Linux (Ubuntu) virtual private servers with automated firewall rules (UFW/Fail2ban), Nginx reverse proxy load balancing with automated Let's Encrypt SSL/TLS certificates, and PM2 clustering for zero-downtime application restarts.",
+      "We configure hardened Linux (Ubuntu) virtual private servers with automated firewall rules (UFW/Fail2ban), Nginx reverse proxy load balancing with automated Let's Encrypt SSL/TLS certificates, and PM2 clustering for rolling application restarts.",
       "Every service is containerized using multi-stage Dockerfiles, enabling reproducible environments across staging and production, automated GitHub Actions CI/CD pipelines, and automated offsite backup routines.",
     ],
     targetAudienceHeadline: "Built for Growing Startups & High-Scale Operations:",
@@ -2092,7 +2092,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     capabilities: [
       { name: "Docker Container Orchestration", tag: "Portability", description: "Multi-stage Docker builds ensuring identical, reproducible execution environments across all servers." },
       { name: "Nginx Reverse Proxy & SSL", tag: "Traffic Gateway", description: "High-performance Nginx reverse proxy with automated Let's Encrypt SSL/TLS certificate renewal." },
-      { name: "PM2 Process Clustering", tag: "Zero Downtime", description: "Automatic CPU core clustering, zero-downtime rolling code reloads, and crash auto-restart." },
+      { name: "PM2 Process Clustering", tag: "High Availability", description: "Automatic CPU core clustering, rolling code reloads, and crash auto-restart." },
       { name: "Linux Server Hardening", tag: "Security", description: "UFW firewall configuration, Fail2ban brute-force protection, SSH key authentication, and non-root execution." },
       { name: "Automated GitHub Actions CI/CD", tag: "Automation", description: "Automatic testing, Docker image building, and production deployment upon pushing code to git." },
     ],
@@ -2128,7 +2128,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     benefits: [
       { title: "Slash Cloud Hosting Costs", description: "Achieve the same performance on a $20–$50/mo VPS that would cost $400+/mo on proprietary cloud vendors." },
       { title: "Zero Vendor Lock-In", description: "Dockerized containers can be migrated to any hosting provider (DigitalOcean, AWS, Linode) in minutes." },
-      { title: "Zero-Downtime Deployments", description: "PM2 cluster mode allows updating production code seamlessly without interrupting active user sessions." },
+      { title: "Rolling Deployments", description: "PM2 cluster mode allows updating production code seamlessly without interrupting active user sessions." },
       { title: "Hardened Enterprise Security", description: "UFW firewalls, SSH key protection, and non-root container execution keep your server secure." },
     ],
     siblingServices: [
@@ -2142,7 +2142,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     faqs: [
       { question: "Why do you recommend Linux VPS hosting over proprietary managed platforms like AWS Elastic Beanstalk?", answer: "Managed cloud platforms add significant proprietary markups (often costing 5x to 10x more per month) while locking your architecture into their ecosystem. A Dockerized Linux VPS gives you identical speed and security at a fraction of the cost with complete infrastructure ownership." },
-      { question: "How is zero-downtime deployment achieved?", answer: "We use PM2 in cluster mode behind an Nginx reverse proxy. When a new release deploys, PM2 reloads worker processes sequentially, ensuring active incoming requests are served continuously without dropped connections." },
+      { question: "How are rolling deployments achieved?", answer: "We use PM2 in cluster mode behind an Nginx reverse proxy. When a new release deploys, PM2 reloads worker processes sequentially, ensuring active incoming requests are served continuously without dropped connections." },
       { question: "How is server security and DDoS mitigation handled?", answer: "We enforce strict UFW firewall rules (closing all ports except 80 and 443), disable password-based SSH access in favor of cryptographic keys, install Fail2ban for brute-force blocking, and configure Nginx rate limiters." },
       { question: "How are automated SSL certificates managed?", answer: "We configure Let's Encrypt with automated Certbot renewal cron jobs, ensuring SSL/TLS certificates renew automatically every 60 days without manual intervention." },
     ],
@@ -2217,7 +2217,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Enforce Business Governance", description: "Eliminate unauthorized purchases or bypassed credit rules with strict programmatic validation." },
     ],
     siblingServices: [
-      { title: "CRM Lead Ingestion & Distribution", href: "/services/business-automation/crm-automation", description: "Automate sub-second lead capture and sales executive allocation." },
+      { title: "CRM Lead Ingestion & Distribution", href: "/services/business-automation/crm-automation", description: "Automate rapid lead capture and sales executive allocation." },
       { title: "Third-Party API Integrations", href: "/services/business-automation/api-automation", description: "Connect payment gateways, KYC APIs, and messaging webhooks." },
       { title: "Web Application Development", href: "/services/web-application-development", description: "Full-stack web applications and SaaS platforms built with Next.js and React." },
     ],
@@ -2245,7 +2245,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     name: "CRM & Sales Pipeline Automation",
     badge: "Lead Acceleration",
     h1Title: "CRM & Inbound Lead Pipeline Automation Engineering",
-    heroSubtitle: "We engineer sub-second lead capture, enrichment, and distribution automation pipelines. Ingesting leads from web forms and ads, assigning via round-robin, and triggering instant WhatsApp greetings.",
+    heroSubtitle: "We engineer rapid lead capture, enrichment, and distribution automation pipelines. Ingesting leads from web forms and ads, assigning via round-robin, and triggering instant WhatsApp greetings.",
     overviewSummary: "Studies show that reaching out to an inbound sales lead within 5 minutes increases conversion rates by up to 391%. When leads sit in unmonitored email inboxes for hours, buyer interest evaporates. NVIT.SPACE builds high-velocity lead automation engines that process, enrich, and route leads in under 500 milliseconds.",
     overviewDetailedParagraphs: [
       "Our webhook listeners capture leads instantly from websites, landing pages, Google Ads, and Meta Lead Forms. The engine auto-enriches contact data, applies territory and executive availability rules, and assigns the lead via weighted round-robin.",
@@ -2259,7 +2259,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       "B2B service companies automating inbound consultation scheduling.",
     ],
     capabilities: [
-      { name: "Sub-500ms Lead Ingestion", tag: "Speed", description: "Real-time webhook capture from web forms, landing pages, Google Ads, and Meta Lead Forms." },
+      { name: "Instant Lead Ingestion", tag: "Speed", description: "Real-time webhook capture from web forms, landing pages, Google Ads, and Meta Lead Forms." },
       { name: "Weighted Round-Robin Assignment", tag: "Lead Routing", description: "Distributes leads dynamically based on executive availability, skill tier, and regional territory." },
       { name: "Instant WhatsApp & SMS Greetings", tag: "Customer Engagement", description: "Triggers personalized welcome messages to the customer within seconds of form submission." },
       { name: "Executive Mobile Push Alerts", tag: "Sales Speed", description: "Delivers full lead contact details and notes directly to the assigned agent's phone instantly." },
@@ -2295,7 +2295,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { number: "07", title: "Continuous Conversion & SLA Monitoring", description: "Tracking first-response latency, conversion rates by source, and ongoing system maintenance.", deliverable: "Continuous Lead SLA Support" },
     ],
     benefits: [
-      { title: "Sub-500ms Lead Assignment", description: "Reach buyers at the exact moment their purchase intent is highest, significantly increasing conversion rates." },
+      { title: "Instant Lead Assignment", description: "Reach buyers at the exact moment their purchase intent is highest, significantly increasing conversion rates." },
       { title: "Zero Lost Leads", description: "Every form submission and ad lead is captured, deduplicated, and recorded in PostgreSQL with zero lost data." },
       { title: "Automated WhatsApp Greetings", description: "Customers receive an immediate personalized WhatsApp message confirming their inquiry." },
       { title: "Enforce Agent Accountability", description: "Automated response timers re-assign leads if agents fail to call within agreed SLA timeframes." },
@@ -2320,7 +2320,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "Can we connect leads directly from Facebook and Google Ads?", answer: "Yes. We integrate directly with Meta Lead Ads Webhooks and Google Ads Webhook feeds, ensuring paid ad leads enter your pipeline instantly without manual CSV downloading." },
     ],
     metaTitle: "CRM & Inbound Lead Automation Engineering | NVIT.SPACE",
-    metaDescription: "CRM & inbound lead automation: sub-500ms lead ingestion, weighted round-robin distribution, instant WhatsApp greetings, and automated response SLA timers.",
+    metaDescription: "CRM & inbound lead automation: instant lead ingestion, weighted round-robin distribution, instant WhatsApp greetings, and automated response SLA timers.",
   },
 
   "erp-automation": {
@@ -2355,7 +2355,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
         title: "Omnichannel Fashion Retailer Stock Sync",
         targetAudience: "Retail & Apparel Brands",
         challenge: "Overselling popular inventory items during flash sales due to a 30-minute sync delay across channels.",
-        deliveredSolution: "Sub-second event-driven Redis sync pipeline updating stock levels across online store and physical stores in 250ms.",
+        deliveredSolution: "Real-time event-driven Redis sync pipeline updating stock levels across online store and physical stores.",
       },
       {
         title: "Industrial Wholesale Accounting Reconciliation",
@@ -2380,7 +2380,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { number: "07", title: "Discrepancy Audit & Ongoing SLA", description: "Automated daily midnight reconciliation audits comparing database counts with physical warehouse reports.", deliverable: "Continuous Data Integrity SLA" },
     ],
     benefits: [
-      { title: "Zero Overselling & Stockouts", description: "Instant sub-second stock synchronization prevents selling items that are already out of stock." },
+      { title: "Zero Overselling & Stockouts", description: "Instant stock synchronization prevents selling items that are already out of stock." },
       { title: "Eliminate Manual Accounting Entry", description: "Orders automatically create verified ledger entries and tax invoices in your accounting software." },
       { title: "Real-Time Inventory Visibility", description: "Warehouse managers and executives always know exact stock counts across all locations." },
       { title: "Automated Logistics Fulfillment", description: "Shipping labels and courier tracking updates are generated automatically upon order approval." },
@@ -2388,7 +2388,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     siblingServices: [
       { title: "Custom ERP Development", href: "/services/web-application-development/erp-development", description: "Full-stack enterprise resource planning systems." },
       { title: "Workflow Automation Engines", href: "/services/business-automation/workflow-automation", description: "Multi-step managerial approval state machines." },
-      { title: "Headless eCommerce Storefronts", href: "/services/website-development/ecommerce-websites", description: "High-converting online storefronts with sub-second browsing." },
+      { title: "Headless eCommerce Storefronts", href: "/services/website-development/ecommerce-websites", description: "High-converting online storefronts with fast responsive browsing." },
     ],
     connectedSolutions: [
       { title: "Business Operations Systems", href: "/solutions/business-management", badge: "Operations" },
@@ -2550,11 +2550,11 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "High-Reliability Webhook Processing", description: "Redis-backed BullMQ queues ensure every payment and order event is safely captured and processed." },
       { title: "Resilient to Third-Party Downtimes", description: "If an external API is down, requests are safely buffered in retry queues until the service recovers." },
       { title: "Cryptographic HMAC Security", description: "Verify that incoming webhook requests originate genuinely from your payment or messaging provider." },
-      { title: "Instant Sub-Second KYC Verification", description: "Verify PAN, GSTIN, and company registration status in real time during user onboarding." },
+      { title: "Instant KYC Verification", description: "Verify PAN, GSTIN, and company registration status in real time during user onboarding." },
     ],
     siblingServices: [
       { title: "Enterprise REST API Architecture", href: "/services/backend-development/rest-api-development", description: "Standardized RESTful APIs with OpenAPI 3.0 specifications." },
-      { title: "CRM & Lead Pipeline Automation", href: "/services/business-automation/crm-automation", description: "Automate sub-second lead capture and sales executive allocation." },
+      { title: "CRM & Lead Pipeline Automation", href: "/services/business-automation/crm-automation", description: "Automate rapid lead capture and sales executive allocation." },
       { title: "Workflow Automation Engines", href: "/services/business-automation/workflow-automation", description: "Multi-step managerial approval state machines." },
     ],
     connectedSolutions: [

@@ -35,7 +35,7 @@ const PILLARS: Pillar[] = [
       "Your digital presence is the first lens through which clients, partners, and investors judge your competence. We design architectural web experiences that communicate prestige, speed, and undeniable credibility.",
     deliverables: [
       "Brand-aligned corporate web systems",
-      "Sub-second load times & responsive fluid grids",
+      "Fast page load times & responsive fluid grids",
       "Clean semantic architecture & technical SEO",
       "Executive storytelling & digital identity",
     ],

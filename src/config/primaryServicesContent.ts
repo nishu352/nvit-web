@@ -64,7 +64,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
     name: "Website Development",
     badge: "Web & UX Engineering",
     h1Title: "Performance-Driven Website Development for Modern Businesses",
-    heroSubtitle: "We engineer lightning-fast, accessible, and high-converting web platforms using Next.js, React, and TypeScript. Optimized for sub-second page loads, organic search visibility, and frictionless user experiences.",
+    heroSubtitle: "We engineer lightning-fast, accessible, and high-converting web platforms using Next.js, React, and TypeScript. Optimized for fast page loads, organic search visibility, and frictionless user experiences.",
     overviewSummary: "Modern websites are no longer static digital brochures; they are high-performance conversion engines and the primary digital storefront of your business. At NVIT.SPACE, our website development services unite modern headless frontend engineering, strict Core Web Vitals optimization, and clean semantic code architectures to deliver websites that outperform industry benchmarks.",
     overviewDetailedParagraphs: [
       "A slow or poorly structured website directly erodes revenue and search rankings. Google's search algorithms heavily penalize slow interaction times (INP), cumulative layout shifts (CLS), and delayed content rendering (LCP). We architect every website with server-side rendering (SSR), optimized asset pipelines, and lightweight interactive hydration to ensure instant loading across desktop and mobile devices.",
@@ -96,14 +96,14 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
         slug: "ecommerce-websites",
         name: "High-Converting eCommerce Frontends",
         tag: "Headless Commerce",
-        description: "Sub-second product catalog search, dynamic shopping carts, and secure payment gateway integrations.",
+        description: "Fast product catalog search, dynamic shopping carts, and secure payment gateway integrations.",
         childHref: "/services/website-development/ecommerce-websites",
       },
       {
         slug: "landing-pages",
         name: "Performance Campaign Landing Pages",
         tag: "PPC & CRO",
-        description: "Zero-bloat marketing pages built for paid media campaigns with sub-80KB initial payloads and analytics tracking.",
+        description: "Zero-bloat marketing pages built for paid media campaigns with lightweight initial payloads and analytics tracking.",
         childHref: "/services/website-development/landing-pages",
       },
       {
@@ -131,7 +131,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
         title: "High-Velocity SaaS Product Launch",
         targetAudience: "Venture-Backed Technology Startups",
         challenge: "Need for rapid A/B testing across multiple ad campaigns with strict attribution tracking.",
-        deliveredSolution: "Dynamic UTM-routed landing pages with interactive product demos, sub-second LCP, and CRM webhook ingestion.",
+        deliveredSolution: "Dynamic UTM-routed landing pages with interactive product demos, optimized LCP, and CRM webhook ingestion.",
       },
       {
         title: "Enterprise Multi-Region Portal",
@@ -192,20 +192,20 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         number: "06",
         title: "Edge CDN Deployment",
-        description: "Configuring custom domains, SSL/TLS certificates, reverse proxy caching, and zero-downtime continuous integration (CI/CD).",
+        description: "Configuring custom domains, SSL/TLS certificates, reverse proxy caching, and automated continuous integration (CI/CD).",
         deliverable: "Live Production Deployment",
       },
       {
         number: "07",
         title: "Core Web Vitals Optimization",
-        description: "Post-launch telemetry monitoring ensuring LCP remains under 1.2s, CLS remains zero, and interaction latency is minimal.",
-        deliverable: "Continuous Performance Guarantee",
+        description: "Post-launch telemetry monitoring ensuring LCP remains under 1.2s, CLS remains minimal, and interaction latency is minimal.",
+        deliverable: "Continuous Performance Monitoring",
       },
     ],
     whyChooseUs: [
       {
         title: "Performance-First Architecture",
-        description: "We do not use bloated pre-made templates or heavy page builders. Every line of TypeScript is engineered for sub-second page loads.",
+        description: "We do not use bloated pre-made templates or heavy page builders. Every line of TypeScript is engineered for fast page loads.",
       },
       {
         title: "Strict SEO & Search Discoverability",
@@ -269,7 +269,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       },
       {
         question: "How do you ensure the website achieves high Google SEO rankings?",
-        answer: "We build strict SEO foundations into the codebase: clean HTML5 semantic tags, exact single H1 hierarchy, canonical URL definitions, Open Graph metadata, automated XML sitemaps, and Schema.org JSON-LD structured data. Furthermore, our sub-second page speeds maximize Google Core Web Vitals performance.",
+        answer: "We build strict SEO foundations into the codebase: clean HTML5 semantic tags, exact single H1 hierarchy, canonical URL definitions, Open Graph metadata, automated XML sitemaps, and Schema.org JSON-LD structured data. Furthermore, our fast page speeds maximize Google Core Web Vitals performance.",
       },
       {
         question: "Can we integrate a Content Management System (CMS) for easy editing?",
@@ -285,7 +285,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       },
     ],
     metaTitle: "Website Development Services — Fast & SEO-First | NVIT.SPACE",
-    metaDescription: "High-performance website development for modern businesses. Built with Next.js, React, and TypeScript for sub-second page loads, SEO authority, and high conversions.",
+    metaDescription: "High-performance website development for modern businesses. Built with Next.js, React, and TypeScript for fast page loads, SEO authority, and high conversions.",
   },
 
   "web-application-development": {
@@ -438,7 +438,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       },
       {
         title: "High-Speed Fastify Backend",
-        description: "Our backends run on Fastify and Node.js, achieving sub-20ms route resolution times and handling thousands of requests per second.",
+        description: "Our backends run on Fastify and Node.js, achieving fast route resolution times and handling high concurrent requests efficiently.",
       },
       {
         title: "Strict Database Indexing & Integrity",
@@ -1006,7 +1006,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
         slug: "nodejs-development",
         name: "Fastify & Node.js Asynchronous Backends",
         tag: "Low Latency",
-        description: "High-throughput asynchronous servers engineered for sub-20ms route resolution and minimal memory overhead.",
+        description: "High-throughput asynchronous servers engineered for fast route resolution and minimal memory overhead.",
         childHref: "/services/backend-development/nodejs-development",
       },
       {
@@ -1128,8 +1128,8 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
     ],
     whyChooseUs: [
       {
-        title: "Sub-20ms Response Times",
-        description: "We build on Fastify's high-speed schema serialization to deliver blazing API response times under 20ms.",
+        title: "Fast API Response Times",
+        description: "We build on Fastify's high-speed schema serialization to deliver fast, low-latency API response times.",
       },
       {
         title: "Relational PostgreSQL Mastery",
@@ -1213,7 +1213,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       },
     ],
     metaTitle: "Backend Architecture & High-Speed REST API Systems | NVIT.SPACE",
-    metaDescription: "Scalable backend architecture, microservices, and high-throughput REST APIs. Engineered with Fastify, Node.js, PostgreSQL & Docker for sub-20ms latency.",
+    metaDescription: "Scalable backend architecture, microservices, and high-throughput REST APIs. Engineered with Fastify, Node.js, PostgreSQL & Docker for fast, low-latency execution.",
   },
 
   "business-automation": {
@@ -1225,11 +1225,11 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
     overviewSummary: "Repetitive manual data entry, disconnected spreadsheets, and delayed cross-team communication drain organizational productivity and introduce costly human errors. NVIT.SPACE engineers custom business automation pipelines that connect disparate software systems into an automated, error-resilient operational machine.",
     overviewDetailedParagraphs: [
       "Unlike rigid no-code automation tools that break under high volume and charge exorbitant per-task fees, we engineer custom asynchronous queue workers and webhook dispatchers built in TypeScript and Node.js. Our systems ingest, validate, and synchronize high-volume data streams with high-reliability event processing.",
-      "From batch spreadsheet ETL pipelines that parse 100,000+ row bank pincode lists in seconds to automated WhatsApp notification triggers that alert sales executives the millisecond a lead arrives, our automation engines accelerate business throughput.",
+      "From batch spreadsheet ETL pipelines that parse 100,000+ row bank pincode lists in seconds to automated WhatsApp notification triggers that alert sales executives the instant a lead arrives, our automation engines accelerate business throughput.",
     ],
     targetAudienceHeadline: "Who Requires Custom Business Process Automation?",
     targetAudienceList: [
-      "Financial brokerages needing sub-second lead capture, enrichment, and round-robin agent distribution.",
+      "Financial brokerages needing rapid lead capture, enrichment, and round-robin agent distribution.",
       "Operations teams processing massive Excel and CSV datasets with automated database reconciliation.",
       "Retail and manufacturing enterprises syncing inventory across multiple warehouse systems.",
       "Organizations automating client onboarding, billing notifications, and transactional messaging.",
@@ -1246,7 +1246,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
         slug: "crm-automation",
         name: "CRM Lead Ingestion & Distribution",
         tag: "Sales Acceleration",
-        description: "Sub-second lead capture from web forms and ads, auto-enrichment, and round-robin executive routing.",
+        description: "Rapid lead capture from web forms and ads, auto-enrichment, and round-robin executive routing.",
         childHref: "/services/business-automation/crm-automation",
       },
       {

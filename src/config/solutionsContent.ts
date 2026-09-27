@@ -142,13 +142,13 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     heroSubtitle: "We engineer end-to-end digital lending architectures: borrower onboarding, multi-bank policy matching, pincode serviceability lookups, Document AI parsing, and lead distribution.",
     overviewSummary: "Digital lending platforms require seamless borrower onboarding, instant pre-qualification against complex multi-bank criteria, automated document underwriting, and real-time status tracking. NVIT.SPACE builds custom Loan Origination Systems (LOS) and DSA management software.",
     overviewDetailedParagraphs: [
-      "Our lending platforms integrate national bank policy matrices and verified pan-India pincode databases (covering 19,500+ pincodes) to evaluate applicant eligibility in under 500 milliseconds.",
+      "Our lending platforms integrate national bank policy matrices and verified pan-India pincode databases (covering 19,500+ pincodes) to evaluate applicant eligibility rapidly and accurately.",
       "With automated Document AI pipelines extracting 6 months of bank statement transactions in seconds and integrated WhatsApp notification triggers, loan distributors and fintech lenders accelerate disbursal velocity while cutting processing overhead.",
     ],
     challenges: [
       {
         challenge: "Underwriters wasting hours cross-referencing multi-bank pincode sheets and employer category tiers.",
-        solution: "Centralized policy matching engine querying 19,500+ pincodes and multi-bank employer lists in 10ms.",
+        solution: "Centralized policy matching engine querying 19,500+ pincodes and multi-bank employer lists with fast indexed query execution.",
       },
       {
         challenge: "Borrowers abandoning long, multi-page paper loan applications on mobile devices.",
@@ -168,7 +168,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: "19.5k Pincode Serviceability Matrix", tag: "Policy Engine", description: "Instant serviceability validation across Indian lenders with automated state and district enrichment." },
       { title: "Multi-Bank Employer Categorization", tag: "Company Match", description: "Instant fuzzy search matching borrower employers across Cat A, B, C, and D lender tier lists." },
       { title: "Document AI Bank Statement Parser", tag: "Neural OCR", description: "Extracts transaction tables, average monthly balances, and salary credits from PDF statements in seconds." },
-      { title: "Executive Round-Robin Lead Routing", tag: "DSA Operations", description: "Sub-500ms lead allocation to sales executives with instant WhatsApp notification dispatch." },
+      { title: "Executive Round-Robin Lead Routing", tag: "DSA Operations", description: "Instant lead allocation to sales executives with instant WhatsApp notification dispatch." },
       { title: "Lender API Integration Gateway", tag: "Disbursal", description: "Secure API bridges forwarding qualified applications directly into partner banking LOS systems." },
     ],
     modules: [
@@ -209,9 +209,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ],
     faqs: [
       { question: "Does NVIT.SPACE approve loans or provide lending capital?", answer: "No. NVIT.SPACE provides the software technology that powers digital lending platforms, broker networks, and DSAs. We do not provide credit or make credit decisions." },
-      { question: "How does the pincode eligibility check work across multiple banks?", answer: "Our platform indexes 19,500+ Indian pincodes with composite B-Tree database indexes, cross-referencing your partner banking lists in under 10ms to identify which lenders service that exact location." },
-      { question: "Can borrower leads be automatically distributed to sales agents via WhatsApp?", answer: "Yes. Inbound applications are captured in under 500ms, allocated via weighted round-robin rules, and dispatched directly to the assigned executive's WhatsApp." },
-      { question: "How accurate is the Document AI bank statement parser?", answer: "Our neural OCR engine achieves 99%+ extraction accuracy on multi-page PDF bank statements, outputting structured JSON transaction tables with automatic debit/credit balance reconciliation." },
+      { question: "How does the pincode eligibility check work across multiple banks?", answer: "Our platform indexes 19,500+ Indian pincodes with composite B-Tree database indexes, cross-referencing your partner banking lists with fast indexed query execution to identify which lenders service that exact location." },
+      { question: "Can borrower leads be automatically distributed to sales agents via WhatsApp?", answer: "Yes. Inbound applications are captured seamlessly, allocated via weighted round-robin rules, and dispatched directly to the assigned executive's WhatsApp." },
+      { question: "How accurate is the Document AI bank statement parser?", answer: "Our neural OCR pipeline provides high extraction accuracy on multi-page PDF bank statements, outputting structured JSON transaction tables with automatic debit/credit balance reconciliation." },
     ],
     metaTitle: "Loan Origination Systems & Lending Platforms | NVIT.SPACE",
     metaDescription: "Digital loan origination platform engineering: multi-bank policy matching, 19.5k pincode lookup, Document AI bank statement OCR, and DSA lead management.",
@@ -298,16 +298,16 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     name: "eCommerce & Digital Storefronts",
     badge: "Headless Commerce",
     h1Title: "Modern Headless eCommerce & Digital Storefront Solutions",
-    heroSubtitle: "We engineer lightning-fast headless eCommerce web platforms with sub-second product filtering, frictionless single-page checkouts, multi-gateway payments, and real-time inventory sync.",
+    heroSubtitle: "We engineer lightning-fast headless eCommerce web platforms with fast product filtering, frictionless single-page checkouts, multi-gateway payments, and real-time inventory sync.",
     overviewSummary: "Slow page loads and clunky checkout steps directly decrease conversion rates and average order values. NVIT.SPACE builds modern headless eCommerce platforms that decouple frontend presentation from backend inventory logic, delivering instant catalog browsing and checkout velocity.",
     overviewDetailedParagraphs: [
-      "Built with Next.js and React, our storefronts deliver sub-second client-side product filtering, persistent cart synchronization, and single-page checkout funnels optimized for mobile conversion.",
+      "Built with Next.js and React, our storefronts deliver rapid client-side product filtering, persistent cart synchronization, and single-page checkout funnels optimized for mobile conversion.",
       "Integrated with domestic and international payment gateways (Stripe, Razorpay, Cashfree), automated tax calculation engines, and courier tracking webhooks, our solutions scale seamlessly during flash sales.",
     ],
     challenges: [
       {
         challenge: "Slow mobile page load times (4+ seconds) causing high bounce rates and lost sales.",
-        solution: "Headless Next.js storefront deployed on edge CDNs delivering sub-800ms page loads."
+        solution: "Headless Next.js storefront deployed on edge CDNs delivering optimized page loads."
       },
       {
         challenge: "High cart abandonment caused by complicated multi-step checkout screens.",
@@ -323,7 +323,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       }
     ],
     capabilities: [
-      { title: "Sub-Second Faceted Product Search", tag: "Catalog Velocity", description: "Instant client-side filtering by category, price, size, rating, and attributes without page reloads." },
+      { title: "Fast Faceted Product Search", tag: "Catalog Velocity", description: "Instant client-side filtering by category, price, size, rating, and attributes without page reloads." },
       { title: "Single-Page Optimized Checkout", tag: "CRO", description: "Streamlined 1-page checkout flow minimizing input friction and reducing cart drop-offs." },
       { title: "Multi-Gateway Payment Integration", tag: "Fintech", description: "Secure integration with UPI, Credit/Debit Cards, Net Banking, Apple Pay, and Google Pay." },
       { title: "Distributed Inventory Locking", tag: "Concurrency", description: "Redis distributed locking preventing race conditions and overselling during peak flash sales." },
@@ -331,7 +331,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: "Abandoned Cart Recovery Hooks", tag: "Re-Engagement", description: "Automated WhatsApp and email reminders to recover dropped checkout sessions." },
     ],
     modules: [
-      { step: "01", title: "Edge Headless Storefront", description: "Sub-second Next.js product catalog and category list pages deployed on edge CDNs." },
+      { step: "01", title: "Edge Headless Storefront", description: "High-performance Next.js product catalog and category list pages deployed on edge CDNs." },
       { step: "02", title: "Faceted Search & Filtering", description: "Client-side instant filtering across thousands of SKUs without full-page reloads." },
       { step: "03", title: "Persistent Cart & Wishlist", description: "Cross-device synchronized cart state supporting guest checkout and discount codes." },
       { step: "04", title: "1-Page Checkout & Payments", description: "Frictionless checkout integrating Stripe, Razorpay, Cashfree, and Apple/Google Pay." },
@@ -347,14 +347,14 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     processSteps: [
       { number: "01", title: "Catalog & Checkout Architecture", description: "Map catalog taxonomy, shipping rules, tax calculations, and payment gateway specifications.", deliverable: "eCommerce Functional Blueprint" },
       { number: "02", title: "UI/UX & Mobile Commerce Design", description: "Designing high-converting product pages, category grids, cart drawers, and checkout flows.", deliverable: "Figma eCommerce Design System" },
-      { number: "03", title: "Headless Storefront Development", description: "Engineering sub-second Next.js pages with dynamic cart state and client-side filtering.", deliverable: "Production Storefront Codebase" },
+      { number: "03", title: "Headless Storefront Development", description: "Engineering fast Next.js pages with dynamic cart state and client-side filtering.", deliverable: "Production Storefront Codebase" },
       { number: "04", title: "Payment & Shipping Integrations", description: "Connecting payment gateway webhooks, shipping APIs, and automated GST invoice generators.", deliverable: "Verified Payment & Fulfillment Gateway" },
       { number: "05", title: "Load & Concurrency Benchmarks", description: "Simulating heavy flash sale traffic and verifying payment settlement webhooks.", deliverable: "Concurrency & Stress Test Scorecard" },
       { number: "06", title: "Production Store Launch", description: "Configuring domain routing, SSL certificates, analytics funnels, and production deployment.", deliverable: "Live eCommerce Platform Launch" },
       { number: "07", title: "Continuous CRO & Performance SLA", description: "Analyzing cart drop-off funnels, A/B testing checkout layouts, and optimizing speed.", deliverable: "Continuous Optimization SLA" },
     ],
     connectedServices: [
-      { title: "Headless eCommerce Development", href: "/services/website-development/ecommerce-websites", tag: "Storefront", description: "High-converting online storefronts with sub-second browsing." },
+      { title: "Headless eCommerce Development", href: "/services/website-development/ecommerce-websites", tag: "Storefront", description: "High-converting online storefronts with responsive browsing." },
       { title: "ERP & Inventory Synchronization", href: "/services/business-automation/erp-automation", tag: "Inventory Sync", description: "Real-time multi-channel inventory reconciliation." },
       { title: "Backend & API Systems", href: "/services/backend-development", tag: "APIs", description: "High-throughput Fastify REST APIs and PostgreSQL database architectures." },
       { title: "Custom CRM Development", href: "/services/web-application-development/crm-development", tag: "CRM", description: "Lead tracking and sales opportunity pipeline management." },
@@ -366,7 +366,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { question: "Do you support automated GST tax invoices?", answer: "Yes. Every completed order automatically generates a compliant GST tax invoice PDF with verified tax subtotals and dispatches it to the buyer via email and WhatsApp." },
     ],
     metaTitle: "Modern Headless eCommerce & Storefront Solutions | NVIT.SPACE",
-    metaDescription: "Modern headless eCommerce solutions: sub-second product filtering, 1-page checkout, multi-gateway payments (Stripe/Razorpay), and distributed inventory locking.",
+    metaDescription: "Modern headless eCommerce solutions: rapid product filtering, 1-page checkout, multi-gateway payments (Stripe/Razorpay), and distributed inventory locking.",
   },
 
   "education": {

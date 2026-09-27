@@ -21,9 +21,9 @@ export default function Footer() {
   const supportEmail = cms?.brand?.supportEmail || "info@nvit.space";
   const supportPhone = cms?.brand?.supportPhone || "";
   const founderName = cms?.founders?.founder?.name || "Nishant Bhardwaj";
-  const founderRole = cms?.founders?.founder?.title || "Founder & CEO";
+  const founderRole = "Founder & CEO";
   const coFounderName = cms?.founders?.coFounder?.name || "Vineet";
-  const coFounderRole = cms?.founders?.coFounder?.title || "Co-Founder & CTO";
+  const coFounderRole = "Co-Founder & CTO";
   const address = [cms?.company?.address, cms?.company?.city, cms?.company?.state]
     .filter(Boolean)
     .join(", ");

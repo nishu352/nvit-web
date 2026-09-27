@@ -37,7 +37,7 @@ export default function DigitalGapSection() {
       fragmentTitle: "Weak Digital Presence",
       fragmentDesc: "Outdated interfaces that fail to communicate the true caliber and trust of your business.",
       unifiedTitle: "Strong Digital Presence",
-      unifiedDesc: "Architectural web platforms with sub-second page loads and authoritative typography.",
+      unifiedDesc: "Architectural web platforms with fast page loads and refined modern typography.",
     },
     {
       index: "03",

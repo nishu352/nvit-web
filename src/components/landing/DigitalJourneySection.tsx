@@ -22,8 +22,8 @@ const STAGES = [
     step: "03",
     name: "Build",
     sub: "Production Engineering & Hardening",
-    desc: "We construct your digital platform with enterprise-grade TypeScript, robust Fastify/Next.js architectures, automated test suites, and sub-second query performance.",
-    outputs: ["Modular Codebase", "Zero-Downtime Deployment", "Security & Pen-Testing"],
+    desc: "We construct your digital platform with enterprise-grade TypeScript, robust Fastify/Next.js architectures, automated test suites, and performance-focused engineering.",
+    outputs: ["Modular Codebase", "Automated Deployment Pipeline", "Security & Pen-Testing"],
   },
   {
     step: "04",

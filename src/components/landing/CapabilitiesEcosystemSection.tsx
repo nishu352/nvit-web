@@ -28,7 +28,7 @@ const CAPABILITIES: Record<CapabilityKey, Capability> = {
     description: "Websites, digital identity and platforms that establish authority online.",
     scope: [
       "Corporate web platforms & brand-aligned design systems",
-      "Sub-second page performance & global edge distribution",
+      "Performance-focused web development & global edge distribution",
       "Semantic architecture, clean metadata & technical SEO",
     ],
     link: "/services/website-development",
