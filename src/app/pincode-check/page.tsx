@@ -316,7 +316,7 @@ export default function PincodeCheckPage() {
                   How often is the 19,500+ pincode database updated?
                 </h4>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                  Our database syncs with official Indian postal directory updates and lending institution policy revisions periodically to ensure high geographic fidelity across urban and semi-urban clusters.
+                  The checker uses the currently available postal and serviceability dataset, which is updated periodically to reflect geographic coverage and lender policy changes. For the most current serviceability status, we recommend confirming directly with your lender.
                 </p>
               </div>
             </div>

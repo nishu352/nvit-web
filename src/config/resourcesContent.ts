@@ -541,7 +541,7 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
     pillarTopic: "SaaS Architecture & Engineering",
     readingTime: "14 min read",
     publishedDate: "August 2026",
-    summary: "An authoritative end-to-end technical guide for engineering scalable multi-tenant SaaS platforms, configuring subscription billing, enforcing role-based permissions, and deploying zero-downtime cloud infrastructure.",
+    summary: "A practical technical guide for engineering scalable multi-tenant SaaS platforms, configuring subscription billing, enforcing role-based permissions, and deploying cloud infrastructure.",
     targetAudience: ["Startup Founders", "Technical Co-Founders", "Engineering Managers", "Full-Stack Architects"],
     architectureSummary: "Decoupled Next.js frontend with edge caching, Fastify TypeScript REST API gateway, shared PostgreSQL relational database with Row-Level Security (RLS), Redis distributed caching, and Docker VPS orchestration.",
     sections: [
@@ -606,7 +606,7 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
     pillarTopic: "Fintech Architecture & Ledger Systems",
     readingTime: "16 min read",
     publishedDate: "August 2026",
-    summary: "An in-depth technical blueprint for architecting mission-critical fintech software: double-entry accounting ledgers, banking API integrations, Document AI KYC pipelines, and institutional security standards.",
+    summary: "An in-depth technical guide to fintech software architecture: double-entry accounting ledgers, banking API integrations, Document AI KYC pipelines, and institutional security standards.",
     targetAudience: ["Fintech Leaders", "Banking CTOs", "Lending Operations Heads", "Financial Software Architects"],
     architectureSummary: "ACID-compliant PostgreSQL double-entry ledgers, Fastify REST APIs with idempotency keys, AES-256 field-level encryption, Document AI neural OCR, and Redis message queue workers.",
     sections: [
@@ -615,7 +615,7 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
         title: "1. Double-Entry Accounting & ACID Relational Integrity",
         content: [
           "Financial software requires zero room for balance discrepancies. A double-entry accounting ledger is an immutable database record where every transaction contains at least one debit and one credit of equal amounts.",
-          "Using PostgreSQL atomic transaction blocks (`BEGIN ... COMMIT`) and row-level locking ensures that simultaneous credit transfers maintain 100% balance integrity with zero race conditions.",
+          "Using PostgreSQL atomic transaction blocks (`BEGIN ... COMMIT`) and row-level locking helps ensure that simultaneous credit transfers maintain ledger balance integrity and minimize race conditions.",
         ],
         keyPoints: [
           "Total debits must equal total credits in every single transaction block.",
@@ -707,7 +707,7 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
     pillarTopic: "Lending Technology & LOS Architecture",
     readingTime: "15 min read",
     publishedDate: "August 2026",
-    summary: "The definitive engineering blueprint for building digital loan origination platforms: borrower onboarding funnels, 19,500+ pincode serviceability engines, Document AI statement OCR, and DSA sales pipelines.",
+    summary: "A practical engineering guide to building digital loan origination platforms: borrower onboarding funnels, pincode serviceability engines, Document AI statement OCR, and DSA sales pipelines.",
     targetAudience: ["Lending Founders", "DSA Network Directors", "Fintech Product Managers", "Fintech Engineers"],
     architectureSummary: "Mobile-first borrower intake funnel, 19,500+ Indian pincode B-Tree indexing engine, Document AI neural statement parsing, Fastify lead routing gateway, and real-time WhatsApp triggers.",
     sections: [
@@ -817,7 +817,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     solution: "NVIT.SPACE built a specialized Company Category Checker API utilizing PostgreSQL full-text search, trigram indexing (`pg_trgm`), and Fastify API caching. The system provides real-time autocomplete suggestions within 50ms as the loan officer types.",
     architectureHighlights: [
       "Trigram and ILIKE prefix search indexing hundreds of thousands of registered corporate employer entities.",
-      "Sub-50ms autocomplete API endpoint with debounced client-side queries.",
+      "Fast autocomplete API endpoint with debounced client-side queries.",
       "Multi-bank category aggregation displaying Cat A, B, C, or D status across all partner banks in a unified card.",
       "Direct integration with borrower application funnels to apply instant interest rate discounts.",
     ],
@@ -848,7 +848,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     ],
     liveToolLink: { title: "Live Company Category Checker", href: "/company-check" },
     metaTitle: "Case Study: Employer Categorization Search Engine | NVIT.SPACE",
-    metaDescription: "How NVIT.SPACE built a sub-50ms PostgreSQL employer categorization autocomplete engine for digital lending underwriting and policy matching.",
+    metaDescription: "How NVIT.SPACE built a fast PostgreSQL employer categorization autocomplete engine for digital lending underwriting and policy matching.",
   },
 
   "multi-tenant-loan-origination-system": {

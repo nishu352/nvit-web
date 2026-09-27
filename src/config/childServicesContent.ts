@@ -294,7 +294,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     faqs: [
       { question: "What is headless eCommerce and why is it faster?", answer: "Headless eCommerce decouples the frontend user interface (built in Next.js) from the backend inventory and payment logic. This allows the frontend to load instantly as static/server pages via edge CDNs without waiting for heavy backend CMS databases." },
       { question: "Which payment gateways do you support?", answer: "We support all major payment providers including Stripe, Razorpay, Cashfree, PayU, PayPal, Apple Pay, Google Pay, and custom bank net-banking portals." },
-      { question: "Can the platform handle tens of thousands of products?", answer: "Yes. Our normalized PostgreSQL schemas and indexed database queries easily support catalogs with 100,000+ SKUs with sub-millisecond search and filtering." },
+      { question: "Can the platform handle tens of thousands of products?", answer: "Yes. Our normalized PostgreSQL schemas and indexed database queries easily support catalogs with 100,000+ SKUs with fast indexed search and filtering." },
       { question: "Do you integrate automated tax and GST invoice generation?", answer: "Yes. Every completed order can automatically generate compliant GST tax invoices in PDF format and dispatch them to the customer via email and WhatsApp." },
       { question: "Is the checkout process secure and PCI compliant?", answer: "Yes. Payment details are tokenized and processed directly through certified PCI-DSS Level 1 compliant gateway SDKs, ensuring no sensitive card numbers touch your web server." },
     ],
@@ -567,7 +567,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     overviewSummary: "Generic off-the-shelf CRM software forces your sales team to adapt to rigid third-party workflows while charging costly monthly per-user subscription fees. NVIT.SPACE builds proprietary, custom CRM systems engineered specifically around your sales velocity, lead routing algorithms, and multi-channel customer timelines.",
     overviewDetailedParagraphs: [
       "We design interactive Kanban deal pipelines, automated round-robin lead distribution engines, and consolidated communication timelines connecting WhatsApp Business, transactional email, and phone call logs into a single centralized dashboard.",
-      "Built with full-stack TypeScript, React, and indexed PostgreSQL, our custom CRMs handle hundreds of thousands of customer records with instant sub-millisecond search and automated follow-up reminders.",
+      "Built with full-stack TypeScript, React, and indexed PostgreSQL, our custom CRMs handle hundreds of thousands of customer records with fast indexed search and automated follow-up reminders.",
     ],
     targetAudienceHeadline: "Built for High-Velocity Sales & Service Organizations:",
     targetAudienceList: [
@@ -715,7 +715,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     faqs: [
       { question: "How long does it take to develop and deploy a custom ERP system?", answer: "A modular custom ERP system typically takes 4 to 8 weeks depending on the number of departments (inventory, billing, procurement, HR) and legacy data migration complexity." },
       { question: "Can the ERP system handle multi-warehouse inventory transfers?", answer: "Yes. Our inventory module supports multi-location stock tracking with formal transfer request, approval, dispatch, and receiving workflows." },
-      { question: "How do you ensure financial accounting ledger accuracy?", answer: "We enforce strict double-entry accounting principles with ACID transactional guarantees in PostgreSQL, ensuring total debits always equal total credits with zero data corruption." },
+      { question: "How do you ensure financial accounting ledger accuracy?", answer: "We enforce strict double-entry accounting principles with ACID transactional guarantees in PostgreSQL, ensuring total debits always equal total credits and preventing data corruption." },
       { question: "Can we import our historical inventory and customer data from Excel?", answer: "Yes. We build custom batch ETL ingestion scripts that validate and import hundreds of thousands of historical spreadsheet rows directly into the new database." },
     ],
     metaTitle: "Custom ERP Development & Operations Software | NVIT.SPACE",
@@ -743,7 +743,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       "Content moderation teams reviewing user-generated media and published content.",
     ],
     capabilities: [
-      { name: "High-Density Paginated Data Tables", tag: "Data Management", description: "Sub-millisecond filtering, sorting, pagination, and inline editing across millions of database rows." },
+      { name: "High-Density Paginated Data Tables", tag: "Data Management", description: "Fast indexed filtering, sorting, pagination, and inline editing across millions of database rows." },
       { name: "Visual Analytics & KPI Widgets", tag: "Executive Insights", description: "Interactive charts (Recharts) visualizing revenue trajectories, conversion rates, and user growth." },
       { name: "Batch Data Ingestion & Export", tag: "ETL Tools", description: "Upload massive CSV/Excel spreadsheets with visual validation error correction and instant CSV exports." },
       { name: "Granular Role Governance (RBAC)", tag: "Security", description: "Restrict administrative tabs, sensitive columns, and deletion permissions by user role." },
@@ -866,7 +866,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Complete Competitive Differentiation", description: "Software built specifically around your proprietary strengths, giving you capabilities competitors cannot buy off the shelf." },
       { title: "Zero Vendor Lock-In", description: "You own 100% of your source code and database schemas with zero recurring per-user software license fees." },
       { title: "Infinite Customization Agility", description: "Easily modify business rules, add new calculators, or integrate new APIs as your business evolves." },
-      { title: "High-Speed Performance", description: "Engineered with Fastify and PostgreSQL for sub-millisecond query execution and zero lag." },
+      { title: "High-Speed Performance", description: "Engineered with Fastify and PostgreSQL for fast indexed query execution and low-latency performance." },
     ],
     siblingServices: [
       { title: "Multi-Tenant SaaS Platforms", href: "/services/web-application-development/saas-development", description: "Build scalable cloud software platforms for paying external subscribers." },
@@ -1571,7 +1571,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     heroSubtitle: "We engineer private Retrieval-Augmented Generation (RAG) knowledge pipelines that connect Large Language Models to your proprietary documentation, technical manuals, and corporate databases with zero hallucinations.",
     overviewSummary: "Generic AI models lack knowledge of your company's private operational guidelines, customer histories, and proprietary documentation. NVIT.SPACE architects private RAG pipelines that ground frontier LLMs in your internal data, delivering instant, cited, and hallucination-free answers to employees and customers.",
     overviewDetailedParagraphs: [
-      "We design high-performance semantic search pipelines utilizing vector embeddings stored in PostgreSQL with pgvector. Documents are intelligently chunked, embedded, and indexed for sub-millisecond similarity retrieval.",
+      "We design high-performance semantic search pipelines utilizing vector embeddings stored in PostgreSQL with pgvector. Documents are intelligently chunked, embedded, and indexed for fast similarity retrieval.",
       "Our RAG systems enforce strict semantic thresholding, verifiable source citations with direct page numbers, and role-based access governance, ensuring employees only retrieve information they are authorized to access.",
     ],
     targetAudienceHeadline: "Built for Knowledge-Intensive Enterprises & Support Teams:",
@@ -1583,10 +1583,10 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     capabilities: [
       { name: "Vector Embedding & Chunking Pipeline", tag: "Data Ingestion", description: "Intelligent semantic document chunking preserving tables, headers, and code snippets." },
-      { name: "pgvector PostgreSQL Storage", tag: "Vector DB", description: "Sub-millisecond cosine similarity search integrated directly inside your relational PostgreSQL database." },
+      { name: "pgvector PostgreSQL Storage", tag: "Vector DB", description: "Fast cosine similarity search integrated directly inside your relational PostgreSQL database." },
       { name: "Verifiable Source Citations", tag: "Truth Grounding", description: "Every AI response includes clickable source citations linking directly to the exact source document." },
       { name: "Role-Based Knowledge Isolation", tag: "Security", description: "Filter search queries by user role so staff only access documents permitted by their permissions." },
-      { name: "Hybrid Search (Vector + Keyword)", tag: "Search Precision", description: "Combines semantic dense vector search with sparse BM25 keyword matching for 99%+ retrieval accuracy." },
+      { name: "Hybrid Search (Vector + Keyword)", tag: "Search Precision", description: "Combines semantic dense vector search with sparse BM25 keyword matching for improved retrieval accuracy." },
     ],
     useCases: [
       {
@@ -1611,7 +1611,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     processSteps: [
       { number: "01", title: "Data Audit & Knowledge Ingestion", description: "Collect corporate PDFs, markdown files, databases, and define semantic search boundaries.", deliverable: "Knowledge Ingestion Architecture" },
       { number: "02", title: "Chunking & Embedding Pipeline", description: "Implementing semantic document chunking, metadata extraction, and vector embedding generation.", deliverable: "Vector Embedding Pipeline" },
-      { number: "03", title: "pgvector Index Optimization", description: "Configuring PostgreSQL pgvector with HNSW indexes for sub-millisecond similarity search.", deliverable: "Optimized Vector Database" },
+      { number: "03", title: "pgvector Index Optimization", description: "Configuring PostgreSQL pgvector with HNSW indexes for fast similarity search.", deliverable: "Optimized Vector Database" },
       { number: "04", title: "RAG Prompt & Citation Grounding", description: "Crafting grounding prompt instructions that enforce strict citation and reject unsupported questions.", deliverable: "Validated RAG Prompt Suite" },
       { number: "05", title: "Hybrid Search & Reranking Setup", description: "Integrating Cohere reranking and BM25 keyword search to maximize retrieval accuracy.", deliverable: "Hybrid Retrieval Engine" },
       { number: "06", title: "Search UI & Role Access Deployment", description: "Deploying intuitive search interface with document viewer and role-based permission filters.", deliverable: "Live Enterprise RAG Deployment" },
@@ -1701,7 +1701,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     benefits: [
       { title: "Handle Complex Qualitative Tasks", description: "Automate workflows that require understanding context, sentiment, and unstructured language." },
       { title: "Sub-Second Inbound Lead Triage", description: "Score, categorize, and assign leads to the right sales reps the instant they arrive." },
-      { title: "Zero Lost Events", description: "Redis-backed background queues ensure every classification task is executed with retry resilience." },
+      { title: "Reliable Event Processing", description: "Redis-backed background queues ensure every classification task is executed with retry resilience and minimal dropped events." },
       { title: "Substantial Labor Savings", description: "Free your team from hours of manual email reading, ticket sorting, and data entry." },
     ],
     siblingServices: [
@@ -1990,7 +1990,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     name: "PostgreSQL Database Architecture",
     badge: "Relational Database Scale",
     h1Title: "PostgreSQL Schema Design, Indexing & Query Optimization",
-    heroSubtitle: "We design bulletproof relational PostgreSQL architectures: optimized composite B-Tree/GIN indexes, sub-millisecond query execution, ACID transactional integrity, and automated migration pipelines.",
+    heroSubtitle: "We design bulletproof relational PostgreSQL architectures: optimized composite B-Tree/GIN indexes, fast and efficient query execution, ACID transactional integrity, and automated migration pipelines.",
     overviewSummary: "Your database is the foundation of your entire software ecosystem. Unindexed queries, poorly normalized tables, and missing foreign key constraints lead to sluggish page loads, database locks, and catastrophic data corruption under load. NVIT.SPACE engineers high-performance, indexed PostgreSQL database architectures.",
     overviewDetailedParagraphs: [
       "We design normalized relational schemas with strict ACID transactional guarantees, composite B-Tree, GIN, and GiST indexes, and pgvector extensions for AI semantic search. We analyze query execution plans (EXPLAIN ANALYZE) to eliminate sequential table scans and optimize multi-million row tables.",
@@ -2004,7 +2004,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       "Enterprises migrating away from expensive proprietary databases (Oracle, MS SQL) to PostgreSQL.",
     ],
     capabilities: [
-      { name: "Specialized Composite Indexing", tag: "Query Speed", description: "B-Tree, GIN (JSONB/Full-Text), and GiST indexes eliminating full-table scans for sub-millisecond queries." },
+      { name: "Specialized Composite Indexing", tag: "Query Speed", description: "B-Tree, GIN (JSONB/Full-Text), and GiST indexes eliminating full-table scans for faster, efficient queries." },
       { name: "ACID Transactional Integrity", tag: "Data Safety", description: "Strict foreign key constraints, unique constraints, and atomic multi-table transaction blocks." },
       { name: "pgvector AI Semantic Search", tag: "Vector Indexing", description: "HNSW indexed vector embeddings stored natively inside PostgreSQL for AI knowledge retrieval." },
       { name: "Automated Prisma Migrations", tag: "CI/CD", description: "Version-controlled schema migrations ensuring safe, reproducible database schema updates." },
@@ -2040,8 +2040,8 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { number: "07", title: "Automated Daily Backups & Disaster Recovery", description: "Setting up automated daily pg_dump scripts with offsite encrypted cloud storage and health alerts.", deliverable: "Continuous Backup & Recovery SLA" },
     ],
     benefits: [
-      { title: "Sub-Millisecond Query Response", description: "Specialized composite indexing ensures database queries execute in single-digit milliseconds." },
-      { title: "Zero Data Corruption", description: "ACID compliance and relational integrity constraints prevent orphaned records and duplicate entries." },
+      { title: "Optimized Query Performance", description: "Specialized composite indexing ensures database queries execute efficiently across large datasets." },
+      { title: "Transactional Data Integrity", description: "ACID compliance and relational integrity constraints prevent orphaned records and duplicate entries." },
       { title: "Vector Search Without Extra DBs", description: "Store AI vector embeddings directly inside PostgreSQL with pgvector, eliminating extra database fees." },
       { title: "Automated Disaster Recovery", description: "Daily automated offsite snapshots ensure your enterprise data can be restored in minutes if disaster strikes." },
     ],
@@ -2066,7 +2066,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "How are automated database backups configured?", answer: "We configure automated daily cron jobs that generate compressed `pg_dump` snapshot files, encrypt them, and upload them to secure offsite cloud storage vaults with automated retention policies." },
     ],
     metaTitle: "PostgreSQL Database Architecture & Optimization | NVIT.SPACE",
-    metaDescription: "PostgreSQL database design, indexing, and query optimization. Sub-millisecond queries, composite B-Tree/GIN indexes, ACID transactions, and pgvector AI storage.",
+    metaDescription: "PostgreSQL database design, indexing, and query optimization. Optimized queries, composite B-Tree/GIN indexes, ACID transactions, and pgvector AI storage.",
   },
 
   "cloud-backend-development": {
@@ -2147,7 +2147,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "How are automated SSL certificates managed?", answer: "We configure Let's Encrypt with automated Certbot renewal cron jobs, ensuring SSL/TLS certificates renew automatically every 60 days without manual intervention." },
     ],
     metaTitle: "Cloud Backend Infrastructure & Docker Architecture | NVIT.SPACE",
-    metaDescription: "Cloud backend infrastructure and DevOps: Docker containerization, Linux VPS hardening, Nginx reverse proxy SSL termination, and zero-downtime CI/CD.",
+    metaDescription: "Cloud backend infrastructure and DevOps: Docker containerization, Linux VPS hardening, Nginx reverse proxy SSL termination, and automated CI/CD pipelines.",
   },
 
   // ───────────────────────────────────────────────────────────────────────────
@@ -2522,7 +2522,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
         title: "Payment Gateway Webhook Reconciliation Bridge",
         targetAudience: "eCommerce & Subscription Platforms",
         challenge: "Payment gateway webhook timeouts during flash sales causing customer accounts not to activate.",
-        deliveredSolution: "Resilient BullMQ webhook listener on Redis with idempotency keys, guaranteeing 100% payment reconciliation with zero lost events.",
+        deliveredSolution: "Resilient BullMQ webhook listener on Redis with idempotency keys, designed for reliable payment reconciliation with minimal lost events.",
       },
       {
         title: "Automated Government PAN & GSTIN Verification Bridge",
@@ -2540,14 +2540,14 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     processSteps: [
       { number: "01", title: "API Contract & Webhook Scoping", description: "Audit third-party API documentation, authentication requirements, rate limits, and webhook payload structures.", deliverable: "API Integration Specification Blueprint" },
       { number: "02", title: "HMAC Security & Ingestion Architecture", description: "Developing secure webhook listeners with cryptographic signature validation and payload sanitization.", deliverable: "Secure Webhook Receiver Layer" },
-      { number: "03", title: "Idempotency & Deduplication Engine", description: "Implementing Redis idempotency key caching to guarantee zero duplicate processing of webhook events.", deliverable: "Idempotency & Deduplication Codebase" },
+      { number: "03", title: "Idempotency & Deduplication Engine", description: "Implementing Redis idempotency key caching designed to prevent duplicate processing of webhook events.", deliverable: "Idempotency & Deduplication Codebase" },
       { number: "04", title: "Queue Workers & Retry Backoff", description: "Configuring BullMQ workers with exponential backoff schedules and dead-letter queue (DLQ) monitoring.", deliverable: "Resilient Retry Queue Pipeline" },
       { number: "05", title: "Failure Simulation & Stress Testing", description: "Simulating third-party API downtime, network dropouts, and malformed payloads to verify fault tolerance.", deliverable: "Resilience & Fault Tolerance Scorecard" },
       { number: "06", title: "Production Cloud Deployment", description: "Deploying on cloud VPS with real-time webhook logging, error alerts, and SSL certificate termination.", deliverable: "Live API Integration Activation" },
-      { number: "07", title: "Ongoing SLA & API Version Updates", description: "Monitoring third-party API deprecations, latency spikes, and maintaining 99.99% bridge uptime.", deliverable: "Continuous Integration SLA Support" },
+      { number: "07", title: "Ongoing SLA & API Version Updates", description: "Monitoring third-party API deprecations, latency spikes, and maintaining high bridge uptime.", deliverable: "Continuous Integration SLA Support" },
     ],
     benefits: [
-      { title: "Guaranteed Zero Lost Webhooks", description: "Redis-backed BullMQ queues ensure every payment and order event is safely captured and executed." },
+      { title: "High-Reliability Webhook Processing", description: "Redis-backed BullMQ queues ensure every payment and order event is safely captured and processed." },
       { title: "Resilient to Third-Party Downtimes", description: "If an external API is down, requests are safely buffered in retry queues until the service recovers." },
       { title: "Cryptographic HMAC Security", description: "Verify that incoming webhook requests originate genuinely from your payment or messaging provider." },
       { title: "Instant Sub-Second KYC Verification", description: "Verify PAN, GSTIN, and company registration status in real time during user onboarding." },

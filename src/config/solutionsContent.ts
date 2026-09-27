@@ -59,9 +59,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     badge: "Financial Technology",
     h1Title: "Fintech Software Solutions & Digital Banking Technology Engineering",
     heroSubtitle: "We engineer secure, high-concurrency fintech platforms, digital lending portals, double-entry financial ledgers, and banking API gateways with full-stack TypeScript, Fastify, and PostgreSQL.",
-    overviewSummary: "Modern financial institutions and fintech startups require uncompromising data security, sub-millisecond query execution, and robust integrations with banking networks and payment gateways. NVIT.SPACE provides end-to-end technology engineering for high-scale financial software.",
+    overviewSummary: "Modern financial institutions and fintech startups require uncompromising data security, optimized query execution, and robust integrations with banking networks and payment gateways. NVIT.SPACE provides end-to-end technology engineering for high-scale financial software.",
     overviewDetailedParagraphs: [
-      "Financial technology demands architectural precision. We construct normalized relational PostgreSQL schemas with strict ACID transactional guarantees, ensuring ledger balances maintain 100% integrity with zero duplicate transactions.",
+      "Financial technology demands architectural precision. We construct normalized relational PostgreSQL schemas with strict ACID transactional guarantees, ensuring ledger balances maintain integrity with zero duplicate transactions.",
       "From real-time KYC identity verification and automated bank statement parsing to token-bucket rate-limited REST API gateways, our fintech software architectures are engineered for institutional scale and resilience.",
     ],
     challenges: [
@@ -86,7 +86,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: "Digital Lending & Customer Portals", tag: "Customer UX", description: "Intuitive self-service loan application portals with real-time eligibility checks and document uploads." },
       { title: "Double-Entry Accounting Ledgers", tag: "Accounting Core", description: "ACID-compliant relational ledgers ensuring immutable audit trails and balanced debits and credits." },
       { title: "Automated KYC & Identity Verification", tag: "Compliance", description: "Instant API verification for PAN cards, GSTIN records, Aadhaar OTP, and corporate registration data." },
-      { title: "Bank Policy & Serviceability Gateway", tag: "Policy Matching", description: "Sub-millisecond matching across 19,500+ Indian pincodes and multi-bank company categorization lists." },
+      { title: "Bank Policy & Serviceability Gateway", tag: "Policy Matching", description: "Fast indexed matching across 19,500+ Indian pincodes and multi-bank company categorization lists." },
       { title: "Payment Gateway Integration", tag: "Transactions", description: "Secure, idempotent payment integration for UPI, Net Banking, credit cards, and automated NACH mandates." },
       { title: "Real-Time Financial Dashboards", tag: "Analytics", description: "Executive KPI dashboards visualizing loan disbursals, delinquency ratios, and cohort collection metrics." },
     ],
@@ -107,7 +107,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     processSteps: [
       { number: "01", title: "Fintech Domain & Regulatory Scoping", description: "Map out transaction workflows, identity verification steps, and data security requirements.", deliverable: "Fintech Technical Architecture Blueprint" },
       { number: "02", title: "Relational Schema & Ledger Design", description: "Designing normalized PostgreSQL schemas with foreign key integrity and double-entry ledgers.", deliverable: "Database ERD & Prisma Schema" },
-      { number: "03", title: "Fastify API & Integration Build", description: "Implementing sub-20ms RESTful endpoints, bank API adapters, and payment gateway webhooks.", deliverable: "Core Fintech Backend Codebase" },
+      { number: "03", title: "Fastify API & Integration Build", description: "Implementing performant RESTful endpoints, bank API adapters, and payment gateway webhooks.", deliverable: "Core Fintech Backend Codebase" },
       { number: "04", title: "Document AI & Policy Rules Engine", description: "Integrating neural OCR document parsers and multi-bank pincode serviceability algorithms.", deliverable: "Underwriting & OCR Engine" },
       { number: "05", title: "Stress, Concurrency & Pen Testing", description: "Simulating high concurrent transactions, verifying zero duplicate writes, and auditing security.", deliverable: "Security Audit & Stress Scorecard" },
       { number: "06", title: "Hardened Production Deployment", description: "Deploying on cloud VPS with Docker containers, Nginx reverse proxy SSL, and UFW firewalls.", deliverable: "Live Production Fintech Deployment" },
@@ -115,7 +115,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ],
     connectedServices: [
       { title: "Web Application Development", href: "/services/web-application-development", tag: "Full-Stack", description: "Build scalable customer portals and administrative control panels." },
-      { title: "Backend & API Systems", href: "/services/backend-development", tag: "Microservices", description: "Sub-20ms Fastify APIs and relational PostgreSQL schemas." },
+      { title: "Backend & API Systems", href: "/services/backend-development", tag: "Microservices", description: "High-performance Fastify APIs and relational PostgreSQL schemas." },
       { title: "Document AI & Neural OCR", href: "/services/ai-development/document-ai", tag: "AI Extraction", description: "Automated extraction of bank statements and KYC documents." },
       { title: "Custom CRM Development", href: "/services/web-application-development/crm-development", tag: "CRM", description: "Lead tracking and loan opportunity pipeline management." },
     ],
@@ -126,12 +126,12 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ],
     faqs: [
       { question: "Is NVIT.SPACE a licensed lender or financial institution?", answer: "No. NVIT.SPACE is purely a technology and software development company. We engineer custom software platforms, web applications, and APIs for banks, fintech companies, lending distributors, and financial enterprises." },
-      { question: "How do you ensure transaction accuracy and prevent duplicate credit records?", answer: "We enforce strict double-entry accounting models with ACID transactions in PostgreSQL. Combined with header-based idempotency keys on APIs, transactions are guaranteed to execute exactly once." },
+      { question: "How do you ensure transaction accuracy and prevent duplicate credit records?", answer: "We enforce strict double-entry accounting models with ACID transactions in PostgreSQL. Combined with header-based idempotency keys on APIs, the system is designed to prevent duplicate execution of the same transaction." },
       { question: "Can the platform integrate with external banking APIs and credit bureaus?", answer: "Yes. We engineer secure RESTful and SOAP API integration layers to connect with banking core systems, credit bureaus (CIBIL, Experian), and payment gateways." },
       { question: "How is sensitive customer financial data protected?", answer: "We implement AES-256 database field-level encryption for sensitive identifiers, enforce HTTPS/TLS in transit, use JWT authentication with httpOnly cookie storage, and implement role-based access control." },
     ],
     metaTitle: "Fintech Software Solutions & Banking Technology | NVIT.SPACE",
-    metaDescription: "Fintech software engineering: digital lending portals, double-entry ledgers, banking API gateways, Document AI OCR, and sub-20ms Fastify backends.",
+    metaDescription: "Fintech software engineering: digital lending portals, double-entry ledgers, banking API gateways, Document AI OCR, and high-performance Fastify backends.",
   },
 
   "loan-finance-platforms": {
@@ -286,7 +286,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     faqs: [
       { question: "Why build a custom ERP/CRM instead of using SAP or Salesforce?", answer: "Commercial enterprise suites cost tens of thousands of dollars annually in per-user license fees and force your company into rigid workflows. A custom system gives you 100% code ownership, zero recurring license fees, and workflows engineered around your business." },
       { question: "Can the system synchronize inventory across multiple physical warehouse locations?", answer: "Yes. Our multi-location inventory module supports real-time stock counts, inter-branch transfer requests, barcode dispatch verification, and automated reorder triggers." },
-      { question: "How does the system ensure double-entry accounting accuracy?", answer: "We enforce strict double-entry accounting rules wrapped in PostgreSQL ACID transactions, ensuring that total debits always equal total credits with zero data corruption." },
+      { question: "How does the system ensure double-entry accounting accuracy?", answer: "We enforce strict double-entry accounting rules wrapped in PostgreSQL ACID transactions, ensuring that total debits always equal total credits and preventing data corruption." },
       { question: "Can we import our existing customer and inventory data from Excel?", answer: "Yes. We build custom batch ETL ingestion scripts that validate and import hundreds of thousands of historical spreadsheet rows directly into the new PostgreSQL database." },
     ],
     metaTitle: "Enterprise Business Operations, Custom ERP & CRM | NVIT.SPACE",

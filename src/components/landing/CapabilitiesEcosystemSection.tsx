@@ -29,7 +29,7 @@ const CAPABILITIES: Record<CapabilityKey, Capability> = {
     scope: [
       "Corporate web platforms & brand-aligned design systems",
       "Sub-second page performance & global edge distribution",
-      "Semantic architecture, clean metadata & SEO dominance",
+      "Semantic architecture, clean metadata & technical SEO",
     ],
     link: "/services/website-development",
     icon: Globe,

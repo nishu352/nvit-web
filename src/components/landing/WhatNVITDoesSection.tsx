@@ -34,8 +34,8 @@ const JOURNEY_STAGES: JourneyStage[] = [
     name: "Build",
     tagline: "Full-Stack Production Engineering",
     description:
-      "We construct scalable systems with strict typed contracts, sub-50ms query optimization, automated tests, and resilient edge delivery.",
-    milestones: ["Type-Safe Codebase", "Optimized Data Queries", "Zero-Downtime CI/CD"],
+      "We construct scalable systems with strict typed contracts, optimized and indexed data queries, automated tests, and resilient edge delivery.",
+    milestones: ["Type-Safe Codebase", "Optimized Data Queries", "Automated CI/CD Pipeline"],
   },
   {
     step: "04",

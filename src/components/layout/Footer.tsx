@@ -21,9 +21,9 @@ export default function Footer() {
   const supportEmail = cms?.brand?.supportEmail || "info@nvit.space";
   const supportPhone = cms?.brand?.supportPhone || "";
   const founderName = cms?.founders?.founder?.name || "Nishant Bhardwaj";
-  const founderRole = cms?.founders?.founder?.title || "Director & CEO";
+  const founderRole = cms?.founders?.founder?.title || "Founder & CEO";
   const coFounderName = cms?.founders?.coFounder?.name || "Vineet";
-  const coFounderRole = cms?.founders?.coFounder?.title || "Co-Director & CTO";
+  const coFounderRole = cms?.founders?.coFounder?.title || "Co-Founder & CTO";
   const address = [cms?.company?.address, cms?.company?.city, cms?.company?.state]
     .filter(Boolean)
     .join(", ");
@@ -197,11 +197,11 @@ export default function Footer() {
                 </div>
               )}
 
-              {/* Directors & Leadership */}
+              {/* Founders & Leadership */}
               <div className="pt-2 border-t border-slate-200 dark:border-slate-800/80 space-y-1">
                 <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-800 dark:text-slate-200">
                   <Users className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
-                  <span>Directors &amp; Leadership:</span>
+                  <span>Founders &amp; Leadership:</span>
                 </div>
                 <div className="text-[11px] text-slate-600 dark:text-slate-400 space-y-0.5 pl-5">
                   <p>

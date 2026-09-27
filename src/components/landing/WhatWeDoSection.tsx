@@ -36,7 +36,7 @@ const PILLARS: Pillar[] = [
     deliverables: [
       "Brand-aligned corporate web systems",
       "Sub-second load times & responsive fluid grids",
-      "Clean semantic architecture & SEO dominance",
+      "Clean semantic architecture & technical SEO",
       "Executive storytelling & digital identity",
     ],
     connections: "Feeds verified traffic and inquiries directly into Digital Experiences and Smart Systems.",

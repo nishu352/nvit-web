@@ -27,7 +27,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     engineered:
       "NVIT architected a specialized high-speed categorization engine utilizing PostgreSQL trigram indexing (pg_trgm), normalized company alias tables, and an asynchronous Fastify API layer. Queries are debounced on the client side to minimize server strain.",
     result:
-      "Sub-50ms autocomplete search latency across hundreds of thousands of registered corporate employer entities, with a unified view displaying partner bank policy tiers in real time.",
+      "Fast autocomplete search across hundreds of thousands of registered corporate employer entities, with a unified view displaying partner bank policy tiers in real time.",
     technologies: ["PostgreSQL (pg_trgm)", "Fastify", "TypeScript", "Next.js"],
     liveHref: "/company-check",
     caseStudyHref: "/resources/case-studies/enterprise-company-category-checker",
@@ -54,7 +54,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     engineered:
       "NVIT built a high-speed geospatial indexing engine mapping 19,500+ postal PIN codes to state, district, and circle hubs, cross-referenced with institution-specific lending criteria.",
     result:
-      "Fast public lookup service returning positive/negative serviceability flags across tier-1 and tier-2 financial institutions with confirmed sub-50ms query execution on indexed data.",
+      "Fast public lookup service returning positive/negative serviceability flags across tier-1 and tier-2 financial institutions with fast indexed query execution.",
     technologies: ["Next.js", "Fastify", "PostgreSQL", "TypeScript"],
     liveHref: "/pincode-check",
     caseStudyHref: "/resources/case-studies/pan-india-pincode-eligibility-engine",
