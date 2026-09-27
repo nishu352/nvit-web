@@ -37,7 +37,7 @@ export default function AboutPage() {
     "To democratize advanced digital engineering and intelligent software architectures for businesses of all scales.";
   const mission =
     cms?.about?.mission ||
-    "Empower enterprises by engineering high-speed, secure, and modern digital platforms with unmatched user experience.";
+    "Empower enterprises by engineering high-speed, secure, and modern digital platforms with exceptional user experience.";
 
   const founder = cms?.founders?.founder;
   const coFounder = cms?.founders?.coFounder;

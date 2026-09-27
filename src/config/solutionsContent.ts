@@ -284,7 +284,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: "Workflow Automation Engines", href: "/services/business-automation/workflow-automation", tag: "Workflows", description: "Multi-step managerial approval state machines." },
     ],
     faqs: [
-      { question: "Why build a custom ERP/CRM instead of using SAP or Salesforce?", answer: "Commercial enterprise suites cost tens of thousands of dollars annually in per-user license fees and force your company into rigid workflows. A custom system gives you 100% code ownership, zero recurring license fees, and workflows engineered around your business." },
+      { question: "Why build a custom ERP/CRM instead of using SAP or Salesforce?", answer: "Commercial enterprise suites cost tens of thousands of dollars annually in per-user license fees and force your company into rigid workflows. A custom system gives you complete code ownership, zero recurring license fees, and workflows engineered around your business." },
       { question: "Can the system synchronize inventory across multiple physical warehouse locations?", answer: "Yes. Our multi-location inventory module supports real-time stock counts, inter-branch transfer requests, barcode dispatch verification, and automated reorder triggers." },
       { question: "How does the system ensure double-entry accounting accuracy?", answer: "We enforce strict double-entry accounting rules wrapped in PostgreSQL ACID transactions, ensuring that total debits always equal total credits and preventing data corruption." },
       { question: "Can we import our existing customer and inventory data from Excel?", answer: "Yes. We build custom batch ETL ingestion scripts that validate and import hundreds of thousands of historical spreadsheet rows directly into the new PostgreSQL database." },
@@ -319,7 +319,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       },
       {
         challenge: "High recurring revenue percentage fees from proprietary eCommerce platform builders.",
-        solution: "100% custom-owned headless architecture with zero ongoing platform revenue share taxes."
+        solution: "Fully custom-owned headless architecture with zero ongoing platform revenue share taxes."
       }
     ],
     capabilities: [
@@ -543,7 +543,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       },
       {
         challenge: "Expensive per-user software subscriptions and proprietary cloud vendor lock-in.",
-        solution: "Self-hosted Docker and Linux VPS architectures with 100% full intellectual property ownership."
+        solution: "Self-hosted Docker and Linux VPS architectures with complete intellectual property ownership."
       },
       {
         challenge: "Launching with unvalidated features that customers do not actually use or pay for.",
@@ -555,7 +555,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: "Production-Grade Type Safety", tag: "Clean Architecture", description: "Full-stack TypeScript across Next.js and Fastify eliminating runtime bugs from day one." },
       { title: "Authentication & Role Governance", tag: "User Auth", description: "Pre-configured JWT authentication, session management, and role-based permissions (RBAC)." },
       { title: "Payment & Subscription Integration", tag: "Monetization", description: "Integrated Stripe or Razorpay checkout for immediate customer monetization and billing." },
-      { title: "Complete IP & Code Ownership", tag: "Zero Lock-In", description: "You receive 100% full source code ownership and database schemas with zero vendor lock-in." },
+      { title: "Complete IP & Code Ownership", tag: "Zero Lock-In", description: "You receive full source code ownership and database schemas with zero vendor lock-in." },
       { title: "Cost-Effective Cloud VPS Deploy", tag: "Low Runway Burn", description: "Deployed on Dockerized cloud VPS instances ($20/mo) eliminating costly cloud platform markups." },
     ],
     modules: [
@@ -590,10 +590,10 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     faqs: [
       { question: "What is the difference between a prototype and a production-grade MVP?", answer: "A prototype is often built with no-code tools and must be thrown away when traffic grows. A production-grade MVP is built on enterprise TypeScript and PostgreSQL code: it launches just as fast, but scales seamlessly as your user base grows with zero throwaway work." },
       { question: "How quickly can our startup MVP be built and launched?", answer: "Our focused startup MVP sprints typically deliver a working, production-deployed product with authentication and payment integration in 3 to 5 weeks." },
-      { question: "Do we own 100% of the code and intellectual property?", answer: "Yes. You receive 100% intellectual property ownership and full source code access upon completion, with zero vendor lock-in or recurring agency royalties." },
+      { question: "Do we own the code and intellectual property?", answer: "Yes. You receive full intellectual property ownership and complete source code access upon completion, with zero vendor lock-in or recurring agency royalties." },
       { question: "How much does hosting a startup MVP cost per month?", answer: "Because we deploy on lightweight Docker containers and Linux VPS hosting, your monthly infrastructure cost is typically just $20 to $40 per month, saving you thousands in proprietary cloud platform markups." },
     ],
     metaTitle: "Startup MVP Development & Product Engineering | NVIT.SPACE",
-    metaDescription: "Startup MVP development in 3 to 5 weeks. Production-grade TypeScript, Next.js, Fastify, and PostgreSQL foundations. Zero throwaway code, 100% IP ownership.",
+    metaDescription: "Startup MVP development in 3 to 5 weeks. Production-grade TypeScript, Next.js, Fastify, and PostgreSQL foundations. Zero throwaway code, full IP ownership.",
   },
 };

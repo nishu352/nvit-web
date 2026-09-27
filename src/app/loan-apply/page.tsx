@@ -130,7 +130,7 @@ export default function LoanApplyPage() {
                   </div>
                   <div>
                     <h2 className="text-xl font-extrabold text-[var(--text-primary)]">NVIT.SPACE Application Lead Form</h2>
-                    <p className="text-xs text-[var(--text-muted)]">100% confidential and SSL encrypted</p>
+                    <p className="text-xs text-[var(--text-muted)]">Confidential and SSL encrypted transmission</p>
                   </div>
                 </div>
 

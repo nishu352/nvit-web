@@ -58,9 +58,9 @@ const FEATURED_PROJECTS = [
     summary:
       "High-speed postal intelligence service aggregating branch coverage, postal zoning, and district-level lender serviceability across India.",
     highlights: [
-      "100% coverage of 19,500+ postal PIN codes mapped to district and circle hubs",
+      "Coverage includes 19,500+ postal PIN codes in the available dataset mapped to district and circle hubs",
       "Instant positive/negative coverage flags for tier-1 and tier-2 financial institutions",
-      "Zero-dependency public API endpoint delivering JSON serviceability responses",
+      "Fast public lookup endpoint delivering JSON serviceability responses",
     ],
     tech: ["Next.js", "Fastify", "PostgreSQL", "TypeScript", "Tailwind CSS"],
     liveHref: "/pincode-check",

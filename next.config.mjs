@@ -16,6 +16,20 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   transpilePackages: ["framer-motion", "motion"],
+  async redirects() {
+    return [
+      {
+        source: '/privacy',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/case-studies',
+        destination: '/resources/case-studies',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

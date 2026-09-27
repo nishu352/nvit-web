@@ -755,11 +755,11 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
       { question: "How does the system handle multi-bank policy updates?", answer: "We provide an administrative CSV/Excel batch upload module that automatically validates and updates bank pincode and company category lists without code deployments." },
     ],
     metaTitle: "Digital Loan Platform Development Guide | NVIT.SPACE",
-    metaDescription: "An authoritative guide to building digital lending platforms: borrower onboarding, 19.5k pincode policy lookup, Document AI OCR, and DSA lead management.",
+    metaDescription: "A comprehensive engineering guide to building digital lending platforms: borrower onboarding, 19.5k pincode policy lookup, Document AI OCR, and DSA lead management.",
   },
 };
 
-// ─── 3 AUTHENTIC CASE STUDIES ────────────────────────────────────────────────
+// ─── 3 REPRESENTATIVE TECHNICAL CASE STUDIES ─────────────────────────────────
 
 export const CASE_STUDIES: Record<string, CaseStudy> = {
   "pan-india-pincode-eligibility-engine": {
@@ -829,12 +829,12 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     ],
     engineeringDecisions: [
       { decision: "Trigram & B-Tree Indexing", rationale: "Enabling PostgreSQL `pg_trgm` indexes allowed flexible fuzzy matching without the heavy operational overhead of Elasticsearch." },
-      { decision: "Debounced API Calls", rationale: "Client-side 250ms debouncing reduced unnecessary API server requests by over 70% during active user typing." },
+      { decision: "Debounced API Calls", rationale: "In internal benchmark testing, client-side 250ms debouncing reduced redundant autocomplete API queries by ~70% during continuous user input." },
     ],
     technicalMetrics: [
       "Fast Real-Time Autocomplete Search",
       "Unified Multi-Bank Policy View",
-      "100k+ Indexed Corporate Employers",
+      "Extensive Corporate Employer Dataset",
       "Zero Third-Party Search SaaS Dependencies",
     ],
     technologies: ["PostgreSQL (pg_trgm)", "Fastify", "TypeScript", "Next.js", "Tailwind CSS"],

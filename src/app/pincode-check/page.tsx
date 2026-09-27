@@ -50,6 +50,50 @@ export default function PincodeCheckPage() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#050507] text-zinc-900 dark:text-zinc-100 transition-colors duration-300 flex flex-col selection:bg-zinc-900 dark:selection:bg-white selection:text-white dark:selection:text-zinc-950">
+      {/* Schema.org FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why is my PIN code serviceable by one lender but rejected by another?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Each financial institution establishes its own network of physical branch offices and third-party verification agencies. A regional bank or NBFC with strong local presence in a particular district will service postal codes that a centralized private lender might exclude."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I apply for credit using my office address if my residence PIN is unserviceable?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Many lenders allow an application if either the current residence or permanent corporate employer address falls within a serviceable postal code, provided one of the two locations can be physically verified by field representatives."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does querying a pincode on this tool impact my credit score?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. This serviceability check queries public postal zoning and institutional lender coverage indices. It does not pull your credit report (CIBIL/Experian) and has zero impact on your credit rating."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How often is the available pincode dataset updated?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The available dataset is periodically updated to reflect geographic coverage and lender policy changes. For critical or time-sensitive serviceability status, always verify directly with the respective lending institution."
+                }
+              }
+            ]
+          }),
+        }}
+      />
       <Navbar />
 
       {/* Header Banner */}
@@ -69,7 +113,7 @@ export default function PincodeCheckPage() {
               Pincode Serviceability Checker
             </h1>
             <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-medium">
-              Inspect regional postal serviceability, district postal zoning, and operational lender coverage across 19,500+ Indian PIN codes.
+              Coverage includes 19,500+ Indian PIN codes in the available dataset. Inspect regional postal serviceability, district postal zoning, and operational lender coverage.
             </p>
           </div>
 
@@ -307,16 +351,16 @@ export default function PincodeCheckPage() {
                   Does querying a pincode on this tool impact my credit score?
                 </h4>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                  No. This serviceability check queries public postal zoning and partner institution coverage indices. It does not pull your credit report (CIBIL/Experian) and has zero impact on your credit rating.
+                  No. This serviceability check queries public postal zoning and institutional lender coverage indices. It does not pull your credit report (CIBIL/Experian) and has zero impact on your credit rating.
                 </p>
               </div>
 
               <div className="p-5 rounded-2xl glass-card-apple space-y-2 shadow-sm">
                 <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
-                  How often is the 19,500+ pincode database updated?
+                  How often is the available pincode dataset updated?
                 </h4>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                  The checker uses the currently available postal and serviceability dataset, which is updated periodically to reflect geographic coverage and lender policy changes. For the most current serviceability status, we recommend confirming directly with your lender.
+                  The available dataset is periodically updated to reflect geographic coverage and lender policy changes. For critical or time-sensitive serviceability status, always verify directly with the respective lending institution.
                 </p>
               </div>
             </div>
@@ -326,7 +370,7 @@ export default function PincodeCheckPage() {
           <div className="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
             <span className="font-bold text-zinc-800 dark:text-zinc-200 block">Informational Notice:</span>
             <p className="leading-relaxed">
-              Pincode serviceability metrics displayed here are based on compiled reference indexes for informational purposes. Individual lender branch boundaries and credit policies may change without prior notice. Final loan approval remains subject to borrower credit assessment, KYC documentation, and lender underwriting criteria.
+              Pincode serviceability metrics displayed here are based on compiled reference indexes for informational purposes. Individual lender branch boundaries and credit policies may change without prior notice. Final loan approval remains subject to borrower credit assessment, KYC documentation, and lender underwriting criteria. Users should independently verify serviceability and eligibility details with the respective institution. Users should independently verify serviceability and eligibility details with the respective institution.
             </p>
           </div>
         </section>

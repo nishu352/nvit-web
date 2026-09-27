@@ -75,7 +75,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       "Mid-market and enterprise businesses seeking to modernize outdated corporate web portals.",
       "Direct-to-consumer (D2C) and eCommerce brands requiring frictionless, instant-loading checkout funnels.",
       "High-growth technology startups needing high-converting marketing and product landing pages.",
-      "Professional service firms and financial consultancies establishing authoritative digital brand credibility.",
+      "Professional service firms and financial consultancies establishing professional digital brand credibility.",
     ],
     capabilities: [
       {
@@ -446,7 +446,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       },
       {
         title: "Full Code Ownership & Zero Lock-In",
-        description: "You own 100% of the proprietary source code, database schemas, and infrastructure configurations with zero ongoing per-seat fees.",
+        description: "You retain full ownership of the proprietary source code, database schemas, and infrastructure configurations with zero ongoing per-seat fees.",
       },
     ],
     relatedServices: [
@@ -950,7 +950,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         title: "Pincode Eligibility Checker",
         href: "/pincode-check",
-        badge: "Real-time",
+        badge: "19.5k Pincodes",
       },
     ],
     faqs: [
@@ -1343,7 +1343,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         number: "05",
         title: "Staging Pilot & End-to-End Verification",
-        description: "Running the automation engine in staging with production data samples to verify 100% data consistency.",
+        description: "Running the automation engine in staging with production data samples to verify strict data consistency.",
         deliverable: "End-to-End Verification Scorecard",
       },
       {
@@ -1430,7 +1430,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       },
       {
         question: "What happens if a third-party API is temporarily down?",
-        answer: "Our systems use exponential backoff retries with BullMQ and dead-letter queues (DLQ). If an external API (like a payment gateway or WhatsApp API) experiences an outage, requests are safely queued and retried automatically once the service recovers, ensuring zero data loss.",
+        answer: "Our systems use exponential backoff retries with BullMQ and dead-letter queues (DLQ). If an external API (like a payment gateway or WhatsApp API) experiences an outage, requests are safely queued and retried automatically once the service recovers, preventing request loss and maintaining message persistence.",
       },
       {
         question: "Can you automate large Excel/CSV file imports with thousands of rows?",

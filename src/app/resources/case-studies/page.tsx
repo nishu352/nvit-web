@@ -9,13 +9,13 @@ import { CASE_STUDIES } from "@/config/resourcesContent";
 export const metadata: Metadata = {
   title: "Case Studies & Architecture Blueprints | NVIT.SPACE",
   description:
-    "Explore authentic technical case studies on high-scale systems engineered by NVIT.SPACE: Pan-India Pincode Engines, Company Search APIs, and Multi-Tenant Lending Platforms.",
+    "Explore representative technical case studies on high-scale systems engineered by NVIT.SPACE: Pan-India Pincode Engines, Company Search APIs, and Multi-Tenant Lending Platforms.",
   alternates: {
     canonical: "https://www.nvit.space/resources/case-studies",
   },
   openGraph: {
     title: "Engineering Case Studies | NVIT.SPACE",
-    description: "Authentic software engineering case studies, architecture decisions, and demonstrable systems.",
+    description: "Representative engineering case studies, technical architecture decisions, and benchmarked systems.",
     url: "https://www.nvit.space/resources/case-studies",
   },
 };
@@ -47,7 +47,7 @@ export default function CaseStudiesIndexPage() {
             </h1>
 
             <p className="text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-              Explore authentic technical architectures, database indexing decisions, and measurable engineering highlights from systems built by NVIT.SPACE.
+              Explore technical architectures, database indexing decisions, and internal engineering benchmarks from systems built by NVIT.SPACE.
             </p>
           </div>
         </div>
