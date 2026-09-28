@@ -90,6 +90,51 @@ export default function CompanyCheckPage() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#050507] text-zinc-900 dark:text-zinc-100 transition-colors duration-300 flex flex-col selection:bg-zinc-900 dark:selection:bg-white selection:text-white dark:selection:text-zinc-950">
+      {/* Schema.org FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can an applicant get a personal loan if their employer is marked \"Unlisted\"?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. An \"Unlisted\" categorization simply means the lender does not maintain an active corporate tie-up or pre-indexed policy entry for that organization. Commercial lenders and NBFCs process unlisted company employees through open-market channels, evaluating individual income stability, salary credits, and overall credit history."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is a company categorized as CAT-A in one bank but CAT-B or Unlisted in another?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Each lending institution establishes its own internal risk models, commercial relationships, and payroll portfolio partnerships. A bank that manages an employer's corporate payroll accounts will typically place that organization in a higher internal category than an institution without a banking relationship."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does employer tiering affect loan processing workflows?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Some lenders apply automated straight-through processing workflows or streamlined document verification for certain categorized corporate employees. However, processing times vary by lender, applicant documentation completeness, and verification requirements."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How often do lenders revise their corporate employer lists?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Credit committees review corporate employer lists periodically, adjusting classifications based on corporate financial performance, market capitalization, credit rating changes, and internal portfolio risk parameters."
+                }
+              }
+            ]
+          }),
+        }}
+      />
+
       <Navbar />
 
       {/* Hero & Search Header */}

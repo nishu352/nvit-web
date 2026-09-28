@@ -175,7 +175,7 @@ export default function AboutPage() {
                       {founder?.name || "Nishant Bhardwaj"}
                     </h3>
                     <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">
-                      {founder?.title && !founder.title.includes("Director") ? founder.title : "Founder & CEO"}
+                      Founder &amp; CEO
                     </span>
                   </div>
                   {founder?.linkedin && (
@@ -205,7 +205,7 @@ export default function AboutPage() {
                       {coFounder?.name || "Vineet"}
                     </h3>
                     <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-                      {coFounder?.title && !coFounder.title.includes("Director") ? coFounder.title : "Co-Founder & CTO"}
+                      Co-Founder &amp; CTO
                     </span>
                   </div>
                   {coFounder?.linkedin && (

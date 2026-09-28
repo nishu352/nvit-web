@@ -170,7 +170,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       {
         title: "Public Financial Conglomerate Portal",
         targetAudience: "Banking & Investment Groups",
-        challenge: "Managing quarterly earnings releases with strict compliance and zero downtime risk during market hours.",
+        challenge: "Managing quarterly earnings releases with strict compliance and high availability requirements during market hours.",
         deliveredSolution: "Edge-cached corporate portal with automated PDF earnings release publishing and instant CDN cache invalidation.",
       },
       {

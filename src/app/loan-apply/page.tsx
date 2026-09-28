@@ -145,7 +145,7 @@ export default function LoanApplyPage() {
                     {/* Name */}
                     <Input
                       label="Full Name *"
-                      placeholder="e.g. Rajesh Sharma"
+                      placeholder="Enter your full name"
                       leftIcon={<User className="w-4 h-4" />}
                       error={errors.name?.message}
                       {...register("name")}
@@ -165,7 +165,7 @@ export default function LoanApplyPage() {
                     <Input
                       label="Email Address *"
                       type="email"
-                      placeholder="rajesh.sharma@example.com"
+                      placeholder="name@example.com"
                       leftIcon={<Mail className="w-4 h-4" />}
                       error={errors.email?.message}
                       {...register("email")}

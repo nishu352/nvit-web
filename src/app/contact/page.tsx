@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-900 dark:text-white">Corporate Registered Office</p>
+                    <p className="text-xs font-bold text-slate-900 dark:text-white">Office Location</p>
                     <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">{address}</p>
                   </div>
                 </div>
