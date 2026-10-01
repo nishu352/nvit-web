@@ -39,8 +39,17 @@ export default function AboutPage() {
     cms?.about?.mission ||
     "Empower enterprises by engineering high-speed, secure, and modern digital platforms with exceptional user experience.";
 
-  const founder = cms?.founders?.founder;
-  const coFounder = cms?.founders?.coFounder;
+  const founderName = cms?.founders?.founder?.name?.trim() || null;
+  const founderTitle = cms?.founders?.founder?.title?.trim() || null;
+  const founderBio = cms?.founders?.founder?.bio?.trim() || null;
+  const founderLinkedin = cms?.founders?.founder?.linkedin?.trim() || null;
+
+  const coFounderName = cms?.founders?.coFounder?.name?.trim() || null;
+  const coFounderTitle = cms?.founders?.coFounder?.title?.trim() || null;
+  const coFounderBio = cms?.founders?.coFounder?.bio?.trim() || null;
+  const coFounderLinkedin = cms?.founders?.coFounder?.linkedin?.trim() || null;
+
+  const hasFounders = Boolean(founderName || coFounderName);
 
   const address = [cms?.company?.address, cms?.company?.city, cms?.company?.state]
     .filter(Boolean)
@@ -154,81 +163,95 @@ export default function AboutPage() {
 
         <Divider />
 
-        {/* Leadership & Founders Section */}
-        <section className="space-y-6">
-          <MotionReveal>
-            <SectionHeading
-              badge="Leadership"
-              badgeIcon={<Users className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />}
-              badgeVariant="blue"
-              title="Leadership & Founding Team"
-            />
-          </MotionReveal>
+        {hasFounders && (
+          <>
+            {/* Leadership & Founders Section */}
+            <section className="space-y-6">
+              <MotionReveal>
+                <SectionHeading
+                  badge="Leadership"
+                  badgeIcon={<Users className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />}
+                  badgeVariant="blue"
+                  title="Leadership & Founding Team"
+                />
+              </MotionReveal>
 
-          <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Founder Card */}
-            <StaggerItem>
-              <SpotlightCard className="h-full rounded-3xl p-7 sm:p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-                      {founder?.name || "Nishant Bhardwaj"}
-                    </h3>
-                    <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">
-                      Founder &amp; CEO
-                    </span>
-                  </div>
-                  {founder?.linkedin && (
-                    <a
-                      href={founder.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-2 rounded-xl bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-white/20 transition-colors"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-                <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed font-medium">
-                  {founder?.bio ||
-                    "Passionate technologist leading product architecture, full-stack systems engineering, and business strategy at NVIT.SPACE."}
-                </p>
-              </SpotlightCard>
-            </StaggerItem>
+              <StaggerContainer staggerDelay={0.15} className={`grid grid-cols-1 ${founderName && coFounderName ? "sm:grid-cols-2" : "max-w-md mx-auto"} gap-6`}>
+                {/* Founder Card */}
+                {founderName && (
+                  <StaggerItem>
+                    <SpotlightCard className="h-full rounded-3xl p-7 sm:p-8 space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
+                            {founderName}
+                          </h3>
+                          {founderTitle && (
+                            <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">
+                              {founderTitle}
+                            </span>
+                          )}
+                        </div>
+                        {founderLinkedin && (
+                          <a
+                            href={founderLinkedin}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="p-2 rounded-xl bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-white/20 transition-colors"
+                          >
+                            <Linkedin className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                      {founderBio && (
+                        <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed font-medium">
+                          {founderBio}
+                        </p>
+                      )}
+                    </SpotlightCard>
+                  </StaggerItem>
+                )}
 
-            {/* Co-Founder Card */}
-            <StaggerItem>
-              <SpotlightCard className="h-full rounded-3xl p-7 sm:p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-                      {coFounder?.name || "Vineet"}
-                    </h3>
-                    <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-                      Co-Founder &amp; CTO
-                    </span>
-                  </div>
-                  {coFounder?.linkedin && (
-                    <a
-                      href={coFounder.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-2 rounded-xl bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-white/20 transition-colors"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-                <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed font-medium">
-                  {coFounder?.bio ||
-                    "Engineering leader driving backend infrastructure, cloud architectures, database design, and AI model integrations."}
-                </p>
-              </SpotlightCard>
-            </StaggerItem>
-          </StaggerContainer>
-        </section>
+                {/* Co-Founder Card */}
+                {coFounderName && (
+                  <StaggerItem>
+                    <SpotlightCard className="h-full rounded-3xl p-7 sm:p-8 space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
+                            {coFounderName}
+                          </h3>
+                          {coFounderTitle && (
+                            <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                              {coFounderTitle}
+                            </span>
+                          )}
+                        </div>
+                        {coFounderLinkedin && (
+                          <a
+                            href={coFounderLinkedin}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="p-2 rounded-xl bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-white/20 transition-colors"
+                          >
+                            <Linkedin className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                      {coFounderBio && (
+                        <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed font-medium">
+                          {coFounderBio}
+                        </p>
+                      )}
+                    </SpotlightCard>
+                  </StaggerItem>
+                )}
+              </StaggerContainer>
+            </section>
 
-        <Divider />
+            <Divider />
+          </>
+        )}
 
         {/* Corporate Legal Registration */}
         <MotionReveal>
