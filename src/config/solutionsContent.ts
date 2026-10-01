@@ -120,9 +120,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: "Custom CRM Development", href: "/services/web-application-development/crm-development", tag: "CRM", description: "Lead tracking and loan opportunity pipeline management." },
     ],
     relevantTools: [
-      { title: "Company Category Checker API", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker API", href: "/company-check", badge: "Tool" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
-      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator", badge: "Interactive" },
+      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator", badge: "Calculator" },
     ],
     faqs: [
       { question: "Is NVIT.SPACE a licensed lender or financial institution?", answer: "No. NVIT.SPACE is purely a technology and software development company. We engineer custom software platforms, web applications, and APIs for banks, fintech companies, lending distributors, and financial enterprises." },
@@ -202,8 +202,8 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ],
     relevantTools: [
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
-      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator", badge: "Interactive" },
+      { title: "Company Category Checker", href: "/company-check", badge: "Tool" },
+      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator", badge: "Calculator" },
       { title: "Personal Loan EMI Calculator", href: "/finance-tools/personal-loan-emi-calculator", badge: "Personal Loan" },
       { title: "Home Loan EMI Calculator", href: "/finance-tools/home-loan-emi-calculator", badge: "Home Loan" },
     ],

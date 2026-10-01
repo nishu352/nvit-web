@@ -159,7 +159,7 @@ export default function ContactPage() {
                 <span>Response Commitment</span>
               </div>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                You will receive a structured technical reply and architecture roadmap estimate within one business day.
+                We aim to review your inquiry and provide a structured technical response within 1-2 business days.
               </p>
             </div>
           </div>

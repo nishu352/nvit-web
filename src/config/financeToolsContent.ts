@@ -132,7 +132,7 @@ export const FINANCE_TOOLS_DATA: Record<string, FinanceToolData> = {
     connectedTools: [
       { title: "Standard Loan EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Universal" },
       { title: "Loan Eligibility Calculator", href: "/finance-tools/loan-eligibility-calculator", badge: "Capacity Check" },
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check", badge: "Tool" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     connectedSolutions: [
@@ -245,7 +245,7 @@ export const FINANCE_TOOLS_DATA: Record<string, FinanceToolData> = {
       { title: "Standard EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Universal" },
       { title: "Interest Calculator", href: "/finance-tools/interest-calculator", badge: "Simple/Compound" },
       { title: "Loan Eligibility Calculator", href: "/finance-tools/loan-eligibility-calculator", badge: "Capacity" },
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check", badge: "Tool" },
     ],
     connectedSolutions: [
       { title: "Enterprise Business Management", href: "/solutions/business-management", tag: "ERP / Operations", description: "Multi-warehouse inventory, double-entry accounting, and procurement workflows." },
@@ -302,7 +302,7 @@ export const FINANCE_TOOLS_DATA: Record<string, FinanceToolData> = {
       { title: "Standard EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Universal" },
       { title: "Home Loan EMI Calculator", href: "/finance-tools/home-loan-emi-calculator", badge: "Mortgage" },
       { title: "Loan Tenure Calculator", href: "/finance-tools/loan-tenure-calculator", badge: "Tenure Check" },
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check", badge: "Tool" },
     ],
     connectedSolutions: [
       { title: "Loan Origination Platforms", href: "/solutions/loan-finance-platforms", tag: "Lending Tech", description: "Automated underwriting, multi-bank policy matrices, and Document AI parsing." },

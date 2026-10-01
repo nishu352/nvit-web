@@ -784,7 +784,7 @@ export const FINANCE_TOOLS_CONFIG: FinanceToolItem[] = [
   {
     slug: "emi-calculator",
     name: "Standard Loan EMI Calculator",
-    badge: "Interactive",
+    badge: "Calculator",
     description: "Calculate monthly installment, total interest payable, and amortization schedule for any loan amount.",
     heroTitle: "Loan EMI Calculator & Amortization Engine",
     heroSubtitle: "Plan your borrowing with precision. Calculate exact monthly EMI, total interest, and annual breakdown.",

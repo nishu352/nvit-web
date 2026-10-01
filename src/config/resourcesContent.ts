@@ -446,7 +446,7 @@ export const BLOG_ARTICLES: Record<string, BlogArticle> = {
       },
     ],
     connectedTools: [
-      { title: "Loan EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Interactive" },
+      { title: "Loan EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Calculator" },
       { title: "Personal Loan EMI Calculator", href: "/finance-tools/personal-loan-emi-calculator", badge: "Personal" },
       { title: "Loan Tenure Calculator", href: "/finance-tools/loan-tenure-calculator", badge: "Tenure" },
     ],
@@ -648,8 +648,8 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
       { title: "Loan Origination Platforms", href: "/solutions/loan-finance-platforms", badge: "Lending Tech" },
     ],
     connectedTools: [
-      { title: "Universal EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Interactive" },
-      { title: "Company Category Checker API", href: "/company-check", badge: "Live API" },
+      { title: "Universal EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Calculator" },
+      { title: "Company Category Checker API", href: "/company-check", badge: "Tool" },
     ],
     faqs: [
       { question: "How do you guarantee transaction idempotency in fintech backends?", answer: "Clients send a unique UUID `Idempotency-Key` header with write requests. The Fastify API checks Redis for this key before executing the database transaction, immediately returning cached results if duplicate requests arrive." },
@@ -748,8 +748,8 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
     ],
     connectedTools: [
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
-      { title: "Loan EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Interactive" },
+      { title: "Company Category Checker", href: "/company-check", badge: "Tool" },
+      { title: "Loan EMI Calculator", href: "/finance-tools/emi-calculator", badge: "Calculator" },
     ],
     faqs: [
       { question: "How does the system handle multi-bank policy updates?", answer: "We provide an administrative CSV/Excel batch upload module that automatically validates and updates bank pincode and company category lists without code deployments." },

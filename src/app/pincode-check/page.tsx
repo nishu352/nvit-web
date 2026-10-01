@@ -370,7 +370,7 @@ export default function PincodeCheckPage() {
           <div className="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
             <span className="font-bold text-zinc-800 dark:text-zinc-200 block">Informational Notice:</span>
             <p className="leading-relaxed">
-              Pincode serviceability metrics displayed here are based on compiled reference indexes for informational purposes. Individual lender branch boundaries and credit policies may change without prior notice. Final loan approval remains subject to borrower credit assessment, KYC documentation, and lender underwriting criteria. Users should independently verify serviceability and eligibility details with the respective institution. Users should independently verify serviceability and eligibility details with the respective institution.
+              Pincode serviceability metrics displayed here are based on compiled reference indexes for informational purposes. Individual lender branch boundaries and credit policies may change without prior notice. Final loan approval remains subject to borrower credit assessment, KYC documentation, and lender underwriting criteria. Users should independently verify serviceability and eligibility details with the respective institution.
             </p>
           </div>
         </section>
