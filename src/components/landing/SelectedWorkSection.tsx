@@ -52,7 +52,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     problem:
       "Financial institutions lacked a fast, unified lookup system to verify whether branches and partner NBFCs serviced specific postal PIN codes across disparate geographical regions in India.",
     engineered:
-      "NVIT built a high-speed geospatial indexing engine mapping 19,500+ postal PIN codes to state, district, and circle hubs, cross-referenced with institution-specific lending criteria.",
+      "NVIT built a high-speed geospatial indexing engine mapping pan-India postal PIN codes to state, district, and circle hubs, cross-referenced with institution-specific lending criteria.",
     result:
       "Fast public lookup service returning positive/negative serviceability flags across tier-1 and tier-2 financial institutions with fast indexed query execution.",
     technologies: ["Next.js", "Fastify", "PostgreSQL", "TypeScript"],

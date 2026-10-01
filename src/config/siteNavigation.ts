@@ -627,7 +627,7 @@ export const SOLUTIONS_CONFIG: IndustrySolution[] = [
     ],
     coreCapabilities: [
       "Multi-lender instant company category comparison (CAT A, CAT B, Superprime)",
-      "Pan-India 19,500+ Pincode serviceability lookup with auto-enrichment",
+      "Pan-India Pincode serviceability lookup with auto-enrichment",
       "Automated lead ingestion, round-robin assignment, and executive reminders",
       "Interactive loan EMI calculation and amortization table breakdowns",
     ],

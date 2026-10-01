@@ -417,8 +417,8 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       {
         title: "Pan-India Financial Pincode & Branch Directory",
         targetAudience: "Fintech Comparison Portals",
-        challenge: "Need to index 19,500+ Indian pincodes with bank serviceability data without duplicate content penalties.",
-        deliveredSolution: "Programmatic Next.js SSG routing engine generating 19,500 distinct, fast-loading, schema-enriched location pages.",
+        challenge: "Need to index Pan-India pincodes with bank serviceability data without duplicate content penalties.",
+        deliveredSolution: "Programmatic Next.js SSG routing engine generating pan-India distinct, fast-loading, schema-enriched location pages.",
       },
       {
         title: "B2B SaaS Organic Authority Hub",
@@ -588,7 +588,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
         title: "Loan Distribution & Financial Broker CRM",
         targetAudience: "Fintech Distributors & DSAs",
         challenge: "Leads scattered across multiple spreadsheets with no tracking of customer bank eligibility or follow-ups.",
-        deliveredSolution: "Custom CRM featuring integrated company category lookup, 19,500+ pincode serviceability check, and automated lead distribution.",
+        deliveredSolution: "Custom CRM featuring integrated company category lookup, pan-India pincode serviceability check, and automated lead distribution.",
       },
       {
         title: "Commercial Real Estate Sales CRM",
@@ -753,7 +753,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       {
         title: "National Bank Pincode & Policy Master Panel",
         targetAudience: "Fintech Platform Operators",
-        challenge: "Operators need to manage 19,500+ Indian pincodes and multi-bank tiering rules without developer assistance.",
+        challenge: "Operators need to manage Pan-India pincodes and multi-bank tiering rules without developer assistance.",
         deliveredSolution: "Admin portal with AI column mapping, instant batch spreadsheet ingestion, and real-time live preview toggles.",
       },
       {
@@ -837,7 +837,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       {
         title: "Multi-Bank Loan Policy Eligibility Engine",
         targetAudience: "Fintech Platforms & Loan Distributors",
-        challenge: "Verifying loan eligibility across 10+ bank category lists and 19,500+ pincodes simultaneously in real time.",
+        challenge: "Verifying loan eligibility across 10+ bank category lists and pan-India pincodes simultaneously in real time.",
         deliveredSolution: "Bespoke full-stack web application with instant fuzzy company search, pincode verification, and lender redirect toggles.",
       },
       {
@@ -1763,7 +1763,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       {
         title: "High-Traffic Loan Serviceability API Gateway",
         targetAudience: "Fintech Platforms & Loan Networks",
-        challenge: "Handling 1,000+ requests/sec searching 19,500+ Indian pincodes with fast response time SLAs.",
+        challenge: "Handling 1,000+ requests/sec searching Pan-India pincodes with fast response time SLAs.",
         deliveredSolution: "Fastify backend microservice with in-memory Redis caching and composite PostgreSQL indexing, achieving fast indexed response times.",
       },
       {
@@ -2012,7 +2012,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     useCases: [
       {
-        title: "Pan-India 19,500+ Pincode & Bank Master Database",
+        title: "Pan-India Pincode & Bank Master Database",
         targetAudience: "Fintech Platforms & Loan Distributors",
         challenge: "Matching customer pincodes across multiple bank serviceability matrices took 1.2+ seconds.",
         deliveredSolution: "Restructured schema with composite B-Tree indexes on `(pincode, state, district)`, slashing query time to 4 milliseconds.",
@@ -2436,7 +2436,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
         title: "Pan-India Bank Pincode List Ingestion Pipeline",
         targetAudience: "Fintech Platform Operators",
         challenge: "Lenders provide 60,000-row pincode sheets with missing cities, non-standard headers, and duplicate entries.",
-        deliveredSolution: "Streaming ETL ingestion engine auto-enriching 19,500+ master pincodes, validating, and updating PostgreSQL in 18 seconds.",
+        deliveredSolution: "Streaming ETL ingestion engine auto-enriching pan-India master pincodes, validating, and updating PostgreSQL in 18 seconds.",
       },
       {
         title: "Wholesale Supplier Catalog Price Ingestion",

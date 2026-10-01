@@ -480,7 +480,7 @@ export const BLOG_ARTICLES: Record<string, BlogArticle> = {
       {
         heading: "2. Key Architectural Modules",
         paragraphs: [
-          "Modern LOS architectures include digital intake portals, pincode serviceability lookups across 19,500+ locations, Document AI OCR parsers, and executive round-robin lead distribution engines.",
+          "Modern LOS architectures include digital intake portals, pincode serviceability lookups across pan-India locations, Document AI OCR parsers, and executive round-robin lead distribution engines.",
         ],
       },
     ],
@@ -709,7 +709,7 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
     publishedDate: "August 2026",
     summary: "A practical engineering guide to building digital loan origination platforms: borrower onboarding funnels, pincode serviceability engines, Document AI statement OCR, and DSA sales pipelines.",
     targetAudience: ["Lending Founders", "DSA Network Directors", "Fintech Product Managers", "Fintech Engineers"],
-    architectureSummary: "Mobile-first borrower intake funnel, 19,500+ Indian pincode B-Tree indexing engine, Document AI neural statement parsing, Fastify lead routing gateway, and real-time WhatsApp triggers.",
+    architectureSummary: "Mobile-first borrower intake funnel, Pan-India pincode B-Tree indexing engine, Document AI neural statement parsing, Fastify lead routing gateway, and real-time WhatsApp triggers.",
     sections: [
       {
         id: "intake",
@@ -726,7 +726,7 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
         id: "policy-matrix",
         title: "2. Pan-India Pincode Serviceability & Employer Categorization",
         content: [
-          "Our platforms index 19,500+ Indian pincodes with composite database indexes to cross-reference multi-bank serviceability lists in under 10ms. Employer prefix search matches applicants across Cat A, B, C, and D lender tier lists instantly.",
+          "Our platforms index Pan-India pincodes with composite database indexes to cross-reference multi-bank serviceability lists in under 10ms. Employer prefix search matches applicants across Cat A, B, C, and D lender tier lists instantly.",
         ],
       },
       {
@@ -768,10 +768,10 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     badge: "Database & API Architecture",
     clientType: "Fintech & Lending Infrastructure",
     challenge: "Lending underwriters and sales executives spent hours manually searching disconnected Excel spreadsheets from multiple lending institutions to verify whether a borrower's 6-digit PIN code was serviceable, causing severe loan processing bottlenecks and high customer drop-off.",
-    context: "In Indian retail lending, every bank maintains distinct serviceability lists covering varying subsets of the country's 19,500+ postal PIN codes. Merging and querying these disparate lists in real time during customer onboarding was an operational hurdle.",
+    context: "In Indian retail lending, every bank maintains distinct serviceability lists covering varying subsets of the country's pan-India postal PIN codes. Merging and querying these disparate lists in real time during customer onboarding was an operational hurdle.",
     solution: "NVIT.SPACE engineered a centralized high-speed Pincode Eligibility Engine backed by normalized PostgreSQL relational tables and composite B-Tree indexes. The engine enriches every pincode with state, district, and office location data while cross-referencing multi-bank serviceability policies with fast indexed query execution.",
     architectureHighlights: [
-      "Normalized PostgreSQL relational database indexing 19,500+ Indian postal PIN codes.",
+      "Normalized PostgreSQL relational database indexing Pan-India postal PIN codes.",
       "Composite B-Tree database indexes ensuring fast indexed query execution under heavy concurrent lookups.",
       "Fast, low-latency Fastify REST API endpoint serving live web frontend and mobile client applications.",
       "Batch CSV ingestion pipeline enabling non-technical operators to upload updated monthly bank policy sheets.",
@@ -787,7 +787,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       { decision: "Fastify Microservice Architecture", rationale: "Fastify's schema compilation delivered 3x higher throughput compared to standard Express servers for high-volume lookup traffic." },
     ],
     technicalMetrics: [
-      "19,500+ Postal Pincodes Indexed",
+      "Pan-India Postal PIN Codes Indexed",
       "Fast Indexed Query Execution Time",
       "Broad Pan-India Geographical Coverage",
       "Continuous Monthly Policy Updates",
@@ -804,7 +804,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     ],
     liveToolLink: { title: "Live Pincode Checker Utility", href: "/pincode-check" },
     metaTitle: "Case Study: Pan-India Pincode Eligibility Engine | NVIT.SPACE",
-    metaDescription: "How NVIT.SPACE engineered a fast indexed PostgreSQL pincode eligibility engine indexing 19,500+ Indian PIN codes and multi-bank lending policies.",
+    metaDescription: "How NVIT.SPACE engineered a fast indexed PostgreSQL pincode eligibility engine indexing Pan-India PIN codes and multi-bank lending policies.",
   },
 
   "enterprise-company-category-checker": {

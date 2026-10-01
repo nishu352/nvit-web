@@ -29,7 +29,7 @@ const NAV_LINKS = [
 
 const QUICK_TOOLS = [
   { name: "Company Policy Check", href: "/company-check", icon: Building2, desc: "Verify lender tiering" },
-  { name: "Postal PIN Serviceability", href: "/pincode-check", icon: MapPin, desc: "19,500+ postal codes" },
+  { name: "Postal PIN Serviceability", href: "/pincode-check", icon: MapPin, desc: "pan-India postal codes" },
   { name: "Financial Calculator Suite", href: "/finance-tools", icon: Calculator, desc: "Interactive amortizations" },
 ];
 

@@ -23,7 +23,7 @@ const FEATURED_PROJECTS = [
     badge: "Production Live",
     badgeVariant: "emerald" as const,
     summary:
-      "A distributed policy underwriting engine indexing 19,500+ postal PIN codes and multi-bank employer tier matrices for rapid loan eligibility assessment.",
+      "A distributed policy underwriting engine indexing pan-India postal PIN codes and multi-bank employer tier matrices for rapid loan eligibility assessment.",
     highlights: [
       "Fast indexed lookup across 528,000+ corporate employer records",
       "Unified policy categorization matrix spanning 14 leading Indian banks & NBFCs",
@@ -58,7 +58,7 @@ const FEATURED_PROJECTS = [
     summary:
       "High-speed postal intelligence service aggregating branch coverage, postal zoning, and district-level lender serviceability across India.",
     highlights: [
-      "Coverage includes 19,500+ postal PIN codes in the available dataset mapped to district and circle hubs",
+      "Coverage includes pan-India postal PIN codes in the available dataset mapped to district and circle hubs",
       "Instant positive/negative coverage flags for tier-1 and tier-2 financial institutions",
       "Fast public lookup endpoint delivering JSON serviceability responses",
     ],

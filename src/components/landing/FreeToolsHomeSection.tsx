@@ -24,9 +24,9 @@ export default function FreeToolsHomeSection() {
     },
     {
       title: "Pincode Serviceability Checker",
-      badge: "19,500+ Indian Postal Codes",
+      badge: "Pan-India Postal Codes",
       description:
-        "Verify regional banking coverage, district postal zoning, and operational lender serviceability across 19,500+ Indian PIN codes.",
+        "Verify regional banking coverage, district postal zoning, and operational lender serviceability across Pan-India PIN codes.",
       href: "/pincode-check",
       icon: <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
       cta: "Check Pincode Coverage",

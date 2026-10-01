@@ -86,7 +86,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: "Digital Lending & Customer Portals", tag: "Customer UX", description: "Intuitive self-service loan application portals with real-time eligibility checks and document uploads." },
       { title: "Double-Entry Accounting Ledgers", tag: "Accounting Core", description: "ACID-compliant relational ledgers ensuring immutable audit trails and balanced debits and credits." },
       { title: "Automated KYC & Identity Verification", tag: "Compliance", description: "Instant API verification for PAN cards, GSTIN records, Aadhaar OTP, and corporate registration data." },
-      { title: "Bank Policy & Serviceability Gateway", tag: "Policy Matching", description: "Fast indexed matching across 19,500+ Indian pincodes and multi-bank company categorization lists." },
+      { title: "Bank Policy & Serviceability Gateway", tag: "Policy Matching", description: "Fast indexed matching across Pan-India pincodes and multi-bank company categorization lists." },
       { title: "Payment Gateway Integration", tag: "Transactions", description: "Secure, idempotent payment integration for UPI, Net Banking, credit cards, and automated NACH mandates." },
       { title: "Real-Time Financial Dashboards", tag: "Analytics", description: "Executive KPI dashboards visualizing loan disbursals, delinquency ratios, and cohort collection metrics." },
     ],
@@ -142,13 +142,13 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     heroSubtitle: "We engineer end-to-end digital lending architectures: borrower onboarding, multi-bank policy matching, pincode serviceability lookups, Document AI parsing, and lead distribution.",
     overviewSummary: "Digital lending platforms require seamless borrower onboarding, instant pre-qualification against complex multi-bank criteria, automated document underwriting, and real-time status tracking. NVIT.SPACE builds custom Loan Origination Systems (LOS) and DSA management software.",
     overviewDetailedParagraphs: [
-      "Our lending platforms integrate national bank policy matrices and verified pan-India pincode databases (covering 19,500+ pincodes) to evaluate applicant eligibility rapidly and accurately.",
+      "Our lending platforms integrate national bank policy matrices and verified pan-India pincode databases (covering pan-India) to evaluate applicant eligibility rapidly and accurately.",
       "With automated Document AI pipelines extracting 6 months of bank statement transactions in seconds and integrated WhatsApp notification triggers, loan distributors and fintech lenders accelerate disbursal velocity while cutting processing overhead.",
     ],
     challenges: [
       {
         challenge: "Underwriters wasting hours cross-referencing multi-bank pincode sheets and employer category tiers.",
-        solution: "Centralized policy matching engine querying 19,500+ pincodes and multi-bank employer lists with fast indexed query execution.",
+        solution: "Centralized policy matching engine querying pan-India pincodes and multi-bank employer lists with fast indexed query execution.",
       },
       {
         challenge: "Borrowers abandoning long, multi-page paper loan applications on mobile devices.",
@@ -187,7 +187,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ],
     processSteps: [
       { number: "01", title: "Lending Workflow & Policy Scoping", description: "Map out borrower intake criteria, multi-bank tiering rules, and underwriting approval stages.", deliverable: "LOS Technical Architecture Blueprint" },
-      { number: "02", title: "Pincode & Company Master Database", description: "Structuring normalized PostgreSQL tables for 19,500+ pincodes and multi-bank employer categories.", deliverable: "Policy Database & Index Architecture" },
+      { number: "02", title: "Pincode & Company Master Database", description: "Structuring normalized PostgreSQL tables for pan-India pincodes and multi-bank employer categories.", deliverable: "Policy Database & Index Architecture" },
       { number: "03", title: "Borrower Application & State Build", description: "Developing responsive Next.js application flows with phone OTP verification and interactive EMI sliders.", deliverable: "Borrower Front-End Platform" },
       { number: "04", title: "Document AI Extraction Pipeline", description: "Integrating neural OCR engines for PDF bank statement and salary slip financial parsing.", deliverable: "Automated Document AI Pipeline" },
       { number: "05", title: "Underwriter Dashboard & Lead Routing", description: "Engineering executive review consoles with weighted round-robin distribution and audit logs.", deliverable: "Lending Operations Control Center" },
@@ -209,7 +209,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ],
     faqs: [
       { question: "Does NVIT.SPACE approve loans or provide lending capital?", answer: "No. NVIT.SPACE provides the software technology that powers digital lending platforms, broker networks, and DSAs. We do not provide credit or make credit decisions." },
-      { question: "How does the pincode eligibility check work across multiple banks?", answer: "Our platform indexes 19,500+ Indian pincodes with composite B-Tree database indexes, cross-referencing configured institutional banking lists with fast indexed query execution to identify which lenders service that exact location." },
+      { question: "How does the pincode eligibility check work across multiple banks?", answer: "Our platform indexes Pan-India pincodes with composite B-Tree database indexes, cross-referencing configured institutional banking lists with fast indexed query execution to identify which lenders service that exact location." },
       { question: "Can borrower leads be automatically distributed to sales agents via WhatsApp?", answer: "Yes. Inbound applications are captured seamlessly, allocated via weighted round-robin rules, and dispatched directly to the assigned executive's WhatsApp." },
       { question: "How accurate is the Document AI bank statement parser?", answer: "Our neural OCR pipeline provides high extraction accuracy on multi-page PDF bank statements, outputting structured JSON transaction tables with automatic debit/credit balance reconciliation." },
     ],

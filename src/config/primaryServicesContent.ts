@@ -354,7 +354,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
         title: "Financial Policy & Broker CRM",
         targetAudience: "Loan Distribution Agencies & DSAs",
         challenge: "Loan executives losing deals due to slow manual policy checks across 10+ institutional banking lists.",
-        deliveredSolution: "Custom web app with instant multi-bank company categorization matching, 19,500+ pincode check, and automated lead allocation.",
+        deliveredSolution: "Custom web app with instant multi-bank company categorization matching, pan-India pincode check, and automated lead allocation.",
       },
       {
         title: "Manufacturing & Supply Chain ERP",
@@ -1039,7 +1039,7 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         title: "National Pincode & Bank Policy Lookup Gateway",
         targetAudience: "Fintech Platform Operators",
-        challenge: "Querying 19,500+ Indian pincodes and multi-bank tiering rules took 1.5+ seconds per request.",
+        challenge: "Querying Pan-India pincodes and multi-bank tiering rules took 1.5+ seconds per request.",
         deliveredSolution: "Fastify API with composite PostgreSQL B-Tree indexes and Redis caching, slashing response time to under 12ms.",
       },
       {
