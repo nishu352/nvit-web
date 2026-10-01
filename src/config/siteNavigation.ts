@@ -30,7 +30,7 @@ export interface ServiceCategory {
 export interface IndustrySolution {
   slug: string;
   name: string;
-  badge: string;
+  badge?: string;
   shortDescription: string;
   heroTitle: string;
   heroSubtitle: string;
@@ -44,7 +44,7 @@ export interface IndustrySolution {
 export interface FinanceToolItem {
   slug: string;
   name: string;
-  badge: string;
+  badge?: string;
   description: string;
   heroTitle: string;
   heroSubtitle: string;
@@ -554,7 +554,7 @@ export const SERVICES_CONFIG: ServiceCategory[] = [
         name: "Batch Data & Spreadsheet Automation",
         shortDescription: "Automate large-scale CSV/Excel data ingestion, cleaning, validation, and database updates.",
         heroTitle: "Batch Data Ingestion & ETL Automation",
-        heroSubtitle: "Process, clean, validate, and load hundreds of thousands of spreadsheet records in seconds.",
+        heroSubtitle: "Process, clean, validate, and load large volumes of spreadsheet records efficiently.",
         overview: "Stop wrestling with messy Excel files. We engineer streaming batch ETL pipelines that parse large spreadsheets, identify duplicates, match fuzzy naming anomalies, and upsert records into PostgreSQL effortlessly.",
         keyFeatures: ["High-speed stream parsing for 100k+ row spreadsheets", "AI-assisted column header auto-mapping", "Row-by-row validation error logging with visual correction", "One-click rollback and transaction safety"],
         technologies: ["TypeScript", "Node.js", "PostgreSQL", "Prisma", "BullMQ"],

@@ -18,7 +18,7 @@ export interface FinanceToolData {
   slug: string;
   name: string;
   category: "Loan Repayment" | "Borrowing Capacity" | "Interest & Returns";
-  badge: string;
+  badge?: string;
   h1Title: string;
   heroSubtitle: string;
   toolType: "emi" | "personal-emi" | "home-emi" | "business-emi" | "eligibility" | "interest" | "tenure";
@@ -29,7 +29,7 @@ export interface FinanceToolData {
   formulaVariables: { symbol: string; meaning: string }[];
   workedExample: ToolWorkedExample;
   influencingFactors: { title: string; description: string }[];
-  connectedTools: { title: string; href: string; badge: string }[];
+  connectedTools: { title: string; href: string; badge?: string }[];
   connectedSolutions: { title: string; href: string; tag: string; description: string }[];
   faqs: ToolFAQ[];
   metaTitle: string;

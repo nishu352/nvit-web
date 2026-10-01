@@ -8,15 +8,15 @@ export interface BlogArticle {
   slug: string;
   title: string;
   cluster: "Web & Software" | "Backend & APIs" | "AI & Automation" | "Finance & Fintech";
-  badge: string;
+  badge?: string;
   readingTime: string;
   publishedDate: string;
   author: string;
   heroExcerpt: string;
   sections: BlogSection[];
   connectedServices?: { title: string; href: string; tag: string }[];
-  connectedSolutions?: { title: string; href: string; badge: string }[];
-  connectedTools?: { title: string; href: string; badge: string }[];
+  connectedSolutions?: { title: string; href: string; badge?: string }[];
+  connectedTools?: { title: string; href: string; badge?: string }[];
   faqs: { question: string; answer: string }[];
   metaTitle: string;
   metaDescription: string;
@@ -40,8 +40,8 @@ export interface PillarGuide {
   architectureSummary: string;
   sections: GuideSection[];
   connectedServices: { title: string; href: string; tag: string }[];
-  connectedSolutions: { title: string; href: string; badge: string }[];
-  connectedTools?: { title: string; href: string; badge: string }[];
+  connectedSolutions: { title: string; href: string; badge?: string }[];
+  connectedTools?: { title: string; href: string; badge?: string }[];
   faqs: { question: string; answer: string }[];
   metaTitle: string;
   metaDescription: string;
@@ -50,7 +50,7 @@ export interface PillarGuide {
 export interface CaseStudy {
   slug: string;
   title: string;
-  badge: string;
+  badge?: string;
   clientType: string;
   challenge: string;
   context: string;
@@ -61,7 +61,7 @@ export interface CaseStudy {
   technicalMetrics: string[];
   technologies: string[];
   connectedServices: { title: string; href: string; tag: string }[];
-  connectedSolutions: { title: string; href: string; badge: string }[];
+  connectedSolutions: { title: string; href: string; badge?: string }[];
   liveToolLink?: { title: string; href: string };
   metaTitle: string;
   metaDescription: string;
@@ -550,7 +550,7 @@ export const PILLAR_GUIDES: Record<string, PillarGuide> = {
         title: "1. Multi-Tenant Architectural Foundations",
         content: [
           "Multi-tenancy is the architectural core of any SaaS product. Designing for multi-tenancy means deciding early between a shared database with tenant column isolation, separate schemas per tenant, or separate physical databases.",
-          "For 95% of SaaS applications, a shared database with strict PostgreSQL Row-Level Security (RLS) and Prisma middleware provides the ideal balance between low infrastructure overhead and absolute data isolation.",
+          "For most SaaS applications, a shared database with strict PostgreSQL Row-Level Security (RLS) and Prisma middleware provides the ideal balance between low infrastructure overhead and tenant data isolation.",
         ],
         keyPoints: [
           "Shared database with tenant-level foreign key indexing minimizes hosting costs.",
@@ -816,7 +816,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     context: "A single corporate employer might appear as 'HCL Technologies Ltd', 'HCL Tech', or 'HCL' across different banking policy lists. Underwriters required an instant prefix and fuzzy autocomplete search tool to identify verified company tiers in real time.",
     solution: "NVIT.SPACE built a specialized Company Category Checker API utilizing PostgreSQL full-text search, trigram indexing (`pg_trgm`), and Fastify API caching. The system provides fast, real-time autocomplete suggestions as the loan officer types.",
     architectureHighlights: [
-      "Trigram and ILIKE prefix search indexing hundreds of thousands of registered corporate employer entities.",
+      "Trigram and ILIKE prefix search indexing large volumes of registered corporate employer entities.",
       "Fast autocomplete API endpoint with debounced client-side queries.",
       "Multi-bank category aggregation displaying Cat A, B, C, or D status across major lenders in a unified card.",
       "Direct integration with borrower application funnels to reference indicative interest rate tiers.",

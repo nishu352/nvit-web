@@ -38,7 +38,7 @@ export interface PrimaryServiceTechGroup {
 export interface PrimaryServiceData {
   slug: string;
   name: string;
-  badge: string;
+  badge?: string;
   h1Title: string;
   heroSubtitle: string;
   overviewSummary: string;
@@ -51,8 +51,8 @@ export interface PrimaryServiceData {
   processSteps: PrimaryServiceProcessStep[];
   whyChooseUs: PrimaryServiceWhyUsItem[];
   relatedServices: { title: string; href: string; description: string }[];
-  connectedSolutions: { title: string; href: string; badge: string }[];
-  relevantFinanceTools?: { title: string; href: string; badge: string }[];
+  connectedSolutions: { title: string; href: string; badge?: string }[];
+  relevantFinanceTools?: { title: string; href: string; badge?: string }[];
   faqs: PrimaryServiceFAQ[];
   metaTitle: string;
   metaDescription: string;
@@ -487,12 +487,10 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         title: "Company Category Checker",
         href: "/company-check",
-        badge: "Live API",
       },
       {
         title: "Loan EMI Calculator Engine",
         href: "/finance-tools/emi-calculator",
-        badge: "Interactive",
       },
     ],
     faqs: [
@@ -945,7 +943,6 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         title: "Company Category Check",
         href: "/company-check",
-        badge: "Live API",
       },
       {
         title: "Pincode Eligibility Checker",
@@ -1182,7 +1179,6 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         title: "Company Category Check API",
         href: "/company-check",
-        badge: "Live API",
       },
       {
         title: "Pincode Serviceability Matrix",
@@ -1415,7 +1411,6 @@ export const PRIMARY_SERVICES_DATA: Record<string, PrimaryServiceData> = {
       {
         title: "Company Category Checker",
         href: "/company-check",
-        badge: "Live API",
       },
       {
         title: "Pincode Eligibility Checker",

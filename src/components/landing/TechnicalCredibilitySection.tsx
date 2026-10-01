@@ -10,7 +10,7 @@ const PILLARS = [
     icon: GitBranch,
     title: "Decoupled Architecture & Edge Distribution",
     description:
-      "Client interfaces live on distributed edge nodes for instant worldwide page rendering, while microservices scale independently behind dedicated application gateways.",
+      "Client interfaces live on distributed edge nodes for fast page rendering, while microservices scale independently behind dedicated application gateways.",
     spec: "Next.js Edge • Fastify Microservices",
   },
   {
@@ -64,7 +64,7 @@ export default function TechnicalCredibilitySection() {
           </motion.h2>
 
           <p className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
-            We engineer software designed to outlast short-term tech trends. Every platform is architected for long-term maintainability, deterministic performance, and enterprise-grade resilience.
+            We engineer software designed to outlast short-term tech trends. Every platform is architected for long-term maintainability, deterministic performance, and operational stability.
           </p>
         </div>
 

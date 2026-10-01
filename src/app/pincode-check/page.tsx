@@ -113,7 +113,7 @@ export default function PincodeCheckPage() {
               Pincode Serviceability Checker
             </h1>
             <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-medium">
-              Coverage includes 19,500+ Indian PIN codes in the available dataset. Inspect regional postal serviceability, district postal zoning, and operational lender coverage.
+              Inspect regional postal serviceability, district postal zoning, and operational lender coverage across available Indian PIN codes.
             </p>
           </div>
 

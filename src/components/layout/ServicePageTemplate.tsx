@@ -34,7 +34,7 @@ const ICON_MAP: Record<string, any> = {
 
 interface ServicePageTemplateProps {
   breadcrumbs: BreadcrumbItem[];
-  badgeText: string;
+  badgeText?: string;
   heroTitle: string;
   heroSubtitle: string;
   overview: string;

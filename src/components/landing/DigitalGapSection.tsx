@@ -44,7 +44,7 @@ export default function DigitalGapSection() {
       fragmentTitle: "Isolated Channels",
       fragmentDesc: "Customer inquiries, leads, and orders lost between disparate messaging apps and emails.",
       unifiedTitle: "Connected Systems",
-      unifiedDesc: "Autonomous API pipelines that automatically capture, validate, and route data 24/7.",
+      unifiedDesc: "Automated API pipelines that capture, validate, and route data.",
     },
     {
       index: "04",

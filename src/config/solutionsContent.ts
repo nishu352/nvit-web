@@ -35,7 +35,7 @@ export interface SolutionTechGroup {
 export interface SolutionData {
   slug: string;
   name: string;
-  badge: string;
+  badge?: string;
   h1Title: string;
   heroSubtitle: string;
   overviewSummary: string;
@@ -46,7 +46,7 @@ export interface SolutionData {
   techGroups: SolutionTechGroup[];
   processSteps: SolutionProcessStep[];
   connectedServices: { title: string; href: string; tag: string; description: string }[];
-  relevantTools?: { title: string; href: string; badge: string }[];
+  relevantTools?: { title: string; href: string; badge?: string }[];
   faqs: SolutionFAQ[];
   metaTitle: string;
   metaDescription: string;
@@ -287,7 +287,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { question: "Why build a custom ERP/CRM instead of using SAP or Salesforce?", answer: "Commercial enterprise suites cost tens of thousands of dollars annually in per-user license fees and force your company into rigid workflows. A custom system gives you complete code ownership, zero recurring license fees, and workflows engineered around your business." },
       { question: "Can the system synchronize inventory across multiple physical warehouse locations?", answer: "Yes. Our multi-location inventory module supports real-time stock counts, inter-branch transfer requests, barcode dispatch verification, and automated reorder triggers." },
       { question: "How does the system ensure double-entry accounting accuracy?", answer: "We enforce strict double-entry accounting rules wrapped in PostgreSQL ACID transactions, ensuring that total debits always equal total credits and preventing data corruption." },
-      { question: "Can we import our existing customer and inventory data from Excel?", answer: "Yes. We build custom batch ETL ingestion scripts that validate and import hundreds of thousands of historical spreadsheet rows directly into the new PostgreSQL database." },
+      { question: "Can we import our existing customer and inventory data from Excel?", answer: "Yes. We build custom batch ETL ingestion scripts that validate and import large volumes of historical spreadsheet rows directly into the new PostgreSQL database." },
     ],
     metaTitle: "Enterprise Business Operations, Custom ERP & CRM | NVIT.SPACE",
     metaDescription: "Enterprise business management software: multi-warehouse inventory, double-entry accounting, purchase approval state machines, and custom CRM systems.",

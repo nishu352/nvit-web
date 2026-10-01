@@ -32,7 +32,7 @@ export interface ChildServiceData {
   parentSlug: string;
   parentName: string;
   name: string;
-  badge: string;
+  badge?: string;
   h1Title: string;
   heroSubtitle: string;
   overviewSummary: string;
@@ -45,8 +45,8 @@ export interface ChildServiceData {
   processSteps: ChildServiceProcessStep[];
   benefits: ChildServiceWhyUsItem[];
   siblingServices: { title: string; href: string; description: string }[];
-  connectedSolutions: { title: string; href: string; badge: string }[];
-  relevantFinanceTools?: { title: string; href: string; badge: string }[];
+  connectedSolutions: { title: string; href: string; badge?: string }[];
+  relevantFinanceTools?: { title: string; href: string; badge?: string }[];
   faqs: ChildServiceFAQ[];
   metaTitle: string;
   metaDescription: string;
@@ -374,7 +374,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Loan Origination Systems", href: "/solutions/loan-finance-platforms", badge: "Fintech" },
     ],
     relevantFinanceTools: [
-      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator", badge: "Interactive" },
+      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator" },
     ],
     faqs: [
       { question: "How fast can a custom landing page be delivered?", answer: "We can design, build, and deploy a high-converting campaign landing page with full CRM webhook integration in 3 to 5 business days." },
@@ -459,7 +459,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     relevantFinanceTools: [
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
     ],
     faqs: [
       { question: "What is programmatic SEO and how does it work?", answer: "Programmatic SEO is the practice of creating large volumes of landing pages dynamically from structured database records (e.g. city-wise services, pincode check directories, or financial calculators) rather than creating each page manually." },
@@ -567,7 +567,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     overviewSummary: "Generic off-the-shelf CRM software forces your sales team to adapt to rigid third-party workflows while charging costly monthly per-user subscription fees. NVIT.SPACE builds proprietary, custom CRM systems engineered specifically around your sales velocity, lead routing algorithms, and multi-channel customer timelines.",
     overviewDetailedParagraphs: [
       "We design interactive Kanban deal pipelines, automated round-robin lead distribution engines, and consolidated communication timelines connecting WhatsApp Business, transactional email, and phone call logs into a single centralized dashboard.",
-      "Built with full-stack TypeScript, React, and indexed PostgreSQL, our custom CRMs handle hundreds of thousands of customer records with fast indexed search and automated follow-up reminders.",
+      "Built with full-stack TypeScript, React, and indexed PostgreSQL, our custom CRMs handle large volumes of customer records with fast indexed search and automated follow-up reminders.",
     ],
     targetAudienceHeadline: "Built for High-Velocity Sales & Service Organizations:",
     targetAudienceList: [
@@ -628,7 +628,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Business Operations Systems", href: "/solutions/business-management", badge: "Operations" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
@@ -716,7 +716,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { question: "How long does it take to develop and deploy a custom ERP system?", answer: "A modular custom ERP system typically takes 4 to 8 weeks depending on the number of departments (inventory, billing, procurement, HR) and legacy data migration complexity." },
       { question: "Can the ERP system handle multi-warehouse inventory transfers?", answer: "Yes. Our inventory module supports multi-location stock tracking with formal transfer request, approval, dispatch, and receiving workflows." },
       { question: "How do you ensure financial accounting ledger accuracy?", answer: "We enforce strict double-entry accounting principles with ACID transactional guarantees in PostgreSQL, ensuring total debits always equal total credits and preventing data corruption." },
-      { question: "Can we import our historical inventory and customer data from Excel?", answer: "Yes. We build custom batch ETL ingestion scripts that validate and import hundreds of thousands of historical spreadsheet rows directly into the new database." },
+      { question: "Can we import our historical inventory and customer data from Excel?", answer: "Yes. We build custom batch ETL ingestion scripts that validate and import historical spreadsheet rows directly into the new database." },
     ],
     metaTitle: "Custom ERP Development & Operations Software | NVIT.SPACE",
     metaDescription: "Custom ERP development: multi-warehouse inventory tracking, procurement approvals, double-entry accounting, and HR management built with Next.js, Fastify & PostgreSQL.",
@@ -794,10 +794,10 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Business Operations Systems", href: "/solutions/business-management", badge: "Operations" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
     ],
     faqs: [
-      { question: "Can the admin dashboard handle tables with hundreds of thousands of rows?", answer: "Yes. We implement server-side pagination, sorting, and indexing with Prisma and PostgreSQL, loading only the requested page of 20 to 100 records into memory for instant rendering." },
+      { question: "Can the admin dashboard handle large datasets?", answer: "Yes. We implement server-side pagination, sorting, and indexing with Prisma and PostgreSQL, loading only the requested page of 20 to 100 records into memory for fast rendering." },
       { question: "Can we restrict certain employees from editing or deleting records?", answer: "Yes. Our Role-Based Access Control (RBAC) system allows you to define granular permissions (e.g. Super Admin, Manager, Support Agent, Auditor) to restrict access to sensitive tabs and hide delete buttons." },
       { question: "Is the admin dashboard secured against unauthorized access?", answer: "Yes. We implement secure session authentication, IP address whitelisting options, rate-limiting on login endpoints, and tamper-evident audit logs." },
       { question: "Can we export filtered data tables to Excel or CSV?", answer: "Yes. Administrators can apply custom filters and download clean CSV or Excel files with one click." },
@@ -878,9 +878,9 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Startup MVP & Rapid Launch", href: "/solutions/startup-mvp", badge: "Startups" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
-      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator", badge: "Interactive" },
+      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator" },
     ],
     faqs: [
       { question: "What is the typical timeline for developing a custom web application?", answer: "Depending on scope complexity, custom web applications typically take 3 to 6 weeks from initial architecture specification to production launch." },
@@ -1131,7 +1131,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "eCommerce Storefronts", href: "/solutions/ecommerce", badge: "eCommerce" },
     ],
     relevantFinanceTools: [
-      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator", badge: "Interactive" },
+      { title: "Loan EMI Calculator Engine", href: "/finance-tools/emi-calculator" },
     ],
     faqs: [
       { question: "Is Flutter really as fast as native iOS and Android apps?", answer: "Yes. Flutter does not use a JavaScript bridge like older hybrid frameworks. It compiles directly to native ARM machine code and renders using the hardware-accelerated Impeller graphics engine, delivering consistent 60fps animations." },
@@ -1381,7 +1381,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Business Operations Systems", href: "/solutions/business-management", badge: "Operations" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
@@ -1548,7 +1548,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Business Operations Systems", href: "/solutions/business-management", badge: "Operations" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
@@ -1715,7 +1715,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Business Operations Systems", href: "/solutions/business-management", badge: "Operations" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
@@ -1804,7 +1804,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Loan Origination Systems", href: "/solutions/loan-finance-platforms", badge: "Lending" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
@@ -1889,7 +1889,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "eCommerce Storefronts", href: "/solutions/ecommerce", badge: "eCommerce" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Check API", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Check API", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
@@ -2056,7 +2056,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Business Operations Systems", href: "/solutions/business-management", badge: "Operations" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
@@ -2226,7 +2226,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Business Operations Systems", href: "/solutions/business-management", badge: "Operations" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
     ],
     faqs: [
       { question: "How do managers approve requests without logging into a dashboard?", answer: "We generate secure, single-use tokenized approval links sent directly via WhatsApp or email. Managers can click 'Approve' or 'Reject' directly from their phone to execute the state transition instantly." },
@@ -2310,7 +2310,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "Fintech Platforms", href: "/solutions/fintech", badge: "Fintech" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
@@ -2411,7 +2411,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     name: "Batch Data & Spreadsheet Automation",
     badge: "High-Speed ETL",
     h1Title: "Batch Data Ingestion, Cleaning & Spreadsheet ETL Automation",
-    heroSubtitle: "We engineer streaming batch ETL pipelines that parse, validate, auto-enrich, and upsert hundreds of thousands of Excel and CSV records into PostgreSQL in seconds. No more spreadsheet crashes.",
+    heroSubtitle: "We engineer batch ETL pipelines that parse, validate, auto-enrich, and upsert large volumes of Excel and CSV records into PostgreSQL efficiently.",
     overviewSummary: "Handling massive spreadsheet datasets manually—such as multi-bank pincode lists, master company classifications, or wholesale price lists—wastes hundreds of hours and frequently crashes standard spreadsheet software. NVIT.SPACE builds streaming batch ETL engines that automate large-scale data ingestion.",
     overviewDetailedParagraphs: [
       "Our ETL pipelines utilize Node.js memory streams to chunk and parse 100,000+ row CSV and Excel files without server memory exhaustion. We apply AI-assisted header auto-mapping to handle inconsistent column names across different provider formats.",
@@ -2478,7 +2478,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
     ],
     relevantFinanceTools: [
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
     ],
     faqs: [
       { question: "How does the streaming ETL engine handle huge files without running out of server memory?", answer: "Standard parsers load entire multi-gigabyte files into RAM, causing crashes. Our streaming ETL engine reads files chunk by chunk (e.g. 1,000 rows at a time) and processes them in parallel streams, keeping server memory usage under 100MB." },
@@ -2563,7 +2563,7 @@ export const CHILD_SERVICES_DATA: Record<string, ChildServiceData> = {
       { title: "eCommerce Storefronts", href: "/solutions/ecommerce", badge: "eCommerce" },
     ],
     relevantFinanceTools: [
-      { title: "Company Category Checker", href: "/company-check", badge: "Live API" },
+      { title: "Company Category Checker", href: "/company-check" },
       { title: "Pincode Eligibility Checker", href: "/pincode-check", badge: "19.5k Pincodes" },
     ],
     faqs: [
