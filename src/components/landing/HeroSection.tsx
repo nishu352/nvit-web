@@ -126,16 +126,6 @@ export default function HeroSection() {
 
       {/* ── Main Editorial Content ── */}
       <div className="relative z-10 max-w-5xl mx-auto w-full text-center flex flex-col items-center my-auto">
-        {/* Subtle Architectural Category Index */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] mb-8 text-[11px] font-mono tracking-widest uppercase text-slate-600 dark:text-slate-400 backdrop-blur-sm"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-500" />
-          <span>Digital Architecture &amp; Technology Studio</span>
-        </motion.div>
 
         {/* Primary Headline */}
         <motion.h1

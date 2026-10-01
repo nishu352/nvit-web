@@ -330,10 +330,6 @@ export default function PrimaryServiceDetailView({ service }: Props) {
           <div className="glass-card-apple rounded-3xl p-8 sm:p-12 shadow-xl">
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="text-center space-y-2">
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-100 dark:bg-white/10 text-[10px] font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-white/10">
-                  <Sparkles className="w-3 h-3 text-blue-600 dark:text-blue-400" />
-                  <span>Technical Consultation</span>
-                </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
                   Schedule an Architecture Consultation
                 </h2>

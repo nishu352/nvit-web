@@ -71,10 +71,6 @@ export default function ContactPage() {
           <Breadcrumbs items={[{ label: "Contact" }]} />
 
           <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/40 text-blue-700 dark:text-blue-300 text-xs font-bold shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-              <span>Project Consultation</span>
-            </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
               LET&apos;S BUILD SOMETHING EXTRAORDINARY.

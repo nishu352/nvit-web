@@ -266,10 +266,6 @@ export default function PincodeCheckPage() {
         <section className="mt-16 pt-12 border-t border-zinc-200/80 dark:border-white/10 space-y-12">
           {/* Section Heading */}
           <div className="space-y-2 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/40 text-blue-700 dark:text-blue-300 text-[11px] font-bold">
-              <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-              <span>Location Policy Architecture</span>
-            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight">
               How Postal PIN Code Serviceability Works in Banking &amp; Lending
             </h2>

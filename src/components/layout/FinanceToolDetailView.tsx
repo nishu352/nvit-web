@@ -172,10 +172,6 @@ export default function FinanceToolDetailView({ tool }: Props) {
           />
 
           <div className="space-y-3 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/40 text-blue-700 dark:text-blue-300 text-xs font-bold shadow-sm">
-              <Calculator className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-              <span>{tool.badge}</span>
-            </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
               {tool.h1Title}
@@ -390,10 +386,6 @@ export default function FinanceToolDetailView({ tool }: Props) {
           <div className="glass-card rounded-3xl p-8 sm:p-12 bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 shadow-xl">
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="text-center space-y-2">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/40 text-[10px] font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">
-                  <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                  <span>Technical Consultation</span>
-                </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Looking to Build Custom Fintech Calculators?
                 </h2>
