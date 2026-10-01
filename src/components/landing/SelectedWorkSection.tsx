@@ -72,7 +72,7 @@ export default function SelectedWorkSection() {
         <div className="max-w-3xl mb-20 sm:mb-28">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold">
-              05 / Proof &amp; Selected Work
+              06 / Proof &amp; Selected Work
             </span>
             <span className="w-12 h-px bg-slate-300 dark:bg-white/20" />
           </div>

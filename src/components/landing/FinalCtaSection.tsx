@@ -55,7 +55,7 @@ export default function FinalCtaSection() {
         </motion.div>
 
         <span className="text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold block mb-4">
-          08 / The Next Step
+          10 / The Next Step
         </span>
 
         <motion.h2

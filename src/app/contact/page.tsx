@@ -156,7 +156,7 @@ export default function ContactPage() {
             <div className="p-5 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 space-y-2 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                <span>24-Hour Response Protocol</span>
+                <span>Response Commitment</span>
               </div>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
                 You will receive a structured technical reply and architecture roadmap estimate within one business day.

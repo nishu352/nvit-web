@@ -2,14 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
   Building2,
   MapPin,
   Calculator,
   ArrowRight,
-  Sparkles,
-  ShieldCheck,
   Cpu,
 } from "lucide-react";
 
@@ -63,7 +61,7 @@ export default function FreeToolsHomeSection() {
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold">
-              Free Utilities &amp; APIs
+              05 / Free Utilities &amp; APIs
             </span>
             <span className="w-12 h-px bg-slate-300 dark:bg-white/20" />
           </div>

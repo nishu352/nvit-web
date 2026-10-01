@@ -16,7 +16,7 @@ export default function PhilosophySection() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <span className="text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold block mb-8">
-          07 / Philosophy
+          09 / Philosophy
         </span>
 
         <motion.blockquote
@@ -41,6 +41,16 @@ export default function PhilosophySection() {
           className="mt-12 text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-slate-400 dark:text-slate-500"
         >
           NVIT.SPACE Engineering Principles
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-6 max-w-2xl mx-auto text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-normal"
+        >
+          Great engineering should be invisible to the people who use it. We build software that removes friction, surfaces clarity, and creates space for human decisions — not software that demands attention.
         </motion.p>
       </div>
     </section>

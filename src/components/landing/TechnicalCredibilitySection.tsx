@@ -45,7 +45,7 @@ export default function TechnicalCredibilitySection() {
         <div className="max-w-3xl mb-20 sm:mb-28">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold">
-              06 / Technical Credibility
+              08 / Technical Credibility
             </span>
             <span className="w-12 h-px bg-slate-300 dark:bg-white/20" />
           </div>

@@ -2,8 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { BookOpen, FileText, Layers, ArrowRight, Sparkles } from "lucide-react";
+import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
 
 export default function ResourcesHomeSection() {
   const featuredArticles = [
@@ -52,7 +52,7 @@ export default function ResourcesHomeSection() {
           <div className="max-w-3xl space-y-3">
             <div className="flex items-center gap-3">
               <span className="text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold">
-                Educational Knowledge Hub
+                07 / Educational Knowledge Hub
               </span>
               <span className="w-12 h-px bg-slate-300 dark:bg-white/20" />
             </div>
