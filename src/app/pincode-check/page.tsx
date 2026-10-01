@@ -103,10 +103,6 @@ export default function PincodeCheckPage() {
         <div className="max-w-4xl mx-auto space-y-5 text-center relative z-10">
           <Breadcrumbs items={[{ label: "Pincode Check" }]} />
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-white/10 text-zinc-800 dark:text-zinc-200 text-xs font-bold shadow-sm backdrop-blur-xl">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-            <span>Location Intelligence</span>
-          </div>
 
           <div className="space-y-2">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.08]">

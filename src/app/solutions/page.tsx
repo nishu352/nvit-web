@@ -23,10 +23,6 @@ export default function SolutionsHubPage() {
           <Breadcrumbs items={[{ label: "Solutions" }]} />
 
           <MotionReveal className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-white/10 text-zinc-800 dark:text-zinc-200 text-xs font-bold shadow-sm backdrop-blur-xl">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-              <span>Industry Solutions</span>
-            </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-zinc-900 dark:text-white leading-[1.08]">
               INTEGRATED SOLUTIONS FOR COMPLEX INDUSTRIES.
