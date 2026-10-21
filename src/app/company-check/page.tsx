@@ -61,10 +61,10 @@ export default function CompanyCheckPage() {
     setShowSuggestions(false);
     setHasSearched(true);
 
-    // Instant client cache check
+    // Instant client cache check (only serve cached entries if non-empty)
     const clientCacheKey = selectedCompanyId ? `${q}::${selectedCompanyId}` : q;
     const cachedResults = companySearchClientCache.get(clientCacheKey);
-    if (cachedResults) {
+    if (cachedResults && cachedResults.length > 0) {
       setCompanies(cachedResults);
       setSearchedQuery(q);
       setPendingQuery(null);
@@ -94,7 +94,9 @@ export default function CompanyCheckPage() {
       if (response.data && response.data.success && Array.isArray(response.data.data)) {
         setCompanies(response.data.data);
         setSearchedQuery(q);
-        companySearchClientCache.set(clientCacheKey, response.data.data);
+        if (response.data.data.length > 0) {
+          companySearchClientCache.set(clientCacheKey, response.data.data);
+        }
       }
     } catch (err: any) {
       if (axios.isCancel(err) || err.name === "CanceledError" || err.name === "AbortError") {
@@ -243,7 +245,11 @@ export default function CompanyCheckPage() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                handleSearch();
+                const clean = searchTerm.trim().toLowerCase();
+                const matchingSuggestion = suggestions.find(
+                  (s) => s.name.trim().toLowerCase() === clean
+                );
+                handleSearch(undefined, matchingSuggestion?.id);
               }}
               className="relative"
             >
