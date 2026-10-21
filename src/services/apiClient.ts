@@ -17,7 +17,7 @@ export const getBaseUrl = (): string => {
   if (process.env.NODE_ENV === "development") {
     return "http://localhost:5001/api/v1";
   }
-  return "https://web-production-9265a.up.railway.app/api/v1";
+  return "https://api.nvit.space/api/v1";
 };
 
 export const apiClient = axios.create({
@@ -31,7 +31,7 @@ export const apiClient = axios.create({
 
 apiClient.interceptors.request.use((config) => {
   config.baseURL = getBaseUrl();
-  if (!config.baseURL || config.baseURL.includes("railway.app")) {
+  if (!config.baseURL || config.baseURL.includes("railway.app") || config.baseURL.includes("nvit.space")) {
     if (typeof window !== "undefined" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")) {
       config.baseURL = "http://localhost:5001/api/v1";
     }

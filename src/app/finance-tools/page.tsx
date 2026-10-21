@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import axios from "axios";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
@@ -41,10 +42,19 @@ export default function FinanceToolsPage() {
   const [pincodeLoading, setPincodeLoading] = useState(false);
   const [pincodeError, setPincodeError] = useState("");
 
+  const isSelectingCompanyRef = useRef(false);
+  const companySearchAbortControllerRef = useRef<AbortController | null>(null);
+
   const handleCompanySearchSubmit = (e: React.FormEvent, directQuery?: string) => {
     e.preventDefault();
     const q = (directQuery !== undefined ? directQuery : companyQuery).trim();
     if (!q) return;
+
+    if (companySearchAbortControllerRef.current) {
+      companySearchAbortControllerRef.current.abort();
+    }
+    const abortController = new AbortController();
+    companySearchAbortControllerRef.current = abortController;
 
     setCompanyLoading(true);
     setCompanySearchRan(true);
@@ -53,7 +63,9 @@ export default function FinanceToolsPage() {
     setSelectedCompany(null);
 
     apiClient
-      .get(`/company/search?q=${encodeURIComponent(q)}`)
+      .get(`/company/search?q=${encodeURIComponent(q)}`, {
+        signal: abortController.signal,
+      })
       .then((res) => {
         if (res.data.success && res.data.data.length > 0) {
           setSelectedCompany(res.data.data[0]);
@@ -61,33 +73,61 @@ export default function FinanceToolsPage() {
           setSelectedCompany(null);
         }
       })
-      .catch(() => setSelectedCompany(null))
-      .finally(() => setCompanyLoading(false));
+      .catch((err: any) => {
+        if (axios.isCancel(err) || err.name === "CanceledError" || err.name === "AbortError") {
+          return;
+        }
+        setSelectedCompany(null);
+      })
+      .finally(() => {
+        if (companySearchAbortControllerRef.current === abortController) {
+          setCompanyLoading(false);
+        }
+      });
   };
 
   useEffect(() => {
+    if (isSelectingCompanyRef.current) {
+      isSelectingCompanyRef.current = false;
+      return;
+    }
+
     if (companyQuery.trim().length < 2) {
       setCompanySuggestions([]);
       return;
     }
 
-    let active = true;
+    const abortController = new AbortController();
+
     const timer = setTimeout(async () => {
       try {
-        const res = await apiClient.get(`/company/autocomplete?q=${encodeURIComponent(companyQuery.trim())}`);
-        if (active && res.data.success) {
+        const res = await apiClient.get(`/company/autocomplete?q=${encodeURIComponent(companyQuery.trim())}`, {
+          signal: abortController.signal,
+        });
+        if (res.data.success) {
           setCompanySuggestions(res.data.data || []);
         }
-      } catch (err) {
-        if (active) setCompanySuggestions([]);
+      } catch (err: any) {
+        if (axios.isCancel(err) || err.name === "CanceledError" || err.name === "AbortError") {
+          return;
+        }
+        setCompanySuggestions([]);
       }
     }, 250);
 
     return () => {
-      active = false;
       clearTimeout(timer);
+      abortController.abort();
     };
   }, [companyQuery]);
+
+  useEffect(() => {
+    return () => {
+      if (companySearchAbortControllerRef.current) {
+        companySearchAbortControllerRef.current.abort();
+      }
+    };
+  }, []);
 
   const handlePincodeSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -234,6 +274,7 @@ export default function FinanceToolsPage() {
                           key={item.id}
                           type="button"
                           onClick={(e) => {
+                            isSelectingCompanyRef.current = true;
                             setCompanyQuery(item.name);
                             setShowCompanySuggestions(false);
                             handleCompanySearchSubmit(e as any, item.name);

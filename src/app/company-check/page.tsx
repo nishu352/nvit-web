@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import axios from "axios";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { apiClient } from "@/services/apiClient";
@@ -37,9 +38,19 @@ export default function CompanyCheckPage() {
   const [companies, setCompanies] = useState<any[]>([]);
   const [bankFilter, setBankFilter] = useState<"ALL" | CategoryStatusType>("ALL");
 
+  const isSelectingRef = useRef(false);
+  const searchAbortControllerRef = useRef<AbortController | null>(null);
+
   const handleSearch = async (overrideTerm?: string) => {
     const q = (overrideTerm !== undefined ? overrideTerm : searchTerm).trim();
     if (!q) return;
+
+    // Cancel prior in-flight search request
+    if (searchAbortControllerRef.current) {
+      searchAbortControllerRef.current.abort();
+    }
+    const abortController = new AbortController();
+    searchAbortControllerRef.current = abortController;
 
     setLoading(true);
     setShowSuggestions(false);
@@ -50,43 +61,69 @@ export default function CompanyCheckPage() {
     try {
       const response = await apiClient.get("/company/search", {
         params: { q },
+        signal: abortController.signal,
       });
       if (response.data && response.data.success && Array.isArray(response.data.data)) {
         setCompanies(response.data.data);
       }
-    } catch (err) {
+    } catch (err: any) {
+      if (axios.isCancel(err) || err.name === "CanceledError" || err.name === "AbortError") {
+        return;
+      }
       console.error("API search error", err);
     } finally {
-      setLoading(false);
+      if (searchAbortControllerRef.current === abortController) {
+        setLoading(false);
+      }
     }
   };
 
   useEffect(() => {
-    let active = true;
+    // If the searchTerm change was triggered by selecting a suggestion, skip autocomplete
+    if (isSelectingRef.current) {
+      isSelectingRef.current = false;
+      return;
+    }
+
     const term = searchTerm.trim();
     if (term.length < 2) {
       setSuggestions([]);
       return;
     }
 
+    const abortController = new AbortController();
+
     const timer = setTimeout(async () => {
       try {
         const res = await apiClient.get("/company/autocomplete", {
           params: { q: term },
+          signal: abortController.signal,
         });
-        if (active && res.data && res.data.success && Array.isArray(res.data.data)) {
+        if (res.data && res.data.success && Array.isArray(res.data.data)) {
           setSuggestions(res.data.data);
         }
-      } catch (err) {
-        if (active) setSuggestions([]);
+      } catch (err: any) {
+        // Silently ignore canceled requests
+        if (axios.isCancel(err) || err.name === "CanceledError" || err.name === "AbortError") {
+          return;
+        }
+        setSuggestions([]);
       }
     }, 250);
 
     return () => {
-      active = false;
       clearTimeout(timer);
+      abortController.abort();
     };
   }, [searchTerm]);
+
+  useEffect(() => {
+    return () => {
+      if (searchAbortControllerRef.current) {
+        searchAbortControllerRef.current.abort();
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#050507] text-zinc-900 dark:text-zinc-100 transition-colors duration-300 flex flex-col selection:bg-zinc-900 dark:selection:bg-white selection:text-white dark:selection:text-zinc-950">
@@ -218,6 +255,7 @@ export default function CompanyCheckPage() {
                       key={item.id}
                       type="button"
                       onClick={() => {
+                        isSelectingRef.current = true;
                         setSearchTerm(item.name);
                         setShowSuggestions(false);
                         handleSearch(item.name);
