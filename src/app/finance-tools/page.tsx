@@ -24,6 +24,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { getCategoryStatus } from "@/utils/categoryStatus";
 import { FINANCE_TOOLS_CONFIG } from "@/config/siteNavigation";
+import { companySearchClientCache, companyAutocompleteClientCache } from "@/utils/clientCache";
 
 export default function FinanceToolsPage() {
   const [activeTab, setActiveTab] = useState<"emi" | "company" | "pincode">("emi");
@@ -44,21 +45,38 @@ export default function FinanceToolsPage() {
 
   const isSelectingCompanyRef = useRef(false);
   const companySearchAbortControllerRef = useRef<AbortController | null>(null);
+  const companyAutocompleteAbortControllerRef = useRef<AbortController | null>(null);
 
   const handleCompanySearchSubmit = (e: React.FormEvent, directQuery?: string) => {
     e.preventDefault();
     const q = (directQuery !== undefined ? directQuery : companyQuery).trim();
     if (!q) return;
 
+    if (companyAutocompleteAbortControllerRef.current) {
+      companyAutocompleteAbortControllerRef.current.abort();
+    }
     if (companySearchAbortControllerRef.current) {
       companySearchAbortControllerRef.current.abort();
     }
+
+    setShowCompanySuggestions(false);
+    setCompanySearchRan(true);
+
+    const cached = companySearchClientCache.get(q);
+    if (cached) {
+      if (cached.length > 0) {
+        setSelectedCompany(cached[0]);
+      } else {
+        setSelectedCompany(null);
+      }
+      setCompanyLoading(false);
+      return;
+    }
+
     const abortController = new AbortController();
     companySearchAbortControllerRef.current = abortController;
 
     setCompanyLoading(true);
-    setCompanySearchRan(true);
-    setShowCompanySuggestions(false);
     setCompanySuggestions([]);
     setSelectedCompany(null);
 
@@ -69,8 +87,10 @@ export default function FinanceToolsPage() {
       .then((res) => {
         if (res.data.success && res.data.data.length > 0) {
           setSelectedCompany(res.data.data[0]);
+          companySearchClientCache.set(q, res.data.data);
         } else {
           setSelectedCompany(null);
+          companySearchClientCache.set(q, []);
         }
       })
       .catch((err: any) => {
@@ -92,20 +112,33 @@ export default function FinanceToolsPage() {
       return;
     }
 
-    if (companyQuery.trim().length < 2) {
+    const term = companyQuery.trim();
+    if (term.length < 2) {
       setCompanySuggestions([]);
       return;
     }
 
+    const cached = companyAutocompleteClientCache.get(term);
+    if (cached) {
+      setCompanySuggestions(cached);
+      return;
+    }
+
+    if (companyAutocompleteAbortControllerRef.current) {
+      companyAutocompleteAbortControllerRef.current.abort();
+    }
     const abortController = new AbortController();
+    companyAutocompleteAbortControllerRef.current = abortController;
 
     const timer = setTimeout(async () => {
       try {
-        const res = await apiClient.get(`/company/autocomplete?q=${encodeURIComponent(companyQuery.trim())}`, {
+        const res = await apiClient.get(`/company/autocomplete?q=${encodeURIComponent(term)}`, {
           signal: abortController.signal,
         });
         if (res.data.success) {
-          setCompanySuggestions(res.data.data || []);
+          const list = res.data.data || [];
+          setCompanySuggestions(list);
+          companyAutocompleteClientCache.set(term, list);
         }
       } catch (err: any) {
         if (axios.isCancel(err) || err.name === "CanceledError" || err.name === "AbortError") {
@@ -113,7 +146,7 @@ export default function FinanceToolsPage() {
         }
         setCompanySuggestions([]);
       }
-    }, 250);
+    }, 200);
 
     return () => {
       clearTimeout(timer);
@@ -125,6 +158,9 @@ export default function FinanceToolsPage() {
     return () => {
       if (companySearchAbortControllerRef.current) {
         companySearchAbortControllerRef.current.abort();
+      }
+      if (companyAutocompleteAbortControllerRef.current) {
+        companyAutocompleteAbortControllerRef.current.abort();
       }
     };
   }, []);

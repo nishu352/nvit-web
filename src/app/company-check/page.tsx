@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCategoryStatus, CategoryStatusType } from "@/utils/categoryStatus";
+import { companySearchClientCache, companyAutocompleteClientCache } from "@/utils/clientCache";
 
 interface Suggestion {
   id: string;
@@ -35,36 +36,65 @@ export default function CompanyCheckPage() {
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchedQuery, setSearchedQuery] = useState("");
+  const [pendingQuery, setPendingQuery] = useState<string | null>(null);
   const [companies, setCompanies] = useState<any[]>([]);
   const [bankFilter, setBankFilter] = useState<"ALL" | CategoryStatusType>("ALL");
 
   const isSelectingRef = useRef(false);
   const searchAbortControllerRef = useRef<AbortController | null>(null);
+  const autocompleteAbortControllerRef = useRef<AbortController | null>(null);
 
-  const handleSearch = async (overrideTerm?: string) => {
+  const handleSearch = async (overrideTerm?: string, selectedCompanyId?: string) => {
     const q = (overrideTerm !== undefined ? overrideTerm : searchTerm).trim();
     if (!q) return;
+
+    // Abort pending autocomplete immediately
+    if (autocompleteAbortControllerRef.current) {
+      autocompleteAbortControllerRef.current.abort();
+    }
 
     // Cancel prior in-flight search request
     if (searchAbortControllerRef.current) {
       searchAbortControllerRef.current.abort();
     }
+
+    setShowSuggestions(false);
+    setHasSearched(true);
+
+    // Instant client cache check
+    const clientCacheKey = selectedCompanyId ? `${q}::${selectedCompanyId}` : q;
+    const cachedResults = companySearchClientCache.get(clientCacheKey);
+    if (cachedResults) {
+      setCompanies(cachedResults);
+      setSearchedQuery(q);
+      setPendingQuery(null);
+      setLoading(false);
+      return;
+    }
+
     const abortController = new AbortController();
     searchAbortControllerRef.current = abortController;
 
+    setPendingQuery(q);
     setLoading(true);
-    setShowSuggestions(false);
-    setHasSearched(true);
-    setSearchedQuery(q);
-    setCompanies([]);
+
+    // Only clear companies if none exist yet to prevent jarring layout shift
+    if (companies.length === 0) {
+      setSearchedQuery(q);
+    }
 
     try {
       const response = await apiClient.get("/company/search", {
-        params: { q },
+        params: {
+          q,
+          ...(selectedCompanyId ? { companyId: selectedCompanyId } : {}),
+        },
         signal: abortController.signal,
       });
       if (response.data && response.data.success && Array.isArray(response.data.data)) {
         setCompanies(response.data.data);
+        setSearchedQuery(q);
+        companySearchClientCache.set(clientCacheKey, response.data.data);
       }
     } catch (err: any) {
       if (axios.isCancel(err) || err.name === "CanceledError" || err.name === "AbortError") {
@@ -74,6 +104,7 @@ export default function CompanyCheckPage() {
     } finally {
       if (searchAbortControllerRef.current === abortController) {
         setLoading(false);
+        setPendingQuery(null);
       }
     }
   };
@@ -91,7 +122,18 @@ export default function CompanyCheckPage() {
       return;
     }
 
+    // Instant client cache check for suggestions
+    const cachedSuggestions = companyAutocompleteClientCache.get(term);
+    if (cachedSuggestions) {
+      setSuggestions(cachedSuggestions);
+      return;
+    }
+
+    if (autocompleteAbortControllerRef.current) {
+      autocompleteAbortControllerRef.current.abort();
+    }
     const abortController = new AbortController();
+    autocompleteAbortControllerRef.current = abortController;
 
     const timer = setTimeout(async () => {
       try {
@@ -101,6 +143,7 @@ export default function CompanyCheckPage() {
         });
         if (res.data && res.data.success && Array.isArray(res.data.data)) {
           setSuggestions(res.data.data);
+          companyAutocompleteClientCache.set(term, res.data.data);
         }
       } catch (err: any) {
         // Silently ignore canceled requests
@@ -109,7 +152,7 @@ export default function CompanyCheckPage() {
         }
         setSuggestions([]);
       }
-    }, 250);
+    }, 200);
 
     return () => {
       clearTimeout(timer);
@@ -121,6 +164,9 @@ export default function CompanyCheckPage() {
     return () => {
       if (searchAbortControllerRef.current) {
         searchAbortControllerRef.current.abort();
+      }
+      if (autocompleteAbortControllerRef.current) {
+        autocompleteAbortControllerRef.current.abort();
       }
     };
   }, []);
@@ -258,7 +304,7 @@ export default function CompanyCheckPage() {
                         isSelectingRef.current = true;
                         setSearchTerm(item.name);
                         setShowSuggestions(false);
-                        handleSearch(item.name);
+                        handleSearch(item.name, item.id);
                       }}
                       className="w-full px-3.5 py-2.5 rounded-xl text-xs font-bold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-white/5 hover:text-zinc-900 dark:hover:text-white flex items-center justify-between transition-colors cursor-pointer"
                     >
@@ -300,7 +346,7 @@ export default function CompanyCheckPage() {
 
       {/* Main Results Body */}
       <main className="flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
-        {loading && (
+        {loading && companies.length === 0 && (
           <div className="py-24 text-center space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-white/10 border border-zinc-200 dark:border-white/10 flex items-center justify-center mx-auto text-zinc-900 dark:text-white">
               <Loader2 className="w-6 h-6 animate-spin" />
@@ -326,8 +372,16 @@ export default function CompanyCheckPage() {
           </div>
         )}
 
-        {!loading && companies.length > 0 && (
-          <div className="space-y-8">
+        {companies.length > 0 && (
+          <div className="space-y-6">
+            {loading && pendingQuery && (
+              <div className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold animate-pulse">
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                <span>Scanning policy index for &quot;{pendingQuery}&quot;...</span>
+              </div>
+            )}
+
+            <div className={`space-y-8 transition-opacity duration-200 ${loading ? "opacity-60 pointer-events-none" : "opacity-100"}`}>
             {/* Search Header Bar */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-zinc-200 dark:border-white/10">
               <div className="flex items-center gap-2">
@@ -528,6 +582,7 @@ export default function CompanyCheckPage() {
                   </div>
                 );
               })}
+              </div>
             </div>
           </div>
         )}
