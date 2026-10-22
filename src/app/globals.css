@@ -1,65 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ============================================================
-   NVIT.SPACE — GLOBAL DESIGN TOKEN SYSTEM
-   Simple • Premium • Spacious • Responsive
+   NVIT.SPACE — GLOBAL CANONICAL DESIGN TOKEN SYSTEM
+   Enterprise Precision • Accessible • High Contrast • Fast
    ============================================================ */
 
 @layer base {
   :root {
-    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: var(--font-plus-jakarta), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* === LIGHT MODE TOKENS === */
+    /* === LIGHT MODE CANONICAL TOKENS === */
     --bg-base:          #F8FAFC;
     --bg-surface:       #FFFFFF;
     --bg-subtle:        #F1F5F9;
     --bg-muted:         #E2E8F0;
     --bg-card:          rgba(255, 255, 255, 0.95);
     --bg-input:         #FFFFFF;
+    --bg-overlay:       rgba(15, 23, 42, 0.50);
 
     --text-primary:     #0F172A;
     --text-secondary:   #334155;
     --text-muted:       #64748B;
     --text-placeholder: #94A3B8;
+    --text-disabled:    #CBD5E1;
 
-    --border-default:   rgba(203, 213, 225, 0.75);
-    --border-subtle:    rgba(226, 232, 240, 0.65);
+    --border-default:   rgba(203, 213, 225, 0.85);
+    --border-subtle:    rgba(226, 232, 240, 0.75);
+    --border-strong:    #94A3B8;
     --border-focus:     #2563EB;
 
-    --ring:             rgba(37, 99, 235, 0.2);
-    
+    --ring:             rgba(37, 99, 235, 0.25);
+
+    --accent-primary:   #0284C7;
+    --accent-cta:       #1D4ED8;
+    --accent-hover:     #1E40AF;
+
+    /* Semantic Status Tokens (Accessible Light) */
+    --status-success-bg:     rgba(16, 185, 129, 0.12);
+    --status-success-text:   #047857;
+    --status-success-border: rgba(16, 185, 129, 0.25);
+
+    --status-warning-bg:     rgba(245, 158, 11, 0.12);
+    --status-warning-text:   #B45309;
+    --status-warning-border: rgba(245, 158, 11, 0.25);
+
+    --status-error-bg:       rgba(239, 68, 68, 0.12);
+    --status-error-text:     #B91C1C;
+    --status-error-border:   rgba(239, 68, 68, 0.25);
+
+    --status-info-bg:        rgba(2, 132, 199, 0.12);
+    --status-info-text:      #0369A1;
+    --status-info-border:    rgba(2, 132, 199, 0.25);
+
+    --status-neutral-bg:     rgba(148, 163, 184, 0.12);
+    --status-neutral-text:   #475569;
+    --status-neutral-border: rgba(148, 163, 184, 0.25);
+
     --nav-bg:           rgba(255, 255, 255, 0.85);
     --nav-border:       rgba(203, 213, 225, 0.75);
     --nav-shadow:       0 8px 30px -4px rgba(15, 23, 42, 0.07), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
 
     --glass-border:     rgba(226, 232, 240, 0.85);
     --glass-shadow:     0 8px 30px -6px rgba(15, 23, 42, 0.05);
+    --shadow-card:      0 4px 20px 0 rgba(15, 23, 42, 0.05);
+    --shadow-elevated:  0 12px 36px -4px rgba(15, 23, 42, 0.10);
   }
 
   .dark {
-    /* === DARK MODE TOKENS === */
+    /* === DARK MODE CANONICAL TOKENS === */
     --bg-base:          #030712;
     --bg-surface:       #0F172A;
     --bg-subtle:        #111827;
     --bg-muted:         #1E293B;
     --bg-card:          rgba(15, 23, 42, 0.85);
     --bg-input:         rgba(15, 23, 42, 0.95);
+    --bg-overlay:       rgba(0, 0, 0, 0.75);
 
     --text-primary:     #F8FAFC;
     --text-secondary:   #CBD5E1;
-    --text-muted:       #64748B;
+    --text-muted:       #94A3B8;
     --text-placeholder: #475569;
+    --text-disabled:    #475569;
 
     --border-default:   rgba(255, 255, 255, 0.10);
     --border-subtle:    rgba(255, 255, 255, 0.05);
+    --border-strong:    rgba(255, 255, 255, 0.20);
     --border-focus:     #3B82F6;
 
-    --ring:             rgba(59, 130, 246, 0.25);
+    --ring:             rgba(59, 130, 246, 0.30);
+
+    --accent-primary:   #38BDF8;
+    --accent-cta:       #2563EB;
+    --accent-hover:     #1D4ED8;
+
+    /* Semantic Status Tokens (Accessible Dark) */
+    --status-success-bg:     rgba(16, 185, 129, 0.15);
+    --status-success-text:   #34D399;
+    --status-success-border: rgba(16, 185, 129, 0.30);
+
+    --status-warning-bg:     rgba(245, 158, 11, 0.15);
+    --status-warning-text:   #FBBF24;
+    --status-warning-border: rgba(245, 158, 11, 0.30);
+
+    --status-error-bg:       rgba(239, 68, 68, 0.15);
+    --status-error-text:     #F87171;
+    --status-error-border:   rgba(239, 68, 68, 0.30);
+
+    --status-info-bg:        rgba(56, 189, 248, 0.15);
+    --status-info-text:      #38BDF8;
+    --status-info-border:    rgba(56, 189, 248, 0.30);
+
+    --status-neutral-bg:     rgba(148, 163, 184, 0.15);
+    --status-neutral-text:   #94A3B8;
+    --status-neutral-border: rgba(148, 163, 184, 0.25);
 
     --nav-bg:           rgba(15, 23, 42, 0.80);
     --nav-border:       rgba(255, 255, 255, 0.10);
@@ -67,6 +123,8 @@
 
     --glass-border:     rgba(255, 255, 255, 0.08);
     --glass-shadow:     0 20px 50px -12px rgba(0, 0, 0, 0.50);
+    --shadow-card:      0 4px 20px 0 rgba(0, 0, 0, 0.30);
+    --shadow-elevated:  0 20px 48px -8px rgba(0, 0, 0, 0.55);
   }
 
   * { box-sizing: border-box; }
@@ -107,6 +165,15 @@
 }
 
 @layer utilities {
+  .page-canvas     {
+    min-height: 100vh;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
   .bg-surface      { background-color: var(--bg-surface); }
   .bg-base         { background-color: var(--bg-base); }
   .bg-subtle       { background-color: var(--bg-subtle); }
@@ -118,6 +185,33 @@
 
   .border-default  { border-color: var(--border-default); }
   .border-subtle   { border-color: var(--border-subtle); }
+
+  /* Semantic Badge Classes */
+  .badge-status-success {
+    background-color: var(--status-success-bg);
+    color: var(--status-success-text);
+    border: 1px solid var(--status-success-border);
+  }
+  .badge-status-warning {
+    background-color: var(--status-warning-bg);
+    color: var(--status-warning-text);
+    border: 1px solid var(--status-warning-border);
+  }
+  .badge-status-error {
+    background-color: var(--status-error-bg);
+    color: var(--status-error-text);
+    border: 1px solid var(--status-error-border);
+  }
+  .badge-status-info {
+    background-color: var(--status-info-bg);
+    color: var(--status-info-text);
+    border: 1px solid var(--status-info-border);
+  }
+  .badge-status-neutral {
+    background-color: var(--status-neutral-bg);
+    color: var(--status-neutral-text);
+    border: 1px solid var(--status-neutral-border);
+  }
 
   /* Strategic Floating Capsule Header */
   .glass-nav-capsule {
@@ -367,5 +461,153 @@ html.lenis body {
 
 .z-spatial-3 {
   transform: translateZ(40px);
+}
+
+/* ============================================================
+   NVIT.SPACE — LIQUID GLASS DESIGN SYSTEM TOKENS
+   Translucent Glass • Specular Highlights • Glossy Capsule CTAs
+   ============================================================ */
+
+.liquid-atmosphere-canvas {
+  background: radial-gradient(circle at 50% 0%, #EEF4FA 0%, #F5F8FC 45%, #F8FAFC 100%);
+  position: relative;
+}
+
+.dark .liquid-atmosphere-canvas {
+  background: radial-gradient(circle at 50% 0%, #0A1124 0%, #060B18 50%, #030712 100%);
+}
+
+.liquid-glass-btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 9999px;
+  background: radial-gradient(130% 130% at 50% -10%, #1E293B 0%, #0F172A 55%, #020617 100%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.5),
+    0 10px 25px -4px rgba(15, 23, 42, 0.35);
+  color: #FFFFFF;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.liquid-glass-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.5),
+    0 14px 32px -4px rgba(15, 23, 42, 0.45),
+    0 0 20px rgba(37, 99, 235, 0.25);
+}
+
+.liquid-glass-btn-primary:active {
+  transform: translateY(0.5px) scale(0.98);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 2px 4px 0 rgba(0, 0, 0, 0.6),
+    0 4px 12px -2px rgba(15, 23, 42, 0.3);
+}
+
+.dark .liquid-glass-btn-primary {
+  background: radial-gradient(130% 130% at 50% -10%, #334155 0%, #0F172A 60%, #020617 100%);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.6),
+    0 10px 25px -4px rgba(0, 0, 0, 0.7);
+}
+
+.liquid-glass-btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+    0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  color: #0F172A;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-btn-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #FFFFFF;
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+    0 8px 25px -4px rgba(15, 23, 42, 0.09);
+}
+
+.liquid-glass-btn-secondary:active {
+  transform: translateY(0.5px) scale(0.98);
+}
+
+.dark .liquid-glass-btn-secondary {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+    0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  color: #F8FAFC;
+}
+
+.dark .liquid-glass-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Translucent Frosted Glass Card */
+.liquid-glass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 16px 40px -8px rgba(15, 23, 42, 0.04),
+    0 2px 6px -1px rgba(15, 23, 42, 0.02),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 28px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.84);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 24px 50px -10px rgba(15, 23, 42, 0.08),
+    0 4px 12px -2px rgba(15, 23, 42, 0.03),
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.95);
+}
+
+.dark .liquid-glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 
+    0 20px 50px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dark .liquid-glass-card:hover {
+  background: rgba(15, 23, 42, 0.80);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 28px 60px -10px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.14);
 }
 

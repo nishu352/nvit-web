@@ -8,114 +8,141 @@ import {
   MapPin,
   Calculator,
   ArrowRight,
-  Cpu,
+  ArrowUpRight,
 } from "lucide-react";
+import LiquidGlassOrb from "@/components/ui/LiquidGlassOrb";
+
+interface PublicToolItem {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  iconBg: string;
+  iconColor: string;
+  ctaText: string;
+}
 
 export default function FreeToolsHomeSection() {
-  const tools = [
+  const tools: PublicToolItem[] = [
     {
+      id: "company-check",
       title: "Company Category Checker",
-      badge: "Employer Policy Tiering",
-      description:
-        "Inspect corporate employer categorization (Cat A, Cat B, Superprime, Unlisted) across top Indian banks and NBFCs directly from indexed policy data.",
+      description: "Search and explore company categories and related information.",
       href: "/company-check",
-      icon: <Building2 className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
-      cta: "Inspect Company Tiers",
+      icon: Building2,
+      iconBg: "bg-blue-50 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-500/20",
+      iconColor: "text-blue-600 dark:text-blue-400",
+      ctaText: "Open Company Checker",
     },
     {
+      id: "pincode-check",
       title: "Pincode Serviceability Checker",
-      badge: "Pan-India Postal Codes",
-      description:
-        "Verify regional banking coverage, district postal zoning, and operational lender serviceability across Pan-India PIN codes.",
+      description: "Check lender serviceability and eligibility by pincode.",
       href: "/pincode-check",
-      icon: <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
-      cta: "Check Pincode Coverage",
+      icon: MapPin,
+      iconBg: "bg-rose-50 dark:bg-rose-950/40 border border-rose-200/80 dark:border-rose-500/20",
+      iconColor: "text-rose-600 dark:text-rose-400",
+      ctaText: "Open Pincode Checker",
     },
     {
+      id: "emi-calculator",
       title: "Universal Loan EMI Calculator",
-      badge: "Financial Calculation Engine",
-      description:
-        "Compute monthly loan repayments, interest rates, and total payable amounts with reducing-balance formulas and mathematical breakdowns.",
+      description: "Calculate EMIs, compare loan options and plan your finances.",
       href: "/finance-tools/emi-calculator",
-      icon: <Calculator className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
-      cta: "Open EMI Calculator",
-    },
-    {
-      title: "Fintech Tools & Calculators Suite",
-      badge: "Calculators Directory",
-      description:
-        "Explore personal loan, home loan, business loan EMI calculators, loan eligibility tools, and interest compounding utilities.",
-      href: "/finance-tools",
-      icon: <Cpu className="w-5 h-5 text-purple-600 dark:text-purple-400" />,
-      cta: "Browse All Tools",
+      icon: Calculator,
+      iconBg: "bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-500/20",
+      iconColor: "text-emerald-600 dark:text-emerald-400",
+      ctaText: "Open EMI Calculator",
     },
   ];
 
   return (
     <section
-      id="free-tools"
-      className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60 dark:border-white/10 overflow-hidden bg-white dark:bg-[#070B12] transition-colors duration-300"
+      id="public-tools"
+      className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-300"
     >
-      <div className="max-w-7xl mx-auto space-y-16">
-        {/* Section Header */}
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold">
-              05 / Free Utilities &amp; APIs
-            </span>
-            <span className="w-12 h-px bg-slate-300 dark:bg-white/20" />
+      {/* Restrained liquid orb background accent */}
+      <div className="absolute top-10 right-[-30px] pointer-events-none hidden lg:block">
+        <LiquidGlassOrb size={100} tint="cyan" delay={0.9} floatY={12} />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10 space-y-16">
+        {/* Section Header: Left Eyebrow & Title, Right Pill CTA */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold mb-3">
+              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 shadow-[0_0_8px_rgba(37,99,235,0.6)]" />
+              <span>PUBLIC TOOLS</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl font-heading font-extrabold text-slate-950 dark:text-white tracking-[-0.03em] leading-[1.12]">
+              Public Tools Engineered <br />
+              by{" "}
+              <span className="text-blue-600 dark:text-blue-500">
+                NVIT.SPACE.
+              </span>
+            </h2>
+
+            <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
+              Useful tools and resources to help businesses, professionals and individuals make informed decisions.
+            </p>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-heading font-extrabold text-slate-950 dark:text-white tracking-tight leading-[1.12]">
-            Interactive Financial Tools &amp;{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              Banking Data Utilities.
-            </span>
-          </h2>
-
-          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
-            Free public digital tools built by NVIT.SPACE to help individuals and businesses inspect employer category tiers, verify postal pincode serviceability, and calculate exact loan terms.
-          </p>
+          <div className="shrink-0">
+            <Link
+              href="/finance-tools"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-semibold hover:bg-white dark:hover:bg-white/10 transition-all shadow-sm group active:scale-95"
+            >
+              <span>View All Tools</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tools.map((tool, idx) => (
-            <motion.div
-              key={tool.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="rounded-3xl p-6 bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 flex flex-col justify-between space-y-4 hover:border-blue-500/40 transition-all group"
-            >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-white/10 flex items-center justify-center shadow-sm">
-                    {tool.icon}
+        {/* 3 Featured Tools Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {tools.map((tool, idx) => {
+            const Icon = tool.icon;
+            return (
+              <motion.div
+                key={tool.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="liquid-glass-card p-6 sm:p-8 flex flex-col justify-between space-y-6 group"
+              >
+                <div className="space-y-4">
+                  {/* Tinted Glass Icon Square */}
+                  <div className={`w-12 h-12 rounded-2xl ${tool.iconBg} flex items-center justify-center ${tool.iconColor} shadow-sm group-hover:scale-105 transition-transform duration-200`}>
+                    <Icon className="w-6 h-6" />
                   </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-800 px-2 py-0.5 rounded-full border border-slate-200/80 dark:border-white/10">
-                    {tool.badge}
-                  </span>
+
+                  <h3 className="text-xl font-heading font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {tool.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    {tool.description}
+                  </p>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-950 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  <Link href={tool.href}>{tool.title}</Link>
-                </h3>
-
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                  {tool.description}
-                </p>
-              </div>
-
-              <Link href={tool.href}>
-                <button className="w-full py-2.5 rounded-xl bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-950 text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm">
-                  <span>{tool.cta}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </Link>
-            </motion.div>
-          ))}
+                {/* Glossy Dark Liquid Pill CTA Button */}
+                <div className="pt-2">
+                  <Link href={tool.href} className="block w-full">
+                    <button
+                      type="button"
+                      className="liquid-glass-btn-primary w-full py-3 px-5 text-xs font-semibold flex items-center justify-center gap-2 group-hover:shadow-lg transition-all"
+                    >
+                      <span>{tool.ctaText}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-white group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -10,6 +10,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        canvas: "var(--bg-base)",
+        surface: "var(--bg-surface)",
+        subtle: "var(--bg-subtle)",
+        "card-surface": "var(--bg-card)",
+        "input-surface": "var(--bg-input)",
+        "token-border": "var(--border-default)",
+        "token-border-subtle": "var(--border-subtle)",
+        "token-border-focus": "var(--border-focus)",
         navy: {
           DEFAULT: "#0f172a",
           deep: "#060d1a",
@@ -35,8 +43,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
-        heading: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+        sans: ["var(--font-plus-jakarta)", "var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
+        body: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         fin: "0 10px 40px -10px rgba(15, 23, 42, 0.08)",

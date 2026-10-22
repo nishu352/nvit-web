@@ -1,216 +1,221 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowUpRight, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import LiquidGlassOrb from "@/components/ui/LiquidGlassOrb";
 
-interface CaseStudyItem {
-  number: string;
-  category: string;
+interface ProjectShowcase {
+  id: string;
   title: string;
-  problem: string;
-  engineered: string;
-  result: string;
-  technologies: string[];
-  liveHref?: string;
+  tags: string[];
   caseStudyHref: string;
+  theme: "dark" | "light";
+  dashboardType: "loan" | "pincode";
 }
 
-const CASE_STUDIES: CaseStudyItem[] = [
+const PROJECTS: ProjectShowcase[] = [
   {
-    number: "01",
-    category: "Fintech Search & Classification Engine",
-    title: "Autocomplete Employer Categorization Engine",
-    problem:
-      "Lenders classify corporate employers into Category A, B, C, and D tiers to determine personal loan interest rates. Underwriters and loan officers struggled to match company names accurately due to typographical differences, corporate abbreviations, and fragmented multi-bank policy spreadsheets.",
-    engineered:
-      "NVIT architected a specialized high-speed categorization engine utilizing PostgreSQL trigram indexing (pg_trgm), normalized company alias tables, and an asynchronous Fastify API layer. Queries are debounced on the client side to minimize server strain.",
-    result:
-      "Fast autocomplete search across registered corporate employer entities, with a unified view displaying institutional bank policy tiers.",
-    technologies: ["PostgreSQL (pg_trgm)", "Fastify", "TypeScript", "Next.js"],
-    liveHref: "/company-check",
-    caseStudyHref: "/resources/case-studies/enterprise-company-category-checker",
-  },
-  {
-    number: "02",
-    category: "Full-Stack Lending Platform",
+    id: "loan-origination",
     title: "Multi-Tenant Loan Origination System",
-    problem:
-      "Lending distribution networks and direct selling agents operated across manual paper workflows, physical document drop-offs, and disjointed messaging threads, causing 7-to-10 day turnaround times and lead leakage.",
-    engineered:
-      "We engineered an end-to-end digital lending operating system combining a mobile-first Next.js borrower onboarding funnel, Document AI neural statement parsing for bank PDFs, and weighted round-robin lead distribution with instant webhook alerts.",
-    result:
-      "Transitioned a previously manual paper workflow into a paperless digital lending lifecycle with automated applicant pre-qualification and underwriter review consoles.",
-    technologies: ["Next.js (App Router)", "Fastify", "PostgreSQL", "Prisma", "Document AI"],
+    tags: ["Web App", "Multi-Tenant", "Automation"],
     caseStudyHref: "/resources/case-studies/multi-tenant-loan-origination-system",
+    theme: "dark",
+    dashboardType: "loan",
   },
   {
-    number: "03",
-    category: "Geospatial Data Engine",
-    title: "Pan-India Pincode Routing & Serviceability Engine",
-    problem:
-      "Financial institutions lacked a fast, unified lookup system to verify whether branches and partner NBFCs serviced specific postal PIN codes across disparate geographical regions in India.",
-    engineered:
-      "NVIT built a high-speed geospatial indexing engine mapping pan-India postal PIN codes to state, district, and circle hubs, cross-referenced with institution-specific lending criteria.",
-    result:
-      "Fast public lookup service returning positive/negative serviceability flags across tier-1 and tier-2 financial institutions with fast indexed query execution.",
-    technologies: ["Next.js", "Fastify", "PostgreSQL", "TypeScript"],
-    liveHref: "/pincode-check",
+    id: "pincode-engine",
+    title: "Pincode Routing & Serviceability Engine",
+    tags: ["API System", "Data Processing", "Production"],
     caseStudyHref: "/resources/case-studies/pan-india-pincode-eligibility-engine",
+    theme: "light",
+    dashboardType: "pincode",
   },
 ];
 
 export default function SelectedWorkSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
   return (
     <section
       id="selected-work"
-      className="relative py-28 sm:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60 dark:border-white/10 overflow-hidden bg-[var(--bg-base)] transition-colors duration-300"
+      className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-300"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-20 sm:mb-28">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold">
-              06 / Proof &amp; Selected Work
-            </span>
-            <span className="w-12 h-px bg-slate-300 dark:bg-white/20" />
+      {/* Liquid background accent */}
+      <div className="absolute top-1/3 right-[-40px] pointer-events-none hidden lg:block">
+        <LiquidGlassOrb size={120} tint="amber" delay={0.6} floatY={12} />
+      </div>
+      <div className="absolute bottom-10 left-[-30px] pointer-events-none hidden lg:block">
+        <LiquidGlassOrb size={80} tint="blue" delay={1.2} floatY={10} />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10 space-y-16">
+        {/* Section Header with Carousel Arrows at Top Right */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-blue-600 dark:text-blue-400 uppercase font-semibold mb-3">
+              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 shadow-[0_0_8px_rgba(37,99,235,0.6)]" />
+              <span>DELIVERED SOLUTIONS</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl font-heading font-extrabold text-slate-950 dark:text-white tracking-[-0.03em] leading-[1.12]">
+              Delivered Solutions &amp; <br />
+              <span className="text-blue-600 dark:text-blue-500">
+                Production Systems.
+              </span>
+            </h2>
+
+            <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
+              Real-world projects and systems built to solve practical business needs.
+            </p>
           </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold text-slate-950 dark:text-white tracking-[-0.03em] leading-[1.12]"
-          >
-            Engineering Proof.{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              Not Capability Claims.
-            </span>
-          </motion.h2>
-
-          <p className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
-            Real production software engineered for scale, strict relational integrity, and business operations.
-          </p>
+          {/* Circular Glass Carousel Buttons */}
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              type="button"
+              onClick={() => setActiveSlide((prev) => (prev > 0 ? prev - 1 : 0))}
+              aria-label="Previous Slide"
+              className="w-11 h-11 rounded-full border border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-white/10 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-sm active:scale-95"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveSlide((prev) => (prev < 3 ? prev + 1 : 3))}
+              aria-label="Next Slide"
+              className="w-11 h-11 rounded-full border border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-white/10 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-sm active:scale-95"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
-        {/* ── Editorial Alternating Case-Study Layouts ── */}
-        <div className="space-y-28 sm:space-y-36">
-          {CASE_STUDIES.map((study, idx) => {
-            const isReversed = idx % 2 === 1;
-
+        {/* Showcase Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {PROJECTS.map((proj, idx) => {
             return (
               <motion.article
-                key={study.number}
-                initial={{ opacity: 0, y: 32 }}
+                key={proj.id}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start"
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="liquid-glass-card p-6 sm:p-8 flex flex-col justify-between group overflow-hidden"
               >
-                {/* Visual / Blueprint Architectural Representation */}
-                <div
-                  className={`lg:col-span-5 ${
-                    isReversed ? "lg:order-2" : "lg:order-1"
-                  }`}
-                >
-                  <div className="relative p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-[#070B12]/80 overflow-hidden">
-                    {/* Visual Architectural Diagram */}
-                    <div className="py-6 flex flex-col items-center justify-center space-y-4">
-                      <div className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/[0.02] flex items-center justify-center p-6 relative overflow-hidden">
-                        <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.08] bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] bg-[size:16px_16px]" />
-                        <div className="relative z-10 text-center">
-                          <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-2">
-                            {study.category}
-                          </span>
-                          <span className="text-sm sm:text-base font-heading font-bold text-slate-900 dark:text-white">
-                            {study.title}
-                          </span>
+                {/* Browser Device Preview Frame */}
+                <div className="w-full rounded-2xl overflow-hidden border border-slate-200/80 dark:border-white/10 bg-slate-950 shadow-md mb-6 relative">
+                  {/* Browser Bar */}
+                  <div className="px-4 py-2.5 bg-slate-900/90 border-b border-white/10 flex items-center gap-2">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                    </div>
+                    <div className="mx-auto w-1/2 h-3.5 rounded-md bg-white/5 border border-white/5 text-[9px] font-mono text-slate-400 flex items-center justify-center px-2 truncate">
+                      https://app.nvit.space/{proj.id}
+                    </div>
+                  </div>
+
+                  {/* High-Fidelity UI Interface Graphic */}
+                  {proj.dashboardType === "loan" ? (
+                    <div className="p-4 sm:p-6 bg-[#0B0F19] text-white min-h-[220px] sm:min-h-[260px] flex flex-col justify-between select-none">
+                      {/* Sub-header tabs */}
+                      <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-blue-500" />
+                          <span className="text-xs font-semibold text-slate-200">Loan Origination Console</span>
+                        </div>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-500/30 text-emerald-400">
+                          Live Sync
+                        </span>
+                      </div>
+
+                      {/* Metrics row */}
+                      <div className="grid grid-cols-3 gap-2 sm:gap-3 py-3">
+                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
+                          <span className="text-[9px] text-slate-400 block">Active Files</span>
+                          <span className="text-sm sm:text-base font-bold text-white">1,420</span>
+                        </div>
+                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
+                          <span className="text-[9px] text-slate-400 block">Approval Rate</span>
+                          <span className="text-sm sm:text-base font-bold text-emerald-400">94.2%</span>
+                        </div>
+                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
+                          <span className="text-[9px] text-slate-400 block">Disbursed</span>
+                          <span className="text-sm sm:text-base font-bold text-blue-400">₹48.2 Cr</span>
                         </div>
                       </div>
 
-                      {/* Tech Stack Pills */}
-                      <div className="flex flex-wrap gap-2 w-full pt-2">
-                        {study.technologies.map((tech, tIdx) => (
-                          <span
-                            key={tIdx}
-                            className="px-2.5 py-1 rounded-md border border-slate-200 dark:border-white/10 text-[11px] font-mono text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900/60"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                      {/* Mock Chart & Table Lines */}
+                      <div className="space-y-1.5 pt-2 border-t border-white/5">
+                        <div className="h-2 rounded bg-white/10 w-full" />
+                        <div className="h-2 rounded bg-white/5 w-4/5" />
+                        <div className="h-2 rounded bg-blue-500/20 w-3/5" />
                       </div>
                     </div>
+                  ) : (
+                    <div className="p-4 sm:p-6 bg-slate-50 text-slate-900 min-h-[220px] sm:min-h-[260px] flex flex-col justify-between select-none">
+                      {/* Sub-header */}
+                      <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                          <span className="text-xs font-semibold text-slate-800">Pan-India Postal Serviceability</span>
+                        </div>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-50 border border-blue-200 text-blue-700">
+                          19,100+ Pincodes
+                        </span>
+                      </div>
 
-                    {/* Direct Links */}
-                    <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
-                      <Link
-                        href={study.caseStudyHref}
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors group"
-                      >
-                        <span>Read full engineering breakdown</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                      </Link>
+                      {/* Interactive Map Visual Metaphor */}
+                      <div className="p-3 rounded-xl bg-white border border-slate-200/80 my-2 shadow-sm flex items-center justify-between">
+                        <div className="space-y-1">
+                          <span className="text-[10px] font-mono text-slate-400 uppercase">Selected Postal Hub</span>
+                          <div className="text-xs font-bold text-slate-900">110001 — New Delhi GPO</div>
+                        </div>
+                        <span className="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-semibold text-[10px]">
+                          Tier-1 Serviceable
+                        </span>
+                      </div>
 
-                      {study.liveHref && (
-                        <Link
-                          href={study.liveHref}
-                          className="inline-flex items-center gap-1 text-xs font-mono text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white transition-colors"
-                        >
-                          <span>Inspect Live Utility</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </Link>
-                      )}
+                      {/* Geographic bars */}
+                      <div className="grid grid-cols-4 gap-2 pt-1">
+                        <div className="h-8 rounded bg-blue-100/60 border border-blue-200/40" />
+                        <div className="h-8 rounded bg-emerald-100/60 border border-emerald-200/40" />
+                        <div className="h-8 rounded bg-amber-100/60 border border-amber-200/40" />
+                        <div className="h-8 rounded bg-indigo-100/60 border border-indigo-200/40" />
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
-                {/* Editorial Narrative Column (Problem → What NVIT Engineered → Result) */}
-                <div
-                  className={`lg:col-span-7 space-y-6 ${
-                    isReversed ? "lg:order-1" : "lg:order-2"
-                  }`}
-                >
-                  <div>
-                    <span className="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase tracking-widest">
-                      Case Study {study.number}
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 dark:text-white tracking-tight mt-1">
-                      {study.title}
-                    </h3>
-                  </div>
+                {/* Card Title & Bottom Details */}
+                <div className="space-y-4">
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-slate-900 dark:text-white tracking-tight">
+                    {proj.title}
+                  </h3>
 
-                  <div className="space-y-6 text-sm sm:text-base leading-relaxed">
-                    {/* 1. Problem */}
-                    <div>
-                      <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 font-bold mb-1.5">
-                        Problem // What Was Difficult?
-                      </h4>
-                      <p className="text-slate-600 dark:text-slate-300 font-normal">
-                        {study.problem}
-                      </p>
+                  {/* Pills and Corner Link */}
+                  <div className="flex items-center justify-between pt-2">
+                    <div className="flex flex-wrap gap-2">
+                      {proj.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 rounded-full text-xs font-medium border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-white/5 text-slate-600 dark:text-slate-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
 
-                    {/* 2. What NVIT Engineered */}
-                    <div>
-                      <h4 className="text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 font-bold mb-1.5">
-                        What NVIT Engineered // Architecture
-                      </h4>
-                      <p className="text-slate-900 dark:text-slate-100 font-normal">
-                        {study.engineered}
-                      </p>
-                    </div>
-
-                    {/* 3. Result */}
-                    <div>
-                      <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 font-bold mb-1.5">
-                        Result // Operational Impact
-                      </h4>
-                      <p className="text-slate-600 dark:text-slate-300 font-normal">
-                        {study.result}
-                      </p>
-                    </div>
+                    <Link
+                      href={proj.caseStudyHref}
+                      aria-label={`View ${proj.title}`}
+                      className="w-10 h-10 rounded-full border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-white/5 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-600 dark:group-hover:text-white transition-all duration-200 shadow-sm shrink-0 ml-3"
+                    >
+                      <ArrowUpRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </div>
               </motion.article>
@@ -218,18 +223,19 @@ export default function SelectedWorkSection() {
           })}
         </div>
 
-        {/* Bottom CTA to all projects */}
-        <div className="mt-24 pt-8 border-t border-slate-200/60 dark:border-white/10 flex items-center justify-between">
-          <span className="text-xs font-mono text-slate-400 dark:text-slate-500">
-            ALL CODE AND SCHEMAS TESTED FOR PRODUCTION
-          </span>
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors group"
-          >
-            <span>View All Engineering Projects</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+        {/* Carousel Pagination Dots */}
+        <div className="flex items-center justify-center gap-2 pt-4">
+          {[0, 1, 2, 3].map((dot) => (
+            <button
+              key={dot}
+              type="button"
+              onClick={() => setActiveSlide(dot)}
+              aria-label={`Go to slide ${dot + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                activeSlide === dot ? "w-6 bg-blue-600" : "w-2 bg-slate-300 dark:bg-slate-700"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>

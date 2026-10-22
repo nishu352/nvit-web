@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, Building2, Users, MessageSquareText, Search } from "lucide-react";
+import { Sparkles, ShieldCheck, Mail, MapPin, Phone, ArrowUpRight, ArrowUp, Building2, Users, MessageSquareText, Search } from "lucide-react";
 import { useWebsiteCMS } from "@/hooks/useWebsiteCMS";
 import FeedbackModal from "@/components/layout/FeedbackModal";
 
@@ -12,6 +12,16 @@ export default function Footer() {
   const { data: cms } = useWebsiteCMS();
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [defaultFeedbackType, setDefaultFeedbackType] = useState<"COMPLAINT" | "FEEDBACK" | "GRIEVANCE" | "SUGGESTION" | "SUPPORT">("FEEDBACK");
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const companyName = cms?.company?.name || "NVIT.SPACE";
   const brandTagline = cms?.company?.tagline || "Digital Engineering Studio";
@@ -30,7 +40,7 @@ export default function Footer() {
     .join(", ");
 
   return (
-    <footer className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-200 pt-16 pb-12 border-t border-slate-200 dark:border-slate-800/80 relative overflow-hidden transition-colors duration-300">
+    <footer className="bg-[var(--bg-surface)] text-[var(--text-secondary)] pt-16 pb-12 border-t border-[var(--border-subtle)] relative overflow-hidden transition-colors duration-300">
       {/* Subtle top ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 dark:via-blue-500/40 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-blue-500/5 blur-3xl pointer-events-none" />
@@ -311,6 +321,22 @@ export default function Footer() {
         onClose={() => setFeedbackOpen(false)}
         defaultType={defaultFeedbackType}
       />
+
+      {/* Floating Scroll to Top Button (appears smoothly on scroll) */}
+      {showScrollTop && (
+        <button
+          type="button"
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          aria-label="Scroll to top"
+          className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-slate-900/85 dark:bg-white/90 hover:bg-slate-950 dark:hover:bg-white text-white dark:text-slate-900 backdrop-blur-md border border-white/20 dark:border-slate-800 flex items-center justify-center shadow-xl transition-all duration-200 active:scale-95 cursor-pointer"
+        >
+          <ArrowUp className="w-5 h-5 stroke-[2.5]" />
+        </button>
+      )}
     </footer>
   );
 }

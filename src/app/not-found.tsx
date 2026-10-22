@@ -7,7 +7,7 @@ import { ArrowLeft, Home, Compass, Wrench, Sparkles, Search } from "lucide-react
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 flex flex-col selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors duration-300 flex flex-col selection:bg-blue-600 selection:text-white">
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center py-36 px-4 sm:px-6 lg:px-8 relative overflow-hidden">

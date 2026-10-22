@@ -44,7 +44,7 @@ export default function ResourcesHomeSection() {
   return (
     <section
       id="educational-resources"
-      className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60 dark:border-white/10 overflow-hidden bg-[#FAFAFA] dark:bg-[#050507] transition-colors duration-300"
+      className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-subtle)] overflow-hidden bg-[var(--bg-base)] transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Section Header */}

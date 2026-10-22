@@ -3,7 +3,22 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import {
+  Globe,
+  Code2,
+  Database,
+  Cpu,
+  Layers,
+  ShieldCheck,
+  Wrench,
+  Headphones,
+  ArrowRight,
+  Play,
+  Sparkles,
+} from "lucide-react";
+import LiquidButton from "@/components/ui/LiquidButton";
+import LiquidGlassOrb from "@/components/ui/LiquidGlassOrb";
+import { LiquidRibbon } from "@/components/ui/LiquidRibbon";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,166 +34,195 @@ export default function HeroSection() {
     restDelta: 0.001,
   });
 
-  const yParallax = useTransform(smoothProgress, [0, 1], [0, 90]);
-  const opacityParallax = useTransform(smoothProgress, [0, 0.85], [1, 0.15]);
+  const cardY = useTransform(smoothProgress, [0, 1], [0, 40]);
+
+  const VALUE_PROPS = [
+    { label: "Custom Solutions", icon: Layers },
+    { label: "Reliable Engineering", icon: ShieldCheck },
+    { label: "Practical Tools", icon: Wrench },
+    { label: "Long-Term Support", icon: Headphones },
+  ];
+
+  const CAPABILITY_PILLS = [
+    { name: "Web Applications", href: "/services/web-application-development", icon: Globe },
+    { name: "Custom Software", href: "/services/web-application-development/custom-web-app-development", icon: Code2 },
+    { name: "API & Integrations", href: "/services/backend-development", icon: Database },
+    { name: "Automation & AI", href: "/services/business-automation", icon: Cpu },
+  ];
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[94vh] lg:min-h-screen flex flex-col justify-between pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[var(--bg-base)] transition-colors duration-300"
+      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-300"
     >
-      {/* ── Architectural Construction Canvas (Transcendent Gap Geometry) ── */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
-        {/* Subtle Architectural Coordinate Grid */}
-        <div className="absolute inset-0 opacity-[0.035] dark:opacity-[0.06] bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] bg-[size:64px_64px]" />
+      {/* ── Ambient Liquid Atmosphere & Vector Ribbons ── */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Soft Cool Radial Lighting */}
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1200px] h-[750px] bg-gradient-to-b from-blue-100/40 via-blue-50/20 to-transparent dark:from-blue-950/20 dark:via-transparent dark:to-transparent blur-3xl opacity-80" />
 
-        {/* Soft Radial Gradient */}
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-[var(--bg-base)]/80 to-[var(--bg-base)]" />
+        {/* Dynamic Sweeping Liquid Ribbon (Right Side behind Hero Graphic) */}
+        <LiquidRibbon
+          variant="hero"
+          className="right-[-120px] sm:right-[-40px] top-[10%] w-[600px] sm:w-[780px] lg:w-[920px] h-[550px] sm:h-[700px]"
+        />
 
-        {/* Interactive Transcendent Gap Geometric Framework */}
-        <motion.div
-          style={{ y: yParallax, opacity: opacityParallax }}
-          className="relative w-full max-w-5xl h-[520px] sm:h-[640px] flex items-center justify-center opacity-70 dark:opacity-85"
-        >
-          <svg
-            viewBox="0 0 1000 640"
-            className="w-full h-full object-contain"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient id="heroAccentGrad" x1="420" y1="160" x2="580" y2="480" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#3B82F6" />
-                <stop offset="100%" stopColor="#1D4ED8" />
-              </linearGradient>
-            </defs>
-
-            {/* Architectural Baseline Axis Rays */}
-            <line x1="80" y1="160" x2="920" y2="160" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 6" className="text-slate-300 dark:text-slate-800" />
-            <line x1="80" y1="480" x2="920" y2="480" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 6" className="text-slate-300 dark:text-slate-800" />
-            <line x1="420" y1="80" x2="420" y2="560" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 6" className="text-slate-300 dark:text-slate-800" />
-            <line x1="580" y1="80" x2="580" y2="560" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 6" className="text-slate-300 dark:text-slate-800" />
-
-            {/* Diagonal Construction Guideline (The Transcendent Angle) */}
-            <line
-              x1="260"
-              y1="40"
-              x2="740"
-              y2="600"
-              stroke="#2563EB"
-              strokeWidth="0.75"
-              strokeDasharray="4 8"
-              className="opacity-40 dark:opacity-50"
-            />
-
-            {/* 1. Authentic Left Strut */}
-            <path
-              d="M420 160 V480"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              className="text-slate-800 dark:text-slate-300 transition-colors"
-            />
-
-            {/* 2. Diagonal Strut — The Bridge Across the Gap */}
-            <path
-              d="M420 160 L580 480"
-              stroke="url(#heroAccentGrad)"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-            />
-
-            {/* 3. Authentic Right Strut (Terminates early leaving intentional diagonal gap) */}
-            <path
-              d="M580 160 V330"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              className="text-slate-800 dark:text-slate-300 transition-colors"
-            />
-
-            {/* 4. The Intentional Gap Marker Line */}
-            <line
-              x1="580"
-              y1="345"
-              x2="580"
-              y2="480"
-              stroke="#2563EB"
-              strokeWidth="1.2"
-              strokeDasharray="2 4"
-              className="opacity-60"
-            />
-
-            {/* 5. Primary Connection Node (The Digital Destination) */}
-            <circle cx="580" cy="160" r="6" fill="#2563EB" />
-            <circle cx="580" cy="160" r="14" stroke="#2563EB" strokeWidth="0.75" className="opacity-40 animate-ping" />
-
-            {/* Complementary Structural Intersections */}
-            <circle cx="420" cy="160" r="3" fill="currentColor" className="text-slate-400 dark:text-slate-600" />
-            <circle cx="420" cy="480" r="3" fill="currentColor" className="text-slate-400 dark:text-slate-600" />
-            <circle cx="580" cy="480" r="3" fill="#2563EB" className="opacity-80" />
-            <circle cx="580" cy="330" r="3.5" fill="#2563EB" />
-
-
-          </svg>
-        </motion.div>
+        {/* Ambient 3D Glass Orbs positioned around the hero */}
+        <div className="absolute top-[18%] right-[12%] sm:right-[16%] hidden sm:block">
+          <LiquidGlassOrb size={95} tint="amber" delay={0.5} floatY={14} />
+        </div>
+        <div className="absolute top-[8%] right-[32%] sm:right-[38%] hidden lg:block">
+          <LiquidGlassOrb size={64} tint="blue" delay={1.2} floatY={10} />
+        </div>
+        <div className="absolute bottom-[20%] right-[6%] hidden sm:block">
+          <LiquidGlassOrb size={130} tint="cyan" delay={0.2} floatY={16} />
+        </div>
+        <div className="absolute bottom-[10%] right-[38%] hidden lg:block">
+          <LiquidGlassOrb size={50} tint="amber" delay={1.8} floatY={8} />
+        </div>
       </div>
 
-      {/* ── Main Editorial Content ── */}
-      <div className="relative z-10 max-w-5xl mx-auto w-full text-center flex flex-col items-center my-auto">
+      {/* ── Main Two-Column Composition ── */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full my-auto py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Left Column: Editorial Headline & Conversion CTAs */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            {/* Eyebrow Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-orange-200/80 dark:border-orange-500/20 bg-orange-50/60 dark:bg-orange-950/25 text-xs font-mono font-semibold text-orange-600 dark:text-orange-400 mb-6 backdrop-blur-md shadow-sm"
+            >
+              <span className="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.7)]" />
+              <span className="tracking-widest uppercase">Digital Engineering Studio</span>
+            </motion.div>
 
-        {/* Primary Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.4rem] font-heading font-extrabold tracking-[-0.035em] text-slate-950 dark:text-white leading-[1.07] max-w-4xl text-balance"
-        >
-          Take Your Business Into The{" "}
-          <span className="text-slate-950 dark:text-white relative inline-block">
-            Digital World.
-            <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue-600/40 dark:bg-blue-500/40" />
-          </span>
-        </motion.h1>
+            {/* Primary Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-4xl sm:text-6xl md:text-6xl lg:text-[4.75rem] font-heading font-extrabold tracking-[-0.035em] text-slate-950 dark:text-white leading-[1.06] text-balance"
+            >
+              We Build Digital <br className="hidden sm:inline" />
+              Products That <br className="hidden sm:inline" />
+              Move Businesses <br className="hidden sm:inline" />
+              <span className="text-blue-600 dark:text-blue-500">Forward.</span>
+            </motion.h1>
 
-        {/* Supporting Copy */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-2xl font-normal leading-relaxed text-balance"
-        >
-          We design and build digital experiences, systems, and technology that help businesses move forward.
-        </motion.p>
+            {/* Supporting Copy */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-xl font-normal leading-relaxed"
+            >
+              From business websites and custom software to backend systems and intelligent automation, we help turn complex ideas into useful digital products.
+            </motion.p>
 
-        {/* Primary and Secondary Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-        >
-          <Link
-            href="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-slate-950 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-950 text-base font-semibold transition-all duration-200 shadow-sm active:scale-[0.98] group"
-          >
-            <span>Start Your Digital Journey</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+            {/* Dual Liquid Glass CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 w-full sm:w-auto"
+            >
+              <LiquidButton href="/contact" variant="primary" size="lg">
+                Discuss Your Project
+              </LiquidButton>
 
-          <Link
-            href="#what-nvit-does"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 bg-transparent hover:bg-slate-100/50 dark:hover:bg-white/[0.04] text-slate-700 dark:text-slate-300 text-base font-medium transition-all duration-200"
-          >
-            <span>Explore What We Do</span>
-            <ArrowDown className="w-4 h-4 text-slate-400" />
-          </Link>
-        </motion.div>
-      </div>
+              <LiquidButton href="/projects" variant="secondary" size="lg">
+                Explore Our Work
+              </LiquidButton>
+            </motion.div>
 
-      {/* ── Subdued Bottom Anchor ── */}
-      <div className="relative z-10 max-w-5xl mx-auto w-full pt-8 flex items-center justify-center text-xs font-mono text-slate-400 dark:text-slate-500 border-t border-slate-200/50 dark:border-white/5">
-        <span className="tracking-widest uppercase">NVIT.SPACE · Digital Architecture Studio</span>
+            {/* Micro Value Propositions Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.48, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-12 pt-8 border-t border-slate-200/80 dark:border-white/10 w-full grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-4 sm:gap-6 text-xs font-medium text-slate-600 dark:text-slate-400"
+            >
+              {VALUE_PROPS.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.label} className="flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-blue-50 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-900/40 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                      <Icon className="w-3 h-3" />
+                    </span>
+                    <span className="whitespace-nowrap">{item.label}</span>
+                  </div>
+                );
+              })}
+            </motion.div>
+          </div>
+
+          {/* Right Column: Prominent Liquid Glass Architecture Card */}
+          <div className="lg:col-span-5 relative flex items-center justify-center pt-8 lg:pt-0">
+            {/* Liquid Orbs Framed directly around the Card */}
+            <div className="absolute -top-10 -right-4 sm:-right-8 z-20">
+              <LiquidGlassOrb size={84} tint="blue" delay={0.3} floatY={12} />
+            </div>
+            <div className="absolute -bottom-8 -left-6 z-20">
+              <LiquidGlassOrb size={100} tint="amber" delay={0.8} floatY={14} />
+            </div>
+            <div className="absolute top-1/2 -right-12 z-0 hidden sm:block">
+              <LiquidGlassOrb size={54} tint="cyan" delay={1.5} floatY={8} />
+            </div>
+
+            {/* The Main Floating Frosted Glass Panel */}
+            <motion.div
+              style={{ y: cardY }}
+              initial={{ opacity: 0, scale: 0.94, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 w-full max-w-md rounded-[32px] p-6 sm:p-8 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl border border-white/80 dark:border-white/15 shadow-[0_24px_50px_-12px_rgba(15,23,42,0.08),0_4px_16px_rgba(15,23,42,0.02)] dark:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.6)]"
+            >
+              {/* Header Comment & Code Metaphor */}
+              <div className="font-mono text-xs text-slate-500 dark:text-slate-400 space-y-1 mb-6 border-b border-slate-200/60 dark:border-white/10 pb-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-400 dark:text-slate-500">// Building</span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                </div>
+                <div>// Scalable</div>
+                <div className="text-slate-700 dark:text-slate-200 font-semibold">// Digital Products</div>
+              </div>
+
+              {/* 4 Interactive Capability Pills */}
+              <div className="space-y-3">
+                {CAPABILITY_PILLS.map((cap) => {
+                  const Icon = cap.icon;
+                  return (
+                    <Link
+                      key={cap.name}
+                      href={cap.href}
+                      className="group flex items-center justify-between p-3.5 rounded-2xl bg-white/80 dark:bg-white/5 border border-slate-200/70 dark:border-white/10 hover:border-blue-500/50 hover:bg-white dark:hover:bg-white/10 transition-all duration-200 shadow-sm active:scale-[0.99]"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <span className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          {cap.name}
+                        </span>
+                      </div>
+                      <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Bottom Tagline Capsule */}
+              <div className="mt-6 pt-4 border-t border-slate-200/60 dark:border-white/10 flex items-center justify-between">
+                <div className="inline-flex items-center gap-2 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">&gt;</span>
+                  <span>Ideas &rarr; Products &rarr; Real Impact</span>
+                </div>
+                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

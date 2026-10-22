@@ -80,7 +80,7 @@ export default function SolutionDetailView({ solution }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 flex flex-col selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors duration-300 flex flex-col selection:bg-blue-600 selection:text-white">
       {/* Schema.org Microdata */}
       <script
         type="application/ld+json"

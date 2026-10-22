@@ -44,6 +44,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       setThemeState("system");
     }
+
+    if (typeof document !== "undefined") {
+      const isDark = document.documentElement.classList.contains("dark");
+      setResolvedTheme(isDark ? "dark" : "light");
+    }
   }, []);
 
   useEffect(() => {

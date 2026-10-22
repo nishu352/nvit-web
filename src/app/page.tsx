@@ -4,62 +4,41 @@ import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/landing/HeroSection";
-import VisionSection from "@/components/landing/VisionSection";
-import DigitalGapSection from "@/components/landing/DigitalGapSection";
-import WhatNVITDoesSection from "@/components/landing/WhatNVITDoesSection";
-import CapabilitiesEcosystemSection from "@/components/landing/CapabilitiesEcosystemSection";
+import EngineeringServicesSection from "@/components/landing/EngineeringServicesSection";
 import SelectedWorkSection from "@/components/landing/SelectedWorkSection";
 import FreeToolsHomeSection from "@/components/landing/FreeToolsHomeSection";
-import ResourcesHomeSection from "@/components/landing/ResourcesHomeSection";
-import TechnicalCredibilitySection from "@/components/landing/TechnicalCredibilitySection";
-import PhilosophySection from "@/components/landing/PhilosophySection";
+import HowWeWorkSection from "@/components/landing/HowWeWorkSection";
 import FinalCtaSection from "@/components/landing/FinalCtaSection";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors duration-300">
-      {/* Primary Clean Navigation */}
+    <div className="min-h-screen flex flex-col liquid-atmosphere-canvas text-[var(--text-primary)] transition-colors duration-300">
+      {/* Primary Navigation */}
       <Navbar />
 
-      {/* Continuous Architectural Story */}
+      {/* Strategic Digital Engineering Narrative */}
       <main className="flex-1">
-        {/* 01 — Hero: "Take Your Business Into The Digital World." */}
+        {/* Section A: Hero — "We Build Digital Products That Move Businesses Forward." */}
         <HeroSection />
 
-        {/* 02 — Vision: "Every Business Deserves a Place in the Digital Future." */}
-        <VisionSection />
+        {/* Section B: Engineering Services — Websites, Custom Software, Backend APIs, Automation */}
+        <EngineeringServicesSection />
 
-        {/* 03 — The Digital Gap: Traditional Business → Digital Platform */}
-        <DigitalGapSection />
-
-        {/* 04 — What NVIT Does: Software Development & Business Systems */}
-        <WhatNVITDoesSection />
-
-        {/* 05 — Capabilities / Digital Ecosystem */}
-        <CapabilitiesEcosystemSection />
-
-        {/* 06 — Interactive Utilities & Banking Data APIs */}
-        <FreeToolsHomeSection />
-
-        {/* 07 — Proof / Selected Work: Engineered Production Systems */}
+        {/* Section C: Solutions & Work — Delivered Production Architectures & Case Studies */}
         <SelectedWorkSection />
 
-        {/* 08 — Educational Resources & Technical Guides */}
-        <ResourcesHomeSection />
+        {/* Section D: Public Tools — Complementary Utility Products (Company Checker, Pincode, EMI) */}
+        <FreeToolsHomeSection />
 
-        {/* 09 — Technical Credibility */}
-        <TechnicalCredibilitySection />
+        {/* Section E: How We Work — 4-Stage Engineering Process */}
+        <HowWeWorkSection />
 
-        {/* 10 — Philosophy */}
-        <PhilosophySection />
-
-        {/* 11 — Final CTA */}
+        {/* Section F: Final CTA — Project Inquiry */}
         <FinalCtaSection />
       </main>
 
-      {/* Footer */}
+      {/* Footer with Complete Navigation & Legal Links */}
       <Footer />
     </div>
   );
 }
-
