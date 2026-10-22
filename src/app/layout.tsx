@@ -1,24 +1,9 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/providers/QueryProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { MotionProvider } from "@/providers/MotionProvider";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nvit.space"),
@@ -82,7 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${inter.variable} ${plusJakarta.variable}`}
+      className="scroll-smooth"
       suppressHydrationWarning
     >
       <head>
@@ -117,7 +102,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={`${inter.className} min-h-screen antialiased bg-[var(--bg-base)] text-[var(--text-primary)] selection:bg-royal selection:text-white relative`} suppressHydrationWarning>
+      <body className="min-h-screen antialiased bg-[var(--bg-base)] text-[var(--text-primary)] selection:bg-royal selection:text-white relative" suppressHydrationWarning>
         <Analytics />
         <div className="relative z-10">
           <ThemeProvider>
